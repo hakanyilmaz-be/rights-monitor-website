@@ -9,7 +9,7 @@ const AdminTemplate = ( {children}) => {
   return (
     <Container fluid className="admin-template">
         <Row>
-            <Col lg={3} className= 'sidebar sticky-top'>
+            <Col lg={3} className= 'sidebar sticky-top' style={{ width: '23%' }}>
                 <SideBar/>
             </Col>
             <Col lg={9} className='p-5'>

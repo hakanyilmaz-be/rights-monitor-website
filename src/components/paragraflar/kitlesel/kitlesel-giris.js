@@ -1,7 +1,8 @@
 import React from 'react'
 
+
 const KitleselGiris = () => {
-  return (
+  return ( 
     <div className="paragraph-kitlesel-giris">
       Gülen Hareketi mensuplarına yönelik düzenlenen kitlesel gözaltı operasyonları hukuk sınırlarını çoktan aşmıştır. 2017'de tek bir operasyonda 3,224 kişi, 2016'da bir günde 2,745 hakim ve savcı, 2019'da ise aynı günde 1,112 kişi, Gülen Hareketi'ne mensup olma iddiasıyla gözaltına alınmıştır. BM Keyfi Tutuklamalar Çalışma Grubu 
       <a href="https://www.ohchr.org/sites/default/files/documents/issues/detention-wg/opinions/session98/a-hrc-wgad-66-2023-turkiye-aev.pdf" className="paragraph-kitlesel-giris-link">

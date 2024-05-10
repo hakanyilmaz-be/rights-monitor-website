@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import DataTable from 'react-data-table-component';
 
+
 const KitleselIller = () => {
     const [dataRows, setDataRows] = useState([]);
 
@@ -26,32 +27,47 @@ const KitleselIller = () => {
     };
 
     const columns = [
-        { name: 'İl', selector: row => row[0], sortable: true },
-        { name: 'Gözaltı Sayısı', selector: row => row[1], sortable: true },
-        { name: 'Operasyon Sayısı', selector: row => row[2], sortable: true }
+        { name: 'İl', selector: row => row[0], sortable: true, grow: 1 },
+        { name: 'Gözaltı Sayısı', selector: row => row[1], sortable: true, grow: 1 },
+        { name: 'Operasyon Sayısı', selector: row => row[2], sortable: true, grow: 1 }
     ];
+    
 
     const paginationOptions = {
-        rowsPerPageText: 'Satır Sayısı:',  // Özelleştirilmiş metin
+        rowsPerPageText: 'Satır Sayısı:', 
         rangeSeparatorText: 'ile',
-        selectAllRowsItem: true,
+        //selectAllRowsItem: true,
         selectAllRowsItemText: 'Tümünü Göster'
     };
 
     const customStyles = {
+        rows: {
+            style: {
+              minHeight: "36px", // override the row height
+            },
+          },
         headCells: {
             style: {
-                backgroundColor: '#004792', // mavi arkaplan
+                padding: '8px 0px 8px 8px',
+                background: 'linear-gradient(to right, #6DBA91, #69b79e)',
                 color: '#FFF', // beyaz yazı
-                fontSize: '16px',
+                fontSize: '12px', 
+            },
+        },
+        cells: {
+            style: {
+                padding: '0px 0px 0px 8px', 
+                fontSize: '11px', 
+         
             },
         },
     };
+   
 
 
     return (
         <div>
-            <h1>Kitlesel İller Tablosu</h1>
+            <p style={{ fontWeight: 'bold' }}>İllere Göre Gözaltı ve Operasyon Tablosu</p>
             <DataTable
                 columns={columns}
                 data={dataRows}
