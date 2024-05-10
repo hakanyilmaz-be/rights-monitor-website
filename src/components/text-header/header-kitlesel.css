@@ -1,0 +1,41 @@
+@keyframes typing {
+    from {
+        width: 0;
+        border-right-color: black;  /* Başlangıçta cursor görünür */
+    }
+    to {
+        width: 100%;
+        border-right-color: transparent;  /* Bitişte cursor görünmez */
+    }
+}
+
+.typing-container {
+    font-family: 'Roboto', Courier, monospace;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 3px solid transparent; /* Başlangıçta transparent yaparak cursor'un rengini kontrol edebiliriz */
+    max-width: max-content; /* Metnin içeriği kadar genişlik */
+    animation: typing 4s steps(30) 1s forwards; /* Adım sayısını metin uzunluğuna uygun olarak ayarla */
+    text-align: center; /* Metni yatay olarak ortalar */
+    margin: 0 auto; /* Üst ve alt kenar boşluğunu sıfırlar ve otomatik olarak yatayda ortalar */
+}
+
+.kit, .goz {
+    display: inline; /* Aynı satırda olmalarını sağlar */
+}
+
+.kit {
+    color: black;
+}
+
+.goz {
+    color: red;
+}
+
+#text-animation {
+    font-size: 24px;
+    font-weight: bold;
+    font-family: Arial, sans-serif;
+    text-align: center;
+  }
+  

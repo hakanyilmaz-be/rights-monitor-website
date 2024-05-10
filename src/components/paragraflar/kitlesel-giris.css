@@ -1,0 +1,13 @@
+/* styles.css */
+.paragraph-kitlesel-giris-link {
+    color: white;
+    font-family: 'Sans-serif';
+    text-decoration: underline;
+    font-style: italic;
+  }
+  
+  .paragraph-kitlesel-giris {
+    font-family: 'Sans-serif';
+    text-align: justify;
+  }
+  
