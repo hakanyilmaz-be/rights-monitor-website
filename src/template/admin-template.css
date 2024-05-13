@@ -8,3 +8,21 @@
         height: auto;
     }
 }
+
+
+
+.admin-row{
+    padding: 0!important;
+    margin: 0!important;
+    --bs-gutter-x: 0rem!important;
+}
+
+.col-lg-3 {
+    flex: 0 0 auto!important;
+    width: 20%!important;
+}
+
+.col-lg-9 {
+    flex: 0 0 auto!important;
+    width: 80%!important;
+}

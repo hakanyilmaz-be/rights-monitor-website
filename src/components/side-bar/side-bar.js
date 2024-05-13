@@ -32,9 +32,9 @@ const SideBar = () => {
               Ana Sayfa
             </Nav.Link>
             <Nav.Link as={Link} to="/kitlesel" className={currentPath === "/kitlesel" ? "active" : ""}>
-              Kitlesel Gözaltılar
+              Kitlesel Gözaltılar 
             </Nav.Link>
-            <Nav.Link as={Link} to="/projets" className={currentPath === "/projets" ? "active" : ""}>
+            <Nav.Link as={Link} to="/olumler" className={currentPath === "/olumler" ? "active" : ""}>
                Yaşam Hakkı İhlalleri
             </Nav.Link>
             <Nav.Link as={Link} to="/clients" className={currentPath === "/clients" ? "active" : ""}>
