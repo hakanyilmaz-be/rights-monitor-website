@@ -54,7 +54,7 @@ const YillarAciklama = () => {
         düşüş gözlemlense de bu düşüşün istikrarlı olmadığı ve Gülen hareketi
         ile bir şekilde 'iltisaklı' olan herkesin hala hukuksuzca gözaltına
         alındığı bir gerçektir. 2024 senesi içerisinde ise bugüne kadar en az{" "}
-        {a5Value} kişi gözaltına alınmıştır.
+        {a5Value} kişi gözaltına alınmıştır. 
       </p>
     </div>
   );

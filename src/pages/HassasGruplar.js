@@ -1,10 +1,5 @@
 import { Col, Container, Row } from "react-bootstrap";
-import LookerStudioIframeKitlesel from "../components/locker-studio/locker-studio-iframe-kitlesel";
-import Sorumlular from "../components/paragraflar/kitlesel/sorumlular";
-import SorumlularDevam from "../components/paragraflar/kitlesel/sorumlular-devami";
-import AccordionText from "../components/paragraflar/kitlesel/accordion-text";
-import AdvancedTable from "../components/charts/kitlesel/advanced-table";
-import backgroundImg from "../assets/img/bg-olumler4.png"
+import backgroundImg from "../assets/img/bg-hassas.png"
 import OlumlerGiris from "../components/paragraflar/olumler/olumler-giris";
 import Cinsiyet from "../components/charts/olumler/cinsiyet";
 import CinsiyetAciklama from "../components/paragraflar/olumler/cinsiyet-aciklama";
@@ -18,9 +13,10 @@ import SebeplerGrafik from "../components/charts/olumler/sebepler-grafik";
 import SebeplerDevam from "../components/paragraflar/olumler/sebepler-devami";
 import AccordionTextOlumler from "../components/paragraflar/olumler/accordion-text-olumler";
 import AdvancedTableOlumler from "../components/charts/olumler/advanced-table-olumler";
+import MapTest from "../components/locker-studio/map-test";
 
 
-const OlumlerPage = () => {
+const HassasGruplarPage = () => {
   const divStyle = {
     position: 'relative',
     backgroundImage: `url(${backgroundImg})`,
@@ -56,6 +52,8 @@ const OlumlerPage = () => {
       </div>
 
       <Container style={{padding:'4.2rem'}}>
+
+<MapTest/>
 
       <Row>
         <Col lg={5}>
@@ -111,4 +109,4 @@ const OlumlerPage = () => {
   );
 };
 
-export default OlumlerPage;
+export default HassasGruplarPage;
