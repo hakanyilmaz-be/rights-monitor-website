@@ -4,7 +4,7 @@ import DataTable from 'react-data-table-component';
 import Papa from 'papaparse';
 import { FormControl } from 'react-bootstrap';
 
-function AdvancedTableOlumler() {
+function AdvancedTableHassas() {
     const [dataRows, setDataRows] = useState([]);
     const [allData, setAllData] = useState([]);
     const [columns, setColumns] = useState([]);
@@ -12,7 +12,7 @@ function AdvancedTableOlumler() {
 
     useEffect(() => {
         const fetchCSVData = () => {
-            const csvUrl = "https://docs.google.com/spreadsheets/d/e/2PACX-1vSV35Idlyu1RM7zTM_yzTSoY1VhSYonODYO4tLiKgDOKVZwKG4arjET1jcDrwd8S0cS2_TbjwiaAnSh/pub?gid=0&single=true&output=csv";
+            const csvUrl = "https://docs.google.com/spreadsheets/d/e/2PACX-1vQG0Gg1TsKyJ7KBwRkN85W23CnmgICsxPnMS8Xy7iGAlnbME8e3Y2L3wCF2rCNZsYK_UPiWZJ3GH2I4/pub?gid=496568060&single=true&output=csv";
 
             axios.get(csvUrl)
                 .then((response) => {
@@ -32,7 +32,7 @@ function AdvancedTableOlumler() {
                 const rows = results.data;
                 if (rows.length > 0) {
                     const headers = rows[0];
-                    const columnsToShow = [0, 1, 2, 3, 4, 5, 6, 7, 8];
+                    const columnsToShow = [0, 1, 2, 3, 4, 5, 6, 7];
 
                     const data = rows.slice(1).map(row => {
                         let rowData = {};
@@ -62,11 +62,12 @@ function AdvancedTableOlumler() {
                             selector: row => row[headers[2]],
                             sortable: true,
                             wrap: true,
-                            grow: 0.2
+                            grow: 4
                         },
+                       
                         {
-                            name: headers[3],
-                            selector: row => row[headers[3]],
+                            name: headers[4],
+                            selector: row => row[headers[4]],
                             sortable: true,
                             wrap: true,
                             grow: 0.2
@@ -93,20 +94,14 @@ function AdvancedTableOlumler() {
                             wrap: true,
                             grow: 0.3
                         },
+                        
                         {
-                            name: headers[7],
-                            selector: row => row[headers[7]],
-                            sortable: true,
-                            wrap: true,
-                            grow: 1
-                        },
-                        {
-                            name: headers[8],
-                            selector: row => row[headers[8]],
+                            name: headers[3],
+                            selector: row => row[headers[3]],
                             sortable: true,
                             wrap: true,
                             grow: 2.3,
-                            cell: row => <a href={row[headers[8]]} target="_blank" rel="noopener noreferrer">{row[headers[8]]}</a>
+                            cell: row => <a href={row[headers[3]]} target="_blank" rel="noopener noreferrer">{row[headers[3]]}</a>
                         }
                     ];
 
@@ -143,8 +138,8 @@ function AdvancedTableOlumler() {
         headCells: {
             style: {
                 padding: '8px 0px 8px 8px',
-                background: '#9d0000',
-                color: '#FFF',
+                background: '#FFB01E',
+                color: '#000',
                 fontSize: '12px',
             }
         },
@@ -197,4 +192,4 @@ function AdvancedTableOlumler() {
     );
 } */
 
-export default AdvancedTableOlumler;
+export default AdvancedTableHassas;

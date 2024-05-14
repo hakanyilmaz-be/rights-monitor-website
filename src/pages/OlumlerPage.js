@@ -1,9 +1,4 @@
 import { Col, Container, Row } from "react-bootstrap";
-import LookerStudioIframeKitlesel from "../components/locker-studio/locker-studio-iframe-kitlesel";
-import Sorumlular from "../components/paragraflar/kitlesel/sorumlular";
-import SorumlularDevam from "../components/paragraflar/kitlesel/sorumlular-devami";
-import AccordionText from "../components/paragraflar/kitlesel/accordion-text";
-import AdvancedTable from "../components/charts/kitlesel/advanced-table";
 import backgroundImg from "../assets/img/bg-olumler4.png"
 import OlumlerGiris from "../components/paragraflar/olumler/olumler-giris";
 import Cinsiyet from "../components/charts/olumler/cinsiyet";

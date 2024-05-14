@@ -1,19 +1,16 @@
 import { Col, Container, Row } from "react-bootstrap";
 import backgroundImg from "../assets/img/bg-hassas.png"
-import OlumlerGiris from "../components/paragraflar/olumler/olumler-giris";
-import Cinsiyet from "../components/charts/olumler/cinsiyet";
-import CinsiyetAciklama from "../components/paragraflar/olumler/cinsiyet-aciklama";
 import MeslekAciklama from "../components/paragraflar/olumler/meslek-aciklama";
 import Meslek from "../components/charts/olumler/meslek";
 import Yillar from "../components/paragraflar/olumler/yillar";
 import YillarDevam from "../components/paragraflar/olumler/yillar-devami";
 import YillarGrafik from "../components/charts/olumler/yillar-grafik";
-import SebeplerAciklama from "../components/paragraflar/olumler/sebepler-aciklama";
-import SebeplerGrafik from "../components/charts/olumler/sebepler-grafik";
-import SebeplerDevam from "../components/paragraflar/olumler/sebepler-devami";
-import AccordionTextOlumler from "../components/paragraflar/olumler/accordion-text-olumler";
-import AdvancedTableOlumler from "../components/charts/olumler/advanced-table-olumler";
-import MapTest from "../components/locker-studio/map-test";
+import HassasGiris from "../components/paragraflar/hassas/hassas-giris";
+import KadinlarGrafik from "../components/charts/hassas/kadinlar-grafik";
+import KadinlarAciklama from "../components/paragraflar/hassas/kadinlar-aciklama";
+import KadinlarDevam from "../components/paragraflar/hassas/kadinlar-devami";
+import AccordionHassas from "../components/paragraflar/hassas/accordion-hassas";
+import AdvancedTableHassas from "../components/charts/hassas/advanced-table-hassas";
 
 
 const HassasGruplarPage = () => {
@@ -45,22 +42,21 @@ const HassasGruplarPage = () => {
       <div style={divStyle}>
         <div style={overlayStyle}></div>  
         <Container style={contentContainerStyle}>
-         <h1 className="text-white fw-bold" style={{ fontSize: '3rem' }}>Yaşam Hakkı İhlalleri</h1>
-          <div style={{ height: "30px" }}></div>
-         <OlumlerGiris/>
+        <HassasGiris/>
         </Container>
       </div>
 
       <Container style={{padding:'4.2rem'}}>
 
-<MapTest/>
-
       <Row>
         <Col lg={5}>
-         <Cinsiyet/>
+        <KadinlarGrafik/>
         </Col>
         <Col lg={7} className="pl-3">
-          <CinsiyetAciklama/>
+         <KadinlarAciklama/>
+        </Col>
+        <Col lg={12}>
+       <KadinlarDevam/>
         </Col>
       </Row>
       <div style={{ height: "50px" }}></div>
@@ -86,23 +82,10 @@ const HassasGruplarPage = () => {
        <YillarDevam/>
         </Col>
       </Row>
-      <div style={{ height: "50px" }}></div>
-
-      <Row>
-        <Col lg={6}>
-       <SebeplerAciklama/>
-        </Col>
-        <Col lg={6} style={{ marginTop: '3rem' }}>
-       <SebeplerGrafik/>
-        </Col>
-        <Col lg={12}>
-      <SebeplerDevam/>
-        </Col>
-      </Row>
-
       <div style={{ height: "30px" }}></div>
-     <AccordionTextOlumler/>
-    <AdvancedTableOlumler/>
+
+     <AccordionHassas/>
+    <AdvancedTableHassas/>
     </Container>
 
     </>

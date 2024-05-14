@@ -1,4 +1,4 @@
-import { Card, Row } from 'react-bootstrap';
+import { Row } from 'react-bootstrap';
 import Accordion from 'react-bootstrap/Accordion';
 import "./olumler-text.css";
 

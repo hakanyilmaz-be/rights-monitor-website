@@ -1,5 +1,4 @@
 import { Col, Container, Row } from "react-bootstrap";
-import FetchCSVData from "../components/charts/fetchCSVData";
 import HeaderKitlesel from "../components/text-header/headerKitlesel";
 import FlourishEmbedKitlesel from "../components/flourish/FlourishEmbedKitlesel";
 import KitleselGiris from "../components/paragraflar/kitlesel/kitlesel-giris";
@@ -89,7 +88,6 @@ const KitleselPage = () => {
       <AccordionText/>
     <AdvancedTable/>
     </Container>
-   {/*  <FetchCSVData /> */}
     </>
   );
 };
