@@ -37,6 +37,6 @@
   filter: brightness(0) invert(1); /* Renkleri ters çevirir, SVG içindeki renk kodunu değiştirin */
 }
 
-.accordion-body-text {
+.accordion-body-text-kitlesel {
   font-size: 14px; 
 }

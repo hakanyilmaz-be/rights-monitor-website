@@ -43,7 +43,7 @@ const SideBar = () => {
             <Nav.Link as={Link} to="/elements-produits" className={currentPath === "/elements-produits" ? "active" : ""}>
                İhraçlar
             </Nav.Link>
-            <Nav.Link as={Link} to="/stock" className={currentPath === "/stock" ? "active" : ""}>
+            <Nav.Link as={Link} to="/illegaliade" className={currentPath === "/illegaliade" ? "active" : ""}>
              Hukuka Aykırı Sınır Dışı ve İadeler
             </Nav.Link>
             <Nav.Link as={Link} to="/factures" className={currentPath === "/factures" ? "active" : ""}>

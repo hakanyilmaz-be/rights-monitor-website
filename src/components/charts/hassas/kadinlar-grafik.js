@@ -26,7 +26,7 @@ const KadinlarGrafik = () => {
     };
 
     const columns = [
-        { name: 'Ölüm Nedeni', selector: row => row[0], sortable: true, grow: 2 },
+        { name: 'İhlale Maruz Kalan Anneler', selector: row => row[0], sortable: true, grow: 2 },
         { name: 'Sayı', selector: row => row[1], sortable: true, grow: 1 },
     ];
 
@@ -39,7 +39,7 @@ const KadinlarGrafik = () => {
         headCells: {
             style: {
                 padding: '8px 0px 8px 12px',
-                background: '#b40a0a',
+                background: '#ffaf1e',
                 color: '#FFF',
                 fontSize: '15px', 
             },

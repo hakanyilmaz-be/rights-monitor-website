@@ -1,16 +1,15 @@
 import { Col, Container, Row } from "react-bootstrap";
 import backgroundImg from "../assets/img/bg-hassas.png"
-import MeslekAciklama from "../components/paragraflar/olumler/meslek-aciklama";
-import Meslek from "../components/charts/olumler/meslek";
-import Yillar from "../components/paragraflar/olumler/yillar";
-import YillarDevam from "../components/paragraflar/olumler/yillar-devami";
-import YillarGrafik from "../components/charts/olumler/yillar-grafik";
 import HassasGiris from "../components/paragraflar/hassas/hassas-giris";
 import KadinlarGrafik from "../components/charts/hassas/kadinlar-grafik";
 import KadinlarAciklama from "../components/paragraflar/hassas/kadinlar-aciklama";
 import KadinlarDevam from "../components/paragraflar/hassas/kadinlar-devami";
 import AccordionHassas from "../components/paragraflar/hassas/accordion-hassas";
 import AdvancedTableHassas from "../components/charts/hassas/advanced-table-hassas";
+import videoHassasGruplar from "../assets/video/hassas-gruplar.mp4"
+import GenelAciklamaHassas from "../components/paragraflar/hassas/genel-aciklama-hassas";
+import GenelAciklamaHassasDevami from "../components/paragraflar/hassas/genel-aciklama-hassa-devami";
+
 
 
 const HassasGruplarPage = () => {
@@ -57,31 +56,29 @@ const HassasGruplarPage = () => {
         </Col>
         <Col lg={12}>
        <KadinlarDevam/>
-        </Col>
-      </Row>
-      <div style={{ height: "50px" }}></div>
 
-      <Row>
-        <Col lg={6}>
-        <MeslekAciklama/>
         </Col>
-        <Col lg={6}>
-       <Meslek/>
-        </Col>
-      </Row>
-      <div style={{ height: "50px" }}></div>
+        <div style={{ height: "30px" }}></div>
 
-      <Row>
-        <Col lg={6} style={{ marginLeft: '-2rem' }}>
-         <YillarGrafik/>
-        </Col>
-        <Col lg={6}>
-        <Yillar/>
-        </Col>
-        <Col lg={12}>
-       <YillarDevam/>
-        </Col>
+      <GenelAciklamaHassas/>
+
       </Row>
+      <div style={{ height: "10px" }}></div>
+
+      <div style={{ position: 'relative', width: '100%', height: 0, paddingTop: '56.25%', paddingBottom: 0, boxShadow: '0 2px 8px 0 rgba(63,69,81,0.16)', marginTop: '1.6em', marginBottom: '0.9em', overflow: 'hidden', borderRadius: '8px', willChange: 'transform' }}>
+      <video 
+        src={videoHassasGruplar} 
+        style={{ position: 'absolute', width: '100%', height: '100%', top: 0, left: 0, border: 'none', padding: 0, margin: 0 }} 
+        autoPlay 
+        loop 
+        muted 
+        controls
+      />
+    </div>
+    <div style={{ height: "10px" }}></div>
+      <GenelAciklamaHassasDevami/>
+   
+   
       <div style={{ height: "30px" }}></div>
 
      <AccordionHassas/>

@@ -4,17 +4,17 @@ const MapTest = () => {
   const [iframeSrc, setIframeSrc] = useState('');
 
   useEffect(() => {
-    setIframeSrc("https://lookerstudio.google.com/embed/reporting/31567455-8265-44ce-8187-6a648bce36ea/page/MrlQC");
+    setIframeSrc("https://lookerstudio.google.com/embed/reporting/7a817213-523f-4ebd-8ee5-8b34dcc9459c/page/eQ9zD");
   }, []);
 
   return (
-    <div style={{ overflow: 'hidden', height: '750px', position: 'relative' }}> 
+    <div style={{ overflow: 'hidden', height: '540px', position: 'relative' }}> 
       {iframeSrc && (
         <iframe
           title="Looker Studio Report: Kitlesel Gözaltı Serüveni"
           src={iframeSrc}
           width="100%"
-          height="800px"  // iframe yüksekliğini artırarak içerik kaydırmayı sağlayabilirsiniz
+          height="800px"  
           style={{
             border: '0',
             position: 'absolute',
