@@ -8,7 +8,7 @@ const KacirmaAciklama = () => {
     <>
       <Row>
         <Col lg={4}>
-          <img alt="Orhan Inandi" src={profileInandi} className="img-fluid " style={{ marginTop: '14px' }}/>
+          <img alt="Orhan Inandi" src={profileInandi} className="img-fluid " style={{ paddingTop: '2.7rem' }}/>
         </Col>
         <Col lg={8}>
           <h2 style={{ fontWeight: "bold"}}>Yasa Dışı Kaçırma Çalışmaları</h2>
@@ -28,7 +28,7 @@ const KacirmaAciklama = () => {
             olmaksızın hapiste tutuldu.
           </p>
         </Col>
-        <Col lg={12}>
+        <Col lg={12} style={{ paddingTop: '1rem' }}>
           <p className="small-paragraph">
             Akpınar’ı Türkiye’ye getiren polis ekibi Türk İnterpol Birimine
             bağlı polis ekibiydi. Acar ve Akpınar’ın dosyalarına giren resmi

@@ -1,18 +1,12 @@
-import { Col, Container, Row } from "react-bootstrap";
+import {Container} from "react-bootstrap";
 import backgroundImg from "../assets/img/bg-sinirdisi.png"
-import MeslekAciklama from "../components/paragraflar/olumler/meslek-aciklama";
-import Meslek from "../components/charts/olumler/meslek";
-import Yillar from "../components/paragraflar/olumler/yillar";
-import YillarDevam from "../components/paragraflar/olumler/yillar-devami";
-import YillarGrafik from "../components/charts/olumler/yillar-grafik";
-import SebeplerAciklama from "../components/paragraflar/olumler/sebepler-aciklama";
-import SebeplerGrafik from "../components/charts/olumler/sebepler-grafik";
-import SebeplerDevam from "../components/paragraflar/olumler/sebepler-devami";
-import AccordionTextOlumler from "../components/paragraflar/olumler/accordion-text-olumler";
-import AdvancedTableOlumler from "../components/charts/olumler/advanced-table-olumler";
 import SinirDisiGiris from "../components/paragraflar/sinirdisi/sinirdisi-giris";
 import KacirmaAciklama from "../components/paragraflar/sinirdisi/kacirma";
-import MapTest from "../components/locker-studio/map-test";
+import MapSinirDisi from "../components/locker-studio/map-sinir-disi";
+import IadeTalepleri from "../components/paragraflar/sinirdisi/iade-talepleri";
+import InterpolAciklama from "../components/paragraflar/sinirdisi/interpol-aciklama";
+import AccordionTextIade from "../components/paragraflar/sinirdisi/accordion-text-iade";
+import AdvancedTableSinirDisi from "../components/charts/sinirdisi/advanced-table-sinir-disi";
 
 
 const SinirDisiIade = () => {
@@ -50,58 +44,25 @@ const SinirDisiIade = () => {
         </Container>
       </div>
 
-
-
       <Container style={{padding:'4.2rem'}}>
 
-      <MapTest/>
+      <MapSinirDisi/>
 
 <div style={{ height: "50px" }}></div>
       <KacirmaAciklama/>
       
       <div style={{ height: "50px" }}></div>
 
-     
+      <IadeTalepleri/>     
 
-
-      <Row>
-        <Col lg={6}>
-        <MeslekAciklama/>
-        </Col>
-        <Col lg={6}>
-       <Meslek/>
-        </Col>
-      </Row>
       <div style={{ height: "50px" }}></div>
 
-      <Row>
-        <Col lg={6} style={{ marginLeft: '-2rem' }}>
-         <YillarGrafik/>
-        </Col>
-        <Col lg={6}>
-        <Yillar/>
-        </Col>
-        <Col lg={12}>
-       <YillarDevam/>
-        </Col>
-      </Row>
+      <InterpolAciklama/>
+
       <div style={{ height: "50px" }}></div>
 
-      <Row>
-        <Col lg={6}>
-       <SebeplerAciklama/>
-        </Col>
-        <Col lg={6} style={{ marginTop: '3rem' }}>
-       <SebeplerGrafik/>
-        </Col>
-        <Col lg={12}>
-      <SebeplerDevam/>
-        </Col>
-      </Row>
-
-      <div style={{ height: "30px" }}></div>
-     <AccordionTextOlumler/>
-    <AdvancedTableOlumler/>
+    <AccordionTextIade/>
+    <AdvancedTableSinirDisi/>
     </Container>
 
     </>

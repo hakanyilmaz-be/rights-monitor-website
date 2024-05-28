@@ -1,8 +1,8 @@
-.paragraph-sinirdisi-giris span {
+.paragraph-kapatilan-kurumlar-giris span {
   color: #246447; /* Koyu yeşil bir renk */
 }
 
-.paragraph-sinirdisi-giris {
+.paragraph-kapatilan-kurumlar-giris {
   font-size: 15px; 
 }
 
@@ -20,83 +20,26 @@
 
 
   .light-red{
-    color: #1A1A1A;
+    color: #181616;
   }
 
 
-  .sinirdisi .accordion-button:not(.collapsed) {
+  .kapatilan-kurumlar .accordion-button:not(.collapsed) {
     color: white!important;
     background-color: #1A1A1A!important;
     box-shadow: inset 0 calc(-1 * var(--bs-accordion-border-width)) 0 #1A1A1A !important;
 }
 
 /* Accordion butonunun açıldığında görünen ok işaretinin rengini ayarlama */
-.sinirdisi .accordion-button:not(.collapsed)::after {
+.kapatilan-kurumlar .accordion-button:not(.collapsed)::after {
   color: #ffffff !important; /* İşaretin rengini beyaz yap */
   background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" fill="%23ffffff" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>'); /* Varsayılan Bootstrap okunu beyaz renkle yeniden boyar */
   filter: brightness(0) invert(1); /* Renkleri ters çevirir, SVG içindeki renk kodunu değiştirin */
 }
 
-.sinirdisi .accordion-body-text-olumler {
+.kapatilan-kurumlar .accordion-body-text-kapatilan-kurumlar {
   font-size: 14px; 
 }
 
 
 
-.i-title {
-  height: 50px;
-  overflow: hidden;
-  position: relative;
-  align-items: center;
-  justify-content: center;
-}
-
-.i-title-wrapper {
-  height: 150px; /* 3 items * 50px each */
-  animation: move 8s linear infinite;
-}
-
-@keyframes move {
-  0% {
-    transform: translateY(0);
-  }
-  33.33% {
-    transform: translateY(0);
-  }
-  41.66% {
-    transform: translateY(-50px);
-  }
-  74.99% {
-    transform: translateY(-50px);
-  }
-  83.33% {
-    transform: translateY(-100px);
-  }
-  100% {
-    transform: translateY(-100px);
-  }
-}
-
-.i-title-item {
-  height: 50px;
-  font-size: 30px;
-  font-weight: bold;
-  color: #ff4c1f;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.first-data {
-  margin-bottom: 4rem;
-}
-
-.second-data .i-title-item {
-  color: #ffffff;
-
-}
-
-.header-first{
-  color: #ff4c1f;
-
-}

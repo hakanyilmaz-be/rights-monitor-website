@@ -106,8 +106,8 @@ const SinirDisiGiris = () => {
           className="d-flex flex-column justify-content-center align-items-center"
           style={{ marginTop: "-8rem" }}
         >
-          <div className="first-data">
-            <h4 className="text-white text-center">
+          <div className="first-data" style={{ marginBottom: '4rem' }}>
+            <h4 className="header-first text-center">
               Uluslararası Hukuka Aykırı Şekilde Türkiye'ye Götürülme Vakaları
             </h4>
 
@@ -119,7 +119,7 @@ const SinirDisiGiris = () => {
               </div>
             </div>
           </div>
-          <div className="second-data">
+          <div className="second-data" style={{ marginTop: '4rem' }}>
             <h4 className="text-white text-center">
               Reddedilen İade Talepleri
             </h4>
@@ -132,8 +132,6 @@ const SinirDisiGiris = () => {
               </div>
             </div>
           </div>
-
-          <h2 className="text-white" style={{ fontSize: "2.2rem" }}></h2>
         </Col>
       </Row>
     </Container>
