@@ -41,5 +41,9 @@
   font-size: 14px; 
 }
 
+.center-image {
+  display: flex;
+  justify-content: center;
+}
 
 

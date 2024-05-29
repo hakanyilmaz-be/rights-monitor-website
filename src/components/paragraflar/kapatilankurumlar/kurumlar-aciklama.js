@@ -1,5 +1,6 @@
 import React from "react";
 import "./kapatilan-text.css";
+import zamangazetesi from "../../../assets/img/zamangazetesi.png"
 
 const KurumlarAciklama = () => {
   return (
@@ -20,6 +21,14 @@ const KurumlarAciklama = () => {
         Akyazı İlçe Emniyet Müdürlüğü’ne, Ankara Beypazarı’ndaki bir anaokulu
         ise 15 Temmuz Şehitleri Anaokulu’na dönüştürüldü. Ankara Balgat'taki Ülkü Ulusoy Kız Öğrenci Yurdu binası ise Ülkü Ocakları Genel Merkezi’ne verildi.
       </p>
+      <div className="center-image">
+        <img
+          alt="Zaman Gazetesi"
+          src={zamangazetesi}
+          className="img-fluid"
+          style={{ width: 'auto', height: '400px', marginTop: "-3rem" }}
+        />
+      </div>
     </>
   );
 };
