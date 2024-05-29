@@ -6,6 +6,7 @@ import OlumlerPage from "../pages/OlumlerPage";
 import HassasGruplarPage from "../pages/HassasGruplar";
 import SinirDisiIade from "../pages/SinirDisiIade";
 import KapatilanKurumlar from "../pages/KapatilanKurumlar";
+import KaybedilenlerPage from "../pages/KaybedilenlerPage";
 
 const CustomRoutes = () => {
   return (
@@ -17,7 +18,9 @@ const CustomRoutes = () => {
           <Route path="olumler" element={<AdminTemplate><OlumlerPage /></AdminTemplate>} />  
           <Route path="hassasgruplar" element={<AdminTemplate> <HassasGruplarPage/> </AdminTemplate>} /> 
           <Route path="illegaliade" element={<AdminTemplate> <SinirDisiIade/> </AdminTemplate>} />  
-          <Route path="kapatilankurumlar" element={<AdminTemplate> <KapatilanKurumlar/> </AdminTemplate>} />       
+          <Route path="kapatilankurumlar" element={<AdminTemplate> <KapatilanKurumlar/> </AdminTemplate>} />
+          <Route path="kaybedilenler" element={<AdminTemplate> <KaybedilenlerPage/> </AdminTemplate>} />       
+
 
 
 

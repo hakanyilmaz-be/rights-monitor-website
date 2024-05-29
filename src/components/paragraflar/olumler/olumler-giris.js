@@ -72,6 +72,4 @@ const OlumlerGiris = () => {
   );
 };
 
-export default 
-
-OlumlerGiris;
+export default OlumlerGiris;
