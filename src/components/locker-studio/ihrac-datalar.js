@@ -1,21 +1,21 @@
 import React, { useEffect, useState } from 'react';
 
-const MapKapatilan = () => {
+const IhracDatalar = () => {
   const [iframeSrc, setIframeSrc] = useState('');
 
   useEffect(() => {
-    setIframeSrc("https://lookerstudio.google.com/embed/reporting/0067caa5-ebe9-40f0-bea0-fa40aa639c44/page/3In0D");
+    setIframeSrc("https://lookerstudio.google.com/embed/reporting/58fffc1d-828d-4b86-ae85-e6b577e34910/page/HdasB");
   }, []);
 
   return (
-    <div style={{ overflow: 'hidden', height: '590px', position: 'relative' }}> 
-    <p style={{ fontWeight: 'bold' }}>OHAL sürecinde KHK'lar ile kapatılan Türkiye geneli kurumlar</p>
+    <div style={{ overflow: 'hidden', height: '330px', position: 'relative' }}> 
+    <p style={{ fontWeight: 'bold' }}>İhraç Dataları</p>
       {iframeSrc && (
         <iframe
           title="Looker Studio Report: Kitlesel Gözaltı Serüveni"
           src={iframeSrc}
           width="100%"
-          height="800px"  
+          height="450px"  
           style={{
             border: '0',
             position: 'absolute',
@@ -33,4 +33,4 @@ const MapKapatilan = () => {
   );
 }
 
-export default MapKapatilan;
+export default IhracDatalar;

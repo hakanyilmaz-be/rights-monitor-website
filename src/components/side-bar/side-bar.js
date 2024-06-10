@@ -40,7 +40,7 @@ const SideBar = () => {
             <Nav.Link as={Link} to="/hassasgruplar" className={currentPath === "/hassasgruplar" ? "active" : ""}>
              Hassas Gruplar
             </Nav.Link>
-            <Nav.Link as={Link} to="/elements-produits" className={currentPath === "/elements-produits" ? "active" : ""}>
+            <Nav.Link as={Link} to="/ihraclar" className={currentPath === "/ihraclar" ? "active" : ""}>
                İhraçlar
             </Nav.Link>
             <Nav.Link as={Link} to="/illegaliade" className={currentPath === "/illegaliade" ? "active" : ""}>
@@ -49,23 +49,20 @@ const SideBar = () => {
             <Nav.Link as={Link} to="/kaybedilenler" className={currentPath === "/kaybedilenler" ? "active" : ""}>
               Zorla Kaybetmeler
             </Nav.Link>
-            <Nav.Link as={Link} to="/employees" className={currentPath === "/employees" ? "active" : ""}>
+            <Nav.Link as={Link} to="/sosyal-ekonomik-hak-ihlali" className={currentPath === "/sosyal-ekonomik-hak-ihlali" ? "active" : ""}>
            Sosyal ve Ekonomik Hak İhlalleri
             </Nav.Link>
-            <Nav.Link as={Link} to="/calendrier" className={currentPath === "/calendrier" ? "active" : ""}>
+            <Nav.Link as={Link} to="/cezaevi-hak-ihlali" className={currentPath === "/cezaevi-hak-ihlali" ? "active" : ""}>
               Cezaevindeki Hak İhlalleri
             </Nav.Link>
             <Nav.Link as={Link} to="/kapatilankurumlar" className={currentPath === "/kapatilankurumlar" ? "active" : ""}>
                Kapatılan Kurumlar
             </Nav.Link>
-            <Nav.Link as={Link} to="/statistiques" className={currentPath === "/statistiques" ? "active" : ""}>
+            <Nav.Link as={Link} to="/teror-sucu-istatistikleri" className={currentPath === "/teror-sucu-istatistikleri" ? "active" : ""}>
                Terör Suçu İstatistikleri
             </Nav.Link>
-            <Nav.Link as={Link} to="/statistiques" className={currentPath === "/statistiques" ? "active" : ""}>
+            <Nav.Link as={Link} to="/yargi-bagimsizligi" className={currentPath === "/yargi-bagimsizligi" ? "active" : ""}>
               Yargı Bağımsızlığı
-            </Nav.Link>
-            <Nav.Link as={Link} to="/statistiques" className={currentPath === "/statistiques" ? "active" : ""}>
-              Nefret Söylemi
             </Nav.Link>
           </Nav>
         </Navbar.Collapse>

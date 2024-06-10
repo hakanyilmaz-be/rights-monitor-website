@@ -6,6 +6,7 @@ import AccordionTextKaybetmeler from "../components/paragraflar/kaybetmeler/acco
 import AdvancedTableKaybetmeler from "../components/charts/kaybetmeler/advanced-table-kaybetmeler";
 
 
+
 const KaybedilenlerPage = () => {
   const divStyle = {
     position: 'relative',

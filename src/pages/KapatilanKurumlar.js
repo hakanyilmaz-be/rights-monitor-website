@@ -85,6 +85,7 @@ const KapatilanKurumlar = () => {
 
     <AccordionTextKapatilanKurumlar/>
    <AdvancedTableKapatilanKurumlar/>
+  
     </Container>
 
     </>

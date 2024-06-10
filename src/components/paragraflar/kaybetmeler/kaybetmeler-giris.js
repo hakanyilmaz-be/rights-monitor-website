@@ -3,11 +3,18 @@ import axios from "axios";
 import { Col, Container, Row } from "react-bootstrap";
 import CountUp from "react-countup";
 
+
 const KaybetmelerGiris = () => {
   const [a5Value, setA5Value] = useState("");
   const [a6Value, setA6Value] = useState("");
   const [a7Value, setA7Value] = useState("");
 
+  const gradientTextStyle = {
+    
+    background: "linear-gradient(270deg, #ffe985, #ffffff)",
+    WebkitBackgroundClip: "text",
+    WebkitTextFillColor: "transparent",
+  };
 
   useEffect(() => {
     const fetchCSVData = () => {
@@ -86,36 +93,57 @@ const KaybetmelerGiris = () => {
         <Col
           lg={6}
           className="d-flex flex-column justify-content-center"
-          style={{ marginTop: "-9rem", paddingLeft: "8rem"  }}
+          style={{ marginTop: "-9rem", paddingLeft: "8rem" }}
         >
-         <h2 className="text-white" style={{ fontSize: "2.4rem" }}>
-            Hâlâ Kayıp...
+          <h2 style={{ ...gradientTextStyle, fontSize: "2.4rem" }}>
+          
+          Hâlâ Kayıp...
+            
           </h2>
-        <div>
-        <h2 className="text-white" style={{ fontSize: "2.2rem", paddingTop: "2.5rem"   }}>
-            <CountUp start={700} end={a5Value} duration={5} /> <span style={{ fontSize: "1.2rem" }}>gündür</span> 
-          </h2>
-          <h6 className="text-white" style={{ fontSize: "1.4rem" }}>
-          Sunay Elmas
-          </h6>
-        </div>
-        <div>
-        <h2 className="text-white" style={{ fontSize: "2.2rem", paddingTop: "2.5rem" }}>
-            <CountUp start={700} end={a6Value} duration={5} /> <span style={{ fontSize: "1.2rem" }}>gündür</span> 
-          </h2>
-          <h6 className="text-white" style={{ fontSize: "1.4rem" }}>
-          Ayhan Oran
-          </h6>
-        </div>
-        <div>
-        <h2 className="text-white" style={{ fontSize: "2.2rem", paddingTop: "2.5rem" }}>
-            <CountUp start={700} end={a7Value} duration={5} /> <span style={{ fontSize: "1.2rem" }}>gündür</span> 
-          </h2>
-          <h6 className="text-white" style={{ fontSize: "1.4rem" }}>
-          Yusuf Bilge Tunç
-          </h6>
-        </div>
-     
+          <div>
+            <h2
+              className="text-white"
+              style={{ fontSize: "2.2rem", paddingTop: "2.5rem" }}
+            >
+              <CountUp start={700} end={a5Value} duration={5} />{" "}
+              <span style={{ fontSize: "1.2rem" }}>gündür</span>
+            </h2>
+            <h6 style={{ ...gradientTextStyle, fontSize: "1.4rem" }}>
+            
+                Sunay Elmas
+        
+            </h6>
+          </div>
+          <div>
+            <h2
+              className="text-white"
+              style={{ fontSize: "2.2rem", paddingTop: "2.5rem" }}
+            >
+              <CountUp start={700} end={a6Value} duration={5} />{" "}
+              <span style={{ fontSize: "1.2rem" }}>gündür</span>
+            </h2>
+            <h6 style={{ ...gradientTextStyle, fontSize: "1.4rem" }}>
+           
+            Ayhan Oran
+           
+             
+            </h6>
+          </div>
+          <div>
+            <h2
+              className="text-white"
+              style={{ fontSize: "2.2rem", paddingTop: "2.5rem" }}
+            >
+              <CountUp start={700} end={a7Value} duration={5} />{" "}
+              <span style={{ fontSize: "1.2rem" }}>gündür</span>
+            </h2>
+            <h6 style={{ ...gradientTextStyle, fontSize: "1.4rem" }}>
+           
+            Yusuf Bilge Tunç
+            
+              
+            </h6>
+          </div>
         </Col>
       </Row>
     </Container>
