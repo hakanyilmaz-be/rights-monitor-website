@@ -1,17 +1,9 @@
 import { Col, Container, Row } from "react-bootstrap";
 import backgroundImg from "../assets/img/bg-sosyal.png"
-import CinsiyetIhraclar from "../components/charts/ihraclar/cinsiyet-ihraclar";
-import IhracIhbarAciklama from "../components/paragraflar/ihraclar/ihrac-ihbar-aciklama";
-import IhracHukukiAciklama from "../components/paragraflar/ihraclar/ihrac-hukuki-aciklama";
-import IhracMeslek from "../components/charts/ihraclar/ihrac-meslek";
-import IhracKurumlar from "../components/charts/ihraclar/ihrac-kurumlar";
-import IhraclarNeden from "../components/paragraflar/ihraclar/ihraclar-neden";
-import IhraclarNedenDevami from "../components/paragraflar/ihraclar/ihraclar-neden-devami";
-import IhracDatalar from "../components/locker-studio/ihrac-datalar";
-import IhraclarSosyal from "../components/paragraflar/ihraclar/ihraclar-sosyal";
-import CezaeviGiris from "../components/paragraflar/cezaevi/cezaevi-giris";
-import AdvancedTableCezaevi from "../components/charts/cezaevi/advanced-table-cezaevi";
-import AccordionTextCezaevi from "../components/paragraflar/cezaevi/accordion-text-cezaevi";
+import SosyalGiris from "../components/paragraflar/sosyal/sosyal-giris";
+import SosyalAciklama from "../components/paragraflar/sosyal/sosyal-aciklama";
+import AccordionTextSosyal from "../components/paragraflar/sosyal/accordion-text-sosyal";
+import AdvancedTableSosyal from "../components/charts/sosyal/advanced-table-sosyal";
 
 
 const SosyalEkonomikPage = () => {
@@ -43,61 +35,33 @@ const SosyalEkonomikPage = () => {
       <div style={divStyle}>
         <div style={overlayStyle}></div>  
         <Container style={contentContainerStyle}>
-        <h1 style={{color: "white"}}>Sosyal ve Ekonomik Hak İhlalleri!!!</h1>
-        <CezaeviGiris/>
+      
+       <SosyalGiris/>
         </Container>
       </div>
 
       <Container style={{padding:'4.2rem'}}>
 
-      <Row>
-        <Col lg={5}>
-      <CinsiyetIhraclar/>
-        </Col>
-        <Col lg={7} className="pl-3">
-        <IhracIhbarAciklama/>
-        </Col>
-      </Row>
-      <div style={{ height: "50px" }}></div>
+      
+     
 
       <Row>
-        <Col lg={6}>
-       <IhracHukukiAciklama/>
-        </Col>
-        <Col lg={6}>
-      <IhracMeslek/>
-        </Col>
-      </Row>
-      <div style={{ height: "50px" }}></div>
-
-      <Row>
-        <Col lg={6} >
-         <IhracKurumlar/>
-        </Col>
-        <Col lg={6}>
-        <IhraclarNeden/>
-        </Col>
         <Col lg={12}>
-      <IhraclarNedenDevami/>
+       <SosyalAciklama/>
         </Col>
       </Row>
       <div style={{ height: "50px" }}></div>
 
-      <Row>
-        <Col lg={5}>
-      <IhraclarSosyal/>
-        </Col>
-        <Col lg={7} style={{ marginTop: '2rem' }}>
-      <IhracDatalar/>
-        </Col>
-      </Row>
+      
+
+      
 
     
-     <AccordionTextCezaevi/>
+     <AccordionTextSosyal/>
 
-   <div style={{ height: "50px" }}></div>
+   <div style={{ height: "20px" }}></div>
 
-   <AdvancedTableCezaevi/>
+  <AdvancedTableSosyal/>
  
 
     </Container>

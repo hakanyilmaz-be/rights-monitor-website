@@ -13,11 +13,15 @@ function AccordionTextCezaevi() {
           <Accordion.Body className="accordion-body-text-cezaevi">
             <Row>
               <p>
-                Bekleniyor!!!
+                Bu sayfada yer alan veriler, özellikle 15 Temmuz 2016 sonrasında
+                Türkiye'deki cezaevlerinde kalan siyasi tutuklu ve mahkumların
+                yaşadığı insan hakları ihlallerinin açık kaynaklara yansıyan
+                kısmı kayıt altına alınarak hazırlanmıştır. Tutuklu ve
+                hükümlülerin maruz kaldıkları ihlaller; hak ihlalinin tipi, il,
+                tarih ve cezaevi kriterlerine göre raporlanmakta, herhangi bir
+                kişisel veriye yer verilmemektedir.
               </p>
-              <p>
-              Bekleniyor!!!
-              </p>
+       
             </Row>
           </Accordion.Body>
         </Accordion.Item>

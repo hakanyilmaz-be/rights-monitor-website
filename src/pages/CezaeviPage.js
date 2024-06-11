@@ -1,17 +1,11 @@
 import { Col, Container, Row } from "react-bootstrap";
 import backgroundImg from "../assets/img/bg-cezaevi.png"
-import CinsiyetIhraclar from "../components/charts/ihraclar/cinsiyet-ihraclar";
-import IhracIhbarAciklama from "../components/paragraflar/ihraclar/ihrac-ihbar-aciklama";
-import IhracHukukiAciklama from "../components/paragraflar/ihraclar/ihrac-hukuki-aciklama";
-import IhracMeslek from "../components/charts/ihraclar/ihrac-meslek";
-import IhracKurumlar from "../components/charts/ihraclar/ihrac-kurumlar";
-import IhraclarNeden from "../components/paragraflar/ihraclar/ihraclar-neden";
-import IhraclarNedenDevami from "../components/paragraflar/ihraclar/ihraclar-neden-devami";
-import IhracDatalar from "../components/locker-studio/ihrac-datalar";
-import IhraclarSosyal from "../components/paragraflar/ihraclar/ihraclar-sosyal";
 import CezaeviGiris from "../components/paragraflar/cezaevi/cezaevi-giris";
 import AdvancedTableCezaevi from "../components/charts/cezaevi/advanced-table-cezaevi";
 import AccordionTextCezaevi from "../components/paragraflar/cezaevi/accordion-text-cezaevi";
+import IhlalTuru from "../components/charts/cezaevi/ihlal-turu";
+import IhlalTuruText from "../components/paragraflar/cezaevi/ihlal-turu-text";
+import HakIhlali from "../components/paragraflar/cezaevi/hak-ihlali";
 
 
 const CezaeviPage = () => {
@@ -49,48 +43,20 @@ const CezaeviPage = () => {
       </div>
 
       <Container style={{padding:'4.2rem'}}>
-
-      <Row>
-        <Col lg={5}>
-      <CinsiyetIhraclar/>
-        </Col>
-        <Col lg={7} className="pl-3">
-        <IhracIhbarAciklama/>
-        </Col>
-      </Row>
-      <div style={{ height: "50px" }}></div>
-
-      <Row>
-        <Col lg={6}>
-       <IhracHukukiAciklama/>
-        </Col>
-        <Col lg={6}>
-      <IhracMeslek/>
-        </Col>
-      </Row>
-      <div style={{ height: "50px" }}></div>
-
       <Row>
         <Col lg={6} >
-         <IhracKurumlar/>
+        <IhlalTuru/>
         </Col>
         <Col lg={6}>
-        <IhraclarNeden/>
+       <IhlalTuruText/>
         </Col>
         <Col lg={12}>
-      <IhraclarNedenDevami/>
+      <HakIhlali/>
         </Col>
       </Row>
       <div style={{ height: "50px" }}></div>
 
-      <Row>
-        <Col lg={5}>
-      <IhraclarSosyal/>
-        </Col>
-        <Col lg={7} style={{ marginTop: '2rem' }}>
-      <IhracDatalar/>
-        </Col>
-      </Row>
+     
 
     
      <AccordionTextCezaevi/>
