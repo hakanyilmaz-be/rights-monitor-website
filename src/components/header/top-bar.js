@@ -1,5 +1,4 @@
 import React from "react";
-import { FaRegMessage, FaBell } from "react-icons/fa6";
 import profileImage from "./../../assets/img/profile.jpg";
 import "./top-bar.css";
 

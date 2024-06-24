@@ -171,6 +171,7 @@ const Timeline = () => {
             as="select"
             value={selectedYear}
             onChange={handleYearChange}
+            
             className="mt-3"
           >
             <option value="">Yıl Seçiniz</option>
