@@ -55,7 +55,11 @@ const KaybetmelerGiris = () => {
       className=" d-flex justify-content-center align-items-center"
     >
       <Row className="justify-content-center align-items-center">
+      <h1 className="text-white fw-bold mt-5" style={{ fontSize: "3rem" }}>
+        Zorla Kaybedilmeler
+          </h1>
         <Col lg={6} className="text-start">
+       
           <p className="small-paragraph text-white">
             Zorla kaybedilme vakalari (enforced disappearance) , Türkiye’nin
             tarihinde yeni bir olgu değildir. 1980 askeri darbesinin ardından

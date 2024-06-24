@@ -1,0 +1,16 @@
+@media (max-width: 991px) {
+  .advanced-table-container {
+    transform: scale(0.51);
+    transform-origin: top left;
+    width: 200%;
+    height: auto;
+    overflow: hidden;
+  }
+
+  .advanced-table-wrapper {
+    height: auto;
+
+    overflow: hidden;
+    margin-bottom: -1200px; /* Alttaki boşluğu kapatmak için negatif margin ekleyin */
+  }
+}

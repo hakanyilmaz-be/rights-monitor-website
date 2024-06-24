@@ -1,11 +1,11 @@
 @keyframes typing {
     from {
         width: 0;
-        border-right-color: black;  /* Başlangıçta cursor görünür */
+        border-right-color: black;
     }
     to {
         width: 100%;
-        border-right-color: transparent;  /* Bitişte cursor görünmez */
+        border-right-color: transparent;
     }
 }
 
@@ -13,15 +13,15 @@
     font-family: 'Roboto', Courier, monospace;
     white-space: nowrap;
     overflow: hidden;
-    border-right: 3px solid transparent; /* Başlangıçta transparent yaparak cursor'un rengini kontrol edebiliriz */
-    max-width: max-content; /* Metnin içeriği kadar genişlik */
-    animation: typing 4s steps(30) 1s forwards; /* Adım sayısını metin uzunluğuna uygun olarak ayarla */
-    text-align: center; /* Metni yatay olarak ortalar */
-    margin: 0 auto; /* Üst ve alt kenar boşluğunu sıfırlar ve otomatik olarak yatayda ortalar */
+    border-right: 3px solid transparent;
+    max-width: max-content;
+    animation: typing 4s steps(30) 1s forwards;
+    text-align: center;
+    margin: 0 auto;
 }
 
 .kit, .goz {
-    display: inline; /* Aynı satırda olmalarını sağlar */
+    display: inline;
 }
 
 .kit {
@@ -37,5 +37,25 @@
     font-weight: bold;
     font-family: Arial, sans-serif;
     text-align: center;
-  }
-  
+}
+
+@media (max-width: 991px) {
+    .responsive-col {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    
+    .responsive-col h3 {
+        margin-bottom: 10px;
+    }
+    
+    .responsive-col .type-animation-wrapper {
+        margin-top: 10px;
+        height: 4em; /* Yüksekliği sabitle */
+        overflow: hidden; /* Taşan içeriği gizle */
+        display: flex;
+        align-items: center;
+    }
+}

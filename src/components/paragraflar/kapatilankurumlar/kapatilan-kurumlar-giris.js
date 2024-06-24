@@ -64,6 +64,9 @@ const KapatilanKurumlarGiris = () => {
       className="d-flex justify-content-center align-items-center"
     >
       <Row className="justify-content-center align-items-center">
+      <h1 className="text-white fw-bold mt-5" style={{ fontSize: "3rem" }}>
+      Kapatılan ve El Konulan Kurumlar
+          </h1>
         <Col lg={6} className="text-start">
           <p className="small-paragraph text-white">
             Türkiye'de, 15 Temmuz 2016'dan bu yana olağanüstü hal kararnameleri

@@ -1,7 +1,11 @@
-.admin-navbar img{
-    height: auto;
-    margin-bottom: 0.5rem;
-}
+@media (min-width: 992px) {
+    .admin-navbar img{
+        height: auto;
+        margin-bottom: 0.5rem;
+    }
+  }
+
+
 
 .navbar-menu{
     padding:1rem 0rem;
@@ -58,16 +62,21 @@
     }
 }
 
-@media(max-width: 500px){
+@media(max-width: 400px){
     .img-fluid {
-        width: 60%;
+        width: 80%;
     }
-
 }
 
-@media(max-width: 500px){
+@media(max-width: 282px){
+    .navbar-brand {
+        width: 60%;
+    }
+}
+
+@media(max-width: 990px){
     .admin-navbar img{
-        height: 100px;
+        height: 40px;
     }
 
 }

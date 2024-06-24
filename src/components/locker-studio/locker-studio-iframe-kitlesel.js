@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import './looker-studio-iframe-kitlesel.css'; // CSS dosyasını dahil edin
 
 const LookerStudioIframeKitlesel = () => {
   const [iframeSrc, setIframeSrc] = useState('');
@@ -8,13 +9,14 @@ const LookerStudioIframeKitlesel = () => {
   }, []);
 
   return (
-    <div style={{ overflow: 'hidden', height: '350px', position: 'relative' }}> 
+    <div className="iframe-container"> 
       {iframeSrc && (
         <iframe
           title="Looker Studio Report: Kitlesel Gözaltı Serüveni"
           src={iframeSrc}
           width="100%"
-          height="400px"  // iframe yüksekliğini artırarak içerik kaydırmayı sağlayabilirsiniz
+          height="400px"
+          className="looker-iframe"
           style={{
             border: '0',
             position: 'absolute',

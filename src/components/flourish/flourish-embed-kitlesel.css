@@ -1,0 +1,37 @@
+.flourish-container {
+  position: relative;
+  width: 100%;
+  height: 635px;
+  overflow: hidden;
+}
+
+.flourish-inner {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: -10px;
+  left: 0;
+}
+
+.flourish-embed {
+  height: 575px;
+}
+
+@media (max-width: 1338px) {
+  .flourish-container {
+    width: 100%;
+    height: auto;
+    padding: 0;
+  }
+  
+  .flourish-inner {
+    position: relative;
+    width: 100%;
+    height: auto;
+  }
+  
+  .flourish-embed {
+    width: 100%;
+    height: 385px; 
+  }
+}

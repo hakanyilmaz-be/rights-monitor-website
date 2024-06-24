@@ -4,6 +4,7 @@ import "./hassas-text.css";
 
 function AccordionHassas() {
   return (
+    <div className="hassas">
     <Accordion defaultActiveKey="0" className="mb-5">
       <Accordion.Item eventKey="0">
         <Accordion.Header className="custom-accordion-header-hassas">
@@ -33,6 +34,7 @@ function AccordionHassas() {
         </Accordion.Body>
       </Accordion.Item>
     </Accordion>
+    </div>
   );
 }
 

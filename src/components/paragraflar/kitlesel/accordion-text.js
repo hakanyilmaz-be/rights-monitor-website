@@ -67,7 +67,7 @@ function AccordionText() {
             <Accordion.Header>
               AİHM kararlarını uygulama noktasında Türkiye
             </Accordion.Header>
-            <Accordion.Body className="accordion-body-text">
+            <Accordion.Body className="accordion-body-text-kitlesel">
               <Row>
                 AİHM’nin 26 Eylül 2023 tarihli Yüksel Yalçınkaya v Türkiye
                 kararı "FETÖ/PDY" kaynaklı ceza yargılamalarının bütününe dair
@@ -97,7 +97,7 @@ function AccordionText() {
 
           <Accordion.Item eventKey="2">
             <Accordion.Header>Hukuki Çerçeve</Accordion.Header>
-            <Accordion.Body className="accordion-body-text">
+            <Accordion.Body className="accordion-body-text-kitlesel">
               <Row>
                 Birleşmiş Milletler’in Kişisel ve Siyasal Haklar Uluslararası
                 Sözleşmesi başta olmak üzere bütün uluslararası insan hakları
@@ -129,7 +129,7 @@ function AccordionText() {
 
           <Accordion.Item eventKey="3">
             <Accordion.Header>Metodoloji</Accordion.Header>
-            <Accordion.Body className="accordion-body-text">
+            <Accordion.Body className="accordion-body-text-kitlesel">
               <Row>
                 Bu sayfada yer alan veriler, açık kaynaklar üzerinde kapsamlı
                 bir inceleme yapılarak derlenmiş, illere ve faaliyet tarihlerine

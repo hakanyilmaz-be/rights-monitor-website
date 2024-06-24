@@ -9,7 +9,7 @@ const YargiGiris = () => {
       className=" d-flex justify-content-center align-items-center"
     >
       <Row className="justify-content-center align-items-center" style={{paddingLeft: "2rem", paddingRight:"1rem"}}>
-        <h1 className="text-white">Türkiye'de Yargı Bağımsızlığı</h1>
+        <h1 className="text-white mt-5">Türkiye'de Yargı Bağımsızlığı</h1>
 
         <h2 className="text-white"> </h2>
         <div style={{ height: "30px" }}></div>

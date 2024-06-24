@@ -44,8 +44,7 @@ const OlumlerPage = () => {
       <div style={divStyle}>
         <div style={overlayStyle}></div>  
         <Container style={contentContainerStyle}>
-         <h1 className="text-white fw-bold" style={{ fontSize: '3rem' }}>Yaşam Hakkı İhlalleri</h1>
-          <div style={{ height: "30px" }}></div>
+        
          <OlumlerGiris/>
         </Container>
       </div>

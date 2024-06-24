@@ -43,7 +43,7 @@ const IhraclarGiris = () => {
       className=" d-flex justify-content-center align-items-center"
     >
       <Row className="justify-content-center align-items-center">
-        <h1 className="fw-bold" style={{ fontSize: "1rem" }}>
+        <h1 className="fw-bold mt-5" style={{ fontSize: "1rem" }}>
         <AnimatedGradientText>
         {a6Value} Meslek grubundan en az {a5Value} kişi ihraç edilmiştir.
         </AnimatedGradientText>

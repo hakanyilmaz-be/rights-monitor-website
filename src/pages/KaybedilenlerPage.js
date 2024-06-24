@@ -36,8 +36,7 @@ const KaybedilenlerPage = () => {
       <div style={divStyle}>
         <div style={overlayStyle}></div>  
         <Container style={contentContainerStyle}>
-         <h1 className="text-white fw-bold" style={{ fontSize: '3rem' }}>Zorla Kaybedilmeler</h1>
-          <div style={{ height: "30px" }}></div>
+         
         <KaybetmelerGiris/>
         </Container>
       </div>

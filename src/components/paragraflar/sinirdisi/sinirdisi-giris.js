@@ -59,7 +59,13 @@ const SinirDisiGiris = () => {
       className=" d-flex justify-content-center align-items-center"
     >
       <Row className="justify-content-center align-items-center">
+      <h1 className="text-white fw-bold mt-5" style={{ fontSize: "3rem" }}>
+        Hukuka Aykırı Sınır Dışı ve İadeler
+          </h1>
         <Col lg={6} className="text-start">
+
+      
+
           <p className="small-paragraph text-white">
            15 Temmuz 2016’dan sonra özgürlük ve güvenlik haklarını muhafaza
             etmek amacıyla Türkiye’den kaçarak yurt dışına sığınan ya da daha

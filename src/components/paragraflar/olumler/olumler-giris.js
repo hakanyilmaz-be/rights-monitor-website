@@ -33,11 +33,14 @@ const OlumlerGiris = () => {
     return rows.slice(1); // Başlık satırını atla
   }
 
-  return (
+  return ( 
   
     <Container fluid className=" d-flex justify-content-center align-items-center">
     <Row className="justify-content-center align-items-center">
       <Col lg={6} className="text-start">
+      <h1 className="text-white fw-bold mt-5" style={{ fontSize: "3rem" }}>
+      Yaşam Hakkı İhlalleri
+          </h1>
         <p className="small-paragraph text-white">
           2016’da yaşanan sözde darbe girişimi sonrasında yoğun baskı ve takibat
           altında kalan Gülen Hareketi mensupları Türkiye’deki siyasi ve toplumsal

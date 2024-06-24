@@ -44,7 +44,7 @@ const CezaeviGiris = () => {
       className=" d-flex justify-content-center align-items-center"
     >
       <Row className="justify-content-center align-items-center">
-        <h1 className="text-white">Cezaevindeki Hak İhlalleri</h1>
+        <h1 className="text-white mt-5">Cezaevindeki Hak İhlalleri</h1>
 
         <h2 className="text-white"> </h2>
         <div style={{ height: "30px" }}></div>

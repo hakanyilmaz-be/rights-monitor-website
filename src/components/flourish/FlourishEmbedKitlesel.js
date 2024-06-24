@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import './flourish-embed-kitlesel.css';
 
 const FlourishEmbedKitlesel = () => {
   useEffect(() => {
@@ -13,12 +14,11 @@ const FlourishEmbedKitlesel = () => {
   }, []);
 
   return (
-    <div style={{ position: 'relative', width: '100%', height: '635px', overflow: 'hidden' }}>
-      <div style={{ position: 'absolute', width: '100%', height: '100%', top: '-10px', left: '0' }}>
+    <div className="flourish-container">
+      <div className="flourish-inner">
         <div
           className="flourish-embed"
           data-src="story/2296835"
-          style={{ height: '575px' }}
         ></div>
       </div>
     </div>
@@ -26,8 +26,3 @@ const FlourishEmbedKitlesel = () => {
 }
 
 export default FlourishEmbedKitlesel;
-
-
-
-
-

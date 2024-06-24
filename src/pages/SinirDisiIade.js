@@ -38,8 +38,7 @@ const SinirDisiIade = () => {
       <div style={divStyle}>
         <div style={overlayStyle}></div>  
         <Container style={contentContainerStyle}>
-         <h1 className="text-white fw-bold" style={{ fontSize: '3rem' }}>Hukuka Aykırı Sınır Dışı ve İadeler</h1>
-          <div style={{ height: "30px" }}></div>
+         
          <SinirDisiGiris/>
         </Container>
       </div>

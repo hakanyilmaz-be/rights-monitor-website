@@ -73,7 +73,7 @@ const HassasGiris = () => {
     >
       <Row className="justify-content-center align-items-center">
         <Col lg={6} className="text-start">
-          <h1 className="text-white fw-bold" style={{ fontSize: "3rem" }}>
+          <h1 className="text-white fw-bold mt-5" style={{ fontSize: "3rem" }}>
             Hassas Gruplar:
           </h1>
           {/* Metinler buraya */}

@@ -41,8 +41,7 @@ const KapatilanKurumlar = () => {
       <div style={divStyle}>
         <div style={overlayStyle}></div>  
         <Container style={contentContainerStyle}>
-         <h1 className="text-white fw-bold" style={{ fontSize: '3rem' }}>Kapatılan ve El Konulan Kurumlar</h1>
-          <div style={{ height: "30px" }}></div>
+        
          <KapatilanKurumlarGiris/>
         </Container>
       </div>

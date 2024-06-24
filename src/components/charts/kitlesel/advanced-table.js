@@ -3,6 +3,7 @@ import axios from 'axios';
 import DataTable from 'react-data-table-component';
 import Papa from 'papaparse';
 import { FormControl } from 'react-bootstrap';
+import './advanced-table.css'; // CSS dosyasını dahil edin
 
 function AdvancedTable() {
     const [dataRows, setDataRows] = useState([]);
@@ -128,9 +129,8 @@ function AdvancedTable() {
     };
 
     return (
-        <div>
-     <p style={{ fontWeight: 'bold' }}>Arama bölümünü verileri filtrelemek için kullanılabilirsiniz.</p>
-
+        <div className="advanced-table-wrapper">
+            <p style={{ fontWeight: 'bold' }}>Arama bölümünü verileri filtrelemek için kullanılabilirsiniz.</p>
             <FormControl
                 type="text"
                 placeholder="Arama yap..."
@@ -138,18 +138,20 @@ function AdvancedTable() {
                 value={filterText}
                 onChange={handleFilter}
             />
-            <DataTable
-                columns={columns}
-                data={dataRows}
-                defaultSortFieldId={1}
-                pagination
-                highlightOnHover
-                responsive
-                striped
-                noDataComponent={<div>Veri yükleniyor ...</div>}
-                paginationComponentOptions={paginationOptions}
-                customStyles={customStyles}
-            />
+            <div className="advanced-table-container">
+                <DataTable
+                    columns={columns}
+                    data={dataRows}
+                    defaultSortFieldId={1}
+                    pagination
+                    highlightOnHover
+                    responsive
+                    striped
+                    noDataComponent={<div>Veri yükleniyor ...</div>}
+                    paginationComponentOptions={paginationOptions}
+                    customStyles={customStyles}
+                />
+            </div>
         </div>
     );
 }

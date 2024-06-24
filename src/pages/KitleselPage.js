@@ -11,8 +11,8 @@ import Sorumlular from "../components/paragraflar/kitlesel/sorumlular";
 import SorumlularDevam from "../components/paragraflar/kitlesel/sorumlular-devami";
 import AccordionText from "../components/paragraflar/kitlesel/accordion-text";
 import AdvancedTable from "../components/charts/kitlesel/advanced-table";
-import backgroundImg from "../assets/img/background-kitlesel-6.png"
-
+import backgroundImg from "../assets/img/background-kitlesel-6.png";
+import './kitlesel-page.css';  
 
 const KitleselPage = () => {
   const divStyle = {
@@ -34,9 +34,14 @@ const KitleselPage = () => {
 
   const contentContainerStyle = {
     position: 'relative',
-    zIndex: 2,  // Ensure content is above the overlay
-    padding: '4.2rem',
+    zIndex: 2,  
+    paddingTop: '3.2rem',
+    paddingBottom: '1.2rem',
+    paddingLeft: '2.2rem',
+    paddingRight: '2.2rem',
   };
+
+  
 
   return (
     <>
@@ -44,50 +49,53 @@ const KitleselPage = () => {
         <div style={overlayStyle}></div>  
         <Container style={contentContainerStyle}>
           <HeaderKitlesel />
+        </Container>
+        <Container fluid style={contentContainerStyle}>
           <FlourishEmbedKitlesel />
-          <div style={{ height: "30px" }}></div>
+        </Container>
+        <Container style={contentContainerStyle}>
           <KitleselGiris />
         </Container>
       </div>
 
-      <Container style={{padding:'4.2rem'}}>
+      <Container style={contentContainerStyle}>
+        <Row>
+          <Col lg={5} className="mb-col-space">
+            <KitleselIller />
+          </Col>
+         
+          <Col lg={7} className="pl-3">
+            <IllerAciklama />
+          </Col>
+        </Row>
+        <div style={{ height: "50px" }}></div>
 
-      <Row>
-        <Col lg={5}>
-          <KitleselIller />
-        </Col>
-        <Col lg={7} className="pl-3">
-          <IllerAciklama />
-        </Col>
-      </Row>
-      <div style={{ height: "50px" }}></div>
+        <Row>
+          <Col lg={6}>
+            <YillarAciklama/>
+          </Col>
+          <Col lg={6} className="pl-3">
+            <KitleselYillarGrafik/>
+          </Col>
+        </Row>
+        <div style={{ height: "50px" }}></div>
 
-      <Row>
-        <Col lg={6}>
-         <YillarAciklama/>
-        </Col>
-        <Col lg={6} className="pl-3">
-        <KitleselYillarGrafik/>
-        </Col>
-      </Row>
-      <div style={{ height: "50px" }}></div>
+        <Row>
+          <Col lg={5}>
+            <LookerStudioIframeKitlesel/>
+          </Col>
+          <Col lg={7} className="p-3">
+            <Sorumlular/>
+          </Col>
+          <Col lg={12} className="pt-3">
+            <SorumlularDevam/>
+          </Col>
+        </Row>
 
-      <Row>
-        <Col lg={5}>
-         <LookerStudioIframeKitlesel/>
-        </Col>
-        <Col lg={7} className="p-3">
-        <Sorumlular/>
-        </Col>
-        <Col lg={12} className="pt-3">
-        <SorumlularDevam/>
-        </Col>
-      </Row>
-
-      <div style={{ height: "30px" }}></div>
-      <AccordionText/>
-    <AdvancedTable/>
-    </Container>
+        <div style={{ height: "30px" }}></div>
+        <AccordionText/>
+        <AdvancedTable/>
+      </Container>
     </>
   );
 };

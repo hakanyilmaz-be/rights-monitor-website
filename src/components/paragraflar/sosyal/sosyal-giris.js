@@ -9,7 +9,7 @@ const SosyalGiris = () => {
       className="d-flex justify-content-center align-items-center"
     >
       <Row className="justify-content-center align-items-center">
-        <h1 className="text-white">Sosyal ve Ekonomik Hak İhlalleri ve Mağduriyetler</h1>
+        <h1 className="text-white mt-5" >Sosyal ve Ekonomik Hak İhlalleri ve Mağduriyetler</h1>
 
         <h2 className="text-white"> </h2>
         <div style={{ height: "30px" }}></div>
