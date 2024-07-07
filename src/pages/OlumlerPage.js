@@ -13,6 +13,7 @@ import SebeplerGrafik from "../components/charts/olumler/sebepler-grafik";
 import SebeplerDevam from "../components/paragraflar/olumler/sebepler-devami";
 import AccordionTextOlumler from "../components/paragraflar/olumler/accordion-text-olumler";
 import AdvancedTableOlumler from "../components/charts/olumler/advanced-table-olumler";
+import Spacer from "../components/spacer/Spacer";
 
 
 const OlumlerPage = () => {
@@ -36,7 +37,10 @@ const OlumlerPage = () => {
   const contentContainerStyle = {
     position: 'relative',
     zIndex: 2,  
-    padding: '4.2rem',
+    paddingTop: '3.2rem',
+    paddingBottom: '1.2rem',
+    paddingLeft: '2.2rem',
+    paddingRight: '2.2rem',
   };
 
   return (
@@ -49,7 +53,7 @@ const OlumlerPage = () => {
         </Container>
       </div>
 
-      <Container style={{padding:'4.2rem'}}>
+      <Container style={contentContainerStyle}>
 
       <Row>
         <Col lg={5}>
@@ -59,7 +63,8 @@ const OlumlerPage = () => {
           <CinsiyetAciklama/>
         </Col>
       </Row>
-      <div style={{ height: "50px" }}></div>
+      <Spacer/>
+
 
       <Row>
         <Col lg={6}>
@@ -69,7 +74,8 @@ const OlumlerPage = () => {
        <Meslek/>
         </Col>
       </Row>
-      <div style={{ height: "50px" }}></div>
+      <Spacer/>
+
 
       <Row>
         <Col lg={6} style={{ marginLeft: '-2rem' }}>
@@ -82,7 +88,8 @@ const OlumlerPage = () => {
        <YillarDevam/>
         </Col>
       </Row>
-      <div style={{ height: "50px" }}></div>
+      <Spacer/>
+
 
       <Row>
         <Col lg={6}>

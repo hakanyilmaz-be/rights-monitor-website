@@ -1,0 +1,10 @@
+.cinsiyet-chart{
+    margin: 4rem;
+}
+
+
+@media (max-width: 992px) {
+    .cinsiyet-chart{
+       margin: 0 0 2rem 1rem;
+    }
+  }

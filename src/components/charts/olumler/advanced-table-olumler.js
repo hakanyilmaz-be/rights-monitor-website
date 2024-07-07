@@ -3,6 +3,7 @@ import axios from 'axios';
 import DataTable from 'react-data-table-component';
 import Papa from 'papaparse';
 import { FormControl } from 'react-bootstrap';
+import "./advanced-table-olumler.css"
 
 function AdvancedTableOlumler() {
     const [dataRows, setDataRows] = useState([]);
@@ -157,7 +158,7 @@ function AdvancedTableOlumler() {
     };
 
     return (
-        <div>
+        <div className="advanced-table-wrapper">
      <p style={{ fontWeight: 'bold' }}>Arama bölümünü verileri filtrelemek için kullanılabilirsiniz.</p>
 
             <FormControl
@@ -167,6 +168,7 @@ function AdvancedTableOlumler() {
                 value={filterText}
                 onChange={handleFilter}
             />
+            <div className="advanced-table-container">
             <DataTable
                 columns={columns}
                 data={dataRows}
@@ -179,6 +181,7 @@ function AdvancedTableOlumler() {
                 paginationComponentOptions={paginationOptions}
                 customStyles={customStyles}
             />
+            </div>
         </div>
     );
 }

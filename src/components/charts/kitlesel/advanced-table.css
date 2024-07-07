@@ -11,6 +11,6 @@
     height: auto;
 
     overflow: hidden;
-    margin-bottom: -1200px; /* Alttaki boşluğu kapatmak için negatif margin ekleyin */
+    margin-bottom: -1200px; 
   }
 }

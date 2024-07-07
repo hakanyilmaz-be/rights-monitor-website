@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { Col, Container, Row } from "react-bootstrap";
 import CountUp from 'react-countup';
+import "./olumler-text.css";
+
 
 const OlumlerGiris = () => {
   const [a5Value, setA5Value] = useState("");
@@ -30,12 +32,12 @@ const OlumlerGiris = () => {
     const rows = csvText
       .split(/\r?\n/)
       .map((row) => row.split(",").map((cell) => cell.trim()));
-    return rows.slice(1); // Başlık satırını atla
+    return rows.slice(1); 
   }
 
   return ( 
   
-    <Container fluid className=" d-flex justify-content-center align-items-center">
+    <Container fluid className=" d-flex justify-content-center align-items-center ilk-giris">
     <Row className="justify-content-center align-items-center">
       <Col lg={6} className="text-start">
       <h1 className="text-white fw-bold mt-5" style={{ fontSize: "3rem" }}>
@@ -63,7 +65,7 @@ const OlumlerGiris = () => {
           65’i henüz sadece çocuktu.
         </p>
       </Col>
-      <Col lg={6} className="d-flex flex-column justify-content-center align-items-center" style={{ marginTop: '-8rem' }}>
+      <Col lg={6} className="d-flex flex-column justify-content-center align-items-center desktop-margin-top">
         <h2 className="text-white" style={{ fontSize: '6.2rem' }}>
           <CountUp start={700} end={a5Value} duration={5} />
         </h2>

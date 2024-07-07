@@ -3,7 +3,7 @@ import axios from 'axios';
 import DataTable from 'react-data-table-component';
 import Papa from 'papaparse';
 import { FormControl } from 'react-bootstrap';
-import './advanced-table.css'; // CSS dosyasını dahil edin
+import './advanced-table.css';
 
 function AdvancedTable() {
     const [dataRows, setDataRows] = useState([]);

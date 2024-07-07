@@ -33,7 +33,10 @@ const HassasGruplarPage = () => {
   const contentContainerStyle = {
     position: 'relative',
     zIndex: 2,  
-    padding: '4.2rem',
+    paddingTop: '3.2rem',
+    paddingBottom: '1.2rem',
+    paddingLeft: '2.2rem',
+    paddingRight: '2.2rem',
   };
 
   return (
@@ -45,7 +48,7 @@ const HassasGruplarPage = () => {
         </Container>
       </div>
 
-      <Container style={{padding:'4.2rem'}}>
+      <Container style={contentContainerStyle}>
 
       <Row>
         <Col lg={5}>

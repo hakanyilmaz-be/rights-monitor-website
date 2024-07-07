@@ -13,6 +13,7 @@ import AccordionText from "../components/paragraflar/kitlesel/accordion-text";
 import AdvancedTable from "../components/charts/kitlesel/advanced-table";
 import backgroundImg from "../assets/img/background-kitlesel-6.png";
 import './kitlesel-page.css';  
+import Spacer from "../components/spacer/Spacer";
 
 const KitleselPage = () => {
   const divStyle = {
@@ -26,7 +27,7 @@ const KitleselPage = () => {
   const overlayStyle = {
     position: 'absolute',
     top: 0,
-    left: 0,
+    left: 0, 
     right: 0,
     bottom: 0,
     backgroundColor: 'rgba(255, 255, 255, 0.169)',
@@ -68,7 +69,7 @@ const KitleselPage = () => {
             <IllerAciklama />
           </Col>
         </Row>
-        <div style={{ height: "50px" }}></div>
+        <Spacer/>
 
         <Row>
           <Col lg={6}>
@@ -78,7 +79,8 @@ const KitleselPage = () => {
             <KitleselYillarGrafik/>
           </Col>
         </Row>
-        <div style={{ height: "50px" }}></div>
+        <Spacer/>
+
 
         <Row>
           <Col lg={5}>

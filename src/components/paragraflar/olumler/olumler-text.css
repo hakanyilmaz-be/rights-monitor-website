@@ -40,3 +40,25 @@
 .olumler .accordion-body-text-olumler {
   font-size: 14px; 
 }
+
+
+
+/* Olumler Giris */ 
+.desktop-margin-top {
+  margin-top: -8rem;
+}
+
+@media (max-width: 992px) {
+  .desktop-margin-top {
+    padding-bottom: 5rem;
+
+  }
+  .ilk-giris{
+    margin-top: -4rem!important;
+  }
+
+}
+
+
+
+

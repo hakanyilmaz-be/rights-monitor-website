@@ -1,10 +1,10 @@
-import React from 'react'
+import React from 'react';
+import './spacer.css'; // CSS dosyasını import edin
 
-const Spacer = ({height=75}) => {
+const Spacer = () => {
   return (
-    <div style={{height: height}}></div>
-
-  )
+    <div className="spacer"></div>
+  );
 }
 
-export default Spacer
+export default Spacer;
