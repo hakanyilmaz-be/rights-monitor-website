@@ -13,8 +13,9 @@ import IhraclarSosyal from "../components/paragraflar/ihraclar/ihraclar-sosyal";
 import AccordionTextIhraclar from "../components/paragraflar/ihraclar/accordion-text-ihraclar";
 import AdvancedTableIhraclar from "../components/charts/ihraclar/advanced-table-ihraclar";
 import IhracSorumlular from "../components/charts/ihraclar/ihrac-sorumlular";
+import Spacer from "../components/spacer/Spacer";
 
-
+ 
 const IhraclarPage = () => {
   const divStyle = {
     position: 'relative',
@@ -62,7 +63,7 @@ const IhraclarPage = () => {
         <IhracIhbarAciklama/>
         </Col>
       </Row>
-      <div style={{ height: "50px" }}></div>
+    <Spacer/>
 
       <Row>
         <Col lg={6}>
@@ -72,7 +73,8 @@ const IhraclarPage = () => {
       <IhracMeslek/>
         </Col>
       </Row>
-      <div style={{ height: "50px" }}></div>
+      <Spacer/>
+
 
       <Row>
         <Col lg={6} >
@@ -85,7 +87,8 @@ const IhraclarPage = () => {
       <IhraclarNedenDevami/>
         </Col>
       </Row>
-      <div style={{ height: "50px" }}></div>
+      <Spacer/>
+
 
       <Row>
         <Col lg={5}>
@@ -99,7 +102,8 @@ const IhraclarPage = () => {
     
      <AccordionTextIhraclar/>
    <IhracSorumlular/>
-   <div style={{ height: "50px" }}></div>
+   <Spacer/>
+
 
    <AdvancedTableIhraclar/>
 

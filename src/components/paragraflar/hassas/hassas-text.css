@@ -40,3 +40,20 @@
 .hassas .accordion-body-text-hassas {
   font-size: 14px; 
 }
+
+
+.desktop-margin-top {
+  margin-top: -8rem;
+}
+
+@media (max-width: 992px) {
+  .desktop-margin-top {
+    margin-top: -3rem!important;
+
+
+  }
+  .ilk-giris{
+    margin-top: -4rem!important;
+  }
+
+}

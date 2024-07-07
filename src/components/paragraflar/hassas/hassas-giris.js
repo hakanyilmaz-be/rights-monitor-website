@@ -69,12 +69,12 @@ const HassasGiris = () => {
   return (
     <Container
       fluid
-      className="d-flex justify-content-center align-items-center"
+      className="d-flex justify-content-center align-items-center ilk-giris"
     >
       <Row className="justify-content-center align-items-center">
         <Col lg={6} className="text-start">
-          <h1 className="text-white fw-bold mt-5" style={{ fontSize: "3rem" }}>
-            Hassas Gruplar:
+          <h1 className="text-white fw-bold mt-5" style={{ fontSize: "2.5rem" }}>
+          Hassas Gruplar
           </h1>
           {/* Metinler buraya */}
           <p className="small-paragraph ">
@@ -158,8 +158,8 @@ const HassasGiris = () => {
         </Col>
         <Col
           lg={6}
-          className="d-flex flex-column justify-content-center align-items-center p-5"
-          style={{ marginTop: "-6rem" }}>
+          className="d-flex flex-column justify-content-center align-items-center p-5 desktop-margin-top"
+          >
           <div className="mb-4" style={{ width: "100%" }}>
             <h5>Hamile Ve Çocuklu Kadınlar: {a2Value} kişi</h5>
             <ProgressBar 

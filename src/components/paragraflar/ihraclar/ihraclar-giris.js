@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { Col, Container, Row } from "react-bootstrap";
 import AnimatedGradientText from "../../animated-gradient-text/AnimatedGradientText";
+import "./ihraclar-text.css"
 
 const IhraclarGiris = () => {
   const [a5Value, setA5Value] = useState("");
@@ -40,10 +41,10 @@ const IhraclarGiris = () => {
   return (
     <Container
       fluid
-      className=" d-flex justify-content-center align-items-center"
+      className=" d-flex justify-content-center align-items-center ilk-giris"
     >
       <Row className="justify-content-center align-items-center">
-        <h1 className="fw-bold mt-5" style={{ fontSize: "1rem" }}>
+        <h1 className="fw-bold mt-5 baslik" >
         <AnimatedGradientText>
         {a6Value} Meslek grubundan en az {a5Value} kişi ihraç edilmiştir.
         </AnimatedGradientText>

@@ -1,0 +1,35 @@
+.custom-dropdown-toggle {
+    background-color: #331374 !important;
+    border-color: #331374 !important;
+}
+
+
+.cinsiyet-chart{
+    margin: 0 0 0 2rem;
+}
+
+
+@media (max-width: 992px) {
+    .cinsiyet-chart{
+       margin: 0 0 0 1rem;
+    }
+  }
+
+
+  @media (max-width: 576px) {
+    .rdt_Table {
+      font-size: 8px;
+    }
+  
+    .rdt_TableCell, .rdt_TableCol {
+      padding: 0px;
+      white-space: normal; /* Normal beyaz boşluk davranışı */
+      overflow: visible; /* Taşan içeriklerin görünür olması */
+    }
+
+    .tablo {
+      
+        width: 105%;
+       
+    }
+  }

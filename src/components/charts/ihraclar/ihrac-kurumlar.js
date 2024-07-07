@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import DataTable from 'react-data-table-component';
+import "./ihrac-charts.css"
 
 
 const IhracKurumlar = () => {
@@ -29,14 +30,11 @@ const IhracKurumlar = () => {
     const columns = [
         { name: 'Kurum', selector: row => row[0], sortable: true, grow: 2 },
         { name: 'İhraç Sayısı', selector: row => row[1], sortable: true, grow: 1 },
-        
     ];
     
-
     const paginationOptions = {
         rowsPerPageText: 'Satır Sayısı:', 
         rangeSeparatorText: 'ile',
-        //selectAllRowsItem: true,
         selectAllRowsItemText: 'Tümünü Göster'
     };
 
@@ -56,17 +54,16 @@ const IhracKurumlar = () => {
         },
         cells: {
             style: {
-                padding: '0px 0px 0px 8px', 
-                fontSize: '11px', 
-         
+                padding: '4px 4px 4px 8px', 
+                fontSize: '10px',
+                whiteSpace: 'normal', /* Normal beyaz boşluk davranışı */
+                overflow: 'visible', /* Taşan içeriklerin görünür olması */
             },
         },
     };
-   
-
 
     return (
-        <div>
+        <div className='tablo'>
             <p style={{ fontWeight: 'bold' }}>Kurumlara Göre İhraç Tablosu</p>
             <DataTable
                 columns={columns}
@@ -77,6 +74,7 @@ const IhracKurumlar = () => {
                 noDataComponent={<div>Veri yükleniyor ...</div>}
                 paginationComponentOptions={paginationOptions}
                 customStyles={customStyles}
+                responsive
             />
         </div>
     );

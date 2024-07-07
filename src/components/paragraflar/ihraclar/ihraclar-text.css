@@ -40,3 +40,16 @@
 .ihraclar .accordion-body-text-ihraclar {
   font-size: 14px; 
 }
+
+
+
+
+@media (max-width: 992px) {
+  
+  .ilk-giris{
+    margin-top: -4rem!important;
+  }
+
+ 
+  
+}

@@ -11,7 +11,7 @@ const IhraclarNeden = () => {
         Savcılıklar, terör suçlaması kapsamında aşağıdaki unsurları fiilleri
         delil olarak kabul etmiş ve araştırma konusu yapmıştır:
       </p>
-      <ul>
+      <ul className="small-paragraph">
         <li>ByLock, Eagle,Telegram gibi programların kullanımı</li>
         <li>Çalışılan işyerlerine ait bilgiler</li>
         <li>Bank Asya hesapları</li>

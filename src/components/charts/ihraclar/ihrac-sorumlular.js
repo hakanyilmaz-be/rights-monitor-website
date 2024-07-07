@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { Dropdown, FormControl } from 'react-bootstrap';
-import './ihrac-sorumlular.css';  
+import './ihrac-charts.css';  
 
 const IhracSorumlular = () => {
     const [dataRows, setDataRows] = useState([]);

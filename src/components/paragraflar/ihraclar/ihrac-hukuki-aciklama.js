@@ -10,12 +10,12 @@ const IhracHukukiAciklama = () => {
         yöntem sunmuştur:
       </p>
       <ul>
-        <li>
+        <li className="small-paragraph">
           <b>KHK Ek’li Liste ile İhraç:</b> Bu yol ile ihraç edilenler,
           KHK'ların ekinde yer alan listeler aracılığıyla doğrudan ihraç
           edilmiştir.
         </li>
-        <li>
+        <li className="small-paragraph">
           <b>KHK’lara Dayanarak Kurum Kararıyla İhraç:</b> Kurumların aldığı
           kararlarla görevden alınanlar olmuştur.
         </li>

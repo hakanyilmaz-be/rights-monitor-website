@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from 'react';
+import "./locker.css"
+
 
 const IhracDatalar = () => {
   const [iframeSrc, setIframeSrc] = useState('');
@@ -8,7 +10,7 @@ const IhracDatalar = () => {
   }, []);
 
   return (
-    <div style={{ overflow: 'hidden', height: '330px', position: 'relative' }}> 
+    <div className='boyut' style={{ overflow: 'hidden',  position: 'relative' }}> 
     <p style={{ fontWeight: 'bold' }}>İhraç Dataları</p>
       {iframeSrc && (
         <iframe
