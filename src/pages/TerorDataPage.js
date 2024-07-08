@@ -1,7 +1,5 @@
 import { Col, Container, Row } from "react-bootstrap";
 import backgroundImg from "../assets/img/bg-teror.png"
-import CinsiyetIhraclar from "../components/charts/ihraclar/cinsiyet-ihraclar";
-import IhracIhbarAciklama from "../components/paragraflar/ihraclar/ihrac-ihbar-aciklama";
 import IhracHukukiAciklama from "../components/paragraflar/ihraclar/ihrac-hukuki-aciklama";
 import IhracMeslek from "../components/charts/ihraclar/ihrac-meslek";
 import IhracKurumlar from "../components/charts/ihraclar/ihrac-kurumlar";
@@ -9,9 +7,16 @@ import IhraclarNeden from "../components/paragraflar/ihraclar/ihraclar-neden";
 import IhraclarNedenDevami from "../components/paragraflar/ihraclar/ihraclar-neden-devami";
 import IhracDatalar from "../components/locker-studio/ihrac-datalar";
 import IhraclarSosyal from "../components/paragraflar/ihraclar/ihraclar-sosyal";
-import CezaeviGiris from "../components/paragraflar/cezaevi/cezaevi-giris";
 import AdvancedTableCezaevi from "../components/charts/cezaevi/advanced-table-cezaevi";
 import AccordionTextCezaevi from "../components/paragraflar/cezaevi/accordion-text-cezaevi";
+import Spacer from "../components/spacer/Spacer";
+import TerorDataGiris from "../components/paragraflar/teror-data/teror-data-giris";
+import TypewriterText from "../components/paragraflar/teror-data/type-writer-text";
+import AccordionTextTerorData from "../components/paragraflar/teror-data/accordion-text-teror-data";
+import ToplamKararSayisi from "../components/charts/teror-data/toplam-karar-sayisi";
+import KamuDavasi from "../components/charts/teror-data/kamu-davasi";
+import Kovusturma from "../components/charts/teror-data/kovusturma";
+import SorusturmaKisiSayisiAciklama from "../components/paragraflar/teror-data/sorusturma-kisi-sayisi-aciklama";
 
 
 const TerorDataPage = () => {
@@ -35,7 +40,10 @@ const TerorDataPage = () => {
   const contentContainerStyle = {
     position: 'relative',
     zIndex: 2,  
-    padding: '4.2rem',
+   paddingTop: '3.2rem',
+    paddingBottom: '1.2rem',
+    paddingLeft: '2.2rem',
+    paddingRight: '2.2rem',
   };
 
   return (
@@ -43,23 +51,32 @@ const TerorDataPage = () => {
       <div style={divStyle}>
         <div style={overlayStyle}></div>  
         <Container style={contentContainerStyle}>
-        <h1 style={{color: "white"}}>Terör Suçu İstatistikleri!!!</h1>
+       
       
-        <CezaeviGiris/>
+       <TerorDataGiris/>
+
         </Container>
       </div>
 
-      <Container style={{padding:'4.2rem'}}>
+      <Container style={contentContainerStyle}>
+
+        <TypewriterText/>
+
+        <AccordionTextTerorData/>
 
       <Row>
-        <Col lg={5}>
-      <CinsiyetIhraclar/>
+        <Col lg={4}>
+     <ToplamKararSayisi/>
         </Col>
-        <Col lg={7} className="pl-3">
-        <IhracIhbarAciklama/>
+        <Col lg={4}>
+        <KamuDavasi/>
         </Col>
+        <Col lg={4}>
+        <Kovusturma/>
+        </Col>
+        <SorusturmaKisiSayisiAciklama/>
       </Row>
-      <div style={{ height: "50px" }}></div>
+      <Spacer/>
 
       <Row>
         <Col lg={6}>
@@ -69,7 +86,7 @@ const TerorDataPage = () => {
       <IhracMeslek/>
         </Col>
       </Row>
-      <div style={{ height: "50px" }}></div>
+      <Spacer/>
 
       <Row>
         <Col lg={6} >
@@ -82,7 +99,7 @@ const TerorDataPage = () => {
       <IhraclarNedenDevami/>
         </Col>
       </Row>
-      <div style={{ height: "50px" }}></div>
+      <Spacer/>
 
       <Row>
         <Col lg={5}>
@@ -96,7 +113,7 @@ const TerorDataPage = () => {
     
      <AccordionTextCezaevi/>
 
-   <div style={{ height: "50px" }}></div>
+     <Spacer/>
 
    <AdvancedTableCezaevi/>
  
