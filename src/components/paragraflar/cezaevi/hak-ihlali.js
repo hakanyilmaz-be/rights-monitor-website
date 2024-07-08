@@ -69,8 +69,8 @@ const HakIhlali = () => {
         gerekirken tek başına bir hücrede bırakılarak, ölüme terk edilmiştir.
       </p>
 
-      <h2 className="mt-5" style={{ fontWeight: "bold" }}>
-        İşkence- Kötü Muamele Ve Cezaevlerinde Şüpheli Ölümler
+      <h2 className="mt-4" style={{ fontWeight: "bold" }}>
+        İşkence - Kötü Muamele Ve Cezaevlerinde Şüpheli Ölümler
       </h2>
 
       <p className="small-paragraph mt-3">
@@ -94,7 +94,7 @@ const HakIhlali = () => {
 
       <CezaeviIsimleri />
 
-      <h2 className="mt-5" style={{ fontWeight: "bold" }}>
+      <h2 className="mt-4" style={{ fontWeight: "bold" }}>
         Özel İhtiyaca Sahip Mahpusların Durumu
       </h2>
       <p className="small-paragraph mt-3">
@@ -109,7 +109,7 @@ const HakIhlali = () => {
         yöntemlere başvurmak zorunda kalmışlardır.
       </p>
 
-      <h2 className="mt-5" style={{ fontWeight: "bold" }}>
+      <h2 className="mt-4" style={{ fontWeight: "bold" }}>
         Erken Tahliye ve Denetimli Serbestlik Mekanizmalarının Uygulanmaması
       </h2>
       <p className="small-paragraph mt-3">
@@ -127,7 +127,7 @@ const HakIhlali = () => {
         siyasi mahpuslar için etkili bir şekilde işletilmemektedir.
       </p>
 
-      <h2 className="mt-5" style={{ fontWeight: "bold" }}>Denetim Mekanizmalarının Eksikliği</h2>
+      <h2 className="mt-4" style={{ fontWeight: "bold" }}>Denetim Mekanizmalarının Eksikliği</h2>
       <p className="small-paragraph mt-3">
         Cezaevi İzleme Komisyonları ve bağımsız denetim mekanizmaları, 673
         sayılı KHK ile engellenmiştir. Cezaevlerinde yaşanan işkence ve kötü
@@ -138,7 +138,7 @@ const HakIhlali = () => {
         olduklarından emin olunması gerekmektedir.
       </p>
 
-      <h2 className="mt-5" style={{ fontWeight: "bold" }}>
+      <h2 className="mt-4" style={{ fontWeight: "bold" }}>
         Koronavirüs Pandemisi Döneminde Cezaevleri
       </h2>
       <p className="small-paragraph mt-3">

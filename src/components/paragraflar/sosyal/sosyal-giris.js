@@ -6,13 +6,13 @@ const SosyalGiris = () => {
   return (
     <Container
       fluid
-      className="d-flex justify-content-center align-items-center"
+      className="d-flex justify-content-center align-items-center ilk-giris"
     >
       <Row className="justify-content-center align-items-center">
-        <h1 className="text-white mt-5" >Sosyal ve Ekonomik Hak İhlalleri ve Mağduriyetler</h1>
+        <h1 className="text-white mt-5 sosyal-baslik" >Sosyal ve Ekonomik Hak İhlalleri ve Mağduriyetler</h1>
 
         <h2 className="text-white"> </h2>
-        <div style={{ height: "30px" }}></div>
+        <div style={{ height: "20px" }}></div>
         <Col lg={6} className="text-start">
           <p className="small-paragraph text-white">
             15 Temmuz 2016 ardından Türkiye'de olağanüstü hal (OHAL) ilan
@@ -45,7 +45,7 @@ const SosyalGiris = () => {
             <div className="info-box box2">
               <p className="description">
               Söz konusu ihlallerden en az 30 farklı kurum ve kuruluş sorumludur.
-              </p>
+              </p> 
             </div>
           </div>
         </Col>

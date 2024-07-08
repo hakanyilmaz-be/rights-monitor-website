@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { Col, Container, Row } from "react-bootstrap";
 import { motion } from "framer-motion";
+import "./kapatilan-text.css"
 
 const KapatilanKurumlarGiris = () => {
   const [a5Value, setA5Value] = useState("");
@@ -60,11 +61,11 @@ const KapatilanKurumlarGiris = () => {
 
   return (
     <Container
-      fluid
-      className="d-flex justify-content-center align-items-center"
+      fluid 
+      className="d-flex justify-content-center align-items-center ilk-giris"
     >
       <Row className="justify-content-center align-items-center">
-      <h1 className="text-white fw-bold mt-5" style={{ fontSize: "3rem" }}>
+      <h1 className="text-white fw-bold mt-5" style={{ fontSize: "2rem" }}>
       Kapatılan ve El Konulan Kurumlar
           </h1>
         <Col lg={6} className="text-start">
@@ -96,8 +97,8 @@ const KapatilanKurumlarGiris = () => {
         </Col>
         <Col
           lg={6}
-          className="d-flex flex-column justify-content-center align-items-center"
-          style={{ marginTop: "-8rem" }}
+          className="d-flex flex-column justify-content-center align-items-center desktop-margin-top"
+          
         >
           {showDots && (
             <motion.div
@@ -132,7 +133,7 @@ const KapatilanKurumlarGiris = () => {
             <>
               <motion.h2
                 className="text-white"
-                style={{ fontSize: "6.2rem", position: "relative" }}
+                style={{ fontSize: "5.2rem", position: "relative" }}
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ duration: 1 }}

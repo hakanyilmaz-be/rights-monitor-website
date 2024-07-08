@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import "./locker.css"
 
 const KapatilanSorumlular = () => {
   const [iframeSrc, setIframeSrc] = useState('');
@@ -8,7 +9,7 @@ const KapatilanSorumlular = () => {
   }, []);
 
   return (
-    <div style={{ overflow: 'hidden', height: '330px', position: 'relative' }}> 
+    <div className='sorumlu-boyut' style={{ overflow: 'hidden', position: 'relative' }}> 
       {iframeSrc && (
         <iframe
           title="Looker Studio Report: Sorumlular"

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import DataTable from 'react-data-table-component';
-
+import './cezaevi-charts.css';
 
 const IhlalTuru = () => {
     const [dataRows, setDataRows] = useState([]);
@@ -27,46 +27,40 @@ const IhlalTuru = () => {
     };
 
     const columns = [
-        { name: 'Hak İhlali', selector: row => row[0], sortable: true, grow: 3 },
-        { name: 'Hak İhlali Sayısı', selector: row => row[1], sortable: true, grow: 1 },
-        
+        { name: 'Hak İhlali', selector: row => row[0], sortable: true, grow: 1 },
+        { name: 'Hak İhlali Sayısı', selector: row => row[1], sortable: true, grow: 0.5 },
     ];
-    
 
     const paginationOptions = {
         rowsPerPageText: 'Satır Sayısı:', 
         rangeSeparatorText: 'ile',
-        //selectAllRowsItem: true,
         selectAllRowsItemText: 'Tümünü Göster'
     };
 
     const customStyles = {
         rows: {
             style: {
-              minHeight: "36px", // override the row height
+              minHeight: "24px", // Satır yüksekliğini küçült
             },
-          },
+        },
         headCells: {
             style: {
-                padding: '8px 0px 8px 8px',
+                padding: '4px 0px 4px 4px', // Hücre içi boşlukları azalt
                 background: 'linear-gradient(to right, #04314f, #124d74 )',
-                color: '#FFF', // beyaz yazı
-                fontSize: '12px', 
+                color: '#FFF', // Beyaz yazı
+                fontSize: '10px', // Font boyutunu küçült
             },
         },
         cells: {
             style: {
-                padding: '0px 0px 0px 8px', 
-                fontSize: '11px', 
-         
+                padding: '2px 2px 2px 4px', // Hücre içi boşlukları azalt
+                fontSize: '8px', // Font boyutunu küçült
             },
         },
     };
-   
-
 
     return (
-        <div>
+        <div className='table-container'>
             <p style={{ fontWeight: 'bold' }}>Cezaevindeki Hak İhlallerinin Türleri</p>
             <DataTable
                 columns={columns}

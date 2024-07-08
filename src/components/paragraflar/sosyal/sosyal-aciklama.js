@@ -13,7 +13,7 @@ const SosyalAciklama = () => {
         yelpazede kendini gösteren ihlaller bu sayfada ana başlıklar altında
         anlatılmıştır:
       </p>
-      <ul>
+      <ul className="small-paragraph">
         <li>
           <b>1. Finansal Kısıtlamalar ve Bankacılık İşlemleri:</b>
           <ul>

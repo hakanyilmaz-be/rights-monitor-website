@@ -6,6 +6,28 @@
   overflow-x: hidden;
 }
 
+
+@media (max-width: 700px) {
+  .timeline-background {
+    padding-top: 0rem;
+  }
+  .vertical-timeline {
+    width: 85%;
+    max-width: 1170px;
+    margin: 0 auto;
+    position: relative;
+    padding: 2em 0;
+}
+.timeline-background a{
+
+  overflow-x: hidden;
+  font-size: 8.5px;
+}
+
+}
+
+
+
 .timeline-background a{
 
   color: #fff;

@@ -21,3 +21,47 @@
         margin-top: -5rem;
     }
   }
+
+  .locker-map{
+    height: 470px;
+  }
+
+  @media (max-width: 992px) {
+    .locker-map{
+        height: 160px;
+      }
+  }
+
+
+  .locker-map2{
+    height: 470px;
+  }
+
+  @media (max-width: 992px) {
+    .locker-map2{
+        height: 140px;
+      }
+  }
+
+
+  .kapatilan-boyut{
+    height: 590px;
+  }
+
+  @media (max-width: 992px) {
+    .kapatilan-boyut{
+        height: 232px;
+      }
+  }
+
+
+  .sorumlu-boyut{
+    height: 390px;
+  }
+
+  @media (max-width: 992px) {
+    .sorumlu-boyut{
+        height: 200px;
+        margin-top: -3rem;
+      }
+  }

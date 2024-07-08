@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from 'react';
+import "./locker.css"
+
 
 const CezaeviIsimleri = () => {
   const [iframeSrc, setIframeSrc] = useState('');
@@ -6,9 +8,9 @@ const CezaeviIsimleri = () => {
   useEffect(() => {
     setIframeSrc("https://lookerstudio.google.com/embed/reporting/f1064d01-c8bd-41a6-a571-f3f27459adbf/page/sIZxB");
   }, []);
-
+ 
   return (
-    <div style={{ overflow: 'hidden', height: '470px', position: 'relative' }}> 
+    <div className='locker-map2' style={{ overflow: 'hidden', position: 'relative' }}> 
       {iframeSrc && (
         <iframe
           title="Looker Studio Report: Kitlesel Gözaltı Serüveni"

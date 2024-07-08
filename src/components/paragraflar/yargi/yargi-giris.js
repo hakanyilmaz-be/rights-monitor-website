@@ -6,7 +6,7 @@ const YargiGiris = () => {
   return (
     <Container
       fluid
-      className=" d-flex justify-content-center align-items-center"
+      className=" d-flex justify-content-center align-items-center ilk-giris"
     >
       <Row className="justify-content-center align-items-center" style={{paddingLeft: "2rem", paddingRight:"1rem"}}>
         <h1 className="text-white mt-5">Türkiye'de Yargı Bağımsızlığı</h1>

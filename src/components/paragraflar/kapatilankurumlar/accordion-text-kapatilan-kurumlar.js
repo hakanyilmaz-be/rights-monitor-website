@@ -13,7 +13,7 @@ function AccordionTextKapatilanKurumlar () {
           </Accordion.Header>
           <Accordion.Body className="accordion-body-text-kapatilan-kurumlar">
             <Row>
-              <p>
+              <p className="small-paragraph">
               Bu sayfada yer alan veriler, Resmi Gazete'de yayınlanan Kanun Hükmünde Kararnameler (KHK) ve kurumların web sitelerinde paylaşılan listelerden toplanarak derlenmiştir. Kurumların yapıları, bulundukları iller ve kuruluş amaçları dışına çıkmalarında imzası olanlar belirlenip analiz edilmiştir
               </p>
             </Row>

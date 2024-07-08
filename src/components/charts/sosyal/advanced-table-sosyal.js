@@ -3,6 +3,7 @@ import axios from 'axios';
 import DataTable from 'react-data-table-component';
 import Papa from 'papaparse';
 import { FormControl } from 'react-bootstrap';
+import "./advanced-table-sosyal.css"
 
 function AdvancedTableSosyal() {
     const [dataRows, setDataRows] = useState([]);
@@ -138,7 +139,7 @@ function AdvancedTableSosyal() {
     };
 
     return (
-        <div>
+        <div className="advanced-table-wrapper">
      <p style={{ fontWeight: 'bold' }}>Arama bölümünü verileri filtrelemek için kullanılabilirsiniz.</p>
 
             <FormControl
@@ -148,6 +149,7 @@ function AdvancedTableSosyal() {
                 value={filterText}
                 onChange={handleFilter}
             />
+            <div className="advanced-table-container">
             <DataTable
                 columns={columns}
                 data={dataRows}
@@ -160,6 +162,7 @@ function AdvancedTableSosyal() {
                 paginationComponentOptions={paginationOptions}
                 customStyles={customStyles}
             />
+            </div>
         </div>
     );
 }

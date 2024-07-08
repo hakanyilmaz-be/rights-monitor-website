@@ -9,7 +9,6 @@ const YargiPage = () => {
 <Container>
           <YargiGiris />
         </Container>
-        <div style={{ height: "1.2rem" }}></div>
         <Timeline />
       </div>
     </>

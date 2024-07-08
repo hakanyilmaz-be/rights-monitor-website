@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import "./locker.css"
 
 const MapKapatilan = () => {
   const [iframeSrc, setIframeSrc] = useState('');
@@ -8,7 +9,7 @@ const MapKapatilan = () => {
   }, []);
 
   return (
-    <div style={{ overflow: 'hidden', height: '590px', position: 'relative' }}> 
+    <div className='kapatilan-boyut' style={{ overflow: 'hidden', position: 'relative' }}> 
     <p style={{ fontWeight: 'bold' }}>OHAL sürecinde KHK'lar ile kapatılan Türkiye geneli kurumlar</p>
       {iframeSrc && (
         <iframe

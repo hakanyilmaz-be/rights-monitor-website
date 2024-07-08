@@ -3,6 +3,7 @@ import axios from 'axios';
 import DataTable from 'react-data-table-component';
 import Papa from 'papaparse';
 import { FormControl } from 'react-bootstrap';
+import "./advanced-table-hassas.css"
 
 function AdvancedTableHassas() {
     const [dataRows, setDataRows] = useState([]);
@@ -152,7 +153,7 @@ function AdvancedTableHassas() {
     };
 
     return (
-        <div>
+    <div className="advanced-table-wrapper">
      <p style={{ fontWeight: 'bold' }}>Arama bölümünü verileri filtrelemek için kullanılabilirsiniz.</p>
 
             <FormControl
@@ -162,6 +163,7 @@ function AdvancedTableHassas() {
                 value={filterText}
                 onChange={handleFilter}
             />
+            <div className="advanced-table-container">
             <DataTable
                 columns={columns}
                 data={dataRows}
@@ -174,6 +176,7 @@ function AdvancedTableHassas() {
                 paginationComponentOptions={paginationOptions}
                 customStyles={customStyles}
             />
+            </div>
         </div>
     );
 }

@@ -33,7 +33,7 @@ const KaybedilenlerPage = () => {
     paddingLeft: '2.2rem',
     paddingRight: '2.2rem',
   };
-
+ 
   return (
     <>
       <div style={divStyle}>

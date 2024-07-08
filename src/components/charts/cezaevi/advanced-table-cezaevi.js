@@ -3,6 +3,7 @@ import axios from 'axios';
 import DataTable from 'react-data-table-component';
 import Papa from 'papaparse';
 import { FormControl } from 'react-bootstrap';
+import "./advanced-table-cezaevi.css"
 
 function AdvancedTableCezaevi() {
     const [dataRows, setDataRows] = useState([]);
@@ -132,7 +133,7 @@ function AdvancedTableCezaevi() {
     };
 
     return (
-        <div>
+        <div className="advanced-table-wrapper">
      <p style={{ fontWeight: 'bold' }}>Arama bölümünü verileri filtrelemek için kullanılabilirsiniz.</p>
 
             <FormControl
@@ -142,6 +143,7 @@ function AdvancedTableCezaevi() {
                 value={filterText}
                 onChange={handleFilter}
             />
+             <div className="advanced-table-container">
             <DataTable
                 columns={columns}
                 data={dataRows}
@@ -154,6 +156,7 @@ function AdvancedTableCezaevi() {
                 paginationComponentOptions={paginationOptions}
                 customStyles={customStyles}
             />
+            </div>
         </div>
     );
 }

@@ -10,6 +10,7 @@ import KurumlarAciklama from "../components/paragraflar/kapatilankurumlar/kuruml
 import KurumlarGrafik from "../components/charts/kapatilan/kurumlar-grafik";
 import AccordionTextKapatilanKurumlar from "../components/paragraflar/kapatilankurumlar/accordion-text-kapatilan-kurumlar";
 import AdvancedTableKapatilanKurumlar from "../components/charts/kapatilan/advanced-table-kapatilan-kurumlar";
+import Spacer from "../components/spacer/Spacer";
 
 
 const KapatilanKurumlar = () => {
@@ -52,11 +53,12 @@ const KapatilanKurumlar = () => {
       <Container style={contentContainerStyle}>
 
      <MapKapatilan/>
-
-<div style={{ height: "50px" }}></div>
+ 
+    <Spacer/>
      <TarihselAciklama/>
       
-      <div style={{ height: "50px" }}></div>
+     <Spacer/>
+
 
       <Row>
         <Col lg={6}>
@@ -72,7 +74,8 @@ const KapatilanKurumlar = () => {
         </Col>
       </Row>  
 
-      <div style={{ height: "50px" }}></div>
+      <Spacer/>
+
 
       <Row>
         <Col lg={6}>
@@ -83,7 +86,8 @@ const KapatilanKurumlar = () => {
         </Col>
       </Row>  
 
-      <div style={{ height: "50px" }}></div>
+      <Spacer/>
+
 
     <AccordionTextKapatilanKurumlar/>
    <AdvancedTableKapatilanKurumlar/>

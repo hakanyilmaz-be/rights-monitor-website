@@ -43,3 +43,20 @@
 
 
 
+.desktop-margin-top {
+  margin-top: -9rem;
+  padding-left: 8rem;
+}
+
+@media (max-width: 992px) {
+  .desktop-margin-top {
+    margin-top: 0rem!important;
+    padding-left: 1rem;
+
+
+  }
+  .ilk-giris{
+    margin-top: -4rem!important;
+  }
+
+}

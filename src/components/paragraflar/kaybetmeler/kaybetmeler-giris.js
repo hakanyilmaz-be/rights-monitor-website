@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { Col, Container, Row } from "react-bootstrap";
 import CountUp from "react-countup";
+import "./kaybetmeler-text.css"
 
 
 const KaybetmelerGiris = () => {
@@ -52,7 +53,7 @@ const KaybetmelerGiris = () => {
   return (
     <Container
       fluid
-      className=" d-flex justify-content-center align-items-center"
+      className=" d-flex justify-content-center align-items-center ilk-giris"
     >
       <Row className="justify-content-center align-items-center">
       <h1 className="text-white fw-bold mt-5" style={{ fontSize: "3rem" }}>
@@ -96,8 +97,8 @@ const KaybetmelerGiris = () => {
         </Col>
         <Col
           lg={6}
-          className="d-flex flex-column justify-content-center"
-          style={{ marginTop: "-9rem", paddingLeft: "8rem" }}
+          className="d-flex flex-column justify-content-center desktop-margin-top"
+          
         >
           <h2 style={{ ...gradientTextStyle, fontSize: "2.4rem" }}>
           

@@ -1,44 +1,21 @@
 import React from 'react';
-import YouTube from 'react-youtube';
-import styled from 'styled-components';
 import { Card } from 'react-bootstrap';
-
-const VideoContainer = styled.div`
-  position: relative;
-  padding-bottom: 56.25%; /* 16:9 */
-  padding-top: 25px;
-  height: 0;
-  overflow: hidden;
-  border-radius: 15px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-
-  @media (max-width: 768px) {
-    padding-top: 0;
-  }
-`;
-
-const StyledYouTube = styled(YouTube)`
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  border-radius: 15px;
-`;
+import './videoComponent.css';
 
 const VideoComponent = () => {
-  const opts = {
-    playerVars: {
-      autoplay: 0,
-    },
-  };
-
   return (
-    <Card>
+    <Card className='card-bosluk'>
       <Card.Body>
-        <VideoContainer>
-          <StyledYouTube videoId="poLBARJWE3k" opts={opts} />
-        </VideoContainer>
+        <div className="video-container">
+          <iframe
+            className="iframe-youtube"
+            src="https://www.youtube.com/embed/poLBARJWE3k"
+            frameBorder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen
+            title="YouTube video"
+          ></iframe>
+        </div>
       </Card.Body>
     </Card>
   );

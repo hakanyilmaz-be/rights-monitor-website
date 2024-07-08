@@ -12,7 +12,7 @@ function AccordionTextCezaevi() {
           </Accordion.Header>
           <Accordion.Body className="accordion-body-text-cezaevi">
             <Row>
-              <p>
+              <p className="small-paragraph"> 
                 Bu sayfada yer alan veriler, özellikle 15 Temmuz 2016 sonrasında
                 Türkiye'deki cezaevlerinde kalan siyasi tutuklu ve mahkumların
                 yaşadığı insan hakları ihlallerinin açık kaynaklara yansıyan

@@ -1,0 +1,19 @@
+/* styles.css */
+@media (max-width: 576px) {
+    .table-container{
+        overflow-x: hidden;
+    }
+
+    .rdt_Table {
+      font-size: 7px; /* Font boyutunu küçült */
+      width: 95%!important;
+      overflow-x: hidden;
+    }
+  
+    .rdt_TableCell, .rdt_TableCol {
+      padding: 2px; /* Hücre içi boşlukları azalt */
+      white-space: normal; /* Normal beyaz boşluk davranışı */
+      overflow: hidden; /* Taşan içeriklerin görünür olması */
+    }
+  }
+  

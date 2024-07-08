@@ -3,6 +3,7 @@ import axios from 'axios';
 import DataTable from 'react-data-table-component';
 import Papa from 'papaparse';
 import { FormControl } from 'react-bootstrap';
+import "./advanced-table-sinir-disi.css"
 
 function AdvancedTableSinirDisi() {
     const [dataRows, setDataRows] = useState([]);
@@ -135,7 +136,7 @@ function AdvancedTableSinirDisi() {
     };
 
     return (
-        <div>
+        <div className="advanced-table-wrapper">
      <p style={{ fontWeight: 'bold' }}>Arama bölümünü verileri filtrelemek için kullanılabilirsiniz.</p>
 
             <FormControl
@@ -145,6 +146,7 @@ function AdvancedTableSinirDisi() {
                 value={filterText}
                 onChange={handleFilter}
             />
+             <div className="advanced-table-container">
             <DataTable
                 columns={columns}
                 data={dataRows}
@@ -157,6 +159,7 @@ function AdvancedTableSinirDisi() {
                 paginationComponentOptions={paginationOptions}
                 customStyles={customStyles}
             />
+            </div>
         </div>
     );
 }

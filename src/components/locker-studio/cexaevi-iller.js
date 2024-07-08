@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import "./locker.css"
 
 const CezaeviIller = () => {
   const [iframeSrc, setIframeSrc] = useState('');
@@ -8,7 +9,7 @@ const CezaeviIller = () => {
   }, []);
 
   return (
-    <div style={{ overflow: 'hidden', height: '470px', position: 'relative' }}> 
+    <div className='locker-map' style={{ overflow: 'hidden', position: 'relative' }}> 
       {iframeSrc && (
         <iframe
           title="Looker Studio Report: Kitlesel Gözaltı Serüveni"

@@ -40,8 +40,8 @@ const CezaeviGiris = () => {
 
   return (
     <Container
-      fluid
-      className=" d-flex justify-content-center align-items-center"
+      fluid 
+      className=" d-flex justify-content-center align-items-center ilk-giris"
     >
       <Row className="justify-content-center align-items-center">
         <h1 className="text-white mt-5">Cezaevindeki Hak İhlalleri</h1>
@@ -74,8 +74,8 @@ const CezaeviGiris = () => {
           </p>
 
           <motion.h5
-            className="fw-bold text-white"
-            style={{ fontSize: "1.2rem" }}
+            className="fw-bold text-white motion-font"
+           
             animate={{ opacity: [0.1, 1, 0.1] }}
             transition={{ duration: 9, repeat: Infinity }}
           >

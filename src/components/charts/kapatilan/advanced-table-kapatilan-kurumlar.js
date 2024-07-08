@@ -3,6 +3,7 @@ import axios from 'axios';
 import DataTable from 'react-data-table-component';
 import Papa from 'papaparse';
 import { FormControl } from 'react-bootstrap';
+import "./advanced-table-kapatilan-kurumlar.css"
 
 function AdvancedTableKapatilanKurumlar() {
     const [dataRows, setDataRows] = useState([]);
@@ -136,7 +137,7 @@ function AdvancedTableKapatilanKurumlar() {
     };
 
     return (
-        <div>
+        <div className="advanced-table-wrapper">
      <p style={{ fontWeight: 'bold' }}>Arama bölümünü verileri filtrelemek için kullanılabilirsiniz.</p>
 
             <FormControl
@@ -146,6 +147,7 @@ function AdvancedTableKapatilanKurumlar() {
                 value={filterText}
                 onChange={handleFilter}
             />
+             <div className="advanced-table-container">
             <DataTable
                 columns={columns}
                 data={dataRows}
@@ -158,6 +160,7 @@ function AdvancedTableKapatilanKurumlar() {
                 paginationComponentOptions={paginationOptions}
                 customStyles={customStyles}
             />
+        </div>
         </div>
     );
 }

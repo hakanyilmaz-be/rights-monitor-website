@@ -6,6 +6,7 @@ import AccordionTextCezaevi from "../components/paragraflar/cezaevi/accordion-te
 import IhlalTuru from "../components/charts/cezaevi/ihlal-turu";
 import IhlalTuruText from "../components/paragraflar/cezaevi/ihlal-turu-text";
 import HakIhlali from "../components/paragraflar/cezaevi/hak-ihlali";
+import Spacer from "../components/spacer/Spacer";
 
 
 const CezaeviPage = () => {
@@ -57,14 +58,15 @@ const CezaeviPage = () => {
       <HakIhlali/>
         </Col>
       </Row>
-      <div style={{ height: "50px" }}></div>
+    <Spacer/>
 
      
-
+ 
     
      <AccordionTextCezaevi/>
 
-   <div style={{ height: "50px" }}></div>
+     <Spacer/>
+
 
    <AdvancedTableCezaevi/>
  

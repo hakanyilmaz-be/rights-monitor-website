@@ -4,6 +4,7 @@ import SosyalGiris from "../components/paragraflar/sosyal/sosyal-giris";
 import SosyalAciklama from "../components/paragraflar/sosyal/sosyal-aciklama";
 import AccordionTextSosyal from "../components/paragraflar/sosyal/accordion-text-sosyal";
 import AdvancedTableSosyal from "../components/charts/sosyal/advanced-table-sosyal";
+import Spacer from "../components/spacer/Spacer";
 
 
 const SosyalEkonomikPage = () => {
@@ -53,7 +54,7 @@ const SosyalEkonomikPage = () => {
        <SosyalAciklama/>
         </Col>
       </Row>
-      <div style={{ height: "50px" }}></div>
+      <Spacer/>
 
       
 
