@@ -12,7 +12,7 @@ function AccordionTextIade() {
           </Accordion.Header>
           <Accordion.Body className="accordion-body-text-olumler">
             <Row>
-              <p>
+              <p className="small-paragraph">
                 Bu sayfada yer alan veriler, insan hakları kuruluşlarının
                 raporlarından ve medyaya yansıyan heberler üzerinden kapsamlı
                 bir inceleme yapılarak derlenmiş, ülkelere, olay kategorilerine

@@ -9,7 +9,7 @@ const InterpolAciklama = () => {
   return (
     <>
       <Row>
-        <Col lg={4}>
+        <Col className="interpol-resmi" lg={4}>
           <img alt="interpol" src={interpol} className="img-fluid"/>
           <img alt="interpol-document" src={interpolDocument} className="img-fluid"/>
 

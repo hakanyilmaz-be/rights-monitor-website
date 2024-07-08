@@ -7,6 +7,7 @@ import IadeTalepleri from "../components/paragraflar/sinirdisi/iade-talepleri";
 import InterpolAciklama from "../components/paragraflar/sinirdisi/interpol-aciklama";
 import AccordionTextIade from "../components/paragraflar/sinirdisi/accordion-text-iade";
 import AdvancedTableSinirDisi from "../components/charts/sinirdisi/advanced-table-sinir-disi";
+import Spacer from "../components/spacer/Spacer";
 
 
 const SinirDisiIade = () => {
@@ -49,19 +50,22 @@ const SinirDisiIade = () => {
       <Container style={contentContainerStyle}>
 
       <MapSinirDisi/>
-
-<div style={{ height: "50px" }}></div>
+ 
+      <Spacer/>
       <KacirmaAciklama/>
       
-      <div style={{ height: "50px" }}></div>
+      <Spacer/>
+
 
       <IadeTalepleri/>     
 
-      <div style={{ height: "50px" }}></div>
+      <Spacer/>
+
 
       <InterpolAciklama/>
 
-      <div style={{ height: "50px" }}></div>
+      <Spacer/>
+
 
     <AccordionTextIade/>
     <AdvancedTableSinirDisi/>

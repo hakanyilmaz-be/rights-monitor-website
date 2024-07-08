@@ -27,12 +27,12 @@ const IadeTalepleri = () => {
             etmelerinin engellenmesine yol açmıştır.
           </p>
         </Col>
-        <Col lg={4}>
+        <Col className="iade-gorsel" lg={4}>
           <img
             alt="Iade Gorselleri"
             src={iadeTalebi}
             className="img-fluid "
-            style={{ marginTop: "3rem" }}
+            
           />
         </Col>
         <Col lg={12}>

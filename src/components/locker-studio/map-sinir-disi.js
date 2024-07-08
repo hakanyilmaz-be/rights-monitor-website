@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import "./locker.css"
 
 const MapSinirDisi = () => {
   const [iframeSrc, setIframeSrc] = useState('');
@@ -8,7 +9,7 @@ const MapSinirDisi = () => {
   }, []);
 
   return (
-    <div style={{ overflow: 'hidden', height: '540px', position: 'relative' }}> 
+    <div className='yukseklik' style={{ overflow: 'hidden', position: 'relative' }}> 
     <p style={{ fontWeight: 'bold' }}>Olay Haritasi: 2016'dan günümüze hukuka aykırı sınır dışı edilmeler ve reddedilen iade talepleri</p>
       {iframeSrc && (
         <iframe

@@ -56,10 +56,10 @@ const SinirDisiGiris = () => {
   return (
     <Container
       fluid
-      className=" d-flex justify-content-center align-items-center"
+      className=" d-flex justify-content-center align-items-center ilk-giris pb-5"
     >
       <Row className="justify-content-center align-items-center">
-      <h1 className="text-white fw-bold mt-5" style={{ fontSize: "3rem" }}>
+      <h1 className="text-white fw-bold mt-5" style={{ fontSize: "2.6rem" }}>
         Hukuka Aykırı Sınır Dışı ve İadeler
           </h1>
         <Col lg={6} className="text-start">
@@ -106,13 +106,13 @@ const SinirDisiGiris = () => {
             neticesinde, hareket mensupları o ülkelerin yasalarına dahi aykırı
             biçimde alıkonulmuş ve Türk yetkililere teslim edilmişlerdir.
           </p>
-        </Col>
+        </Col> 
         <Col
           lg={6}
-          className="d-flex flex-column justify-content-center align-items-center"
-          style={{ marginTop: "-8rem" }}
+          className="d-flex flex-column justify-content-center align-items-center desktop-margin-top"
+        
         >
-          <div className="first-data" style={{ marginBottom: '4rem' }}>
+          <div className="first-data">
             <h4 className="header-first text-center">
               Uluslararası Hukuka Aykırı Şekilde Türkiye'ye Götürülme Vakaları
             </h4>
@@ -125,7 +125,7 @@ const SinirDisiGiris = () => {
               </div>
             </div>
           </div>
-          <div className="second-data" style={{ marginTop: '4rem' }}>
+          <div className="second-data">
             <h4 className="text-white text-center">
               Reddedilen İade Talepleri
             </h4>

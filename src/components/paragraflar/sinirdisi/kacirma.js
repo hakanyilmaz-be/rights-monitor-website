@@ -8,10 +8,10 @@ const KacirmaAciklama = () => {
     <>
       <Row>
         <Col lg={4}>
-          <img alt="Orhan Inandi" src={profileInandi} className="img-fluid " style={{ paddingTop: '2.7rem' }}/>
+          <img alt="Orhan Inandi" src={profileInandi} className="img-fluid " style={{ paddingTop: '2.5rem' }}/>
         </Col>
         <Col lg={8}>
-          <h2 style={{ fontWeight: "bold"}}>Yasa Dışı Kaçırma Çalışmaları</h2>
+          <h2 className="alt-baslik" style={{ fontWeight: "bold"}}>Yasa Dışı Kaçırma Çalışmaları</h2>
           <p className="small-paragraph">
             2016 yılında İsviçre’de Hizmet’le ilişkili olduğu düşünülen bir
             işadamı, Türkiye büyükelçiliği çalışanı iki kişi tarafından
