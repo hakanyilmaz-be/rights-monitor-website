@@ -21,6 +21,8 @@ import KovusturmaGenel from "../components/charts/teror-data/kovusturma-genel";
 import KovusturmaKadinlar from "../components/charts/teror-data/kovusturma-kadınlar";
 import KovusturmaErkekler from "../components/charts/teror-data/kovusturma-erkekler";
 import PastaKovusturmaCinsiyet from "../components/charts/teror-data/pasta-kovusturma-cinsiyet";
+import EskiKanun from "../components/charts/teror-data/eski-kanun";
+import PastaEskiKanun from "../components/charts/teror-data/pasta-eski-kanun";
 
 
 const TerorDataPage = () => {
@@ -157,7 +159,16 @@ const TerorDataPage = () => {
 </Row>
 <Spacer />
 
-
+<Row>
+  <Col lg={7}>
+ <EskiKanun/>
+  </Col>
+  <Col lg={5}>
+  <PastaEskiKanun/>
+  </Col>
+  
+ 
+</Row>
 
       </Container>
     </>
