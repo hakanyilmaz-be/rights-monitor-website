@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { Chart } from 'react-google-charts';
 
-const KanunKararSayisi = () => {
+const KanunKovusturmaSayisi = () => {
   const [a2Value, setA2Value] = useState('');
   const [b2Value, setB2Value] = useState('');
   const [c2Value, setC2Value] = useState('');
@@ -17,15 +17,15 @@ const KanunKararSayisi = () => {
         .then((response) => {
           const data = parseCSV(response.data);
           if (data.length > 0) {
-            setA2Value(data[1][10]);
+            setA2Value(data[1][14]);
             if (data.length > 1) {
-              setB2Value(data[2][10]);
+              setB2Value(data[2][14]);
             }
             if (data.length > 1) {
-              setC2Value(data[3][10]);
+              setC2Value(data[3][14]);
             }
             if (data.length > 1) {
-              setD2Value(data[4][10]);
+              setD2Value(data[4][14]);
             }
           }
         })
@@ -48,7 +48,7 @@ const KanunKararSayisi = () => {
   ];
 
   const options = {
-    title: 'Toplam karar sayısı TCK-TMK-TFK',
+    title: 'Toplam kovuşturmaya yer olmadığına dair karar TCK-TMK-TFK',
     chartArea: { width: '50%', height: '70%' }, // Daha fazla yer açmak için yükseklik ayarlandı
     vAxis: {
       minValue: 0,
@@ -58,9 +58,8 @@ const KanunKararSayisi = () => {
       title: `Toplam Sayı: ${d2Value}`,
       titleTextStyle: { bold: true }
     },
-    legend: { position: 'bottom', maxLines: 3, textStyle: { fontSize: 10 }, alignment: 'center' },
-    
-    colors: ['#ba1919', '#0a236d', '#eaa609'],
+    legend: { position: 'bottom', maxLines: 3 }, // Alt tarafa ve alt alta ayarlandı
+    colors: ['#acba19', '#0a236d', '#ea0963'],
     annotations: {
       alwaysOutside: true,
       textStyle: {
@@ -84,4 +83,4 @@ const KanunKararSayisi = () => {
   );
 }
 
-export default KanunKararSayisi;
+export default KanunKovusturmaSayisi;

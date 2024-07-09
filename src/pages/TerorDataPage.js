@@ -1,14 +1,5 @@
 import { Col, Container, Row } from "react-bootstrap";
 import backgroundImg from "../assets/img/bg-teror.png"
-import IhracHukukiAciklama from "../components/paragraflar/ihraclar/ihrac-hukuki-aciklama";
-import IhracMeslek from "../components/charts/ihraclar/ihrac-meslek";
-import IhracKurumlar from "../components/charts/ihraclar/ihrac-kurumlar";
-import IhraclarNeden from "../components/paragraflar/ihraclar/ihraclar-neden";
-import IhraclarNedenDevami from "../components/paragraflar/ihraclar/ihraclar-neden-devami";
-import IhracDatalar from "../components/locker-studio/ihrac-datalar";
-import IhraclarSosyal from "../components/paragraflar/ihraclar/ihraclar-sosyal";
-import AdvancedTableCezaevi from "../components/charts/cezaevi/advanced-table-cezaevi";
-import AccordionTextCezaevi from "../components/paragraflar/cezaevi/accordion-text-cezaevi";
 import Spacer from "../components/spacer/Spacer";
 import TerorDataGiris from "../components/paragraflar/teror-data/teror-data-giris";
 import TypewriterText from "../components/paragraflar/teror-data/type-writer-text";
@@ -17,6 +8,9 @@ import ToplamKararSayisi from "../components/charts/teror-data/toplam-karar-sayi
 import KamuDavasi from "../components/charts/teror-data/kamu-davasi";
 import Kovusturma from "../components/charts/teror-data/kovusturma";
 import SorusturmaKisiSayisiAciklama from "../components/paragraflar/teror-data/sorusturma-kisi-sayisi-aciklama";
+import KanunKararSayisi from "../components/charts/teror-data/kanun-karar-sayisi";
+import KanunKamuDavasiSayisi from "../components/charts/teror-data/kanun-kamu-davasi-sayisi";
+import KanunKovusturmaSayisi from "../components/charts/teror-data/kanun-kovusturma-sayisi";
 
 
 const TerorDataPage = () => {
@@ -79,43 +73,20 @@ const TerorDataPage = () => {
       <Spacer/>
 
       <Row>
-        <Col lg={6}>
-       <IhracHukukiAciklama/>
+        <Col lg={4}>
+        <KanunKararSayisi/>
         </Col>
-        <Col lg={6}>
-      <IhracMeslek/>
+        <Col lg={4}>
+      <KanunKamuDavasiSayisi/>
         </Col>
+        <Col lg={4}>
+     <KanunKovusturmaSayisi/>
+        </Col>
+       <h4 className="mt-5">Aciklama Gelecek</h4>
       </Row>
+   
       <Spacer/>
 
-      <Row>
-        <Col lg={6} >
-         <IhracKurumlar/>
-        </Col>
-        <Col lg={6}>
-        <IhraclarNeden/>
-        </Col>
-        <Col lg={12}>
-      <IhraclarNedenDevami/>
-        </Col>
-      </Row>
-      <Spacer/>
-
-      <Row>
-        <Col lg={5}>
-      <IhraclarSosyal/>
-        </Col>
-        <Col lg={7} style={{ marginTop: '2rem' }}>
-      <IhracDatalar/>
-        </Col>
-      </Row>
-
-    
-     <AccordionTextCezaevi/>
-
-     <Spacer/>
-
-   <AdvancedTableCezaevi/>
  
 
     </Container>
