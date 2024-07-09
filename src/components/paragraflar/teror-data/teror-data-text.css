@@ -29,3 +29,12 @@
   font-size: 14px; 
 }
 
+.tck{
+  margin-top: 2rem;
+}
+
+@media (max-width: 768px) {
+  .tck{
+    margin-top: 1rem;
+  }
+}
