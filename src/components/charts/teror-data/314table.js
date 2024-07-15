@@ -2,7 +2,8 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import DataTable from 'react-data-table-component';
 
-const EskiKanun = () => {
+
+const EskiKanunTable = () => {
     const [dataRows, setDataRows] = useState([]);
 
     useEffect(() => {
@@ -11,7 +12,7 @@ const EskiKanun = () => {
             try {
                 const response = await axios.get(csvUrl);
                 const parsedData = parseCSV(response.data);
-                setDataRows(parsedData.slice(13, 20)); 
+                setDataRows(parsedData.slice(3, 11)); 
             } catch (error) {
                 console.error('Error fetching CSV data:', error);
             }
@@ -30,23 +31,20 @@ const EskiKanun = () => {
     };
 
     const columns = [
-        { name: 'Yıl', selector: row => row[22], sortable: true, grow: 0.7 },
+        { name: 'Yıl', selector: row => row[16], sortable: true, grow: 1 },
         { 
-            name: 'Mahkumiyet', 
-            selector: row => formatNumber(row[23]), 
-            grow: 1 
-        },
-        { 
-            name: 'Beraat', 
-            selector: row => formatNumber(row[24]), 
-            grow: 1  
-        },
-        { 
-            name: '*HAGB', 
-            selector: row => formatNumber(row[25]), 
+            name: '314', 
+            selector: row => formatNumber(row[17]), 
+            sortable: true, 
             grow: 1 
         },
     ];
+
+    const paginationOptions = {
+        rowsPerPageText: 'Satır Sayısı:', 
+        rangeSeparatorText: 'ile',
+        selectAllRowsItemText: 'Tümünü Göster'
+    };
 
     const customStyles = {
         rows: {
@@ -60,35 +58,41 @@ const EskiKanun = () => {
                 background: 'linear-gradient(to right, #27154c, #331374 )',
                 color: '#FFF', 
                 fontSize: '12px', 
-                whiteSpace: 'normal', // Başlık hücrelerinin metninin sarılması için eklendi
-                wordWrap: 'break-word', // Başlık hücrelerinin metninin sarılması için eklendi
             },
         },
         cells: {
             style: {
                 padding: '0px 0px 0px 8px', 
-                fontSize: '11px',
-                whiteSpace: 'normal', // Hücrelerin metninin sarılması için eklendi
-                wordWrap: 'break-word', // Hücrelerin metninin sarılması için eklendi
+                fontSize: '11px', 
             },
         },
     };
 
+    const conditionalRowStyles = [
+        {
+            when: (row, index) => index === dataRows.length - 1,
+            style: {
+                backgroundColor: '#0055ff', // Koyu sarı renk
+                color: 'black', // Yazı rengi siyah
+            },
+        },
+    ];
+
     return (
         <div>
-           
+            <p style={{ fontWeight: 'bold' }}>Toplam karar sayısı TCK-TMK-TFK</p>
             <DataTable
                 columns={columns}
                 data={dataRows}
                 highlightOnHover
                 striped
                 noDataComponent={<div>Veri yükleniyor ...</div>}
+                paginationComponentOptions={paginationOptions}
                 customStyles={customStyles}
+                conditionalRowStyles={conditionalRowStyles} // Koşullu satır stilleri
             />
-           <p className='mt-2' style={{ fontSize: '10px' }}>*Hükmün Açıklanmasının Geriye Bırakılması</p>
-
         </div>
     );
 }
 
-export default EskiKanun;
+export default EskiKanunTable;

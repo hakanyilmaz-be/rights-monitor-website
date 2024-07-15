@@ -11,21 +11,21 @@ const KanunKararSayisi = () => {
 
   useEffect(() => {
     const fetchCSVData = () => {
-      const csvUrl = "https://docs.google.com/spreadsheets/d/e/2PACX-1vSy1KygmD2hp-6GovKzgaucGPfsjalgQ6ArSzpAXAHeN16imXVuURPImNc8dPsNFbrxh2brJXLkVi87/pub?gid=1653365026&single=true&output=csv";
+      const csvUrl = "https://docs.google.com/spreadsheets/d/e/2PACX-1vSy1KygmD2hp-6GovKzgaucGPfsjalgQ6ArSzpAXAHeN16imXVuURPImNc8dPsNFbrxh2brJXLkVi87/pub?gid=507472835&single=true&output=csv";
 
       axios.get(csvUrl)
         .then((response) => {
           const data = parseCSV(response.data);
           if (data.length > 0) {
-            setA2Value(data[1][10]);
+            setA2Value(data[5][14]);
             if (data.length > 1) {
-              setB2Value(data[2][10]);
+              setB2Value(data[5][15]);
             }
             if (data.length > 1) {
-              setC2Value(data[3][10]);
+              setC2Value(data[5][16]);
             }
             if (data.length > 1) {
-              setD2Value(data[4][10]);
+              setD2Value(data[5][17]);
             }
           }
         })
@@ -49,7 +49,7 @@ const KanunKararSayisi = () => {
 
   const options = {
     title: 'Toplam karar sayısı TCK-TMK-TFK',
-    chartArea: { width: '50%', height: '70%' }, // Daha fazla yer açmak için yükseklik ayarlandı
+    chartArea: { width: '50%', height: '70%' }, 
     vAxis: {
       minValue: 0,
      

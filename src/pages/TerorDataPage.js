@@ -23,6 +23,12 @@ import KovusturmaErkekler from "../components/charts/teror-data/kovusturma-erkek
 import PastaKovusturmaCinsiyet from "../components/charts/teror-data/pasta-kovusturma-cinsiyet";
 import EskiKanun from "../components/charts/teror-data/eski-kanun";
 import PastaEskiKanun from "../components/charts/teror-data/pasta-eski-kanun";
+import EskiKanunAciklama from "../components/paragraflar/teror-data/eski-kanun-aciklama";
+import CocukKadinKovusturma from "../components/charts/teror-data/cocuk-kadın-kovusturma";
+import CocukErkekKovusturma from "../components/charts/teror-data/cocuk-erkek-kovusturma";
+import PastaGenelCocukKovusturma from "../components/charts/teror-data/pasta-genel-cocuk-kovusturma";
+import CocukAciklama from "../components/paragraflar/teror-data/cocuk-aciklama";
+import TerorDataMetadoloji from "../components/paragraflar/teror-data/teror-data-metadoloji";
 
 
 const TerorDataPage = () => {
@@ -103,7 +109,7 @@ const TerorDataPage = () => {
         </Row>
         <Spacer />
         <Row>
-          <Col lg={5}>
+          <Col lg={4}>
             <TckTable />
           </Col>
           <Col lg={7}>
@@ -113,20 +119,6 @@ const TerorDataPage = () => {
         <Spacer />
         <h2 style={headingStyle}>Kovuşturmalar</h2>
         <YillarKovusturmaGrafik />
-        <Spacer />
-
-        <Row>
-          <Col lg={4}>
-            <KanunKararSayisi />
-          </Col>
-          <Col lg={4}>
-            <KanunKamuDavasiSayisi />
-          </Col>
-          <Col lg={4}>
-            <KanunKovusturmaSayisi />
-          </Col>
-          <h4 className="mt-5">Açıklama Gelecek</h4>
-        </Row>
         <Spacer />
 
         <Row>
@@ -141,9 +133,11 @@ const TerorDataPage = () => {
         <Spacer />
 
 <Row>
-  <Col lg={6}>
+  <Col lg={5}>
   <KovusturmaGenel/>
   </Col>
+  <Col lg={1}></Col>
+
   <Col lg={6}>
   <PastaKovusturmaCinsiyet/>
   </Col>
@@ -160,16 +154,33 @@ const TerorDataPage = () => {
 <Spacer />
 
 <Row>
-  <Col lg={7}>
+<h3>314 - Kovuşturma</h3>
+  <Col lg={6}>
  <EskiKanun/>
   </Col>
+  <Col lg={1}></Col>
+
   <Col lg={5}>
   <PastaEskiKanun/>
   </Col>
-  
- 
+  <EskiKanunAciklama/>
 </Row>
 
+<Row>
+<h3>Çocuklar</h3>
+<div className="mt-2"></div>
+  <Col lg={4}>
+  <CocukKadinKovusturma/>
+  </Col>
+  <Col lg={4}>
+ <CocukErkekKovusturma/>
+  </Col>
+  <Col lg={4}>
+ <PastaGenelCocukKovusturma/>
+  </Col>
+ <CocukAciklama/>
+</Row>
+<TerorDataMetadoloji/>
       </Container>
     </>
   );

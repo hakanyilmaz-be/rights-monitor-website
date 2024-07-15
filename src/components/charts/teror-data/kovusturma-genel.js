@@ -31,7 +31,7 @@ const KovusturmaGenel = () => {
     };
 
     const columns = [
-        { name: 'Karar', selector: row => row[13], sortable: true, grow: 1 },
+        { name: 'Karar', selector: row => row[13], sortable: true, grow: 3 },
         { 
             name: 'Genel toplam', 
             selector: row => formatNumber(row[14]), 
