@@ -26,6 +26,7 @@ const IadeTalepleri = () => {
             yapılan bildirimler, bu kişilerin gözaltına alınmasına ya da seyahat
             etmelerinin engellenmesine yol açmıştır.
           </p>
+          
         </Col>
         <Col className="iade-gorsel" lg={4}>
           <img
@@ -36,7 +37,7 @@ const IadeTalepleri = () => {
           />
         </Col>
         <Col lg={12}>
-          <p className="small-paragraph">
+          <p className="small-paragraph mt-2">
             2021 yılında ABD Büyükelçiliği tarafından yayımlanan insan hakları
             raporunda Türkiye hükûmetinin, tam bir yasal süreç işletilmeden
             gerçekleştirilen iadeler kapsamında yardımlarını güvence altına

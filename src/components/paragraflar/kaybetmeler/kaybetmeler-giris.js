@@ -61,20 +61,7 @@ const KaybetmelerGiris = () => {
           </h1>
         <Col lg={6} className="text-start">
        
-          <p className="small-paragraph text-white">
-            Zorla kaybedilme vakalari (enforced disappearance) , Türkiye’nin
-            tarihinde yeni bir olgu değildir. 1980 askeri darbesinin ardından
-            1,300’den fazla kişi kaybolmuş, 1990'larda ise özellikle Kürtler ve
-            solcu siyasi aktivistler hedef alınmıştı. Bu kayıpların çoğunun
-            devlet ajanları veya gizli gruplar tarafından gerçekleştirildigine
-            inanilmaktadir ve mağdurların akıbetleri hala belirsizdir. Bu
-            bağlamda, Cumartesi Anneleri hareketi, kayıp yakınlarının adalet
-            arayışında önemli bir sembol haline gelmistir. Cumartesi Anneleri,
-            27 Mayıs 1995’ten bu yana her cumartesi günü 90'lı yıllarda
-            gözaltında kaybedilen yakınlarının akıbetini sormak ve faillerin
-            yargılanmasını talep etmek amacı ile Galatasaray Meydanı'nda
-            buluşarak eylem yapmaktadırlar.
-          </p>
+          
           <p className="small-paragraph text-white">
             Zorla kaybetmeler, demokratik değerlerden uzak devletlerin muhalif
             grupları bastırmak amacıyla uyguladığı bir şiddet yöntemidir.
@@ -86,13 +73,26 @@ const KaybetmelerGiris = () => {
             1990'lardaki olağanüstü hal dönemleridir.
           </p>
           <p className="small-paragraph text-white">
+            1980 askeri darbesinin ardından
+            1,300’den fazla kişi kaybolmuş, 1990'larda ise özellikle Kürtler ve
+            solcu siyasi aktivistler hedef alınmıştı. Bu kayıpların çoğunun
+            devlet ajanları veya gizli gruplar tarafından gerçekleştirildigine
+            inanılmaktadır ve bazı mağdurların akıbetleri hala belirsizdir. Bu
+            bağlamda, Cumartesi Anneleri hareketi, kayıp yakınlarının adalet
+            arayışında önemli bir sembol haline gelmiştir. Cumartesi Anneleri,
+            27 Mayıs 1995’ten bu yana her cumartesi günü 90'lı yıllarda
+            gözaltında kaybedilen yakınlarının akıbetini sormak ve faillerin
+            yargılanmasını talep etmek amacı ile Galatasaray Meydanı'nda
+            buluşarak eylem yapmaktadırlar.
+          </p>
+          <p className="small-paragraph text-white">
             1990'lar boyunca veya 2000'lerin başlarında zorla kaybetmelere
             karışan resmi görevlilerin neredeyse hiçbiri yargılanıp ceza
             almamıştır. Kayıp yakınları yetkili makamlara başvuruda bulunurken
-            çoğunlukla etkisiz cevaplar almis ve savcılar tarafından tehdit
-            edilmislerdir. Bu dönemde Avrupa İnsan Hakları Mahkemesi (AİHM),
+            çoğunlukla etkisiz cevaplar almış ve savcılar tarafından tehdit
+            edilmişlerdir. Bu dönemde Avrupa İnsan Hakları Mahkemesi (AİHM),
             zorla kaybetmelerle ilgili birçok davada Türkiye'yi sorumlu
-            bulmustur.
+            bulmuştur.
           </p>
         </Col>
         <Col

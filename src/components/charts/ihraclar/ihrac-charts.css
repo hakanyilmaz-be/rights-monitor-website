@@ -1,35 +1,41 @@
 .custom-dropdown-toggle {
-    background-color: #331374 !important;
-    border-color: #331374 !important;
+  background-color: #331374 !important;
+  border-color: #331374 !important;
 }
 
-
-.cinsiyet-chart{
-    margin: 0 0 0 2rem;
+.cinsiyet-chart {
+  margin: 0 0 0 2rem;
+  position: relative;
+  text-align: center; /* Bu satır, mevcut stilinizi korumak için eklendi */
 }
 
+.chart-title {
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  font-size: 12px;
+  font-weight: bold;
+  top: -20px; /* Layout'a göre ayarlayın */
+}
 
 @media (max-width: 992px) {
-    .cinsiyet-chart{
-       margin: 0 0 0 1rem;
-    }
+  .cinsiyet-chart {
+    margin: 0 0 0 1rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .rdt_Table {
+    font-size: 8px;
   }
 
-
-  @media (max-width: 576px) {
-    .rdt_Table {
-      font-size: 8px;
-    }
-  
-    .rdt_TableCell, .rdt_TableCol {
-      padding: 0px;
-      white-space: normal; /* Normal beyaz boşluk davranışı */
-      overflow: visible; /* Taşan içeriklerin görünür olması */
-    }
-
-    .tablo {
-      
-        width: 105%;
-       
-    }
+  .rdt_TableCell, .rdt_TableCol {
+    padding: 0px;
+    white-space: normal; /* Normal beyaz boşluk davranışı */
+    overflow: visible; /* Taşan içeriklerin görünür olması */
   }
+
+  .tablo {
+    width: 105%;
+  }
+}

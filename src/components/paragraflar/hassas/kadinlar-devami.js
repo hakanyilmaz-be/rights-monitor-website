@@ -25,20 +25,12 @@ const KadinlarDevam = () => {
         Sözleşmesi (AİHS) ile çelişmektedir.
       </p>
       <p className="small-paragraph">
-        Gerek devlet tarafından gerekse toplumsal olarak yaşatılan ağır baskılar
-        siyasi ve sosyal bir soykırıma dönüşmüştür. Atılan çamurun büyüklüğü ve
-        Türkiye’deki siyasi atmosferin gölgesi altında yıkılan adalet sistemi
-        insanların hukuki çerçevede haklarını arayabileceklerine yönelik
-        umutlari söndürmüş, bunun sonucunda ise yaşanan psikolojik travmalar
-        nedeniyle çok sayıda insan intihar etmiştir.
-      </p>
-      <p className="small-paragraph">
         AİHM içtihatlarına, Anayasa'nın 19. maddesine ve AİHS'nin 5. Maddesine
         aykırı olarak Gülen Hareketi ile ilişkilendirilen kadınlar sık sık keyfi
         tutuklamalar ve adil olmayan yargılamalarla karşı karşıya kalmakta,
         sağlık ve hijyen düzenlemeleri yetersiz olan alanlarda kalmak zorunda
         bırakılarak, fiziksel ve psikolojik şiddetin mağduru olmaktadırlar. Bu
-        durum Uluslararasi hukuk nezdinde insanlık dışı ve aşağılayıcı muamele
+        durum uluslararasi hukuk nezdinde insanlık dışı ve aşağılayıcı muamele
         teşkil etmektedir.
       </p>
     </>

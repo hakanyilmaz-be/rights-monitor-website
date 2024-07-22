@@ -1,20 +1,28 @@
+/* flourish-embed-kitlesel.css */
 .flourish-container {
-  position: relative;
   width: 100%;
-  height: 635px;
+  height: 735px;
   overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  margin-bottom: -120px;
 }
 
-.flourish-inner {
+.flourish-iframe-wrapper {
+  width: 100%;
+  height: calc(100%); 
   position: absolute;
+  top: -90px; 
+  left: -35px;
+  
+}
+
+.flourish-iframe {
   width: 100%;
   height: 100%;
-  top: -10px;
-  left: 0;
-}
-
-.flourish-embed {
-  height: 575px;
+  border: none;
 }
 
 @media (max-width: 1338px) {
@@ -23,15 +31,9 @@
     height: auto;
     padding: 0;
   }
-  
-  .flourish-inner {
-    position: relative;
-    width: 100%;
+
+  .flourish-iframe-wrapper {
     height: auto;
   }
-  
-  .flourish-embed {
-    width: 100%;
-    height: 385px; 
-  }
 }
+

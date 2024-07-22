@@ -15,11 +15,11 @@ const KapatilanSorumlular = () => {
           title="Looker Studio Report: Sorumlular"
           src={iframeSrc}
           width="100%"
-          height="400px"  // iframe yüksekliğini artırarak içerik kaydırmayı sağlayabilirsiniz
+          height="400px"   
           style={{
             border: '0',
             position: 'absolute',
-            top: '0px',  // Looker Studio yazısını gizlemek için top değerini ayarlayın
+            top: '0px',  
             left: '0',
             overflow: 'hidden'
           }}

@@ -13,7 +13,7 @@ const YillarAciklama = () => {
         .then((response) => {
           const data = parseCSV(response.data);
           if (data.length > 0) {
-            setA5Value(data[0][10]);
+            setA5Value(data[0][12]);
           }
         })
         .catch((error) => {

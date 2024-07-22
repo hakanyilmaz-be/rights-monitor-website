@@ -26,7 +26,7 @@ const SorumlularAciklama = () => {
         varlıklarına erişimleri engellenmiştir. Bir kısmı hakkında tedbir
         kararları hala devam etmektedir.
       </p>
-   
+    
     </>
   );
 };

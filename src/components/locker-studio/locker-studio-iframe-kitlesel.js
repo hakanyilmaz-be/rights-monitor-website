@@ -15,7 +15,7 @@ const LookerStudioIframeKitlesel = () => {
           title="Looker Studio Report: Kitlesel Gözaltı Serüveni"
           src={iframeSrc}
           width="100%"
-          height="400px"
+          height="430px"
           className="looker-iframe"
           style={{
             border: '0',

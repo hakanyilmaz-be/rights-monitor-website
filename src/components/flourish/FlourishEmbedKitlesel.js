@@ -1,28 +1,30 @@
-import React, { useEffect } from 'react';
-import './flourish-embed-kitlesel.css';
+import React, { useEffect, useState } from "react";
+import "./flourish-embed-kitlesel.css";
 
 const FlourishEmbedKitlesel = () => {
-  useEffect(() => {
-    const script = document.createElement('script');
-    script.src = "https://public.flourish.studio/resources/embed.js";
-    script.async = true;
-    document.body.appendChild(script);
+  const [iframeSrc, setIframeSrc] = useState("");
 
-    return () => {
-      document.body.removeChild(script);
-    };
+  useEffect(() => {
+    setIframeSrc("https://public.flourish.studio/story/2296835/");
   }, []);
 
   return (
     <div className="flourish-container">
-      <div className="flourish-inner">
-        <div
-          className="flourish-embed"
-          data-src="story/2296835"
-        ></div>
-      </div>
+      {iframeSrc && (
+        <div className="flourish-iframe-wrapper">
+          <iframe
+            title="Looker Studio Report: Kitlesel Gözaltı Serüveni"
+            src={iframeSrc}
+            className="flourish-iframe"
+            allowFullScreen
+            sandbox="allow-storage-access-by-user-activation allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox"
+            scrolling="no"
+            loading="lazy"
+          ></iframe>
+        </div>
+      )}
     </div>
   );
-}
+};
 
 export default FlourishEmbedKitlesel;

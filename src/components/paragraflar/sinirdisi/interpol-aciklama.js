@@ -25,7 +25,7 @@ const InterpolAciklama = () => {
           </p>
         </Col>
         <Col lg={12}>
-          <p className="small-paragraph">
+          <p className="small-paragraph mt-3">
           Dönemin Dışişleri Bakan Yardımcısı Yavuz Selim Kıran, 03 Haziran 2021 tarihinde Meclis'te yaptığı konuşmada; “İnterpol üzerine düşeni yapmamaktadır. İnterpol ile çalışmalarımızda, kırmızı bülten ve iade taleplerimizin reddi, kırmızı bültenlerin silinmesi ve Türkiye tarafından İnterpol’ün Çalıntı ve Kayıp Seyahat Belgeleri Veritabanına (SLTD) yapılan veri girişlerinin engellenmesi gibi sorunlarla karşılaşıyoruz.” ifadelerini kullanmıştı. 
           </p>
         </Col>

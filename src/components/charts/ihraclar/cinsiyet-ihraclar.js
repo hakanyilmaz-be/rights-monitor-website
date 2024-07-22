@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { Chart } from "react-google-charts";
-import "./ihrac-charts.css"
+import "./ihrac-charts.css";
 
 function CinsiyetIhraclar() {
   const [a2Value, setA2Value] = useState("");
@@ -50,14 +50,15 @@ function CinsiyetIhraclar() {
   ];
 
   const options = {
-    title: "Cinsiyetlere Göre Dağılım Grafiği",
+    title: "",
     is3D: true,
-    legend: { position: "bottom", alignment: "start", maxLines: 3 },
+    legend: { position: "bottom", alignment: "center", maxLines: 3 },
     chartArea: { width: "100%", height: "60%" },
   };
 
   return (
-    <div className="cinsiyet-chart" style={{ textAlign: 'center' }}>
+    <div className="cinsiyet-chart mt-4">
+      <div className="chart-title">İhraçların Cinsiyetlere Göre Dağılım Grafiği</div>
       <Chart
         chartType="PieChart"
         data={data}

@@ -17,12 +17,12 @@ const GenelAciklamaHassasDevami = () => {
         kaldırılmalıdır.{" "}
       </p>
       <p className="small-paragraph">
-        Birleşmiş Milletlerin 17 Aralık 2015 de toplanan genel kurulunda kabul
+        Birleşmiş Milletler'in 17 Aralık 2015 de toplanan genel kurulunda kabul
         edilen Mahpuslara Yönelik Muameleye İlişkin Birleşmiş Milletler Asgari
-        Standart Kuralları (Nelson Mandela Kuralları) Mahpus hakları bakımından
+        Standart Kuralları (Nelson Mandela Kuralları) mahpus hakları bakımından
         en önemli ve ayrıntılı düzenlemeleri içermektedir. İnfaz kanunuyla
-        ilgili düzenlemeler yapılırken anayasa 90. Madde uyarınca BM Mandela
-        Kurallarının göz önüne alınması gerekliliği açıktır. Bu kapsamda
+        ilgili düzenlemeler yapılırken Anayasa 90. madde uyarınca BM Mandela
+        Kuralları'nın göz önüne alınması gerekliliği açıktır. Bu kapsamda
         kuralların temel ilkeleri rehber alınmalıdır. Bu ilkeler bütün
         mahpuslara insanlık onuru ve değerine uygun davranılması, ayrımcılık
         yasağı, dış dünyayla ilişkilerinin muhafaza altına alınması gibi çok

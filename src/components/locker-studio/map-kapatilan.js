@@ -16,7 +16,7 @@ const MapKapatilan = () => {
           title="Looker Studio Report: Kitlesel Gözaltı Serüveni"
           src={iframeSrc}
           width="100%"
-          height="800px"  
+          height="900px"  
           style={{
             border: '0',
             position: 'absolute',

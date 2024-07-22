@@ -64,7 +64,7 @@ const KapatilanKurumlar = () => {
         <Col lg={6}>
        <SorumlularAciklama/>
         </Col>
-        <Col lg={6} style={{ marginTop: '3rem' }}>
+        <Col lg={6} style={{ marginTop: '2rem' }}>
       <KapatilanSorumlular/>
         </Col>
       <div style={{ height: "10px" }}></div>

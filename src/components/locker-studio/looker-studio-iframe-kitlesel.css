@@ -1,11 +1,11 @@
 .iframe-container {
     overflow: hidden;
-    height: 350px;
+    height: 380px;
     position: relative;
   }
   
   .looker-iframe {
-    height: 400px;
+    height: 550px;
   }
   
   @media (max-width: 991px) {

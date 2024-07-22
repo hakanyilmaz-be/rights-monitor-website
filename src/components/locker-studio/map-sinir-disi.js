@@ -14,7 +14,7 @@ const MapSinirDisi = () => {
       {iframeSrc && (
         <iframe
           title="Looker Studio Report: Kitlesel Gözaltı Serüveni"
-          src={iframeSrc}
+          src={iframeSrc} 
           width="100%"
           height="800px"  
           style={{

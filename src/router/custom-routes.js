@@ -12,13 +12,14 @@ import CezaeviPage from "../pages/CezaeviPage";
 import SosyalEkonomikPage from "../pages/SosyalEkonomikPage";
 import TerorDataPage from "../pages/TerorDataPage";
 import YargiPage from "../pages/YargiPage";
+import AnaSayfa from "../pages/AnaSayfa";
 
 const CustomRoutes = () => {
   return (
     <BrowserRouter>       
       <Routes>
         <Route path="/">
-          <Route index element={<AdminTemplate><KitleselPage /></AdminTemplate>} /> 
+          <Route index element={<AdminTemplate><AnaSayfa/> </AdminTemplate>} /> 
           <Route path="kitlesel" element={<AdminTemplate><KitleselPage /></AdminTemplate>} />  
           <Route path="olumler" element={<AdminTemplate><OlumlerPage /></AdminTemplate>} />  
           <Route path="hassasgruplar" element={<AdminTemplate> <HassasGruplarPage/> </AdminTemplate>} /> 

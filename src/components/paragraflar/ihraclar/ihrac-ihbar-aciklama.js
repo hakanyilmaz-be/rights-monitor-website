@@ -4,11 +4,11 @@ import "./ihraclar-text.css";
 const IhracIhbarAciklama = () => {
   return (
     <>
-      <h2 className="mt-5" style={{ fontWeight: "bold" }}>İhbar Mekanizmasının Etkileri</h2>
+      <h2 className="mt-2" style={{ fontWeight: "bold" }}>İhbar Mekanizmasının Etkileri</h2>
       <p className="small-paragraph">
-        15 Temmuz sonrası dönemde, Cumhurbaşkanı Recep Tayyip Erdoğan’ın
+        OHAL döneminde, Cumhurbaşkanı Recep Tayyip Erdoğan’ın
         talimatlarıyla, vatandaşların ihbar mekanizmasına katılımı teşvik
-        edilmiştir. Erdoğan 10 Ağustos 2016 tarihinde yaptığı bir konuşmasında ;
+        edilmiştir. Erdoğan 10 Ağustos 2016 tarihinde yaptığı bir konuşmasında;
         “O camiadan dostlarınız, arkadaşlarınız olabilir. Ben diyorum ki,
         bunları ifşa edin! Savcılıklara bildirmeniz lazım. Bu bir vatanseverlik
         borcudur. Herkesi, istihbarat bilemeyebilir, emniyet bilemeyebilir, ya

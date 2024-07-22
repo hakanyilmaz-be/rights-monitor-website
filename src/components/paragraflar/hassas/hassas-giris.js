@@ -94,18 +94,8 @@ const HassasGiris = () => {
             engelli kişilerin tutuklanması keyfi tutuklama olarak
             değerlendirilmelidir.
           </p>
-          <p className="small-paragraph">
-            Bu bilgiler ve ulusal hukuk çerçevesinde, hamile ve yeni doğum
-            yapmış kadınlar, ciddi derecede hasta olan bireyler, yaşlılar ve
-            engelli kişilerin tutuklanması keyfi tutuklama olarak
-            değerlendirilmelidir.
-          </p>
           <p className="small-paragraph ">
-            Gülen Hareketi mensuplarına yönelik düzenlenen kitlesel gözaltı
-            operasyonları hukuk sınırlarını çoktan aşmıştır. 2017'de tek bir
-            operasyonda 3,224 kişi, 2016'da bir günde 2,745 hakim ve savcı,
-            2019'da ise aynı günde 1,112 kişi, Gülen Hareketi'ne mensup olma
-            iddiasıyla gözaltına alınmıştır. BM Keyfi Tutuklamalar Çalışma Grubu
+            BM Keyfi Tutuklamalar Çalışma Grubu
             <a
               href="https://www.ohchr.org/sites/default/files/documents/issues/detention-wg/opinions/session98/a-hrc-wgad-66-2023-turkiye-aev.pdf"
               className="text-white"
@@ -140,9 +130,7 @@ const HassasGiris = () => {
             >
               <span> Görüş No. 84/2020 </span>
             </a>
-            (Paragraf 76) ve diğer uluslararası kurumlar, Türkiye'nin Gülen
-            Hareketi mensuplarına yönelik tutuklama ve gözaltı uygulamalarını
-            insanlığa karşı suç olarak nitelendirmiş ve kınamıştır.
+            (Paragraf 76) Türkiye'nin Gülen Hareketi mensuplarına yönelik tutuklama ve gözaltı uygulamalarını insanlığa karşı suç olarak nitelendirmiş ve kınamıştır.
           </p>
           <p className="small-paragraph">
             2016'dan bu yana Türkiye'de keyfi tutuklamalara maruz kalan

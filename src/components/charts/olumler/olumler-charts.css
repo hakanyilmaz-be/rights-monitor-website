@@ -1,10 +1,31 @@
-.cinsiyet-chart{
-    margin: 4rem;
-}
-
-
-@media (max-width: 992px) {
-    .cinsiyet-chart{
-       margin: 0 0 2rem 1rem;
+.flourish-container {
+    width: 100%;
+    height: 735px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  @media (max-width: 1338px) {
+    .flourish-container {
+      width: 100%;
+      height: auto;
+      padding: 0;
     }
   }
+  
+  .cinsiyet-chart {
+    position: relative;
+    text-align: center; 
+  }
+  
+  .chart-title {
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    font-size: 12px;
+    font-weight: bold;
+    top: -21px; 
+  }
+  

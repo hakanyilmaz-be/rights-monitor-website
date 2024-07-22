@@ -89,9 +89,7 @@ const KitleselPage = () => {
           <Col lg={7} className="p-3">
             <Sorumlular/>
           </Col>
-          <Col lg={12} className="pt-3">
-            <SorumlularDevam/>
-          </Col>
+  
         </Row>
 
         <div style={{ height: "30px" }}></div>

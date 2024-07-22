@@ -8,7 +8,7 @@ const KacirmaAciklama = () => {
     <>
       <Row>
         <Col lg={4}>
-          <img alt="Orhan Inandi" src={profileInandi} className="img-fluid " style={{ paddingTop: '2.5rem' }}/>
+          <img alt="Orhan Inandi" src={profileInandi} className="img-fluid "/>
         </Col>
         <Col lg={8}>
           <h2 className="alt-baslik" style={{ fontWeight: "bold"}}>Yasa Dışı Kaçırma Çalışmaları</h2>

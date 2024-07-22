@@ -14,7 +14,7 @@ const KadinlarAciklama = () => {
         .then((response) => {
           const data = parseCSV(response.data);
           if (data.length > 0) {
-            setA5Value(data[3][1]);
+            setA5Value(data[6][8]);
           }
         })
         .catch((error) => {

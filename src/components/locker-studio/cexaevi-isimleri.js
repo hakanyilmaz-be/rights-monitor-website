@@ -16,7 +16,7 @@ const CezaeviIsimleri = () => {
           title="Looker Studio Report: Kitlesel Gözaltı Serüveni"
           src={iframeSrc}
           width="100%"
-          height="500px"  
+          height="600px"  
           style={{
             border: '0',
             position: 'absolute',

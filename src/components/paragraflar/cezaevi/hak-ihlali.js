@@ -55,7 +55,7 @@ const HakIhlali = () => {
       </p>
 
       <CezaeviIller />
-      <p className="small-paragraph mt-2">
+      <p className="small-paragraph mt-3">
         Sağlık hizmetlerine erişim konusunda da ciddi sorunlar yaşanmaktadır.
         Mahkumlar, elleri kelepçeli muayeneye zorlanmakta, yeterli sayıda doktor
         ve tıbbi yardım ekibi bulunmamaktadır. Halime Gülsu gibi kronik

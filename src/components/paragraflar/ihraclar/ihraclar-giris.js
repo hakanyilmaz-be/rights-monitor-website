@@ -55,8 +55,8 @@ const IhraclarGiris = () => {
         <Col lg={12} className="text-start">
           <p className="small-paragraph text-white">
             15 Temmuz 2016, ülke tarihindeki en kritik dönüm noktalarından biri
-            olarak kayıtlara geçmiştir. Bu tarihin ardından hükümet, olağanüstü
-            hal (OHAL) ilan ederek “tedbir” adını verdiği geniş kapsamlı
+            olarak kayıtlara geçmiştir. Bu tarihin ardından hükümet, Olağanüstü
+            Hal (OHAL) ilan ederek “tedbir” adını verdiği geniş kapsamlı
             uygulamalara başvurmuştur. OHAL kapsamında çıkarılan Kanun Hükmünde
             Kararnameler (KHK) aracılığıyla, birçok kamu personeli ve özel
             kurumlarda çalışan kişiler çeşitli gerekçelerle görevlerinden ihraç
