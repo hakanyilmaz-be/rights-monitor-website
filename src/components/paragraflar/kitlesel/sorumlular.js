@@ -23,7 +23,7 @@ const Sorumlular = () => {
         ilkeler ihlal edilmektedir. Türkiye’de ‘makbul’ insan olmak, Gülen
         Hareketi üyelerine yapılan eziyetle ölçülmektedir. En fazla operasyonda
         imzası olan isim, halk ve iktidar nezdinde koltuğunu en çok hak eden
-        isim olarak kabul edilmektedir. Sorumluların her operasyonun ardından Gülen Hareketi mensuplarına ‘göz açtırmayacaklarına’ dair nefret ifadeleri, durumun vehametini ve Türkiye’de demokrasi, hukukun üstünlüğü ve insan hakları değerlerinin nasıl erozyona uğradığını, toplumsal barış ve uyumun nasıl zedelendiğini göstermektedir.
+        isim olarak kabul edilmektedir. Sorumluların her operasyonun ardından Gülen Hareketi mensuplarına ‘göz açtırmayacaklarına’ dair nefret ifadeleri, durumun vehametini ve Türkiye’de demokrasi, hukukun üstünlüğü ve insan hakları değerlerinin erozyona uğradığını, toplumsal barış ve uyumun zedelendiğini göstermektedir.
       </p>
       
     </>

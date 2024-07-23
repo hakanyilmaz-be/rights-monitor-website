@@ -36,10 +36,9 @@ const YillarAciklama = () => {
      <h2 style={{ fontWeight: 'bold' }}>Cadı Avının Kronolojisi</h2>
       <p className="small-paragraph">
         Gülen hareketi üyelerine yönelik kitlesel polis operasyonları 2014 yılı
-        Nisan ayında 8 polisin gözaltına alındığı operasyon ile başlamıştır.
+        Nisan ayında 8 polisin gözaltına alındığı <a href="https://www.haberturk.com/gundem/haber/937007-adanada-operasyon-8-polis-gozaltinda" target="_blank"> operasyon</a> ile başlamıştır.
         Gülen hareketine yönelik zulüm, iktidar tarafından, Türkiye'de önemli
-        bir kırılma anına işaret eden 15 Temmuz 2026 tarihli başarısız darbe
-        girişimine dayandırılarak meşrulaştırılmaya çalışılmaktadır. Ancak,
+        bir kırılma anına işaret eden 15 Temmuz 2016'ya dayandırılarak meşrulaştırılmaya çalışılmaktadır. Ancak,
         veriler bu iddianın aksini göstermektedir. Gülen hareketi mensuplarına
         yönelik operasyonlar, 15 Temmuz 2016 öncesi zaten 72 ile yayılmış
         durumdaydı. Darbe girişiminden önce 250'den fazla operasyonda 5 bine

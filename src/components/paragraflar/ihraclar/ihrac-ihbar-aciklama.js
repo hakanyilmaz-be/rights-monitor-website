@@ -8,7 +8,7 @@ const IhracIhbarAciklama = () => {
       <p className="small-paragraph">
         OHAL döneminde, Cumhurbaşkanı Recep Tayyip Erdoğan’ın
         talimatlarıyla, vatandaşların ihbar mekanizmasına katılımı teşvik
-        edilmiştir. Erdoğan 10 Ağustos 2016 tarihinde yaptığı bir konuşmasında;
+        edilmiştir. <a href="https://www.cnnturk.com/turkiye/erdogan-o-camiadan-dostlarinizi-ihbar-edin" target="_blank"> Erdoğan 10 Ağustos 2016 tarihinde yaptığı bir konuşmasında;</a>
         “O camiadan dostlarınız, arkadaşlarınız olabilir. Ben diyorum ki,
         bunları ifşa edin! Savcılıklara bildirmeniz lazım. Bu bir vatanseverlik
         borcudur. Herkesi, istihbarat bilemeyebilir, emniyet bilemeyebilir, ya

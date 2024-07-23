@@ -4,9 +4,11 @@ const KitleselGiris = () => {
   return (
     <div className="paragraph-kitlesel-giris">
       Gülen Hareketi mensuplarına yönelik düzenlenen kitlesel gözaltı
-      operasyonları hukuk sınırlarını çoktan aşmıştır. 2017'de tek bir
-      operasyonda 3,224 kişi, 2016'da bir günde 2,745 hakim ve savcı, 2019'da
-      ise aynı günde 1,112 kişi, Gülen Hareketi'ne mensup olma iddiasıyla
+      operasyonları hukuk sınırlarını çoktan aşmıştır. 2017'de <a href="https://www.aa.com.tr/tr/15-temmuz-darbe-girisimi/81-ildeki-fetonun-mahrem-yapilanmasi-operasyonunda-1120-gozalti/805570"  target="_blank" > tek bir
+      operasyonda</a> 3,224 kişi, 2016'da bir günde <a href="https://www.aa.com.tr/tr/15-temmuz-darbe-girisimi/-2-bin-745-hakim-ve-savci-hakkinda-gozalti-karari/609308"  target="_blank" >
+      2,745</a> hakim ve savcı, 2019'da
+      ise aynı günde <a href="https://www.aa.com.tr/tr/gunun-basliklari/feto-sorusturmasinda-1112-gozalti-karari/1389890"  target="_blank" >
+      1,112</a> kişi, Gülen Hareketi'ne mensup olma iddiasıyla
       gözaltına alınmıştır. BM Keyfi Tutuklamalar Çalışma Grubu
       <a
         href="https://www.ohchr.org/sites/default/files/documents/issues/detention-wg/opinions/session98/a-hrc-wgad-66-2023-turkiye-aev.pdf"
@@ -43,8 +45,8 @@ const KitleselGiris = () => {
         <span> Görüş No. 84/2020 </span>
       </a>
       (Paragraf 76) ve diğer uluslararası kurumlar, Türkiye'nin Gülen Hareketi
-      mensuplarına yönelik tutuklama ve gözaltı uygulamalarını insanlığa karşı
-      suç olarak nitelendirmiş ve kınamıştır.
+      mensuplarına yönelik tutuklama ve gözaltı uygulamalarını <b>insanlığa karşı
+      suç</b> olarak nitelendirmiş ve kınamıştır.
     </div>
   );
 };

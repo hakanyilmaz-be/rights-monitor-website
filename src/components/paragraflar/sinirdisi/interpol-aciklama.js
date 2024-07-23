@@ -11,8 +11,10 @@ const InterpolAciklama = () => {
       <Row>
         <Col className="interpol-resmi" lg={4}>
           <img alt="interpol" src={interpol} className="img-fluid"/>
-          <img alt="interpol-document" src={interpolDocument} className="img-fluid"/>
-
+           <a href="https://www.patreon.com/posts/adam-kacirmalara-58333013?l=de" target="_blank"> <img alt="interpol-document" src={interpolDocument} className="img-fluid"/></a> 
+          <p className="text-center" style={{fontSize: "10px"}}>
+          Kaçırma olayında görevli polislerin bilgileri ve Bahreyn polisi ile Türk polisi arasındaki teslim tesellüm tutanağı
+          </p>
 
         </Col>
         <Col lg={8}>
@@ -25,8 +27,8 @@ const InterpolAciklama = () => {
           </p>
         </Col>
         <Col lg={12}>
-          <p className="small-paragraph mt-3">
-          Dönemin Dışişleri Bakan Yardımcısı Yavuz Selim Kıran, 03 Haziran 2021 tarihinde Meclis'te yaptığı konuşmada; “İnterpol üzerine düşeni yapmamaktadır. İnterpol ile çalışmalarımızda, kırmızı bülten ve iade taleplerimizin reddi, kırmızı bültenlerin silinmesi ve Türkiye tarafından İnterpol’ün Çalıntı ve Kayıp Seyahat Belgeleri Veritabanına (SLTD) yapılan veri girişlerinin engellenmesi gibi sorunlarla karşılaşıyoruz.” ifadelerini kullanmıştı. 
+          <p className="small-paragraph mt-3">  
+          Dönemin Dışişleri Bakan Yardımcısı Yavuz Selim Kıran, 03 Haziran 2021 tarihinde Meclis'te yaptığı&nbsp;<a href="https://www.birgun.net/haber/interpol-773-feto-suphelisi-icin-kirmizi-bulten-talebini-reddetti-347202" target="_blank">konuşmada</a>; “İnterpol üzerine düşeni yapmamaktadır. İnterpol ile çalışmalarımızda, kırmızı bülten ve iade taleplerimizin reddi, kırmızı bültenlerin silinmesi ve Türkiye tarafından İnterpol’ün Çalıntı ve Kayıp Seyahat Belgeleri Veritabanına (SLTD) yapılan veri girişlerinin engellenmesi gibi sorunlarla karşılaşıyoruz.” ifadelerini kullanmıştı. 
           </p>
         </Col>
       </Row>

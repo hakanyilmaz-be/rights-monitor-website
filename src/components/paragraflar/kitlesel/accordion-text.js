@@ -85,7 +85,7 @@ function AccordionText() {
                 kararıyla Bylock kullanmanın, Bank Asya’da hesap sahibi olmanın,
                 KHK ile kapatılan sendikaya üye olmanın, KHK ile ihraç
                 edilmenin, gizli tanık beyanı esas alınarak terör örgütü üyesi
-                olarak adlandırılmasının suç olmadığını, ve bu fiiller
+                olarak adlandırılmanın suç olmadığını, ve bu fiiller
                 çerçevesinden verilen mahkumiyetlerin de Avrupa İnsan Hakları
                 Sözleşmesi'nin 6, 7 ve 11. Maddelerinin ihlali olduğu yönünde
                 hüküm vermiştir. Ancak bahsi geçen faaliyetler günümüzde hala
@@ -119,7 +119,7 @@ function AccordionText() {
                 araçlarından biri olarak, toplumda yaygın bir korku ve endişe
                 yaratmakta, bireylerin ifade özgürlüğünü ve toplumsal muhalefeti
                 ciddi şekilde kısıtlamaktadır. Türkiye, kitlesel gözaltılar
-                yoluyla beslenen bir korku ve baskı ortamına evrilmiştir Bu
+                yoluyla beslenen bir korku ve baskı ortamına evrilmiştir. Bu
                 korku ikliminin arkasında, yürütme yetkisini keyfi bir şekilde
                 kullanarak toplumsal yapıyı dönüştürmeye çalışan otoriter bir
                 hükümet bulunmaktadır.

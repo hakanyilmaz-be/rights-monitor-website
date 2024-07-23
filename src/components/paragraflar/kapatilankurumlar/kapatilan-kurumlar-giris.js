@@ -70,7 +70,7 @@ const KapatilanKurumlarGiris = () => {
           </h1>
         <Col lg={6} className="text-start">
           <p className="small-paragraph text-white">
-            Türkiye'de, 15 Temmuz 2016'dan bu yana olağanüstü hal kararnameleri
+            Türkiye'de, 2016'dan bu yana olağanüstü hal kararnameleri
             ve idari kararlar, {" "}{a5Value} kurumun kapatılması ve el konulmasına yol
             açtı. 16 kategori altında değerlendirilebilecek kurumların
             kapatılması ve el konulması demokratik değerler ile bağdaşmayan

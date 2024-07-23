@@ -1,36 +1,48 @@
 import React from "react";
 import "./sosyal-text.css";
+import { Col, Row } from "react-bootstrap";
+import khk from "../../../assets/img/khk.jpg";
 
 const SosyalAciklama = () => {
   return (
     <>
       <h2 style={{ fontWeight: "bold" }}>Sosyal ve Ekonomik Hak İhlalleri</h2>
-      <p className="small-paragraph">
-        OHAL dönemi ve sonrasında KHK ile görevlerinden ihraç edilen kişiler,
-        çeşitli sosyal ve ekonomik hak ihlalleriyle karşı karşıya kalmıştır. Bu
-        ihlallerin bilinen net bir sayısı bulunmamakla birlikte en az 30 kurum
-        ve kuruluşun ihlallerden sorumlu olduğu görülmektedir, geniş bir
-        yelpazede kendini gösteren ihlaller bu sayfada ana başlıklar altında
-        anlatılmıştır:
-      </p>
-      <ul className="small-paragraph">
-        <li>
-          <b>1. Finansal Kısıtlamalar ve Bankacılık İşlemleri:</b>
-          <ul>
+      <Row>
+        <Col>
+          <p className="small-paragraph">
+            OHAL dönemi ve sonrasında KHK ile görevlerinden ihraç edilen
+            kişiler, çeşitli sosyal ve ekonomik hak ihlalleriyle karşı karşıya
+            kalmıştır. Bu ihlallerin bilinen net bir sayısı bulunmamakla
+            birlikte en az 30 kurum ve kuruluşun ihlallerden sorumlu olduğu
+            görülmektedir. Geniş bir yelpazede kendini gösteren ihlaller bu
+            sayfada ana başlıklar altında anlatılmıştır:
+          </p>
+          <ul className="small-paragraph">
             <li>
-              - Kredi kartlarının iptali, banka hesaplarına bloke konulması,
-              kredi verilmemesi gibi uygulamalar KHK'lıların ekonomik
-              bağımsızlıklarını ciddi şekilde etkilemiştir. KHK'lı Baykal
-              Tunç'un kamu bankası tarafından banka kartı ve kredi kartlarının
-              iptal edilmesi, bu mağduriyetin bir örneğidir.
-            </li>
-            <li>
-              - Öğretmen Cemil Özen’in SGK çıkış kodu nedeniyle özel sektörde iş
-              bulamaması ve sağlık hizmetlerinden yararlanamaması, ekonomik ve
-              sosyal haklarının ihlal edildiğini göstermektedir.
+              <b>1. Finansal Kısıtlamalar ve Bankacılık İşlemleri:</b>
+              <ul>
+                <li>
+                  - Kredi kartlarının iptali, banka hesaplarına bloke konulması,
+                  kredi verilmemesi gibi uygulamalar KHK'lıların ekonomik
+                  bağımsızlıklarını ciddi şekilde etkilemiştir. KHK'lı Baykal
+                  Tunç'un kamu bankası tarafından banka kartı ve kredi
+                  kartlarının iptal edilmesi, bu mağduriyetin bir örneğidir.
+                </li>
+                <li>
+                  - Öğretmen Cemil Özen’in SGK çıkış kodu nedeniyle özel
+                  sektörde iş bulamaması ve sağlık hizmetlerinden
+                  yararlanamaması, ekonomik ve sosyal haklarının ihlal
+                  edildiğini göstermektedir.
+                </li>
+              </ul>
             </li>
           </ul>
-        </li>
+        </Col>
+        <Col>
+          <img alt="KHK Gorseli" src={khk} className="img-fluid mt-2" style={{borderRadius: "8px"}} />
+        </Col>
+      </Row>
+      <ul className="small-paragraph">
         <li>
           <b>2. İstihdam ve Çalışma Hakları:</b>
           <ul>
@@ -40,11 +52,6 @@ const SosyalAciklama = () => {
               başvurularının reddedilmesi, öğretmen lisanslarının iptali gibi
               uygulamalar, KHK'lıların çalışma hayatını ciddi şekilde
               kısıtlamıştır.
-            </li>
-            <li>
-              - Özel sektörde iş başvuruları SGK çıkış kodu nedeniyle reddedilen
-              Cemil Özen, "Devlet bizi açlıkla imtihan ediyor" diyerek yaşadığı
-              mağduriyeti dile getirmiştir.
             </li>
           </ul>
         </li>
@@ -59,8 +66,8 @@ const SosyalAciklama = () => {
             </li>
             <li>
               - KHK'lılar, mültecilere sağlanan sağlık imkanlarından
-              yararlanamazken, kendi ülkelerinde sağlık hizmetlerine erişim
-              sağlayamamaktadır.
+              yararlanamamakta, kendi ülkelerinde sağlık hizmetlerine bile
+              erişim sağlayamamaktadır.
             </li>
           </ul>
         </li>
@@ -96,31 +103,38 @@ const SosyalAciklama = () => {
           </ul>
         </li>
       </ul>
-      <h2 className="mt-5" style={{ fontWeight: "bold" }}>
-        Sosyal ve Ekonomik Hakların Uluslararası İnsan Hakları Hukukundaki Yeri
-      </h2>
-      <p className="small-paragraph">
-        Sosyal ve ekonomik haklar, uluslararası insan hakları hukukunda önemli
-        bir yere sahiptir. Bu haklar, Uluslararası İnsan Hakları
-        Sözleşmeleri'nde güvence altına alınmıştır. Birleşmiş Milletler
-        Ekonomik, Sosyal ve Kültürel Haklar Sözleşmesi (ICESCR), sosyal ve
-        ekonomik hakları koruma altına alır. Bu sözleşme, herkesin sağlık,
-        eğitim, sosyal güvenlik ve çalışma haklarına sahip olduğunu belirtir.
-      </p>
-        
-      <p className="small-paragraph">
-        
-        Ayrıca Avrupa İnsan Hakları Sözleşmesi (AİHS) ve Avrupa Sosyal Şartı,
-        Avrupa Konseyi üyesi ülkeler tarafından imzalanmış ve onaylanmıştır. Bu
-        belgeler, sosyal ve ekonomik hakları güvence altına alır ve koruma
-        mekanizmaları oluşturur. Ekonomik haklar, bireylerin yaşam
-        standartlarını yükseltmeleri, yoksulluk ve açlıkla mücadele etmeleri
-        için önemlidir. KHK'lıların yaşadığı ekonomik kısıtlamalar, bu hakların
-        ihlal edildiğini göstermektedir. Sosyal haklar ise, bireylerin toplumsal
-        hayata katılımını sağlar ve toplumsal dışlanmayı önler. KHK'lıların
-        yaşadığı sosyal dışlanma ve psikolojik sorunlar, bu hakların da ihlal
-        edildiğini ortaya koymaktadır.
-      </p>
+
+      <Row>
+        <Col>
+          <h2 className="mt-5" style={{ fontWeight: "bold" }}>
+            Sosyal ve Ekonomik Hakların Uluslararası İnsan Hakları Hukukundaki
+            Yeri
+          </h2>
+          <p className="small-paragraph">
+            Sosyal ve ekonomik haklar, uluslararası insan hakları hukukunda
+            önemli bir yere sahiptir. Bu haklar, Uluslararası İnsan Hakları
+            Sözleşmeleri'nde güvence altına alınmıştır. Birleşmiş Milletler
+            Ekonomik, Sosyal ve Kültürel Haklar Sözleşmesi (ICESCR), sosyal ve
+            ekonomik hakları koruma altına alır. Bu sözleşme, herkesin sağlık,
+            eğitim, sosyal güvenlik ve çalışma haklarına sahip olduğunu
+            belirtir.
+          </p>
+
+          <p className="small-paragraph">
+            Ayrıca Avrupa İnsan Hakları Sözleşmesi (AİHS) ve Avrupa Sosyal
+            Şartı, Avrupa Konseyi üyesi ülkeler tarafından imzalanmış ve
+            onaylanmıştır. Bu belgeler, sosyal ve ekonomik hakları güvence
+            altına alır ve koruma mekanizmaları oluşturur. Ekonomik haklar,
+            bireylerin yaşam standartlarını yükseltmeleri, yoksulluk ve açlıkla
+            mücadele etmeleri için önemlidir. KHK'lıların yaşadığı ekonomik
+            kısıtlamalar, bu hakların ihlal edildiğini göstermektedir. Sosyal
+            haklar ise, bireylerin toplumsal hayata katılımını sağlar ve
+            toplumsal dışlanmayı önler. KHK'lıların yaşadığı sosyal dışlanma ve
+            psikolojik sorunlar, bu hakların da ihlal edildiğini ortaya
+            koymaktadır.
+          </p>
+        </Col>
+      </Row>
     </>
   );
 };

@@ -8,7 +8,6 @@ import YillarAciklama from "../components/paragraflar/kitlesel/yillar-aciklama";
 import KitleselYillarGrafik from "../components/charts/kitlesel/kitlesel-yillar";
 import LookerStudioIframeKitlesel from "../components/locker-studio/locker-studio-iframe-kitlesel";
 import Sorumlular from "../components/paragraflar/kitlesel/sorumlular";
-import SorumlularDevam from "../components/paragraflar/kitlesel/sorumlular-devami";
 import AccordionText from "../components/paragraflar/kitlesel/accordion-text";
 import AdvancedTable from "../components/charts/kitlesel/advanced-table";
 import backgroundImg from "../assets/img/background-kitlesel-6.png";

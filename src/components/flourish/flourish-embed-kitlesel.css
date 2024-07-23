@@ -1,39 +1,17 @@
-/* flourish-embed-kitlesel.css */
-.flourish-container {
-  width: 100%;
-  height: 735px;
-  overflow: hidden;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-  margin-bottom: -120px;
-}
 
-.flourish-iframe-wrapper {
+.flourish-container {
+  position: relative;
   width: 100%;
-  height: calc(100%); 
-  position: absolute;
-  top: -90px; 
-  left: -35px;
-  
+  height: 0;
+  padding-bottom: 56.25%; /* 16:9 aspect ratio */
+  overflow: hidden;
 }
 
 .flourish-iframe {
-  width: 100%;
-  height: 100%;
+  position: absolute;
+  top: -83px; /* Yukarıdan kesme miktarı */
+  left: -52px; /* Soldan kesme miktarı */
+  width: calc(100% + 40px); /* Kesme miktarını ekleyin */
+  height: calc(100% + 40px); /* Kesme miktarını ekleyin */
   border: none;
 }
-
-@media (max-width: 1338px) {
-  .flourish-container {
-    width: 100%;
-    height: auto;
-    padding: 0;
-  }
-
-  .flourish-iframe-wrapper {
-    height: auto;
-  }
-}
-

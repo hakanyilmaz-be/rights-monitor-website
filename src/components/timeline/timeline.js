@@ -156,7 +156,7 @@ const Timeline = () => {
   return (
     <>
       <div className="timeline-background">
-        <h2 className="timeline-title mb-5">Timeline</h2>
+        <h2 className="timeline-title mb-5">Zaman Çizelgesi</h2>
         <div className="search-filter">
           <p style={{ fontWeight: "bold" }}>
             Arama bölümünü verileri filtrelemek için kullanabilirsiniz.

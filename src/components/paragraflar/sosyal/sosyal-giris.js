@@ -15,14 +15,12 @@ const SosyalGiris = () => {
         <div style={{ height: "20px" }}></div>
         <Col lg={6} className="text-start">
           <p className="small-paragraph text-white">
-            15 Temmuz 2016 ardından Türkiye'de olağanüstü hal (OHAL) ilan
+            2016'da Türkiye'de olağanüstü hal (OHAL) ilan
             edilmesiyle birlikte çıkarılan Kanun Hükmünde Kararnameler (KHK)
             çerçevesinde yaklaşık 125 bin kamu çalışanının, idari ve adli işleme
             tabi tutulmadan görevlerine son verildi. Bu süreçte, KHK'lıların
             karşılaştığı sosyal ve ekonomik hak ihlalleri, insan hakları
-            gözlemcileri tarafından "sosyal ölüm" olarak tanımlandı. Bu sayfada,
-            KHK'lıların “Ağaç kabuğu” yesinler denilerek sosyal ve ekonomik hak
-            ihlallerine maruz kalmalari ele alınmaktadır.
+            gözlemcileri tarafından "sosyal ölüm" olarak tanımlandı.
           </p>
         </Col>
         <Col lg={6} className="text-start intro">

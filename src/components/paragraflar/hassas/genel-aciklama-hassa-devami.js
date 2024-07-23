@@ -1,8 +1,49 @@
-import React from "react";
+import axios from "axios";
+import React, { useEffect, useState } from "react";
 
 const GenelAciklamaHassasDevami = () => {
+  const [a2Value, setA2Value] = useState("");
+  const [b2Value, setB2Value] = useState("");
+  const [c2Value, setC2Value] = useState("");
+  const [d2Value, setD2Value] = useState("");
+
+  useEffect(() => {
+    const fetchCSVData = () => {
+      const csvUrl =
+        "https://docs.google.com/spreadsheets/d/e/2PACX-1vQG0Gg1TsKyJ7KBwRkN85W23CnmgICsxPnMS8Xy7iGAlnbME8e3Y2L3wCF2rCNZsYK_UPiWZJ3GH2I4/pub?gid=1891916443&single=true&output=csv";
+      axios
+        .get(csvUrl)
+        .then((response) => {
+          const data = parseCSV(response.data);
+          if (data.length > 0) {
+            setA2Value(Number(data[6][8]));
+            if (data.length > 1) {
+              setB2Value(Number(data[7][8]));
+            }
+            if (data.length > 1) {
+              setC2Value(Number(data[8][8]));
+            }
+            if (data.length > 1) {
+              setD2Value(Number(data[9][8]));
+            }
+          }
+        })
+        .catch((error) => {
+          console.error("Error fetching CSV data:", error);
+        });
+    };
+
+    fetchCSVData();
+  }, []);
+
+  function parseCSV(csvText) {
+    const rows = csvText
+      .split(/\r?\n/)
+      .map((row) => row.split(",").map((cell) => cell.trim()));
+    return rows.slice(1);
+  }
   return (
-    <div>
+    <div> 
       <p className="small-paragraph">
         Cezaevinde tutulan mahpuslar için sağlık hakkı, Birleşmiş Milletler'in
         çeşitli standartları ile tanımlanmaktadır. Devletler hasta ve engelli
@@ -49,8 +90,8 @@ const GenelAciklamaHassasDevami = () => {
         Kurumu, Gülen Hareketi ile ilişkilendirilen mahkumlar için bu raporu
         vermekte çekimser davranmış, ciddi hastalıkları olan kişilere rapor
         vermemiş ve "cezaevinde kalabilir" şeklinde görüş bildirmiştir. 2016’dan
-        bugüne, Gülen Hareketi ile ilişkilendirilen en az 163 hasta, 46 engelli
-        birey, ve 28 yaşlı tutuklanmış ve hem hakları ihlal edilmiş hem de
+        bugüne, Gülen Hareketi ile ilişkilendirilen en az {b2Value} hasta, {c2Value} engelli
+        birey, ve {d2Value} yaşlı tutuklanmış ve hem hakları ihlal edilmiş hem de
         cezaevlerinde yeterli sağlık ve bakım hizmetlerine erişimleri
         engellenmiştir. Avrupa Konseyi’nin 2020 cezaevi istatistiklerine göre,
         Avrupa’da cezaevlerinde nüfusa oranla en fazla tutuklu ve hükümlü
