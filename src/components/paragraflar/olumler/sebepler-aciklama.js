@@ -9,18 +9,17 @@ const SebeplerAciklama = () => {
         Gülen Hareketi mensuplarının maruz kaldığı hak ihlallerinin farklı
         kategorilere ayrılıyor olması farklı sebeplerle doğrudan ve dolaylı
         olarak vefat etme sebeplerinin 15 Temmuz hadisesi olduğunu
-        düşündürmektedir. Gülen Hareketi mensuplarının yaşamına yönelik
+        göstermektedir. Gülen Hareketi mensuplarının yaşamına yönelik
         değersizleştirme ve maruz kaldıkları sosyal soykırım, onların normal
         hayatlarını sürdürmelerinin önüne geçmiş ve hem doğrudan hem de dolaylı
-        yollardan ölümlerine sebep olmuştur
+        yollardan ölümlerine sebep olmuştur.
       </p>
       <p className="small-paragraph">
-        15 Temmuz günü gerek Erdoğan’ın çağrısı ile sokaklara inan gerekse
-        “darbeci “oldukları iddia edilen yüzlerce kişi yaşanan şiddet olayları
+        15 Temmuz günü gerek Erdoğan'ın çağrısı ile sokaklara inan gerekse
+        "darbeci "oldukları iddia edilen yüzlerce kişi yaşanan şiddet olayları
         nedeniyle hayatlarını kaybetmişlerdir. Neden o gün orada olduğunu
         bilmeyen, silahını bırakıp halka teslim olmak isteyen askeri öğrenciler
-        provokatif grupların orantısız gücüyle katledilmiş, her iki taraf için
-        de tarihe kanla yazılan bir gün olmuştur.
+        provokatif grupların orantısız gücüyle katledilmiştir.
       </p>
       <p className="small-paragraph">
         Gülen Hareketi mensubu olmakla suçlandığı için cezaevlerinde kalan
@@ -35,7 +34,11 @@ const SebeplerAciklama = () => {
         Gülen Hareketi mensubu oldukları iddiasıyla gözaltına alınan kişiler
         kollukta gördükleri işkence ya da uzun süre ve ağır şartlarda kaldıkları
         nezarethanelerdeki kötü muameleler nedeniyle hayatlarını
-        kaybetmişlerdir. 
+        kaybetmişlerdir. Bu durum, uluslararası insan hakları standartlarına
+        açık bir şekilde aykırıdır ve sorumluların hesap vermesi gerekmektedir.
+        İşkence ve kötü muamele yasağı Türkiye'de kolluk güçleri tarafından
+        ihlal edilmiş bunun sonucunda ise Gülen Hareketi mensuplarının yaşam
+        hakları açıkça ihlal edilmiştir.
       </p>
     </>
   );

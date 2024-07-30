@@ -14,11 +14,11 @@ const FlourishEmbedKitlesel = () => {
         <iframe
           title="Looker Studio Report: Kitlesel Gözaltı Serüveni"
           src={iframeSrc}
-          className="flourish-iframe"
           allowFullScreen
           sandbox="allow-storage-access-by-user-activation allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox"
           scrolling="no"
           loading="lazy"
+          className="flourish-iframe"
         ></iframe>
       )}
     </div>

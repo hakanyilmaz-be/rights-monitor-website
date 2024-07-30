@@ -1,17 +1,31 @@
-
 .flourish-container {
   position: relative;
-  width: 100%;
-  height: 0;
-  padding-bottom: 56.25%; /* 16:9 aspect ratio */
+  width: 950px;
+  height: 700px;
   overflow: hidden;
 }
 
 .flourish-iframe {
   position: absolute;
-  top: -83px; /* Yukarıdan kesme miktarı */
-  left: -52px; /* Soldan kesme miktarı */
-  width: calc(100% + 40px); /* Kesme miktarını ekleyin */
-  height: calc(100% + 40px); /* Kesme miktarını ekleyin */
+  top: -50px; /* Adjust as needed to center the content vertically */
+  left: -40px; /* Adjust as needed to center the content horizontally */
+  width: 1150px; /* Adjust as needed to zoom the content */
+  height: 800px; /* Adjust as needed to zoom the content */
   border: none;
+  clip-path: inset(90px 68px 70px 68px); /* Top, right, bottom, left */
+}
+
+@media (max-width: 600px) {
+  .flourish-container {
+    width: 100%;
+    height: 300px; /* Adjust as needed for mobile view */
+  }
+
+  .flourish-iframe {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    clip-path: none; /* Disable clipping for mobile view */
+  }
 }
