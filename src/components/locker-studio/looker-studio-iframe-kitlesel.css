@@ -18,3 +18,12 @@
     }
   }
   
+  @media (min-width: 1450px) {
+    .iframe-container {
+      height: 430px;
+    }
+  
+    .looker-iframe {
+      height: 650px;
+    }
+  }

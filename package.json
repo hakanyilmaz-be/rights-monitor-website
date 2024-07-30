@@ -24,6 +24,7 @@
     "react-vertical-timeline-component": "^3.6.0",
     "react-youtube": "^10.1.0",
     "styled-components": "^5.3.11",
+    "swiper": "^11.1.8",
     "web-vitals": "^2.1.4"
   },
   "scripts": {

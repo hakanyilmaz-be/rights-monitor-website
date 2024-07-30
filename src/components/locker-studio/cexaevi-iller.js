@@ -7,7 +7,7 @@ const CezaeviIller = () => {
   useEffect(() => {
     setIframeSrc("https://lookerstudio.google.com/embed/reporting/03858703-f85d-42c1-81b8-9df24bee7df9/page/sIZxB");
   }, []);
-
+ 
   return (
     <div className='locker-map' style={{ overflow: 'hidden', position: 'relative' }}> 
       {iframeSrc && (

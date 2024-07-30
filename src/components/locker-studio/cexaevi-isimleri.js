@@ -8,7 +8,7 @@ const CezaeviIsimleri = () => {
   useEffect(() => {
     setIframeSrc("https://lookerstudio.google.com/embed/reporting/f1064d01-c8bd-41a6-a571-f3f27459adbf/page/sIZxB");
   }, []);
- 
+  
   return (
     <div className='locker-map2' style={{ overflow: 'hidden', position: 'relative' }}> 
       {iframeSrc && (

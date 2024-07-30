@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import './looker-studio-iframe-kitlesel.css'; // CSS dosyasını dahil edin
+import './looker-studio-iframe-kitlesel.css'; 
 
 const LookerStudioIframeKitlesel = () => {
   const [iframeSrc, setIframeSrc] = useState('');

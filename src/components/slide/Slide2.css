@@ -1,0 +1,34 @@
+.slider-container2 {
+    overflow: hidden;
+    width: 100%;
+    height: 300px;
+    position: relative;
+  }
+  
+  .slider2 {
+    display: flex;
+    gap: 10px;
+    width: calc((350px + 10px) * 20); /* Slide genişliği + boşluk * 2 * toplam slide sayısı */
+    animation: slide2 90s linear infinite; /* Daha yavaş animasyon için süreyi artır */
+    transform: translateX(-50%); /* Başlangıçta %50 sola kaymış */
+  }
+  
+  .slide2 {
+    min-width: 350px;
+    height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 24px;
+  }
+  
+  @keyframes slide2 {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+  

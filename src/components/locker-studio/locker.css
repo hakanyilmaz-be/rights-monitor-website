@@ -43,6 +43,14 @@
       }
   }
  
+  @media (min-width: 1590px) {
+    .locker-map{
+        height: 580px;
+      }
+  }
+
+
+
 
 
   .locker-map2{
@@ -54,7 +62,11 @@
         height: 140px;
       }
   }
-
+  @media (min-width: 1590px) {
+    .locker-map2{
+        height: 580px;
+      }
+  }
 
 
   .kapatilan-boyut{
@@ -66,12 +78,16 @@
         height: 232px;
       }
   }
-  @media (min-width: 1425px) {
+  @media (min-width: 1475px) {
     .kapatilan-boyut{
-        height: 710!important;
+        height: 690px;
       }
   }
-
+  @media (min-width: 1600px) {
+    .kapatilan-boyut{
+        height: 720px;
+      }
+  }
 
 
 
