@@ -11,15 +11,18 @@ const FlourishEmbedKitlesel = () => {
   return (
     <div className="flourish-container">
       {iframeSrc && (
-        <iframe
-          title="Looker Studio Report: Kitlesel Gözaltı Serüveni"
-          src={iframeSrc}
-          allowFullScreen
-          sandbox="allow-storage-access-by-user-activation allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox"
-          scrolling="no"
-          loading="lazy"
-          className="flourish-iframe"
-        ></iframe>
+        <>
+          <iframe
+            title="Looker Studio Report: Kitlesel Gözaltı Serüveni"
+            src={iframeSrc}
+            allowFullScreen
+            sandbox="allow-storage-access-by-user-activation allow-scripts allow-same-origin"
+            scrolling="no"
+            loading="lazy"
+            className="flourish-iframe"
+          ></iframe>
+          <div className="overlay"></div>
+        </>
       )}
     </div>
   );
