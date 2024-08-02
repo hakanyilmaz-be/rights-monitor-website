@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { Col, Container, Row } from "react-bootstrap";
-import CountUp from "react-countup";
+import CountUp from "react-countup"; 
 import "./olumler-text.css";
 
 const OlumlerGiris = () => {

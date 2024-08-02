@@ -3,6 +3,8 @@ import axios from "axios";
 import { Col, Container, Row } from "react-bootstrap";
 import AnimatedGradientText from "../../animated-gradient-text/AnimatedGradientText";
 import "./ihraclar-text.css"
+import CountUp from "react-countup"; 
+
 
 const IhraclarGiris = () => {
   const [a5Value, setA5Value] = useState("");
@@ -46,7 +48,9 @@ const IhraclarGiris = () => {
       <Row className="justify-content-center align-items-center">
         <h1 className="fw-bold mt-5 baslik" >
         <AnimatedGradientText>
-       <span style={{color:"red"}}> {a6Value}</span> Meslek grubundan en az {a5Value} kişi ihraç edilmiştir.
+        <CountUp style={{ color: 'red' }} start={0} end={a6Value} duration={5} />
+        {" "}Meslek grubundan en az <CountUp start={0} end={a5Value} duration={5} />
+        {" "} kişi ihraç edilmiştir.
         </AnimatedGradientText>
           
         </h1>

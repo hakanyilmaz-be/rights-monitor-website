@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { Col, Container, Row } from "react-bootstrap";
 import { motion } from "framer-motion";
+import AnimatedGradientText from "../../animated-gradient-text/AnimatedGradientText";
+import CountUp from "react-countup"; 
 
 
 const CezaeviGiris = () => {
@@ -72,17 +74,15 @@ const CezaeviGiris = () => {
             hak ihlallerinin önüne geçemediği gibi ihlallerin ve mağduriyetlerin
             yaşanmasına sebebiyet vermektedir.
           </p>
-
-          <motion.h5
-            className="fw-bold text-white motion-font"
-           
-            animate={{ opacity: [0.1, 1, 0.1] }}
-            transition={{ duration: 9, repeat: Infinity }}
-          >
-            15 Temmuz’dan bugüne cezaevlerinde siyasi mahpuslara yönelik 30
-            farklı kategoride {a5Value} cezaevinde en az {a6Value} hak
-            ihlalinin yaşandığı bilinmektedir.
-          </motion.h5>
+        <AnimatedGradientText > <p style={{fontSize: "20px"}}>15 Temmuz’dan bugüne cezaevlerinde siyasi mahpuslara yönelik 30
+        farklı kategoride{" "}
+        <CountUp style={{ color: 'red' }} start={0} end={a5Value} duration={5} />
+        {" "}cezaevinde en az {" "}<CountUp start={0} end={a6Value} duration={5} />
+        {" "} hak
+        ihlalinin yaşandığı bilinmektedir.
+        </p></AnimatedGradientText>
+       
+      
         </Col>
       </Row>
     </Container>

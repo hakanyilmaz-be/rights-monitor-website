@@ -9,7 +9,7 @@ const FlourishEmbedKitlesel = () => {
   }, []);
 
   return (
-    <div className="flourish-container">
+    <div className="flourish-container2">
       {iframeSrc && (
         <>
           <iframe

@@ -50,7 +50,7 @@ const KitleselPage = () => {
         <Container style={contentContainerStyle}>
           <HeaderKitlesel />
         </Container>
-        <Container fluid style={contentContainerStyle}>
+        <Container fluid style={{...contentContainerStyle, marginLeft: "3%"}}>
           <FlourishEmbedKitlesel />
         </Container>
         <Container style={{...contentContainerStyle, paddingTop: "0rem" }}>

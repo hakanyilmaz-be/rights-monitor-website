@@ -16,7 +16,7 @@ const gradient = keyframes`
 
 // Animasyonlu gradient metin bileşeni oluşturun
 const GradientText = styled.h1`
-  background: linear-gradient(270deg, #ee9ca7, #ffdde1, #2193b0, #6dd5ed);
+  background: linear-gradient(270deg, #ee9ca7, #ff1934, #2193b0, #6dd5ed, #f4d405, #89ff62, #ff2a2a);
   background-size: 800% 800%;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -24,7 +24,7 @@ const GradientText = styled.h1`
   font-size: 2rem;
  
 `;
-
+ 
 const AnimatedGradientText = ({ children }) => {
   return <GradientText>{children}</GradientText>;
 };

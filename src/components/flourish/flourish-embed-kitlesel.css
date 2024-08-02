@@ -1,8 +1,30 @@
-.flourish-container {
-  position: relative;
-  width: 950px;
-  height: 700px;
+
+
+.flourish-container2 {
+  width: 100%;
+  height: 635px;
   overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media (max-width: 1338px) {
+  .flourish-container2 {
+  position: relative;
+
+    width: 100%;
+    height: 470px;
+    padding: 0;
+  }
+
+  .flourish-iframe {
+    position: absolute;
+    top: -50px!important;
+    left: -10px!important;
+ 
+    
+  }
 }
 
 .flourish-iframe {
@@ -46,25 +68,21 @@
 }
 
 #onetrust-consent-sdk #onetrust-banner-sdk {
-  display: none!important;
+  display: none !important;
 }
 
-#onetrust-consent-sdk{
-  display: none!important;
+#onetrust-consent-sdk {
+  display: none !important;
 }
-
 
 #onetrust-banner-sdk .ot-sdk-container {
-  display: none!important;
-
+  display: none !important;
 }
 
 .ot-sdk-container {
-  display: none!important;
-
+  display: none !important;
 }
 
-.ot-sdk-row{
-  display: none!important;
-
+.ot-sdk-row {
+  display: none !important;
 }

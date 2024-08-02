@@ -1,6 +1,8 @@
 import React from "react";
 import { Col, Container, Row } from "react-bootstrap";
 import "./sosyal-text.css"
+import CountUp from "react-countup"; 
+
 
 const SosyalGiris = () => {
   return (
@@ -27,7 +29,8 @@ const SosyalGiris = () => {
           <div className="info-box-container">
             <div className="info-box box1">
               <p className="title">Olay Sayısı</p>
-              <p className="count">58</p>
+              <CountUp className="count" start={0} end={58} duration={5} />
+          
             </div>
             <div className="info-box box2">
               <p className="description">
@@ -38,7 +41,7 @@ const SosyalGiris = () => {
           <div className="info-box-container mt-3">
             <div className="info-box box1">
               <p className="title">Kurum Sayısı</p>
-              <p className="count">30</p>
+              <CountUp className="count" start={0} end={30} duration={5} />
             </div>
             <div className="info-box box2">
               <p className="description">
