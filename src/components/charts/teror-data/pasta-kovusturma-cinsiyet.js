@@ -56,12 +56,13 @@ function PastaKovusturmaCinsiyet() {
   const options = {
     title: "Cinsiyetlere Göre Dağılımı",
     is3D: true,
-    legend: { position: "bottom", alignment: "start", maxLines: 3 },
+    legend: { position: "bottom", alignment: "center", maxLines: 3 },
     chartArea: { width: "100%", height: "80%" },
   };
 
   return (
     <div style={{ textAlign: 'center' }}>
+    
       <Chart
         chartType="PieChart"
         data={data}

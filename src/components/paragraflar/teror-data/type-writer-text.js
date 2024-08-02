@@ -138,7 +138,7 @@ const TypewriterText = () => {
           {highlightedText(formatNumber(a2Value))}
           {` kişi hakkında kamu davası açılmış, `}
           {highlightedText(formatNumber(a3Value))}
-          {` kişi hakkında ise mahkumiyet kararı alınmıştır. Mahkumiyet kararına tabi olanlardan `}
+          {` kişi hakkında ise mahkumiyet kararı alınmıştır. Mahkumiyet kararı verilenlerden `}
           {highlightedText(formatNumber(a4Value))}
           {` kişi 18 yaşının altındadır.`}
           </h4></span>

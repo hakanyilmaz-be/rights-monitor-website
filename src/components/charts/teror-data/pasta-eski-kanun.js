@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { Chart } from "react-google-charts";
+import "./chart-title.css"
 
 function PastaEskiKanun() {
   const [a2Value, setA2Value] = useState("");
@@ -55,14 +56,14 @@ function PastaEskiKanun() {
   ];
 
   const options = {
-    title: "314 Konusu Dağılımı",
     is3D: true,
-    legend: { position: "bottom", alignment: "start", maxLines: 3 },
+    legend: { position: "bottom", alignment: "center", maxLines: 3 },
     chartArea: { width: "100%", height: "80%" },
   };
 
   return (
-    <div style={{ textAlign: 'center' }}>
+    <div>
+    <p className="chart-title2"><strong>TCK md. 314 Kovuşturma Kararları</strong></p>
       <Chart
         chartType="PieChart"
         data={data}

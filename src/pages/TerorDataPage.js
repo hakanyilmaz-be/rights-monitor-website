@@ -28,10 +28,9 @@ import CocukKadinKovusturma from "../components/charts/teror-data/cocuk-kadın-k
 import CocukErkekKovusturma from "../components/charts/teror-data/cocuk-erkek-kovusturma";
 import PastaGenelCocukKovusturma from "../components/charts/teror-data/pasta-genel-cocuk-kovusturma";
 import CocukAciklama from "../components/paragraflar/teror-data/cocuk-aciklama";
-import TerorDataMetadoloji from "../components/paragraflar/teror-data/teror-data-metadoloji";
 
 
-const TerorDataPage = () => {
+const TerorDataPage = () => { 
   const divStyle = {
     position: 'relative',
     backgroundImage: `url(${backgroundImg})`,
@@ -105,7 +104,7 @@ const TerorDataPage = () => {
           <Col lg={4}>
             <KanunKovusturmaSayisi />
           </Col>
-          <h4 className="mt-5">Açıklama Gelecek</h4>
+          <p className="mt-5 small-paragraph">Bu tablo, TCK 309-316 maddeleri, Terörle Mücadele Kanunu (TMK), ve Terörizmin Finansmanı ile Mücadele Kanunu (TFK) kapsamında terör soruşturmalarına ilişkin kararları özetlemektedir.  Bu veriler, TCK 309-316 maddeleri kapsamında yapılan soruşturmaların sayısının çok yüksek olduğunu ve bu suçlarla ilgili davaların sıkça açıldığını ancak önemli bir kısmında kovuşturma için yeterli gerekçe olmadığını göstermektedir. TFK ve TMK kapsamındaki davalar ise daha az sayıda olup, genellikle kovuşturulmaya devam edilmektedir.</p>
         </Row>
         <Spacer />
         <Row>
@@ -136,12 +135,11 @@ const TerorDataPage = () => {
   <Col lg={5}>
   <KovusturmaGenel/>
   </Col>
-  <Col lg={1}></Col>
-
-  <Col lg={6}>
-  <PastaKovusturmaCinsiyet/>
+  <Col lg={7}>
+  <p className="mt-4 small-paragraph">Bu tablolar, Türkiye'deki Terörle Mücadele Kanunu (TMK) ve Türk Ceza Kanunu (TCK) altında yargılanan davaların sonuçlarını göstermektedir. TCK kapsamında çok daha fazla dava görülmüş ve bu davaların çoğunda beraat kararı verilmişken, TMK altında yargılanan davaların sayısı daha az olup, mahkumiyet oranı nispeten daha yüksektir. Bu farklılık, TMK'nın daha sert uygulandığını ve terörle ilgili suçlamalarda daha az beraat kararı çıkma ihtimalini göstermektedir. Bu durum, suistimale açık olan terör yasalarının muhalifleri bastırmada güçlü bir araç olarak kullanıldığını gözler önüne sermektedir.</p>
   </Col>
-  <Spacer/>
+ 
+  <Spacer />
   <Col lg={6}>
   <KovusturmaKadinlar/>
    
@@ -149,12 +147,22 @@ const TerorDataPage = () => {
   <Col lg={6}>
    <KovusturmaErkekler/>
    </Col>
+  <Spacer />
+
+  <Col lg={6}>
+  <PastaKovusturmaCinsiyet/>
+  </Col>
+ 
+  <Col lg={6}>
+ <p className="mt-4 small-paragraph">Bu veriler, yasaların suistimal edilebileceği iddialarını göz önüne alarak incelendiğinde önemli içgörüler sunmaktadır. Erkeklerin yüksek mahkumiyet oranı, erkeklerin terör suçlarıyla daha sık ilişkilendirildiğini veya bu tür suçlarla yargılandığında daha ağır cezalara çarptırıldığını gösterebilir. Kadınların ise daha yüksek beraat oranı, belki de kadınların ilk aşamada haksız yere terör suçlarıyla ilişkilendirilildiğini veya yargılama sürecinde farklı muamele gördüklerini gösteriyor olabilir. Türkiye'de terör yasalarının bazen siyasi muhalifleri susturmak için kullanıldığına dair endişeler göz önünde bulundurulduğunda, bu veriler, yasaların cinsiyete göre nasıl farklı uygulandığını ve potansiyel adaletsizlikleri ortaya koymaktadır.</p>
+  </Col>
+  <Spacer/>
  
 </Row>
 <Spacer />
 
 <Row>
-<h3>314 - Kovuşturma</h3>
+<h3>TCK Madde 314 - Kovuşturma</h3>
   <Col lg={6}>
  <EskiKanun/>
   </Col>
@@ -180,7 +188,7 @@ const TerorDataPage = () => {
   </Col>
  <CocukAciklama/>
 </Row>
-<TerorDataMetadoloji/>
+
       </Container>
     </>
   );

@@ -58,7 +58,7 @@ function Cinsiyet() {
 
   return (
     <div className="cinsiyet-chart mt-5" style={{ textAlign: 'center' }}>
-      <div className="chart-title">Cinsiyetlere Göre Dağılım Grafiği</div>
+      <div className="chart-title">Cinsiyetlere Göre Dağılım Grafiği</div> 
       <Chart
         chartType="PieChart"
         data={data}

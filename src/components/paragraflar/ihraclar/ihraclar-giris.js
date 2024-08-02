@@ -46,7 +46,7 @@ const IhraclarGiris = () => {
       <Row className="justify-content-center align-items-center">
         <h1 className="fw-bold mt-5 baslik" >
         <AnimatedGradientText>
-        {a6Value} Meslek grubundan en az {a5Value} kişi ihraç edilmiştir.
+       <span style={{color:"red"}}> {a6Value}</span> Meslek grubundan en az {a5Value} kişi ihraç edilmiştir.
         </AnimatedGradientText>
           
         </h1>

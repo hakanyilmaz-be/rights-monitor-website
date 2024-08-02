@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { Chart } from "react-google-charts";
+import "./chart-title.css"
+
 
 function PastaGenekKovusturma() {
   const [a2Value, setA2Value] = useState("");
@@ -57,14 +59,15 @@ function PastaGenekKovusturma() {
   ];
 
   const options = {
-    title: "Kovusturma Açılan Kanunların Dağılımı",
+ 
     is3D: true,
-    legend: { position: "bottom", alignment: "start", maxLines: 3 },
+    legend: { position: "bottom", alignment: "center", maxLines: 3 },
     chartArea: { width: "100%", height: "80%" },
   };
 
   return (
     <div style={{ textAlign: 'center' }}>
+    <p className="chart-title2"><strong>Kovusturma Açılan Kanunların Dağılımı</strong></p>
       <Chart
         chartType="PieChart"
         data={data}
@@ -72,7 +75,7 @@ function PastaGenekKovusturma() {
         width="100%"
         height="250px"
       />
-     <p style={{ textAlign: 'left' }}>
+     <p style={{ textAlign: 'center' }}>
   <b>Toplamda <span style={{ color: 'red' }}>{formatNumber(d2Value)}</span> kişi hakkında kamu davası açılmıştır.</b>
 </p>
 

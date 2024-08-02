@@ -48,9 +48,9 @@ function CinsiyetKovusturma() {
   ];
 
   const options = {
-    title: "CinsiyetKovusturmalere Göre Dağılım Grafiği",
+    title: "Cinsiyet Kovusturmalere Göre Dağılım Grafiği",
     is3D: true,
-    legend: { position: "bottom", alignment: "start", maxLines: 3 },
+    legend: { position: "bottom", alignment: "center", maxLines: 3 },
     chartArea: { width: "100%", height: "80%" },
   };
 
