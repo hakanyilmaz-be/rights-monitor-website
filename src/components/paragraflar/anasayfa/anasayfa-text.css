@@ -1,0 +1,128 @@
+.gradient-text {
+    background: linear-gradient(to right, #b92b27, #1565c0);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-fill-color: transparent;
+  }
+  
+
+  .mask-overlay {
+    position: absolute;
+    top: -4rem;
+    left: 0;
+    width: 100%;
+    height: 6rem; /* Maskenin yüksekliğini 3rem olarak ayarladık */
+    background-image: url('/src/assets/img/mask.png'); /* Maskeyi uyguluyoruz */
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: top;
+    z-index: 2; /* Üstte görünmesini sağlamak için */
+  }
+  
+
+  .i-title {
+    height: 50px;
+    overflow: hidden;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .i-title-wrapper {
+    height: 150px; /* 3 items * 50px each */
+    animation: move 8s linear infinite;
+  }
+  
+  @keyframes move {
+    0% {
+      transform: translateY(0);
+    }
+    33.33% {
+      transform: translateY(0);
+    }
+    41.66% {
+      transform: translateY(-50px);
+    }
+    74.99% {
+      transform: translateY(-50px);
+    }
+    83.33% {
+      transform: translateY(-100px);
+    }
+    100% {
+      transform: translateY(-100px);
+    }
+  }
+  
+  .i-title-item11 {
+    height: 50px;
+    font-size: 30px;
+    font-weight: bold;
+    color: #120400;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .first-data {
+    margin-bottom: 4rem;
+  }
+  
+  .second-data .i-title-item {
+    color: #ffffff;
+  
+  }
+  
+  .header-first11{
+    color: #210700;
+  
+  }
+  
+  
+
+  
+  @media (max-width: 992px) {
+ 
+    .ilk-giris{
+      margin-top: -4rem!important;
+    }
+    .first-data{
+      margin-bottom: 0rem!important;
+    }
+    
+    .second-data{
+      margin-top: 1rem!important;
+    }
+  }
+  
+  .first-data{
+    margin-bottom: 4rem;
+  }
+  
+  .second-data{
+    margin-top: 4rem;
+  }
+  
+  
+  @media (max-width: 768px) {
+    .img-fluid {
+      width: 100%;
+    }
+    .alt-baslik{
+      margin-top: 1rem;
+      font-size: 1.3rem;
+    }
+    .iade-gorsel{
+      margin-top: 1rem;
+      margin-bottom: 1.5rem;
+    }
+    .interpol-resmi{
+      margin-top: -1.5rem!important;
+      margin-bottom: 1rem;
+    }
+  }
+  
+  .iade-gorsel{
+    margin-top: 3rem;
+  }

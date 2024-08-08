@@ -1,0 +1,57 @@
+@keyframes typing {
+    from {
+        width: 0;
+        border-right-color: black;
+    }
+    to {
+        width: 100%;
+        border-right-color: transparent;
+    }
+}
+
+#text-animation {
+    font-size: 24px;
+    font-weight: bold;
+    font-family: Arial, sans-serif;
+    text-align: center;
+}
+
+.responsive-col {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.responsive-col h3 {
+    margin-bottom: 10px;
+}
+
+.type-animation-wrapper {
+    margin-top: 10px;
+    height: 4em; /* Yüksekliği sabitle */
+    overflow: hidden; /* Taşan içeriği gizle */
+    display: flex;
+    align-items: center;
+}
+
+@media (max-width: 991px) {
+    .responsive-col {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    
+    .responsive-col h3 {
+        margin-bottom: 10px;
+    }
+    
+    .responsive-col .type-animation-wrapper {
+        margin-top: 10px;
+        height: 4em; /* Yüksekliği sabitle */
+        overflow: hidden; /* Taşan içeriği gizle */
+        display: flex;
+        align-items: center;
+    }
+}

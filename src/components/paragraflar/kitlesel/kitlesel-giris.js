@@ -2,6 +2,7 @@ import React from "react";
 
 const KitleselGiris = () => {
   return (
+    <>
     <div className="paragraph-kitlesel-giris">
       Gülen Hareketi mensuplarına yönelik düzenlenen kitlesel gözaltı
       operasyonları hukuk sınırlarını çoktan aşmıştır. 2017'de <a href="https://www.aa.com.tr/tr/15-temmuz-darbe-girisimi/81-ildeki-fetonun-mahrem-yapilanmasi-operasyonunda-1120-gozalti/805570"  target="_blank" > tek bir
@@ -48,6 +49,8 @@ const KitleselGiris = () => {
       mensuplarına yönelik tutuklama ve gözaltı uygulamalarını <b>insanlığa karşı
       suç</b> olarak nitelendirmiş ve kınamıştır.
     </div>
+    <p style={{color: "red"}}><b>Bu sayfada yer alan veriler, açık kaynaklar üzerinde kapsamlı bir inceleme yapılarak derlenmiş olup, toplu gözaltı operasyonlarının tamamını yansıtmamaktadır. Örneğin, Süleyman Soylu Temmuz 2022’de yaptığı bir <a href="https://www.sozcu.com.tr/fetoden-gozaltina-332-bin-kisi-alindi-19-bini-tutuklu-wp7233107" target="_blank" style={{color:"red"}}><u> konuşmada</u></a>, 15 Temmuz 2016’dan 2 Haziran 2022’ye kadar geçen sürede 332 bin 884 kişinin gözaltına alındığını ifade etmiştir. Ancak, bahsi geçen süre için açık kaynaklarda yer alan gözaltına alınmış kişi sayısı 132 bin 760’tır.</b></p>
+    </>
   );
 };
 

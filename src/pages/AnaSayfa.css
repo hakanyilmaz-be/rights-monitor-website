@@ -1,0 +1,23 @@
+.image-header-container {
+    position: relative;
+    width: 100%;
+  }
+  
+  .centered-image {
+    width: 100%;
+  }
+  
+  .centered-header {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-65%, -50%);
+    z-index: 1; /* Ensure it's on top of the image */
+  }
+  .centered-header2 {
+    position: absolute;
+    top: 40%;
+    left: 49%;
+    transform: translate(-65%, -50%);
+    z-index: 1; /* Ensure it's on top of the image */
+  }
