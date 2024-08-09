@@ -70,8 +70,8 @@ const HeaderKitlesel = () => {
                 2700, // Waits 3s
                 `Günlük Ortalama Gözaltı Sayısı: ${c2Value}`,
                 2700, // Waits 3s
-                `Günlük Ortalama Operasyon Sayısı: ${d2Value}`,
-                2700, // Waits 3s
+               // `Günlük Ortalama Operasyon Sayısı: ${d2Value}`,
+               // 2700, // Waits 3s
                 () => {
                   console.log("Sequence completed");
                 },

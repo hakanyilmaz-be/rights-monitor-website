@@ -13,10 +13,12 @@ import SosyalEkonomikPage from "../pages/SosyalEkonomikPage";
 import TerorDataPage from "../pages/TerorDataPage";
 import YargiPage from "../pages/YargiPage";
 import AnaSayfa from "../pages/AnaSayfa";
+import ScrollToTop from "./ScrollToTop";
 
 const CustomRoutes = () => {
   return (
-    <BrowserRouter>       
+    <BrowserRouter> 
+    <ScrollToTop />      
       <Routes>
         <Route path="/">
           <Route index element={<AdminTemplate><AnaSayfa/> </AdminTemplate>} /> 

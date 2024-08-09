@@ -38,3 +38,27 @@
     }
   }
   
+
+  .sidebar-hidden {
+    display: none;
+  }
+  
+  .sidebar-visible {
+    animation: slideIn 1s forwards;
+  }
+  
+  @keyframes slideIn {
+    from {
+      transform: translateX(-100%);
+    }
+    to {
+      transform: translateX(0);
+    }
+  }
+  
+  .content-column {
+    transition: flex 1s ease;
+    min-width: 0; /* Flexbox genişleme sorununu önlemek için */
+    overflow: hidden; /* Taşmaları gizlemek için */
+  }
+  

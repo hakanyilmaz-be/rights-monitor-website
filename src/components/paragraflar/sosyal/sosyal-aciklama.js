@@ -8,7 +8,7 @@ const SosyalAciklama = () => {
     <>
       <h2 style={{ fontWeight: "bold" }}>Sosyal ve Ekonomik Hak İhlalleri</h2>
       <Row>
-        <Col>
+        <Col sm={12} md={6} lg={6}>
           <p className="small-paragraph">
             OHAL dönemi ve sonrasında KHK ile görevlerinden ihraç edilen
             kişiler, çeşitli sosyal ve ekonomik hak ihlalleriyle karşı karşıya
@@ -39,7 +39,7 @@ const SosyalAciklama = () => {
           </ul>
         </Col>
         <Col>
-          <img alt="KHK Gorseli" src={khk} className="img-fluid mt-2" style={{borderRadius: "8px"}} />
+          <img alt="KHK Gorseli" src={khk} className="img-fluid mt-2 mb-2" style={{borderRadius: "8px"}} />
         </Col>
       </Row>
       <ul className="small-paragraph">

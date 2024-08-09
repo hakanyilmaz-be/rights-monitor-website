@@ -6,7 +6,7 @@ const AnasayfaIntro = () => {
         <h2 style={{ color:"white" }}>2014 yılından bu yana </h2>
 
     </div>
-  )
+  ) 
 }
 
 export default AnasayfaIntro

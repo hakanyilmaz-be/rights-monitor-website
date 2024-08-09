@@ -3,6 +3,8 @@ import axios from "axios";
 import { Container } from "react-bootstrap";
 import ProgressBar from "@ramonak/react-progress-bar";
 import "./anasayfa-text.css"
+import "./buton.css"
+import { useNavigate } from 'react-router-dom';
 
 
 
@@ -11,6 +13,11 @@ const AnasayfaHassas = () => {
   const [b2Value, setB2Value] = useState("");
   const [c2Value, setC2Value] = useState("");
   const [d2Value, setD2Value] = useState("");
+  const navigate = useNavigate();
+
+  const handleButtonClick = () => {
+    navigate('/hassasgruplar');
+  };
 
   useEffect(() => {
     const fetchCSVData = () => {
@@ -66,6 +73,7 @@ const AnasayfaHassas = () => {
 
   return (
     <Container>
+      <h2  className="text-center text-white mb-4" style={{ fontSize: "2.7rem" }}>Hassas Gruplar</h2>
       <p className="text-center mt-4" style={{color:"white"}}>
         Hamile ve yeni doğum yapmış kadınlar, ciddi derecede hasta olan bireyler, yaşlılar ve engelli kişilerin tutuklanması keyfi tutuklama olarak değerlendirilmektedir.
       </p>
@@ -108,6 +116,9 @@ const AnasayfaHassas = () => {
           animateOnRender
           customLabel=" "
         />
+      </div>
+      <div class="buttons">
+    <button class="btn-hover color-7" onClick={handleButtonClick}>Hamile, Hasta, Yaşlı ve Engelli Tutuklular</button>
       </div>
     </Container>
   );

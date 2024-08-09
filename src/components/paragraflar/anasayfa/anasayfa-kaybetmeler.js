@@ -1,13 +1,20 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import { Container } from "react-bootstrap";
+import { Col, Container, Row } from "react-bootstrap";
 import CountUp from "react-countup";
 import "./anasayfa-text.css"
+import "./buton.css"
+import { useNavigate } from 'react-router-dom';
 
 const AnasayfaKaybetmeler = () => {
   const [a5Value, setA5Value] = useState("");
   const [a6Value, setA6Value] = useState("");
   const [a7Value, setA7Value] = useState("");
+  const navigate = useNavigate();
+
+  const handleButtonClick = () => {
+    navigate('/kaybedilenler');
+  };
 
   const gradientTextStyle = {
     background: "linear-gradient(to left, #b92b27, #1565c0)",
@@ -50,6 +57,7 @@ const AnasayfaKaybetmeler = () => {
 
   return (
     <Container>
+    <Row>
       <h2
         className="text-center"
         style={{ ...gradientTextStyle, fontSize: "2.4rem" }}
@@ -57,7 +65,8 @@ const AnasayfaKaybetmeler = () => {
         Hâlâ Kayıp...
       </h2>
 
-      <div className="d-flex justify-content-center" style={{ gap: '5rem' }}>
+  
+      <Col lg={4}>
         <div className="text-center">
           <h2 style={{ fontSize: "2.2rem", paddingTop: "2.5rem" }}>
             <CountUp start={700} end={a5Value} duration={5} />{" "}
@@ -67,6 +76,8 @@ const AnasayfaKaybetmeler = () => {
             Sunay Elmas
           </h6>
         </div>
+        </Col>
+        <Col lg={4}>
         <div className="text-center">
           <h2 style={{ fontSize: "2.2rem", paddingTop: "2.5rem" }}>
             <CountUp start={700} end={a6Value} duration={5} />{" "}
@@ -76,6 +87,9 @@ const AnasayfaKaybetmeler = () => {
             Ayhan Oran
           </h6>
         </div>
+        </Col>
+        <Col lg={4}>
+
         <div className="text-center">
           <h2 style={{ fontSize: "2.2rem", paddingTop: "2.5rem" }}>
             <CountUp start={700} end={a7Value} duration={5} />{" "}
@@ -85,8 +99,10 @@ const AnasayfaKaybetmeler = () => {
             Yusuf Bilge Tunç
           </h6>
         </div>
-      </div>
+        </Col>
 
+      
+</Row>
       <p className="mt-5">
         2000'li yıllarda Türkiye'nin AB üyeliği sürecindeki reform çabaları ve
         işkenceye karşı önlemlerle zorla kaybetmelerin geçmişte kaldığına dair
@@ -97,6 +113,9 @@ const AnasayfaKaybetmeler = () => {
         Türkmen, mahkemede kaçırıldığını ve gayri resmi olarak işkence altında
         sorgulandığını ifade etmiştir.
       </p>
+      <div class="buttons">
+    <button class="btn-hover color-7" onClick={handleButtonClick}>Zorla Kaybetmeler</button>
+      </div>
     </Container>
   );
 };

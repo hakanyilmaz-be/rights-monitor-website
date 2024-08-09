@@ -2,9 +2,17 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import CountUp from "react-countup";
 import "./anasayfa-text.css"
+import "./buton.css"
+import { useNavigate } from 'react-router-dom';
 
 const AnasayfaOlumler = () => {
   const [a5Value, setA5Value] = useState("");
+  const navigate = useNavigate();
+
+  const handleButtonClick = () => {
+    navigate('/olumler');
+  };
+
 
   useEffect(() => {
     const fetchCSVData = () => {
@@ -45,6 +53,9 @@ const AnasayfaOlumler = () => {
         az {a5Value} kişi hayatını kaybetmiştir. <span style={{color:"red"}}><b> Hayatını kaybeden kişilerden en az
         65'i çocuktur.</b></span>
       </p>
+      <div class="buttons">
+    <button class="btn-hover color-7" onClick={handleButtonClick}>Vefatlara Dair İstatistikler</button>
+      </div>
     </>
   );
 };

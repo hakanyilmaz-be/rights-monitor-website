@@ -9,7 +9,7 @@ const AnasayfaHeader = () => {
   const [a2Value, setA2Value] = useState('');
   const [b2Value, setB2Value] = useState('');
   const [c2Value, setC2Value] = useState('');
-  const [d2Value, setD2Value] = useState('');
+  const [d2Value, setD2Value] = useState(''); 
 
   useEffect(() => {
       const fetchCSVData = () => {
@@ -19,15 +19,10 @@ const AnasayfaHeader = () => {
                   const data = parseCSV(response.data);
                   if (data.length > 0) {
                       setA2Value(data[0][10]);  
-                      if (data.length > 1) {
-                          setB2Value(data[0][9]);  
-                      }
-                      if (data.length > 1) {
-                        setC2Value(data[0][8]); 
-                    }
-                    if (data.length > 1) {
-                        setD2Value(data[0][11]);  
-                    }
+                      setB2Value(data[0][9]);  
+                      setC2Value(data[0][8]); 
+                      setD2Value(data[0][11]);  
+                      setIsVisible(true); // Veri çekme tamamlandığında yazıyı görünür yap
                   }
               })
               .catch(error => {
@@ -43,24 +38,14 @@ const AnasayfaHeader = () => {
       return rows.slice(1);  
   }
 
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setIsVisible(true);
-    }, 1500); 
-    return () => clearTimeout(timer);
-  }, []);
-
   const formatNumber = (number) => {
     return new Intl.NumberFormat('tr-TR').format(number);
   };
 
-
   return (
-    <Row className="mb-5" style={{ visibility: isVisible ? "visible" : "hidden" }}>
-   
-      <Col lg={12} className="responsive-col">
-     
-        <div className="type-animation-wrapper">
+    <Row className="mb-4" style={{ display: isVisible ? "block" : "none" }}>
+      <Col lg={12} className="responsive-col2">
+        <div className="type-animation-wrapper2">
           <TypeAnimation
             key={`${a2Value}-${b2Value}-${c2Value}-${d2Value}`}
             sequence={[
@@ -70,8 +55,6 @@ const AnasayfaHeader = () => {
               2700, // Waits 3s
               `Günlük Ortalama Gözaltı Sayısı: ${c2Value}`,
               2700, // Waits 3s 
-              `Günlük Ort. Operasyon Sayısı: ${d2Value}`,
-              2700, // Waits 3s
               () => {
                 console.log("Sequence completed");
               },

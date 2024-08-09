@@ -3,6 +3,8 @@ import { Container } from 'react-bootstrap';
 import { motion } from 'framer-motion';
 import axios from 'axios';
 import "./anasayfa-text.css"
+import "./buton.css"
+import { useNavigate } from 'react-router-dom';
 
 
 const AnasayfaKitlesel = () => {
@@ -10,6 +12,11 @@ const AnasayfaKitlesel = () => {
   const [a2Value, setA2Value] = useState("");
   const [a3Value, setA3Value] = useState("");
   const [a4Value, setA4Value] = useState("");
+  const navigate = useNavigate();
+
+  const handleButtonClick = () => {
+    navigate('/kitlesel');
+  };
 
   useEffect(() => {
     const fetchCSVData = () => {
@@ -102,6 +109,9 @@ const AnasayfaKitlesel = () => {
      
           </p></span>
       </motion.div>
+      <div class="buttons">
+    <button class="btn-hover color-7" onClick={handleButtonClick}>Kitlesel Operasyonlar Dataları</button>
+      </div>
     </Container>
   );
 };

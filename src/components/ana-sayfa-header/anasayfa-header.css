@@ -16,18 +16,18 @@
     text-align: center;
 }
 
-.responsive-col {
+.responsive-col2 {
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
 }
 
-.responsive-col h3 {
+.responsive-col2 h3 {
     margin-bottom: 10px;
 }
 
-.type-animation-wrapper {
+.type-animation-wrapper2 {
     margin-top: 10px;
     height: 4em; /* Yüksekliği sabitle */
     overflow: hidden; /* Taşan içeriği gizle */
@@ -36,18 +36,18 @@
 }
 
 @media (max-width: 991px) {
-    .responsive-col {
+    .responsive-col2 {
         display: flex;
         flex-direction: column;
         align-items: center;
         text-align: center;
     }
     
-    .responsive-col h3 {
+    .responsive-col2 h3 {
         margin-bottom: 10px;
     }
     
-    .responsive-col .type-animation-wrapper {
+    .responsive-col2 .type-animation-wrapper2 {
         margin-top: 10px;
         height: 4em; /* Yüksekliği sabitle */
         overflow: hidden; /* Taşan içeriği gizle */

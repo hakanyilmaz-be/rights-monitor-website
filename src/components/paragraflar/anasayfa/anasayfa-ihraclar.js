@@ -4,10 +4,20 @@ import { Container} from "react-bootstrap";
 import AnimatedGradientText from "../../animated-gradient-text/AnimatedGradientText";
 import CountUp from "react-countup";
 import "./anasayfa-text.css"
+import "./buton.css"
+import { useNavigate } from 'react-router-dom';
+
+
 
 const AnasayfaIhraclar = () => {
   const [a5Value, setA5Value] = useState("");
   const [a6Value, setA6Value] = useState("");
+  const navigate = useNavigate();
+
+  const handleButtonClick = () => {
+    navigate('/ihraclar');
+  };
+
 
   useEffect(() => {
     const fetchCSVData = () => {
@@ -67,6 +77,9 @@ const AnasayfaIhraclar = () => {
         (KHK) aracılığıyla, 229 Meslek grubundan en az 134258 kişi ihraç
         edilmiştir.
       </p>
+      <div class="buttons">
+    <button class="btn-hover color-7" onClick={handleButtonClick}>İhraçlara Dair İstatistikler</button>
+      </div>
     </Container>
   );
 };

@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import { Container } from "react-bootstrap";
 import "./anasayfa-text.css"
 
 

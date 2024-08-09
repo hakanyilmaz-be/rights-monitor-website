@@ -21,3 +21,35 @@
     transform: translate(-65%, -50%);
     z-index: 1; /* Ensure it's on top of the image */
   }
+
+
+  @media (max-width: 768px) {
+    .centered-header, .centered-header2 {
+      position: static;
+      transform: none;
+      text-align: center;
+      font-size: 8px;
+      margin: 0 0; /* Üst ve alt boşluk ekler */
+      padding: 0 0; /* Sol ve sağdan boşluk ekler */
+      z-index: 0; /* Z-index sırasını normal hale getir */
+      width: 100%; /* Genişliği tam yapar */
+      box-sizing: border-box; /* Padding'in genişliğe eklenmesini sağlar */
+    }
+  
+    .image-header-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .centered-image {
+      width: 100%;
+    }
+  }
+  
+  @media (max-width: 991.98px) {
+    .lg-only {
+      display: none;
+    }
+  }
+  
