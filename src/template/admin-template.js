@@ -7,11 +7,14 @@ const AdminTemplate = ({ children }) => {
   const [showSidebar, setShowSidebar] = useState(false);
 
   useEffect(() => {
-    const timer = setTimeout(() => {
-      setShowSidebar(true);
-    }, 8000); // 8 saniye sonra sidebar görünür
-
-    return () => clearTimeout(timer); // Temizleme işlemi
+    if (window.innerWidth >= 992) { // Desktop için
+      const timer = setTimeout(() => {
+        setShowSidebar(true);
+      }, 8000); // 8 saniye sonra sidebar görünür
+      return () => clearTimeout(timer); // Temizleme işlemi
+    } else { // Mobil için
+      setShowSidebar(true); // Mobilde hemen görünür
+    }
   }, []);
 
   return (
