@@ -49,8 +49,8 @@
     
     .responsive-col2 .type-animation-wrapper2 {
         margin-top: 10px;
-        height: 4em; /* Yüksekliği sabitle */
-        overflow: hidden; /* Taşan içeriği gizle */
+        height: 6em; /* Yüksekliği sabitle */
+       font-size: 14px;
         display: flex;
         align-items: center;
     }

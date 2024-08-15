@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Container } from 'react-bootstrap';
 import { motion } from 'framer-motion';
 import axios from 'axios';
-import "./anasayfa-text.css"
+import "./anasayfa-text.css" 
 import "./buton.css"
 import { useNavigate } from 'react-router-dom';
 import AnasayfaIntro from '../../text-header/anasayfa-intro';

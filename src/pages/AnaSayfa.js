@@ -205,7 +205,7 @@ const AnaSayfa = () => {
         <div className="mask-overlay"></div>
         <div style={{ backgroundColor: "#011029" }}>
           <Container style={{ padding: "7%" }}>
-            
+            <div style={{height:"30px"}}></div>
             <AnasayfaSosyal />
           </Container>
         </div>

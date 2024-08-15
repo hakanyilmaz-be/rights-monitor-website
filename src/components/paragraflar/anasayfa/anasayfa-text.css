@@ -142,13 +142,13 @@
     
     }
   }
-  @media (max-width: 767) {
+  @media (min-width: 461px) {
     .yukseklika{
         height: 300px;
     
     }
   }
-  @media (max-width: 992px) {
+  @media (min-width: 767px) {
     .yukseklika{
         height: 337px;
     
