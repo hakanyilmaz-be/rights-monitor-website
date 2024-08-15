@@ -11,17 +11,23 @@
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-65%, -50%);
+    transform: translate(-50%, -50%);
     z-index: 1; /* Ensure it's on top of the image */
   }
   .centered-header2 {
     position: absolute;
     top: 40%;
     left: 49%;
-    transform: translate(-65%, -50%);
+    transform: translate(-50%, -50%);
     z-index: 1; /* Ensure it's on top of the image */
   }
-
+  .centered-header3 {
+    position: absolute;
+    top: 30%;
+    left: 38%;
+    transform: translate(-22%, -30%);
+    z-index: 1; /* Ensure it's on top of the image */
+  }
 
   @media (max-width: 768px) {
     .centered-header, .centered-header2 {
@@ -35,6 +41,18 @@
       width: 100%; /* Genişliği tam yapar */
       box-sizing: border-box; /* Padding'in genişliğe eklenmesini sağlar */
     }
+
+    .centered-header3 {
+      position: absolute;
+      top: 30%;
+      left: 39%;
+      transform: translate(-22%, -30%);
+      z-index: 1; /* Ensure it's on top of the image */
+    }
+
+    .buton-mobile{
+      display: none;
+    }
   
     .image-header-container {
       display: flex;
@@ -45,11 +63,67 @@
     .centered-image {
       width: 100%;
     }
+
   }
   
+ .mobile-only{
+  display: none;
+ }
+
+
   @media (max-width: 991.98px) {
     .lg-only {
       display: none;
     }
+    .mobile-only{
+      display: block;
+     }
+  }
+  
+  .bebas-neue-regular {
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+  
+  .anasayfa-baslik{
+   font-size: 80px;
+  }
+
+  @media (max-width: 991.98px) {
+    .anasayfa-baslik{
+      font-size: 20px;
+     }
+     .homepageheader{
+      display: none;
+     }
+  }
+
+
+  .homepageheader img{
+    position: absolute;
+    top: 8%;
+    left: 8%;
+    transform: translate(-22%, -30%);
+    z-index: 1;
+    width: 280px;
+  }
+
+  .homepageheader .homepagemenu{
+    position: absolute;
+    top: 6%;
+    right: 5%;
+    transform: translate(-22%, -30%);
+    z-index: 1;
+    font-size: 52px;
+    color: white;
+  }
+
+  .homepagemenucontent{
+    position: absolute;
+    top: 14%;
+    right: 0%;
+    z-index: 2;
+    color: white;
   }
   

@@ -1,32 +1,33 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { Row, Col } from 'react-bootstrap';
 import SideBar from '../components/side-bar/side-bar';
 import "./admin-template.css";
+import { useLocation } from 'react-router-dom';
+import HamburgerMenu from '../components/hamburger-menu/hamburger-menu';
 
 const AdminTemplate = ({ children }) => {
-  const [showSidebar, setShowSidebar] = useState(false);
+  const { pathname } = useLocation();
 
-  useEffect(() => {
-    if (window.innerWidth >= 992) { // Desktop için
-      const timer = setTimeout(() => {
-        setShowSidebar(true);
-      }, 8000); // 8 saniye sonra sidebar görünür
-      return () => clearTimeout(timer); // Temizleme işlemi
-    } else { // Mobil için
-      setShowSidebar(true); // Mobilde hemen görünür
-    }
-  }, []);
+  
+  const isLargeScreen = window.innerWidth >= 992; 
+  const isHomePage = pathname === '/'; 
 
   return (
     <div className="admin-template">
+     {/* {(isHomePage && isLargeScreen) && ( 
+         
+            <HamburgerMenu />
+
+        )} */}
       <Row className='admin-row'>
-        <Col
-          lg={showSidebar ? 3 : 0}
-          className={`sidebar sticky-top ${showSidebar ? 'sidebar-visible' : 'sidebar-hidden'}`}
-        >
-          {showSidebar && <SideBar />}
-        </Col>
-        <Col lg={showSidebar ? 9 : 12} className="content-column">
+  
+
+        {!(isHomePage && isLargeScreen) && ( 
+          <Col lg={3} className='sidebar sticky-top'>
+            <SideBar />
+          </Col>
+        )}
+        <Col lg={isHomePage && isLargeScreen ? 12 : 9}>
           {children}
         </Col>
       </Row>

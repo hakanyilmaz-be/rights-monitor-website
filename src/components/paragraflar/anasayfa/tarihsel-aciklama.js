@@ -1,7 +1,10 @@
-import React from "react";
+import React, { useRef, useState, useEffect } from "react";
 import { motion } from "framer-motion";
 
 const TarihselAciklama = () => {
+  const ref = useRef();
+  const [isVisible, setIsVisible] = useState(false);
+
   const text = `Türkiye Cumhuriyeti, milliyetçilik, merkezi yönetim ve üniterlik üzerine kurulduğundan insan hakları üzerinde olumsuz etkiler oluşmuştur. Azınlık hakları, ifade özgürlüğü, medya özgürlüğü, yargı bağımsızlığı sürekli sorunlu alanlar olmuş, 1980'lerde askeri cunta yönetimi, 1990'larda Kürt bölgelerindeki askeri çatışmalar sırasında ciddi hak ihlalleri, işkence ve zorla kaybetmeler yaşanmıştır.`;
 
   const words = text.split(" ").map((word, index) => {
@@ -17,7 +20,6 @@ const TarihselAciklama = () => {
       word === "ve" ||
       word === "zorla" ||
       word === "kaybetmeler"
-
     ) {
       return <b key={index}>{word}</b>;
     }
@@ -39,14 +41,40 @@ const TarihselAciklama = () => {
     visible: {
       opacity: 1,
       scale: 1,
-      transition: { duration: 0.5 },
+      transition: { duration: 0.2 },
     },
   };
 
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+          observer.unobserve(ref.current); // Bileşen bir kez görünür olduğunda tekrar kontrol etmeyi bırakır
+        }
+      },
+      { threshold: 0.1 } // %10'u göründüğünde tetiklenir
+    );
+
+    if (ref.current) {
+      observer.observe(ref.current);
+    }
+
+    return () => {
+      if (ref.current) {
+        observer.unobserve(ref.current);
+      }
+    };
+  }, [ref]);
+
   return (
-    <div>
+    <div ref={ref}>
       <h4 className="mb-4 text-center">TÜRKİYE'NİN İNSAN HAKLARI SİCİLİ</h4>
-      <motion.p variants={containerVariants} initial="hidden" animate="visible">
+      <motion.p
+        variants={containerVariants}
+        initial="hidden"
+        animate={isVisible ? "visible" : "hidden"}
+      >
         {words.map((word, index) => (
           <motion.span
             key={index}

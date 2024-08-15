@@ -56,7 +56,7 @@ const AnasayfaKayanText = () => {
   return (
     <>
           <div className="first-data">
-            <h5 className="header-first11">
+            <h5 className="header-first11 text-center">
               Uluslararası Hukuka Aykırı Şekilde Türkiye'ye Götürülme Vakaları
             </h5>
 

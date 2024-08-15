@@ -7,6 +7,7 @@ import AnasayfaKayanText from "./anasayfa-kayan-text";
 import axios from "axios";
 import "./buton.css"
 import { useNavigate } from 'react-router-dom';
+import AnasayfaMapSinirDisi from "./anasayfa-map-sinir-disi";
 
 
 
@@ -56,22 +57,25 @@ const AnasayfaKacirilmalar = () => {
   return (
     <>
       <Row>
-        <Col className="interpol-resmi" lg={4}>
-          <img alt="interpol" src={interpol} className="img-fluid"/>
+      <h2 className="gradient-text mb-5 text-center" style={{ fontWeight: "bold"}}>Hukuka Aykırı Sınır Dışı ve İadeler</h2>
+
+        <Col className="interpol-resmi" lg={6}>
+          <AnasayfaMapSinirDisi/>
+      
+         {/*  <img alt="interpol" src={interpol} className="img-fluid"/>
            <a href="https://www.patreon.com/posts/adam-kacirmalara-58333013?l=de" target="_blank"> <img alt="interpol-document" src={interpolDocument} className="img-fluid"/></a> 
           <p className="text-center" style={{fontSize: "10px"}}>
           Kaçırma olayında görevli polislerin bilgileri ve Bahreyn polisi ile Türk polisi arasındaki teslim tesellüm tutanağı
-          </p>
+          </p> */}
 
         </Col>
-        <Col lg={8}>
+        <Col lg={6}>
         
-          <h2 className="gradient-text mb-5" style={{ fontWeight: "bold"}}>Hukuka Aykırı Sınır Dışı ve İadeler</h2>
           <AnasayfaKayanText/>
           <p >
           İllegal sınır dışı edilme işlemleri ve iade taleplerinde güncel olarak kaydedilen vaka sayısı en az {a1Value}, mağdur olan ise en az {a3Value} kişidir.</p>
           <div class="buttons">
-    <button class="btn-hover color-7" onClick={handleButtonClick}>Zorla Kaybetmeler</button>
+    <button class="btn-hover color-5" onClick={handleButtonClick}>Ulusötesi Baskı</button>
       </div>
         </Col>
     

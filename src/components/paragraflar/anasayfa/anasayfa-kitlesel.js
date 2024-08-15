@@ -5,6 +5,8 @@ import axios from 'axios';
 import "./anasayfa-text.css"
 import "./buton.css"
 import { useNavigate } from 'react-router-dom';
+import AnasayfaIntro from '../../text-header/anasayfa-intro';
+import AnasayfaHeader from '../../ana-sayfa-header/anasayfaHeader';
 
 
 const AnasayfaKitlesel = () => {
@@ -109,8 +111,14 @@ const AnasayfaKitlesel = () => {
      
           </p></span>
       </motion.div>
+
+      <AnasayfaIntro/>
+      <AnasayfaHeader/>
+
+
+
       <div class="buttons">
-    <button class="btn-hover color-7" onClick={handleButtonClick}>Kitlesel Operasyonlar Dataları</button>
+    <button class="btn-hover color-5" onClick={handleButtonClick}>Kitlesel Operasyonlar Dataları</button>
       </div>
     </Container>
   );

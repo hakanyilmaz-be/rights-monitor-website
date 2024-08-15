@@ -1,0 +1,55 @@
+@keyframes slideInFromRight {
+  from {
+    transform: translateX(100%); /* Ekranın sağından başlar */
+    opacity: 1; /* Başlangıçta görünmez */
+  }
+  to {
+    transform: translateX(0); /* Orijinal konumuna gelir */
+    opacity: 1; /* Tamamen görünür olur */
+  }
+}
+
+
+.menu-container2 {
+  width: 300px;
+  margin: 0 auto;
+  animation: slideInFromRight 0.8s ease-out;
+}
+
+.navbar-menu2 ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  padding-top: 1rem;
+  background-color: #001d39;
+
+}
+
+.navbar-menu2 li {
+
+  color: rgb(255, 255, 255);
+  padding-left: 0.8rem;
+ 
+  
+}
+
+.navbar-menu2 .nav-link {
+  display: block; 
+  padding: 10px;
+  text-decoration: none;
+  color: rgb(255, 255, 255);
+ 
+}
+
+.navbar-menu2 .nav-link:hover {
+  background-color: #ffffff; 
+  color: #001d39!important;
+  border-radius: 8px;
+
+}
+
+.navbar-menu2 .nav-link.active {
+  background-color: #ffffff;
+  color: #001d39;
+  border-radius: 8px;
+}

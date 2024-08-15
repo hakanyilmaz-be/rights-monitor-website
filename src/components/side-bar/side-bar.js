@@ -1,15 +1,30 @@
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import logo from "../../assets/img/logo.png";
 import "./side-bar.css";
 import backgroundVideo from "../../assets/video/video.m4v";
 import { Container, Dropdown, Nav, Navbar } from "react-bootstrap";
+import AppInstallPrompt from "../AppInstallPrompt"; // AppInstallPrompt bileşenini içe aktarın
+import { MdOutlineMobileFriendly } from "react-icons/md";
 
 const SideBar = () => {
   const location = useLocation();
   const currentPath = location.pathname;
+  const installRef = useRef(null); // AppInstallPrompt içindeki butonu referans olarak tutar
 
   const [expanded, setExpanded] = useState(false); // Menünün açık/kapalı durumunu takip eder
+  const [isMobile, setIsMobile] = useState(false); // Cihazın mobil olup olmadığını takip eder
+
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 992); // 992px'den küçükse mobil olarak kabul edilir
+    };
+
+    checkMobile();
+    window.addEventListener('resize', checkMobile); // Ekran boyutu değiştiğinde kontrol et
+
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
 
   const handleToggle = () => {
     setExpanded(!expanded); // Menü durumunu tersine çevirir
@@ -17,6 +32,12 @@ const SideBar = () => {
 
   const handleNavClick = () => {
     setExpanded(false); // Bir menü öğesine tıklandığında menüyü kapatır
+  };
+
+  const handleInstallClick = () => {
+    if (installRef.current) {
+      installRef.current.click(); // Butona tıklama simülasyonu
+    }
   };
 
   return (
@@ -71,10 +92,17 @@ const SideBar = () => {
               <Nav.Link as={Link} to="/yargi-bagimsizligi" className={currentPath === "/yargi-bagimsizligi" ? "active" : ""} onClick={handleNavClick}>
                 Yargı Bağımsızlığı
               </Nav.Link>
+              {/* Yalnızca mobilde gösterilecek "Uygulamayı Yükle" linki */}
+              {isMobile && (
+                <Nav.Link onClick={handleInstallClick}>
+                <MdOutlineMobileFriendly /> Uygulamayı Yükle
+                </Nav.Link>
+              )}
             </Nav>
           </Navbar.Collapse>
         </Container>
       </Navbar>
+      <AppInstallPrompt onClick={installRef} /> {/* Bileşeni sayfada kullanın */}
     </div>
   );
 };

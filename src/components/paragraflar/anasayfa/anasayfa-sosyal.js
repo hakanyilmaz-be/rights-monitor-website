@@ -1,46 +1,73 @@
-import React from "react";
+import React, { useState, useRef, useEffect } from "react";
 import { Col, Container, Row } from "react-bootstrap";
 import CountUp from "react-countup"; 
-import "./buton.css"
+import "./buton.css";
 import { useNavigate } from 'react-router-dom';
 
 const AnasayfaSosyal = () => {
+  const [isCounting, setIsCounting] = useState(false);
+  const ref = useRef();
   const navigate = useNavigate();
 
   const handleButtonClick = () => {
     navigate('/sosyal-ekonomik-hak-ihlali');
   };
 
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting && !isCounting) {
+          setIsCounting(true);
+        }
+      },
+      { threshold: 0.1 }
+    );
+
+    if (ref.current) {
+      observer.observe(ref.current);
+    }
+
+    return () => {
+      if (ref.current) {
+        observer.unobserve(ref.current);
+      }
+    };
+  }, [isCounting]);
 
   return (
     <Container
       fluid
       className="d-flex justify-content-center align-items-center ilk-giris"
+      ref={ref}
     >
       <Row className="justify-content-center align-items-center">
-        <h1 className="text-white mt-5 sosyal-baslik" >Sosyal ve Ekonomik Hak İhlalleri ve Mağduriyetler</h1>
+        <h1 className="text-white mt-5 sosyal-baslik">
+          Sosyal ve Ekonomik Hak İhlalleri ve Mağduriyetler
+        </h1>
 
-        <h2 className="text-white"> </h2>
         <div style={{ height: "20px" }}></div>
         <Col lg={6} className="text-start">
           <p className="small-paragraph text-white">
-            2016'da Türkiye'de olağanüstü hal (OHAL) ilan
-            edilmesiyle birlikte çıkarılan Kanun Hükmünde Kararnameler (KHK)
-            çerçevesinde yaklaşık 125 bin kamu çalışanının, idari ve adli işleme
-            tabi tutulmadan görevlerine son verildi. Bu süreçte, KHK'lıların
-            karşılaştığı sosyal ve ekonomik hak ihlalleri, insan hakları
-            gözlemcileri tarafından "sosyal ölüm" olarak tanımlandı.
+            2016'da Türkiye'de olağanüstü hal (OHAL) ilan edilmesiyle birlikte
+            çıkarılan Kanun Hükmünde Kararnameler (KHK) çerçevesinde yaklaşık
+            125 bin kamu çalışanının, idari ve adli işleme tabi tutulmadan
+            görevlerine son verildi. Bu süreçte, KHK'lıların karşılaştığı sosyal
+            ve ekonomik hak ihlalleri, insan hakları gözlemcileri tarafından
+            "sosyal ölüm" olarak tanımlandı.
           </p>
-          <div class="buttons mb-4">
-    <button class="btn-hover color-7" onClick={handleButtonClick}>Sosyal ve Ekonomik Hak İhlalleri</button>
-      </div>
+          <div className="buttons mb-4">
+            <button className="btn-hover color-5" onClick={handleButtonClick}>
+              Sosyal ve Ekonomik Hak İhlalleri
+            </button>
+          </div>
         </Col>
         <Col lg={6} className="text-start intro">
           <div className="info-box-container">
             <div className="info-box box1">
               <p className="title">Olay Sayısı</p>
-              <CountUp className="count" start={0} end={58} duration={5} />
-          
+              {isCounting && (
+                <CountUp className="count" start={0} end={58} duration={5} />
+              )}
             </div>
             <div className="info-box box2">
               <p className="description">
@@ -51,16 +78,17 @@ const AnasayfaSosyal = () => {
           <div className="info-box-container mt-3">
             <div className="info-box box1">
               <p className="title">Kurum Sayısı</p>
-              <CountUp className="count" start={0} end={30} duration={5} />
+              {isCounting && (
+                <CountUp className="count" start={0} end={30} duration={5} />
+              )}
             </div>
             <div className="info-box box2">
               <p className="description">
-              Söz konusu ihlallerden en az 30 farklı kurum ve kuruluş sorumludur.
-              </p> 
+                Söz konusu ihlallerden en az 30 farklı kurum ve kuruluş sorumludur.
+              </p>
             </div>
           </div>
         </Col>
-
       </Row>
     </Container>
   );

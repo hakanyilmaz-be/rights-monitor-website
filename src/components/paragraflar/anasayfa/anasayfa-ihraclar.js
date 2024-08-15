@@ -78,7 +78,7 @@ const AnasayfaIhraclar = () => {
         edilmiştir.
       </p>
       <div class="buttons">
-    <button class="btn-hover color-7" onClick={handleButtonClick}>İhraçlara Dair İstatistikler</button>
+    <button class="btn-hover color-5" onClick={handleButtonClick}>İhraçlara Dair İstatistikler</button>
       </div>
     </Container>
   );
