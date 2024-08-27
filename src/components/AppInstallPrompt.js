@@ -30,9 +30,10 @@ const AppInstallPrompt = ({ onClick }) => {
 
   return (
     <div>
-      <button onClick={handleInstallClick} style={{ display: 'none' }} ref={onClick}>
-        Uygulamayi İndir
-      </button>
+<button onClick={handleInstallClick} style={{ display: deferredPrompt ? 'block' : 'none' }} ref={onClick}>
+  
+</button>
+
     </div>
   );
 };

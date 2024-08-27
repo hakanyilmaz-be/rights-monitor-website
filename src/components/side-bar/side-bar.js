@@ -14,6 +14,7 @@ const SideBar = () => {
 
   const [expanded, setExpanded] = useState(false); // Menünün açık/kapalı durumunu takip eder
   const [isMobile, setIsMobile] = useState(false); // Cihazın mobil olup olmadığını takip eder
+  const [deferredPrompt, setDeferredPrompt] = useState(null);
 
   useEffect(() => {
     const checkMobile = () => {
@@ -94,10 +95,19 @@ const SideBar = () => {
               </Nav.Link>
               {/* Yalnızca mobilde gösterilecek "Uygulamayı Yükle" linki */}
               {isMobile && (
-                <Nav.Link onClick={handleInstallClick}>
-                <MdOutlineMobileFriendly /> Uygulamayı Yükle
-                </Nav.Link>
-              )}
+  deferredPrompt ? (
+    <Nav.Link onClick={handleInstallClick}>
+      <MdOutlineMobileFriendly /> Uygulamayı Yükle
+    </Nav.Link>
+  ) : (
+    <Nav.Link onClick={handleInstallClick}>
+    <div className="install-instructions text-white" >
+       <MdOutlineMobileFriendly /> Uygulamayı Yükle
+      <p className="text-white mt-2" style={{fontSize:"9px"}}>(iPhone kullanıyorsanız, Safari'den paylaş simgesine tıklayarak "Ana Ekrana Ekle" seçeneğini kullanınız.)</p>
+    </div>
+    </Nav.Link>
+  )
+)}
             </Nav>
           </Navbar.Collapse>
         </Container>
