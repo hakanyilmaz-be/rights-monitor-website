@@ -3,6 +3,7 @@ import axios from 'axios';
 import DataTable from 'react-data-table-component';
 import Papa from 'papaparse';
 import { FormControl } from 'react-bootstrap';
+import { useTranslation } from 'react-i18next'; // i18next hook'u
 import "./advanced-table-kaybetmeler.css"
 
 function AdvancedTableKaybetmeler() {
@@ -10,10 +11,15 @@ function AdvancedTableKaybetmeler() {
     const [allData, setAllData] = useState([]);
     const [columns, setColumns] = useState([]);
     const [filterText, setFilterText] = useState('');
+    const { t, i18n } = useTranslation(); // i18n hook'u
 
     useEffect(() => {
         const fetchCSVData = () => {
-            const csvUrl = "https://docs.google.com/spreadsheets/d/e/2PACX-1vSmvOl769rwKcc4YZn5O_UzYEapzgjUe5QG1bDyJDy2QxooD70jm7BXOgoyj3DJwDWfnorpMqT3c6gf/pub?gid=276250322&single=true&output=csv";
+            const csvUrl =
+                i18n.language === 'tr'
+                    ? "https://docs.google.com/spreadsheets/d/e/2PACX-1vSmvOl769rwKcc4YZn5O_UzYEapzgjUe5QG1bDyJDy2QxooD70jm7BXOgoyj3DJwDWfnorpMqT3c6gf/pub?gid=276250322&single=true&output=csv"
+                    : "https://docs.google.com/spreadsheets/d/e/2PACX-1vSmvOl769rwKcc4YZn5O_UzYEapzgjUe5QG1bDyJDy2QxooD70jm7BXOgoyj3DJwDWfnorpMqT3c6gf/pub?gid=1646592514&single=true&output=csv";
+                    
             axios.get(csvUrl)
                 .then((response) => {
                     parseCSV(response.data);
@@ -24,7 +30,7 @@ function AdvancedTableKaybetmeler() {
         };
 
         fetchCSVData();
-    }, []);
+    }, [i18n.language]); // Dil değişikliğini izleyerek uygun URL'yi çekeriz
 
     function parseCSV(csvText) {
         Papa.parse(csvText, {
@@ -100,8 +106,6 @@ function AdvancedTableKaybetmeler() {
                             grow: 3.5,
                             cell: (row) => <ExpandableCell data={row[headers[7]]} />
                         },
-                    
-                       
                     ];
 
                     setDataRows(data);
@@ -128,9 +132,9 @@ function AdvancedTableKaybetmeler() {
     };
 
     const paginationOptions = {
-        rowsPerPageText: 'Satır Sayısı:',
-        rangeSeparatorText: 'ile',
-        selectAllRowsItemText: 'Tümünü Göster'
+        rowsPerPageText: t('rowsPerPageText'),
+        rangeSeparatorText: t('rangeSeparatorText'),
+        selectAllRowsItemText: t('selectAllRowsItemText')
     };
 
     const customStyles = {
@@ -152,28 +156,27 @@ function AdvancedTableKaybetmeler() {
 
     return (
         <div className="advanced-table-wrapper">
-     <p style={{ fontWeight: 'bold' }}>Arama bölümünü verileri filtrelemek için kullanılabilirsiniz.</p>
-
+            <p style={{ fontWeight: 'bold' }}>{t('filterText')}</p>
             <FormControl
                 type="text"
-                placeholder="Arama yap..."
+                placeholder={t('searchPlaceholder')}
                 className="mb-3"
                 value={filterText}
                 onChange={handleFilter}
             />
-             <div className="advanced-table-container">
-            <DataTable
-                columns={columns}
-                data={dataRows}
-                defaultSortFieldId={1}
-                pagination
-                highlightOnHover
-                responsive
-                striped
-                noDataComponent={<div>Veri yükleniyor ...</div>}
-                paginationComponentOptions={paginationOptions}
-                customStyles={customStyles}
-            />
+            <div className="advanced-table-container">
+                <DataTable
+                    columns={columns}
+                    data={dataRows}
+                    defaultSortFieldId={1}
+                    pagination
+                    highlightOnHover
+                    responsive
+                    striped
+                    noDataComponent={<div>{t('noData')}</div>}
+                    paginationComponentOptions={paginationOptions}
+                    customStyles={customStyles}
+                />
             </div>
         </div>
     );
@@ -181,19 +184,30 @@ function AdvancedTableKaybetmeler() {
 
 function ExpandableCell({ data }) {
     const [expand, setExpand] = useState(false);
-    const preview = `${data.substring(0, 200)}...`;
+    const { t } = useTranslation(); // i18next hook'u
+
+    const preview = data ? `${data.substring(0, 200)}...` : t('noData');
 
     return (
         <div>
             {expand ? data : preview}
-            <button onClick={() => setExpand(!expand)} style={{ marginLeft: '5px', cursor: 'pointer', color: 'blue', textDecoration: 'underline', border: 'none', background: 'none' }}>
-                {expand ? 'Daha az göster' : 'Daha fazla oku'}
-            </button>
+            {data && (
+                <button
+                    onClick={() => setExpand(!expand)}
+                    style={{
+                        marginLeft: '5px',
+                        cursor: 'pointer',
+                        color: 'blue',
+                        textDecoration: 'underline',
+                        border: 'none',
+                        background: 'none'
+                    }}
+                >
+                    {expand ? t('readLess') : t('readMore')}
+                </button>
+            )}
         </div>
     );
 }
 
 export default AdvancedTableKaybetmeler;
-
-
-

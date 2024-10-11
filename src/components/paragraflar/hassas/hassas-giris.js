@@ -2,9 +2,11 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { Col, Container, Row } from "react-bootstrap";
 import ProgressBar from "@ramonak/react-progress-bar";
+import { useTranslation } from 'react-i18next';  // Çeviri için i18next kullanımı
 import "./hassas-text.css";
 
 const HassasGiris = () => {
+  const { t } = useTranslation();  // useTranslation hook'u ile çeviri fonksiyonunu kullanıyoruz.
   const [a2Value, setA2Value] = useState("");
   const [b2Value, setB2Value] = useState("");
   const [c2Value, setC2Value] = useState("");
@@ -29,7 +31,6 @@ const HassasGiris = () => {
             if (data.length > 1) {
               setD2Value(Number(data[9][8]));
             }
-            animateProgress(); // Progress animasyonunu başlat
           }
         })
         .catch((error) => {
@@ -47,25 +48,6 @@ const HassasGiris = () => {
     return rows.slice(1);
   }
 
-
-
-  function animateProgress() {
-    const duration = 8000; // 3 saniye
-    const steps = 80; // 30 adım
-    const stepDuration = duration / steps;
-
-    let step = 0;
-    const interval = setInterval(() => {
-      step++;
-   
-      if (step >= steps) {
-        clearInterval(interval);
-      }
-    }, stepDuration);
-  }
-
-
-
   return (
     <Container
       fluid
@@ -74,74 +56,23 @@ const HassasGiris = () => {
       <Row className="justify-content-center align-items-center">
         <Col lg={6} className="text-start">
           <h1 className="text-white fw-bold mt-5" style={{ fontSize: "2.5rem" }}>
-          Hassas Gruplar
+            {t('sensitive_groups')}
           </h1>
-          {/* Metinler buraya */}
-          <p className="small-paragraph ">
-            Uluslararası literatürde "keyfi" teriminin kesin bir tanımı
-            bulunmasa da, özgürlüğünden keyfi olarak mahrum bırakılma ve
-            tutuklanma durumlarında yasal savunma hakkının sınırsız olduğu kabul
-            edilir. Hükümetlerin savunmaları, tedbirlerinin "gerekli" ve
-            "orantılı" olduğunu iddia etseler de, bu iddiaların
-            değerlendirilmesinde çeşitli faktörler göz önünde bulundurulur.
-            Ancak, hükümetin bu tutuklamaların "adaletsiz", "yasadışı" ve
-            "öngörülemez" doğasını göz ardı etmesi durumunda, uluslararası
-            teamül hukuku uyarınca tutukluluğun keyfi olduğuna hükmedilir.
+         
+          <p className="small-paragraph">
+            {t('sensitive_groups_description_1')}
           </p>
           <p className="small-paragraph">
-            Bu bilgiler ve ulusal hukuk çerçevesinde, hamile ve yeni doğum
-            yapmış kadınlar, ciddi derecede hasta olan bireyler, yaşlılar ve
-            engelli kişilerin tutuklanması keyfi tutuklama olarak
-            değerlendirilmelidir.
-          </p>
-          <p className="small-paragraph ">
-            BM Keyfi Tutuklamalar Çalışma Grubu
-            <a
-              href="https://www.ohchr.org/sites/default/files/documents/issues/detention-wg/opinions/session98/a-hrc-wgad-66-2023-turkiye-aev.pdf"
-              className="text-white"
-            >
-              <span> Görüş No. 66/2023 </span>
-            </a>
-            (Paragraf 63),
-            <a
-              href="https://www.ohchr.org/sites/default/files/documents/issues/detention-wg/opinions/session96/A-HRC-WGAD-2023-3-AEV.pdf"
-              className="text-white"
-            >
-              <span> Görüş No. 3/2023 </span>
-            </a>
-            (Paragraf 85),
-            <a
-              href="https://www.ohchr.org/sites/default/files/Documents/Issues/Detention/Opinions/Session89/A_HRC_WGAD_2020_66.pdf"
-              className="text-white"
-            >
-              <span> Görüş No. 66/2020 </span>
-            </a>
-            (Paragraf 67),
-            <a
-              href="https://www.ohchr.org/sites/default/files/Documents/Issues/Detention/Opinions/Session89/A_HRC_WGAD_2020_67.pdf"
-              className="text-white"
-            >
-              <span> Görüş No. 67/2020 </span>
-            </a>
-            (Paragraf 96) ve
-            <a
-              href="https://www.ohchr.org/sites/default/files/Documents/Issues/Detention/Opinions/Session89/A_HRC_WGAD_2020_84.pdf"
-              className="text-white"
-            >
-              <span> Görüş No. 84/2020 </span>
-            </a>
-            (Paragraf 76) Türkiye'nin Gülen Hareketi mensuplarına yönelik tutuklama ve gözaltı uygulamalarını insanlığa karşı suç olarak nitelendirmiş ve kınamıştır.
+            {t('sensitive_groups_description_2')}
           </p>
           <p className="small-paragraph">
-            2016'dan bu yana Türkiye'de keyfi tutuklamalara maruz kalan
-            insanların yaşadığı mağduriyetler, adaletin ve insan haklarının
-            ihlal edilmesinin acı bir yansımasıdır. Bu tutuklamalar, sadece
-            bireylerin özgürlüğünü kısıtlamakla kalmayıp, aynı zamanda toplumun
-            genel huzurunu ve güvenini de zayıflatmaktadır. Gülen Hareketi
-            mensuplari, bireysel durumları göz önüne alınmaksızın hukuksuzca
-            özgürlüklerinden mahrum bırakılarak, fiziki durumlarına uygun
-            düşmeyen şartlar altında insanlık suçu kurbanları olarak hayatta
-            kalmaya çalışmaktadırlar.
+            {t('sensitive_groups_description_3')}
+          </p>
+          <p className="small-paragraph">
+            {t('sensitive_groups_description_4')}
+          </p>
+          <p className="small-paragraph">
+            {t('sensitive_groups_description_5')}
           </p>
         </Col>
         <Col
@@ -149,7 +80,7 @@ const HassasGiris = () => {
           className="d-flex flex-column justify-content-center align-items-center p-5 desktop-margin-top"
           >
           <div className="mb-4" style={{ width: "100%" }}>
-            <h5>Hamile Ve Çocuklu Kadınlar: {a2Value} kişi</h5>
+            <h5>{t('pregnant_women')}: {a2Value} {t('people')}</h5>
             <ProgressBar 
               completed={a2Value} 
               bgColor="#4caf50"
@@ -159,7 +90,7 @@ const HassasGiris = () => {
             />
           </div>
           <div className="mb-4" style={{ width: "100%" }}>
-            <h5>Hastalar: {b2Value} kişi</h5>
+            <h5>{t('patients')}: {b2Value} {t('people')}</h5>
             <ProgressBar 
               completed={b2Value} 
               bgColor="#b84f21"
@@ -170,7 +101,7 @@ const HassasGiris = () => {
             />
           </div>
           <div className="mb-4" style={{ width: "100%" }}>
-            <h5>Engelliler: {c2Value} kişi</h5>
+            <h5>{t('disabled_people')}: {c2Value} {t('people')}</h5>
             <ProgressBar 
               completed={c2Value} 
               bgColor="#4c6faf"
@@ -181,7 +112,7 @@ const HassasGiris = () => {
             />
           </div>
           <div className="mb-4" style={{ width: "100%" }}>
-            <h5>Yaşlılar: {d2Value} kişi</h5>
+            <h5>{t('elderly_people')}: {d2Value} {t('people')}</h5>
             <ProgressBar 
               completed={d2Value} 
               bgColor="#af4caf"

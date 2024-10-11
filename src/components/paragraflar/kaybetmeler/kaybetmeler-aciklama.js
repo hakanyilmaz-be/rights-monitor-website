@@ -1,55 +1,38 @@
 import React from "react";
 import "./kaybetmeler-text.css";
 import { Col, Row } from "react-bootstrap";
+import { useTranslation } from "react-i18next";
 import VideoComponentKaybetmelerTr from "../../video/kaybetmeler-tr";
 import YillarKaybetmeler from "../../charts/kaybetmeler/yillar-kaybetmeler";
 import IllerGrafik from "../../charts/kaybetmeler/iller-grafik";
 
 const KaybetmelerAciklama = () => {
+  const { t, i18n } = useTranslation();
+  const isTurkish = i18n.language === 'tr'; // Check if language is Turkish
+
   return (
     <>
       <Row>
         <h2 style={{ fontWeight: "bold", marginBottom: "1rem" }}>
-          Türkiye'de 15 Temmuz 2016 Sonrası Muhaliflere Yönelik Zorla Kaçırma ve
-          Kaybetme Vakaları
+          {t("kaybetmelerAciklama.title")}
         </h2>
         <Col lg={4}>
           <p className="small-paragraph">
-            2000'li yıllarda Türkiye'nin AB üyeliği sürecindeki reform çabaları
-            ve işkenceye karşı önlemlerle zorla kaybetmelerin geçmişte kaldığına
-            dair umutlar yeşermişti. Ancak, 15 Temmuz 2016 sonrası bu korkunç
-            uygulama tekrar gündeme geldi. Özellikle Gülen Hareketi ile
-            bağlantılı olduğu iddia edilen kişilere yönelik en az otuz yeni
-            zorla kaybetme vakası rapor edilmiştir. 2016 sonrası meydana gelen
-            25 vakada, mağdurların profillerindeki benzerlikler, polis ve
-            savcıların soruşturmaları ihmal etmeleri ve olayların düzenli olarak
-            tekrarlanması gibi ortak noktalar öne çıkmıştır.
+            {t("kaybetmelerAciklama.paragraph1")}
           </p>
           <p className="small-paragraph">
-            Bazı kayıplar, aylar sonra polis gözetiminde yeniden ortaya çıkmış ve
-            bu kişilerin fiziksel ve zihinsel olarak zayıflamış durumda
-            oldukları ve nerede tutulduklarına dair konuşmaktan kaçındıkları
-            gözlemlenmiştir.
+            {t("kaybetmelerAciklama.paragraph2")}
           </p>
         </Col>
         <Col lg={8}>
-          <VideoComponentKaybetmelerTr />
+          <VideoComponentKaybetmelerTr /> {/* Video changes based on language */}
         </Col>
         <Col lg={12}>
-     
           <p className="small-paragraph">
-            Mağdurlar genellikle
-            evlerinden veya iş yerlerinden gözaltına alınmış ve aylar sonra
-            işkence belirtileriyle tekrar ortaya çıkmışlardır. Mustafa Yılmaz,
-            Salim Zeybek, Özgür Kaya, Gökhan Türkmen, Erkan Irmak, Yasin Ugan ve
-            Yusuf Bilge Tunç, 2019 yılında peş peşe siyah transporterla
-            kaçırılmış ve bazıları aylar sonra Ankara Emniyet Müdürlüğü'ne
-            teslim edilmiştir. Yusuf Bilge Tunç ise hala kayıptır.
+            {t("kaybetmelerAciklama.paragraph3")}
           </p>
           <p className="small-paragraph">
-            Bu süreçte kaçırılan kişilerin Milli İstihbarat Teşkilatı (MİT)’na ait olduğu iddia edilen
-            "Çiftlik" adlı bölgede işkenceye maruz kaldıkları belirtilmektedir.
-            Mağdurlar ve mağdur yakınları tarafından yapılan suç duyuruları savcılıklar tarafından çoğu zaman işleme konulmamış, soruşturma açıldığı durumlarda ise hiç bir zaman etkili bir soruşturma yürütülmemiş ve sorumlular adli makamlar tarafından korunmuştur.
+            {t("kaybetmelerAciklama.paragraph4")}
           </p>
         </Col>
         <Col lg={6}>
@@ -58,24 +41,10 @@ const KaybetmelerAciklama = () => {
         <Col lg={6}>
           <div style={{ paddingTop: "1.2rem" }}>
             <p className="small-paragraph">
-              Zorla kaybetme vakaları, mağdurların fiziksel ve psikolojik
-              sağlığı üzerinde derin izler bırakmakta, ailelerinin acılarını
-              artırmakta ve toplumda genel bir güvensizlik yaratmaktadır.
-              Türkiye’de etkili soruşturmaların yapılmaması, bu suçların cezasız
-              kalmasına neden olmaktadır. Bu durum, Türkiye'nin uluslararası
-              hukuk çerçevesindeki yükümlülüklerine tamamen aykırıdır ve
-              mağdurların adalet arayışını engellemektedir.
+              {t("kaybetmelerAciklama.paragraph5")}
             </p>
             <p className="small-paragraph">
-              Birleşmiş Milletler'in zorla kaybetmelere ilişkin tanımı,
-              Türkiye'deki kayıp ve kaçırılma vakaları ile birebir
-              örtüşmektedir. BM, zorla kaybetmeleri "kişilerin devlet tarafından
-              veya devlet adına hareket eden gruplar tarafından özgürlüklerinden
-              yoksun bırakılması ve bu durumun gizlenmesi" olarak tanımlar.
-              Türkiye'de de mağdurlar, devlet yetkilileri veya devletle
-              bağlantılı gruplar tarafından kaçırılmakta ve gözaltında
-              tutuldukları inkar edilmektedir. Bu uygulamalar, BM tarafından
-              uluslararası hukuk çerçevesinde yasaklanmıştır.
+              {t("kaybetmelerAciklama.paragraph6")}
             </p>
           </div>
         </Col>
@@ -83,25 +52,10 @@ const KaybetmelerAciklama = () => {
         <Col lg={6}>
           <div style={{ paddingTop: "1.2rem" }}>
             <p className="small-paragraph">
-              Özellikle yeniden ortaya çıkan mağdurların yaşadığı işkence ve
-              kötü muamele, insan hakları ihlallerinin boyutlarını gözler önüne
-              sermektedir. Ümit Horzum, çıkarıldığı mahkemede, kaçırıldığı
-              dönemde işkence gördüğünü ve tanımadığı kişilerle ilgili suçlayıcı
-              ifadeler imzalamaya zorlandığını belirtmiştir. Benzer şekilde
-              Gültekin, kendisine yapılan işkenceler sonucu suçlayıcı ifadeler
-              vermek zorunda kaldığını ifade etmiştir. Bu durum, zorla
-              kaybetmelerin yanı sıra işkence uygulamalarının da yaygın olduğunu
-              göstermektedir.
+              {t("kaybetmelerAciklama.paragraph7")}
             </p>
             <p className="small-paragraph">
-              Zorla kaybetme mağdurlarının yeniden ortaya çıktıktan sonra maruz
-              kaldıkları muamele, Türkiye'deki insan hakları ihlallerinin
-              boyutlarını gözler önüne sermektedir. Mağdurlar, resmi gözaltı
-              merkezlerinde yeniden ortaya çıktıklarında, serbestçe avukat seçme
-              hakları ellerinden alınmakta ve genellikle devletin çıkarları
-              doğrultusunda hareket eden avukatlar atanmaktadır. Bu durum, adil
-              yargılanma hakkının ihlalidir ve Türkiye’nin uluslararası
-              yükümlülükleri ile bağdaşmamaktadır.
+              {t("kaybetmelerAciklama.paragraph8")}
             </p>
           </div>
         </Col>

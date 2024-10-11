@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import DataTable from 'react-data-table-component';
-
+import { useTranslation } from 'react-i18next';
 
 const IllerGrafik = () => {
+    const { t } = useTranslation();
     const [dataRows, setDataRows] = useState([]);
 
     useEffect(() => {
@@ -12,7 +13,7 @@ const IllerGrafik = () => {
             try {
                 const response = await axios.get(csvUrl);
                 const parsedData = parseCSV(response.data);
-                setDataRows(parsedData.slice(11, 20)); // Take only rows 1 to 85 (inclusive)
+                setDataRows(parsedData.slice(11, 20)); // Take only rows 11 to 20
             } catch (error) {
                 console.error('Error fetching CSV data:', error);
             }
@@ -27,18 +28,16 @@ const IllerGrafik = () => {
     };
 
     const columns = [
-        { name: 'İl/ülke', selector: row => row[0], sortable: true, grow: 2 },
-        { name: 'Vaka Sayısı', selector: row => row[1], sortable: true, grow: 2 },
-       
+        { name: t('illerGrafik.column1'), selector: row => row[0], sortable: true, grow: 2 },
+        { name: t('illerGrafik.column2'), selector: row => row[1], sortable: true, grow: 2 },
     ];
-
 
     const customStyles = {
         rows: {
             style: {
-              minHeight: "36px", // override the row height
+                minHeight: "36px", // override the row height
             },
-          },
+        },
         headCells: {
             style: {
                 padding: '8px 0px 8px 12px',
@@ -49,24 +48,20 @@ const IllerGrafik = () => {
         },
         cells: {
             style: {
-                padding: '0px 0px 0px 12px', 
-                fontSize: '11px', 
-         
+                padding: '0px 0px 0px 12px',
+                fontSize: '11px',
             },
         },
     };
-   
-
 
     return (
         <div>
-           {/*  <p style={{ fontWeight: 'bold' }}>Ölüm Nedenlerine Göre Veri Tablosu</p> */}
             <DataTable
                 columns={columns}
                 data={dataRows}
                 highlightOnHover
                 striped
-                noDataComponent={<div>Veri yükleniyor ...</div>}
+                noDataComponent={<div>{t('illerGrafik.noData')}</div>}
                 customStyles={customStyles}
             />
         </div>
@@ -74,10 +69,3 @@ const IllerGrafik = () => {
 }
 
 export default IllerGrafik;
-
-
-
-
-
-
-

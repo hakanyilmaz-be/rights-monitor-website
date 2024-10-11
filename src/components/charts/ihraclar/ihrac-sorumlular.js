@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { Dropdown, FormControl } from 'react-bootstrap';
+import { useTranslation } from 'react-i18next'; // Çeviri için ekleme
 import './ihrac-charts.css';  
 
 const IhracSorumlular = () => {
+    const { t } = useTranslation(); // Çeviri hook'u
     const [dataRows, setDataRows] = useState([]);
     const [selectedSorumlu, setSelectedSorumlu] = useState(null);
     const [searchInput, setSearchInput] = useState("");
@@ -43,16 +45,16 @@ const IhracSorumlular = () => {
 
     return (
         <div>
-            <h2>İhraç listelerinde imzası olan sorumlular</h2>
+            <h2>{t('dismissal_responsibles')}</h2>
             <Dropdown>
                 <Dropdown.Toggle className="custom-dropdown-toggle" id="dropdown-basic">
-                    Sorumlu seçin
+                    {t('select_responsible')}
                 </Dropdown.Toggle>
 
                 <Dropdown.Menu>
                     <FormControl
                         autoFocus
-                        placeholder="Arama yapın..."
+                        placeholder={t('search_placeholder')}
                         onChange={handleSearchInputChange}
                         value={searchInput}
                     />
@@ -69,7 +71,9 @@ const IhracSorumlular = () => {
             {selectedSorumlu && (
                 <div style={styles.selectedInfo}>
                     <span style={styles.selectedLabel}>{selectedSorumlu[0]}:</span>
-                    <span style={styles.responsibilityCount}>{selectedSorumlu[1]} kişi</span>
+                    <span style={styles.responsibilityCount}>
+                        {selectedSorumlu[1]} {t('person')}
+                    </span>
                 </div>
             )}
         </div>
@@ -96,7 +100,3 @@ const styles = {
 };
 
 export default IhracSorumlular;
-
-
-
-

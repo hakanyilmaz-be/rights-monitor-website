@@ -3,6 +3,7 @@ import axios from 'axios';
 import DataTable from 'react-data-table-component';
 import Papa from 'papaparse';
 import { FormControl } from 'react-bootstrap';
+import { useTranslation } from 'react-i18next'; // i18n hook'u
 import "./advanced-table-kapatilan-kurumlar.css"
 
 function AdvancedTableKapatilanKurumlar() {
@@ -10,10 +11,14 @@ function AdvancedTableKapatilanKurumlar() {
     const [allData, setAllData] = useState([]);
     const [columns, setColumns] = useState([]);
     const [filterText, setFilterText] = useState('');
+    const { t, i18n } = useTranslation(); // i18next hook'u
 
     useEffect(() => {
         const fetchCSVData = () => {
-            const csvUrl = "https://docs.google.com/spreadsheets/d/e/2PACX-1vSZ7luwTsBBVIPJbcS195bFfU6JMnKvuMCxn3YdGUJBQU9rXsNg9Xi6PYw_WLTwGGG4L4VZBh2sEBtM/pub?gid=0&single=true&output=csv";
+            const csvUrl =
+                i18n.language === 'tr'
+                    ? "https://docs.google.com/spreadsheets/d/e/2PACX-1vSZ7luwTsBBVIPJbcS195bFfU6JMnKvuMCxn3YdGUJBQU9rXsNg9Xi6PYw_WLTwGGG4L4VZBh2sEBtM/pub?gid=0&single=true&output=csv"
+                    : "https://docs.google.com/spreadsheets/d/e/2PACX-1vSZ7luwTsBBVIPJbcS195bFfU6JMnKvuMCxn3YdGUJBQU9rXsNg9Xi6PYw_WLTwGGG4L4VZBh2sEBtM/pub?gid=794883821&single=true&output=csv";
 
             axios.get(csvUrl)
                 .then((response) => {
@@ -25,7 +30,7 @@ function AdvancedTableKapatilanKurumlar() {
         };
 
         fetchCSVData();
-    }, []);
+    }, [i18n.language]); // Dil değişikliklerini izliyoruz
 
     function parseCSV(csvText) {
         Papa.parse(csvText, {
@@ -78,16 +83,7 @@ function AdvancedTableKapatilanKurumlar() {
                             sortable: true,
                             wrap: true,
                             grow: 0.2
-                        },
-                        /* {
-                            name: headers[4],
-                            selector: row => row[headers[4]],
-                            sortable: true,
-                            wrap: true,
-                            grow: 4.5,
-                            cell: (row) => <ExpandableCell data={row[headers[4]]} />
-                        }, */
-                       
+                        }
                     ];
 
                     setDataRows(data);
@@ -114,9 +110,9 @@ function AdvancedTableKapatilanKurumlar() {
     };
 
     const paginationOptions = {
-        rowsPerPageText: 'Satır Sayısı:',
-        rangeSeparatorText: 'ile',
-        selectAllRowsItemText: 'Tümünü Göster'
+        rowsPerPageText: t('rowsPerPageText'),
+        rangeSeparatorText: t('rangeSeparatorText'),
+        selectAllRowsItemText: t('selectAllRowsItemText')
     };
 
     const customStyles = {
@@ -138,45 +134,30 @@ function AdvancedTableKapatilanKurumlar() {
 
     return (
         <div className="advanced-table-wrapper">
-     <p style={{ fontWeight: 'bold' }}>Arama bölümünü verileri filtrelemek için kullanılabilirsiniz.</p>
-
+            <p style={{ fontWeight: 'bold' }}>{t('filterText')}</p>
             <FormControl
                 type="text"
-                placeholder="Arama yap..."
+                placeholder={t('searchPlaceholder')}
                 className="mb-3"
                 value={filterText}
                 onChange={handleFilter}
             />
-             <div className="advanced-table-container">
-            <DataTable
-                columns={columns}
-                data={dataRows}
-                defaultSortFieldId={1}
-                pagination
-                highlightOnHover
-                responsive
-                striped
-                noDataComponent={<div>Veri yükleniyor ...</div>}
-                paginationComponentOptions={paginationOptions}
-                customStyles={customStyles}
-            />
-        </div>
+            <div className="advanced-table-container">
+                <DataTable
+                    columns={columns}
+                    data={dataRows}
+                    defaultSortFieldId={1}
+                    pagination
+                    highlightOnHover
+                    responsive
+                    striped
+                    noDataComponent={<div>{t('noData')}</div>}
+                    paginationComponentOptions={paginationOptions}
+                    customStyles={customStyles}
+                />
+            </div>
         </div>
     );
 }
-
-/* function ExpandableCell({ data }) {
-    const [expand, setExpand] = useState(false);
-    const preview = `${data.substring(0, 170)}...`;
-
-    return (
-        <div>
-            {expand ? data : preview}
-            <button onClick={() => setExpand(!expand)} style={{ marginLeft: '5px', cursor: 'pointer', color: 'blue', textDecoration: 'underline', border: 'none', background: 'none' }}>
-                {expand ? 'Daha az göster' : 'Daha fazla oku'}
-            </button>
-        </div>
-    );
-} */
 
 export default AdvancedTableKapatilanKurumlar;

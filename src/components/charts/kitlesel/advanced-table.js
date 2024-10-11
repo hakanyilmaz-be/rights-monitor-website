@@ -3,6 +3,7 @@ import axios from 'axios';
 import DataTable from 'react-data-table-component';
 import Papa from 'papaparse';
 import { FormControl } from 'react-bootstrap';
+import { useTranslation } from 'react-i18next'; 
 import './advanced-table.css';
 
 function AdvancedTable() {
@@ -10,10 +11,15 @@ function AdvancedTable() {
     const [allData, setAllData] = useState([]);
     const [columns, setColumns] = useState([]);
     const [filterText, setFilterText] = useState('');
+    const { t, i18n } = useTranslation(); 
 
     useEffect(() => {
         const fetchCSVData = () => {
-            const csvUrl = "https://docs.google.com/spreadsheets/d/e/2PACX-1vTHFQwv-ZFUNFPshDPD3hRR3Ub_eLX0gw1Oyl8VKOZiCg7G0KeJRWLy3D4W_CLV3moHjJZS539qyPax/pub?gid=0&single=true&output=csv";
+            const csvUrl =
+                i18n.language === 'tr'
+                    ? "https://docs.google.com/spreadsheets/d/e/2PACX-1vTHFQwv-ZFUNFPshDPD3hRR3Ub_eLX0gw1Oyl8VKOZiCg7G0KeJRWLy3D4W_CLV3moHjJZS539qyPax/pub?gid=0&single=true&output=csv"
+                    : "https://docs.google.com/spreadsheets/d/e/2PACX-1vTSkSCbRLdA49HBF4gWExUZG344xodWkO9_rzCX9l97soMsXvb7YpVd32mQCfvEcmRkfqFJgmk4CCp2/pub?gid=0&single=true&output=csv";
+                    
             axios.get(csvUrl)
                 .then((response) => {
                     parseCSV(response.data);
@@ -24,7 +30,7 @@ function AdvancedTable() {
         };
 
         fetchCSVData();
-    }, []);
+    }, [i18n.language]);
 
     function parseCSV(csvText) {
         Papa.parse(csvText, {
@@ -130,10 +136,12 @@ function AdvancedTable() {
 
     return (
         <div className="advanced-table-wrapper">
-            <p style={{ fontWeight: 'bold' }}>Arama bölümünü verileri filtrelemek için kullanılabilirsiniz.</p>
+            <p style={{ fontWeight: 'bold' }}>
+                {t('filterText')}
+            </p>
             <FormControl
                 type="text"
-                placeholder="Arama yap..."
+                placeholder={t('searchPlaceholder')}
                 className="mb-3"
                 value={filterText}
                 onChange={handleFilter}
@@ -147,7 +155,7 @@ function AdvancedTable() {
                     highlightOnHover
                     responsive
                     striped
-                    noDataComponent={<div>Veri yükleniyor ...</div>}
+                    noDataComponent={<div>{t('noData')}</div>}
                     paginationComponentOptions={paginationOptions}
                     customStyles={customStyles}
                 />
@@ -158,14 +166,28 @@ function AdvancedTable() {
 
 function ExpandableCell({ data }) {
     const [expand, setExpand] = useState(false);
-    const preview = `${data.substring(0, 200)}...`;
+    const { t } = useTranslation(); 
+
+    const preview = data ? `${data.substring(0, 200)}...` : t('noData');
 
     return (
         <div>
             {expand ? data : preview}
-            <button onClick={() => setExpand(!expand)} style={{ marginLeft: '5px', cursor: 'pointer', color: 'blue', textDecoration: 'underline', border: 'none', background: 'none' }}>
-                {expand ? 'Daha az göster' : 'Daha fazla oku'}
-            </button>
+            {data && (
+                <button
+                    onClick={() => setExpand(!expand)}
+                    style={{
+                        marginLeft: '5px',
+                        cursor: 'pointer',
+                        color: 'blue',
+                        textDecoration: 'underline',
+                        border: 'none',
+                        background: 'none'
+                    }}
+                >
+                    {expand ? t('readLess') : t('readMore')}
+                </button>
+            )}
         </div>
     );
 }

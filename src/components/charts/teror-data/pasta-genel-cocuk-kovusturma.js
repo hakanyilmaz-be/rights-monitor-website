@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { Chart } from "react-google-charts";
-import "./chart-title.css"
+import { useTranslation } from "react-i18next";
+import "./chart-title.css";
 
 
 function PastaGenelCocukKovusturma() {
+  const { t } = useTranslation();
   const [a2Value, setA2Value] = useState("");
   const [b2Value, setB2Value] = useState("");
   const [c2Value, setC2Value] = useState("");
@@ -52,14 +54,13 @@ function PastaGenelCocukKovusturma() {
   };
 
   const data = [
-    ["Category", "Value"],
-    ["Mahkumiyet", parseFloat(a2Value)],
-    ["Beraat", parseFloat(b2Value)],
-    ["Hükmün Açıklanmasının Geriye Bırakılması", parseFloat(c2Value)],
+    [t("chartmm.category"), t("chartmm.value")],
+    [t("chartmm.conviction"), parseFloat(a2Value)],
+    [t("chartmm.acquittal"), parseFloat(b2Value)],
+    [t("chartmm.hagb"), parseFloat(c2Value)],
   ];
 
   const options = {
-
     is3D: true,
     legend: { position: "bottom", alignment: "center", maxLines: 3 },
     chartArea: { width: "100%", height: "80%" },
@@ -67,7 +68,9 @@ function PastaGenelCocukKovusturma() {
 
   return (
     <div style={{ textAlign: 'center' }}>
-    <p className="chart-title2"><strong>Çocuklara Yönelik Yürütülen Kovusturma Kararlarının Dağılımı</strong></p>
+      <p className="chart-title2">
+        <strong>{t('chartmm.childProsecutionTitle')}</strong>
+      </p>
 
       <Chart
         chartType="PieChart"
@@ -76,11 +79,11 @@ function PastaGenelCocukKovusturma() {
         width="100%"
         height="250px"
       />
-     <p style={{ textAlign: 'center' }}>
-  <b>Toplamda <span style={{ color: 'red' }}>{formatNumber(d2Value)}</span> çocuk hakkında kamu davası açılmıştır.</b>
-</p>
-
-
+      <p style={{ textAlign: 'center' }}
+        dangerouslySetInnerHTML={{
+          __html: t('chartmm.totalChildrenProsecuted', { total: formatNumber(d2Value) })
+        }}
+      />
     </div>
   );
 }

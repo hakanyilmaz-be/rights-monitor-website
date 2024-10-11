@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import DataTable from 'react-data-table-component';
-
+import { useTranslation } from 'react-i18next';
 
 const KitleselIller = () => {
+    const { t } = useTranslation();
     const [dataRows, setDataRows] = useState([]);
 
     useEffect(() => {
@@ -12,7 +13,7 @@ const KitleselIller = () => {
             try {
                 const response = await axios.get(csvUrl);
                 const parsedData = parseCSV(response.data);
-                setDataRows(parsedData.slice(2, 83)); // Take only rows 1 to 85 (inclusive)
+                setDataRows(parsedData.slice(2, 83)); 
             } catch (error) {
                 console.error('Error fetching CSV data:', error);
             }
@@ -27,30 +28,29 @@ const KitleselIller = () => {
     };
 
     const columns = [
-        { name: 'İl', selector: row => row[0], sortable: true, grow: 1 },
-        { name: 'Gözaltı Sayısı', selector: row => row[1], sortable: true, grow: 1 },
-        { name: 'Operasyon Sayısı', selector: row => row[2], sortable: true, grow: 1 }
+        { name: t('kitleselIller.columns.city'), selector: row => row[0], sortable: true, grow: 1 },
+        { name: t('kitleselIller.columns.detentions'), selector: row => row[1], sortable: true, grow: 1 },
+        { name: t('kitleselIller.columns.operations'), selector: row => row[2], sortable: true, grow: 1 }
     ];
     
 
     const paginationOptions = {
-        rowsPerPageText: 'Satır Sayısı:', 
-        rangeSeparatorText: 'ile',
-        //selectAllRowsItem: true,
-        selectAllRowsItemText: 'Tümünü Göster'
+        rowsPerPageText: t('kitleselIller.pagination.rowsPerPage'), 
+        rangeSeparatorText: t('kitleselIller.pagination.rangeSeparator'),
+        selectAllRowsItemText: t('kitleselIller.pagination.selectAllRows')
     };
 
     const customStyles = {
         rows: {
             style: {
-              minHeight: "36px", // override the row height
+              minHeight: "36px", 
             },
           },
         headCells: {
             style: {
                 padding: '8px 0px 8px 8px',
                 background: 'linear-gradient(to right, #6DBA91, #69b79e)',
-                color: '#FFF', // beyaz yazı
+                color: '#FFF', 
                 fontSize: '12px', 
             },
         },
@@ -62,19 +62,17 @@ const KitleselIller = () => {
             },
         },
     };
-   
-
 
     return (
         <div>
-            <p style={{ fontWeight: 'bold' }}>İllere Göre Gözaltı ve Operasyon Tablosu</p>
+            <p style={{ fontWeight: 'bold' }}>{t('kitleselIller.title')}</p>
             <DataTable
                 columns={columns}
                 data={dataRows}
                 pagination
                 highlightOnHover
                 striped
-                noDataComponent={<div>Veri yükleniyor ...</div>}
+                noDataComponent={<div>{t('kitleselIller.noData')}</div>}
                 paginationComponentOptions={paginationOptions}
                 customStyles={customStyles}
             />

@@ -3,6 +3,7 @@ import axios from 'axios';
 import DataTable from 'react-data-table-component';
 import Papa from 'papaparse';
 import { FormControl } from 'react-bootstrap';
+import { useTranslation } from 'react-i18next'; // i18next kullanımı
 import "./advanced-table-sinir-disi.css"
 
 function AdvancedTableSinirDisi() {
@@ -10,10 +11,15 @@ function AdvancedTableSinirDisi() {
     const [allData, setAllData] = useState([]);
     const [columns, setColumns] = useState([]);
     const [filterText, setFilterText] = useState('');
+    const { t, i18n } = useTranslation(); // i18next hook'u
 
     useEffect(() => {
         const fetchCSVData = () => {
-            const csvUrl = "https://docs.google.com/spreadsheets/d/e/2PACX-1vTkIwP6tKmO6tKBjet3T5c4kgg9laweJMsrZ_XAWnyF-0yfX1Z2y4ARRTCuKQkKcDKQSOsC-gbSiotN/pub?gid=0&single=true&output=csv";
+            const csvUrl =
+                i18n.language === 'tr'
+                    ? "https://docs.google.com/spreadsheets/d/e/2PACX-1vTkIwP6tKmO6tKBjet3T5c4kgg9laweJMsrZ_XAWnyF-0yfX1Z2y4ARRTCuKQkKcDKQSOsC-gbSiotN/pub?gid=0&single=true&output=csv"
+                    : "https://docs.google.com/spreadsheets/d/e/2PACX-1vTkIwP6tKmO6tKBjet3T5c4kgg9laweJMsrZ_XAWnyF-0yfX1Z2y4ARRTCuKQkKcDKQSOsC-gbSiotN/pub?gid=1169403029&single=true&output=csv";
+
             axios.get(csvUrl)
                 .then((response) => {
                     parseCSV(response.data);
@@ -24,7 +30,7 @@ function AdvancedTableSinirDisi() {
         };
 
         fetchCSVData();
-    }, []);
+    }, [i18n.language]); // Dil değişikliğini izliyoruz
 
     function parseCSV(csvText) {
         Papa.parse(csvText, {
@@ -113,9 +119,9 @@ function AdvancedTableSinirDisi() {
     };
 
     const paginationOptions = {
-        rowsPerPageText: 'Satır Sayısı:',
-        rangeSeparatorText: 'ile',
-        selectAllRowsItemText: 'Tümünü Göster'
+        rowsPerPageText: t('rowsPerPageText'),
+        rangeSeparatorText: t('rangeSeparatorText'),
+        selectAllRowsItemText: t('selectAllRowsItemText')
     };
 
     const customStyles = {
@@ -137,28 +143,27 @@ function AdvancedTableSinirDisi() {
 
     return (
         <div className="advanced-table-wrapper">
-     <p style={{ fontWeight: 'bold' }}>Arama bölümünü verileri filtrelemek için kullanılabilirsiniz.</p>
-
+            <p style={{ fontWeight: 'bold' }}>{t('filterText')}</p>
             <FormControl
                 type="text"
-                placeholder="Arama yap..."
+                placeholder={t('searchPlaceholder')}
                 className="mb-3"
                 value={filterText}
                 onChange={handleFilter}
             />
-             <div className="advanced-table-container">
-            <DataTable
-                columns={columns}
-                data={dataRows}
-                defaultSortFieldId={1}
-                pagination
-                highlightOnHover
-                responsive
-                striped
-                noDataComponent={<div>Veri yükleniyor ...</div>}
-                paginationComponentOptions={paginationOptions}
-                customStyles={customStyles}
-            />
+            <div className="advanced-table-container">
+                <DataTable
+                    columns={columns}
+                    data={dataRows}
+                    defaultSortFieldId={1}
+                    pagination
+                    highlightOnHover
+                    responsive
+                    striped
+                    noDataComponent={<div>{t('noData')}</div>}
+                    paginationComponentOptions={paginationOptions}
+                    customStyles={customStyles}
+                />
             </div>
         </div>
     );
@@ -166,14 +171,28 @@ function AdvancedTableSinirDisi() {
 
 function ExpandableCell({ data }) {
     const [expand, setExpand] = useState(false);
-    const preview = `${data.substring(0, 200)}...`;
+    const { t } = useTranslation(); // i18n kullanımı
+
+    const preview = data ? `${data.substring(0, 200)}...` : t('noData');
 
     return (
         <div>
             {expand ? data : preview}
-            <button onClick={() => setExpand(!expand)} style={{ marginLeft: '5px', cursor: 'pointer', color: 'blue', textDecoration: 'underline', border: 'none', background: 'none' }}>
-                {expand ? 'Daha az göster' : 'Daha fazla oku'}
-            </button>
+            {data && (
+                <button
+                    onClick={() => setExpand(!expand)}
+                    style={{
+                        marginLeft: '5px',
+                        cursor: 'pointer',
+                        color: 'blue',
+                        textDecoration: 'underline',
+                        border: 'none',
+                        background: 'none'
+                    }}
+                >
+                    {expand ? t('readLess') : t('readMore')}
+                </button>
+            )}
         </div>
     );
 }

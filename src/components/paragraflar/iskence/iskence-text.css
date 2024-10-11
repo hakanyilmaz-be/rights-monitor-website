@@ -1,0 +1,64 @@
+.paragraph-iskence-giris span {
+  color: #246447; /* Koyu yeşil bir renk */
+}
+
+.paragraph-iskence-giris {
+  font-size: 15px; 
+}
+
+
+.small-paragraph {
+  font-size: 14px; /* Varsayılan değer */
+  line-height: 1.5;
+}
+
+@media (max-width: 768px) {
+  .small-paragraph {
+      font-size: 13px; /* Daha küçük ekranlar için */
+  }
+}
+
+
+  .light-red{
+    color: #D8484F;
+  }
+
+
+  .iskence .accordion-button:not(.collapsed) {
+    color: white!important;
+    background-color: #5f3df8!important;
+    box-shadow: inset 0 calc(-1 * var(--bs-accordion-border-width)) 0 rgb(95, 61, 248)!important;
+}
+
+/* Accordion butonunun açıldığında görünen ok işaretinin rengini ayarlama */
+.iskence .accordion-button:not(.collapsed)::after {
+  color: #ffffff !important; /* İşaretin rengini beyaz yap */
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" fill="%23ffffff" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>'); /* Varsayılan Bootstrap okunu beyaz renkle yeniden boyar */
+  filter: brightness(0) invert(1); /* Renkleri ters çevirir, SVG içindeki renk kodunu değiştirin */
+}
+
+.iskence .accordion-body-text-iskence {
+  font-size: 14px; 
+}
+
+
+
+/* Olumler Giris */ 
+.desktop-margin-top {
+  margin-top: 3rem;
+}
+
+@media (max-width: 992px) {
+  .desktop-margin-top {
+    padding-bottom: 5rem;
+
+  }
+  .ilk-giris{
+    margin-top: -4rem!important;
+  }
+
+}
+
+
+
+

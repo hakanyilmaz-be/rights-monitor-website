@@ -2,8 +2,10 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import Chart from 'react-google-charts';
 import { Container } from 'react-bootstrap';
+import { useTranslation } from 'react-i18next';
 
 const YillarKovusturmaGrafik = () => {
+    const { t } = useTranslation();
     const [data, setData] = useState([]);
 
     useEffect(() => {
@@ -12,7 +14,7 @@ const YillarKovusturmaGrafik = () => {
             try {
                 const response = await axios.get(csvUrl);
                 const rows = parseCSV(response.data);
-                const chartData = [['Yıl', 'Mahkumiyet', 'Hükmün açıklanmasının geriye bırakılması', 'Beraat']];
+                const chartData = [[t('graph.year'), t('graph.conviction'), t('graph.suspendedSentence'), t('graph.acquittal')]];
                 rows.slice(3, 13).forEach(row => {
                     chartData.push([row[20], parseInt(row[23]), parseInt(row[22]), parseInt(row[21]) ]);
                 });
@@ -22,7 +24,7 @@ const YillarKovusturmaGrafik = () => {
             }
         };
         fetchCSVData();
-    }, []);
+    }, [t]);
 
     const parseCSV = (csvText) => {
         const rows = csvText.split(/\r?\n/).map(row => row.split(',').map(cell => cell.trim()));
@@ -35,12 +37,12 @@ const YillarKovusturmaGrafik = () => {
                 width={'100%'}
                 height={'400px'}
                 chartType="ComboChart"
-                loader={<div>Veri Yükleniyor...</div>}
+                loader={<div>{t('graph.loading')}</div>}
                 data={data}
                 options={{
-                    title: 'Yıllara göre kovuşturma aşaması ve karar sayısı grafiği',
-                    vAxis: { title: 'Karar Sayısı' },
-                    hAxis: { title: 'Yıl' },
+                    title: t('graph.title'),
+                    vAxis: { title: t('graph.verdictCount') },
+                    hAxis: { title: t('graph.year') },
                     seriesType: 'bars',
                     series: { 
                         0: { type: 'bars' },
@@ -51,7 +53,7 @@ const YillarKovusturmaGrafik = () => {
                 }}
             />
             <Container>
-            <p className='mt-3 small-paragraph'>2015'ten 2021'e kadar TCK 309-316 maddeleri arasındaki suçlar ayrı ayrı raporlanmış, bu da spesifik suçlara yönelik detaylı analiz yapılmasını sağlamıştır. Ancak, 2022'den itibaren bu maddeler "Anayasal Düzene ve Bu Düzenin İşleyişine Karşı Suçlar" başlığı altında topluca raporlanmıştır.</p>
+            <p className='mt-3 small-paragraph'>{t('graph.explanation')}</p>
             </Container>
         </div>
     );

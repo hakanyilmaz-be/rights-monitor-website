@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import { useTranslation } from "react-i18next"; // Çeviri için i18next kullanımı
 import "./hassas-text.css";
 
 const KadinlarAciklama = () => {
+  const { t } = useTranslation(); // Çeviri fonksiyonunu kullanmak için
   const [a5Value, setA5Value] = useState("");
 
   useEffect(() => {
@@ -31,22 +33,15 @@ const KadinlarAciklama = () => {
       .map((row) => row.split(",").map((cell) => cell.trim()));
     return rows.slice(1); // Başlık satırını atla
   }
+
   return (
     <>
       <h2 style={{ fontWeight: "bold" }}>
-        Hamile ve Yeni Doğum Yapmış Kadınlar
+        {t('pregnant_and_recently_delivered_women')}
       </h2>
       <p className="small-paragraph">
-        2016'dan bu yana, özellikle Gülen Hareketi ile ilişkilendirilen binlerce
-        kadın, genellikle somut deliller olmaksızın tutuklanıp alıkonulmuştur.
-        Aralık 2016 sonu itibarıyla, Türkiye'deki ceza kurumlarında 201.139
-        hükümlü ve tutuklu bulunmaktadır. Bunlardan 8.315'i kadın hükümlü ve
-        tutuklular olup, toplam hükümlü ve tutukluların %4.1'ini
-        oluşturmaktadır. 2016’dan bugüne, Gülen Hareketi ile ilişkilendirildiği
-        için tutuklanan hamile ve yeni doğum yapmış en az {a5Value} kadın olduğu
-        bilinmektedir.
+        {t('since_2016_thousands_of_women')} {a5Value} {t('known_pregnant_women')}
       </p>
-      
     </>
   );
 };

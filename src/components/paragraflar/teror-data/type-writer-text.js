@@ -2,12 +2,14 @@ import React, { useEffect, useState } from 'react';
 import { Container } from 'react-bootstrap';
 import { motion } from 'framer-motion';
 import axios from 'axios';
+import { useTranslation } from 'react-i18next';
 
 const TypewriterText = () => {
   const [a1Value, setA1Value] = useState("");
   const [a2Value, setA2Value] = useState("");
   const [a3Value, setA3Value] = useState("");
   const [a4Value, setA4Value] = useState("");
+  const { t } = useTranslation(); // i18next hook'u
 
   useEffect(() => {
     const fetchCSVData = () => {
@@ -29,13 +31,6 @@ const TypewriterText = () => {
     fetchCSVData();
   }, []);
 
-  function parseCSV(csvText) {
-    const rows = csvText
-      .split(/\r?\n/)
-      .map((row) => row.split(",").map((cell) => cell.trim()));
-    return rows.slice(1); // Başlık satırını atla
-  }
-
   useEffect(() => {
     const fetchCSVData = () => {
       const csvUrl =
@@ -46,8 +41,6 @@ const TypewriterText = () => {
           const data = parseCSV(response.data);
           if (data.length > 0) {
             setA2Value(data[5][17]);
-          }
-          if (data.length > 0) {
             setA3Value(data[4][17]);
           }
         })
@@ -90,21 +83,6 @@ const TypewriterText = () => {
     return new Intl.NumberFormat('tr-TR').format(number);
   };
 
-  const text = `2015’den bugüne toplam ${formatNumber(a1Value)} kişi hakkında soruşturma açılmış, bunlardan ${formatNumber(a2Value)} kişi hakkında kamu davası açılmış, ${formatNumber(a3Value)} kişi hakkında ise mahkumiyet kararı alınmıştır. Mahkumiyet kararına tabi olanlardan ${formatNumber(a4Value)} kişi 18 yaşının altındadır.`;
-  
-  const [displayedText, setDisplayedText] = useState('');
-  const [index, setIndex] = useState(0);
-
-  useEffect(() => {
-    if (index < text.length) {
-      const timeoutId = setTimeout(() => {
-        setDisplayedText((prev) => prev + text[index]);
-        setIndex(index + 1);
-      }, 100); 
-      return () => clearTimeout(timeoutId);
-    }
-  }, [index, text]);
-
   const highlightedTextVariants = {
     initial: { opacity: 0 },
     animate: {
@@ -132,15 +110,15 @@ const TypewriterText = () => {
         transition={{ duration: 0.5 }}
       >
         <span><h4>
-          {`2015’den bugüne toplam `}
+          {t('typewriterText.since2015')} 
           {highlightedText(formatNumber(a1Value))}
-          {` kişi hakkında soruşturma açılmış, bunlardan `}
+          {t('typewriterText.peopleInvestigated')}
           {highlightedText(formatNumber(a2Value))}
-          {` kişi hakkında kamu davası açılmış, `}
+          {t('typewriterText.peopleSued')}
           {highlightedText(formatNumber(a3Value))}
-          {` kişi hakkında ise mahkumiyet kararı alınmıştır. Mahkumiyet kararı verilenlerden `}
+          {t('typewriterText.peopleConvicted')}
           {highlightedText(formatNumber(a4Value))}
-          {` kişi 18 yaşının altındadır.`}
+          {t('typewriterText.peopleUnder18')}
           </h4></span>
       </motion.div>
     </Container>

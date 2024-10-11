@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { Chart } from 'react-google-charts';
+import { useTranslation } from 'react-i18next';
 
 function Meslek() {
+  const { t } = useTranslation(); 
   const [a2Value, setA2Value] = useState('');
   const [b2Value, setB2Value] = useState('');
 
@@ -34,18 +36,24 @@ function Meslek() {
   }
 
   const data = [
-    ['Category', 'Asker/Polis', { role: 'annotation' }, 'Sivil', { role: 'annotation' }],
+    [
+      'Category', 
+      t('meslek.soldier_police'), 
+      { role: 'annotation' }, 
+      t('meslek.civilian'), 
+      { role: 'annotation' }
+    ],
     ['', parseFloat(a2Value), a2Value, parseFloat(b2Value), b2Value],
   ];
 
   const options = {
-    title: 'Asker/Polis ve Sivil Can Kayıpları',
+    title: t('meslek.title'), // Çeviri kullanılarak başlık
     chartArea: { width: '50%' },
     hAxis: {
       minValue: 0,
     },
     vAxis: {
-      title: 'Kategori',
+      title: t('meslek.category'),
     },
     legend: { position: 'bottom' },
     colors: ['#57A6A1', '#577B8D'],  

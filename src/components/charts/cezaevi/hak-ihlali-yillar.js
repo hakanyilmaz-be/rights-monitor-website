@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import { useTranslation } from 'react-i18next'; // Çeviri için i18next hook'u dahil ettik
 import { Chart } from 'react-google-charts';
 
 const HakIhlaliYillar = () => {
+    const { t } = useTranslation(); // Çeviri fonksiyonunu kullanmak için hook
     const [dataRows, setDataRows] = useState([]);
 
     useEffect(() => {
@@ -26,14 +28,14 @@ const HakIhlaliYillar = () => {
     };
 
     const chartData = [
-        ['Ay', 'Olay Sayısı'],
+        [t('month'), t('event_count')],
         ...dataRows.map(row => [row[0], parseInt(row[1], 10)])
     ];
 
     const options = {
-        title: 'Yıl ve aylara göre hak ihlalleri grafiği',
-        hAxis: { title: 'Ay' },
-        vAxis: { title: 'Olay Sayısı' },
+        title: t('rights_violations_by_month_year'),
+        hAxis: { title: t('month') },
+        vAxis: { title: t('event_count') },
         legend: 'none',
         animation: {
             startup: true,

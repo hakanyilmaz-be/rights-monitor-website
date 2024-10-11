@@ -1,13 +1,14 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { Chart } from "react-google-charts";
-import "./chart-title.css"
+import { useTranslation } from "react-i18next";
+import "./chart-title.css";
 
 function PastaEskiKanun() {
+  const { t } = useTranslation();
   const [a2Value, setA2Value] = useState("");
   const [b2Value, setB2Value] = useState("");
   const [c2Value, setC2Value] = useState("");
-
 
   useEffect(() => {
     const fetchCSVData = () => {
@@ -26,7 +27,6 @@ function PastaEskiKanun() {
             if (data.length > 1) {
               setC2Value(data[19][25]);
             }
-            
           }
         })
         .catch((error) => {
@@ -49,10 +49,10 @@ function PastaEskiKanun() {
   };
 
   const data = [
-    ["Category", "Value"],
-    ["Beraat", parseFloat(b2Value)],
-    ["Mahkumiyet", parseFloat(a2Value)],
-    ["Hükmün Açıklanmasının Geriye Bırakılması", parseFloat(c2Value)],
+    [t("chartff.category"), t("chartff.value")],
+    [t("chartff.acquittal"), parseFloat(b2Value)],
+    [t("chartff.conviction"), parseFloat(a2Value)],
+    [t("chartff.hagb"), parseFloat(c2Value)],
   ];
 
   const options = {
@@ -63,7 +63,9 @@ function PastaEskiKanun() {
 
   return (
     <div>
-    <p className="chart-title2"><strong>TCK md. 314 Kovuşturma Kararları</strong></p>
+      <p className="chart-title2">
+        <strong>{t('chartff.title')}</strong>
+      </p>
       <Chart
         chartType="PieChart"
         data={data}

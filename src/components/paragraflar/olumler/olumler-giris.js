@@ -2,9 +2,11 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { Col, Container, Row } from "react-bootstrap";
 import CountUp from "react-countup"; 
+import { useTranslation } from "react-i18next";
 import "./olumler-text.css";
 
 const OlumlerGiris = () => {
+  const { t } = useTranslation();
   const [a5Value, setA5Value] = useState("");
 
   useEffect(() => {
@@ -37,29 +39,18 @@ const OlumlerGiris = () => {
   return (
     <Container
       fluid
-      className=" d-flex justify-content-center align-items-center ilk-giris"
+      className="d-flex justify-content-center align-items-center ilk-giris"
     >
       <Row className="justify-content-center align-items-center">
         <Col lg={6} className="text-start">
           <h1 className="text-white fw-bold mt-5" style={{ fontSize: "3rem" }}>
-            Yaşam Hakkı İhlalleri
+            {t('olumler_giris.title')}
           </h1>
           <p className="small-paragraph text-white">
-            15 Temmuz 2016 sonrasında Gülen Hareketi mensupları yoğun baskı ve
-            takibat altında kalmış, Türkiye’deki siyasi ve toplumsal
-            değişimlerin odak noktası olmuşlardır. Bu süreçte Gülen Hareketi
-            mensupları sosyal ve ekonomik ayrımcılığa maruz kalmış, erkek, kadın
-            ve çocuk ayrımı olmaksızın çeşitli hak ihlalleri ile
-            karşılaşmışlardır. Ulusal ve uluslararası güvenceler altına alınmış
-            insan hakları ihlal edilen Gülen Hareketi mensuplarının yaşama
-            hakları da 2016 Temmuz'dan sonra doğrudan veya dolaylı yollarla
-            ihlal edilmiştir.
+            {t('olumler_giris.paragraph1')}
           </p>
           <p className="small-paragraph text-white">
-            Gülen Hareketi mensuplarına yönelik toplumsal algı, bu kişilerin ve
-            ailelerinin can güvenliğine değer verilmemesi yönünde değişmiştir.
-            2016’dan bugüne kadar Gülen Hareketi ile bağlantılı olmakla suçlanan
-            en az {a5Value} kişi hayatını kaybetmiştir. Hayatını kaybedenlerden en az 65'i çocuktur.
+            {t('olumler_giris.paragraph2', { count: a5Value })}
           </p>
         </Col>
         <Col
@@ -70,7 +61,7 @@ const OlumlerGiris = () => {
             <CountUp start={700} end={a5Value} duration={5} />
           </h2>
           <h6 className="text-white" style={{ fontSize: "1.4rem" }}>
-            Toplam Ölen Kişi Sayısı
+            {t('olumler_giris.total_deaths')}
           </h6>
         </Col>
       </Row>

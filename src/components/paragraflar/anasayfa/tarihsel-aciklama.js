@@ -1,25 +1,23 @@
 import React, { useRef, useState, useEffect } from "react";
 import { motion } from "framer-motion";
+import { useTranslation } from 'react-i18next';
 
 const TarihselAciklama = () => {
+  const { t } = useTranslation(); // Çeviri fonksiyonunu kullanmak için hook
   const ref = useRef();
   const [isVisible, setIsVisible] = useState(false);
 
-  const text = `Türkiye Cumhuriyeti, milliyetçilik, merkezi yönetim ve üniterlik üzerine kurulduğundan insan hakları üzerinde olumsuz etkiler oluşmuştur. Azınlık hakları, ifade özgürlüğü, medya özgürlüğü, yargı bağımsızlığı sürekli sorunlu alanlar olmuş, 1980'lerde askeri cunta yönetimi, 1990'larda Kürt bölgelerindeki askeri çatışmalar sırasında ciddi hak ihlalleri, işkence ve zorla kaybetmeler yaşanmıştır.`;
+  const text = t('historical_description'); // Çevirilen metni çekiyoruz
 
   const words = text.split(" ").map((word, index) => {
     if (
-      word === "milliyetçilik," ||
-      word === "merkezi" ||
-      word === "yönetim" ||
-      word === "ve" ||
-      word === "üniterlik" ||
-      word === "hak" ||
-      word === "ihlalleri," ||
-      word === "işkence" ||
-      word === "ve" ||
-      word === "zorla" ||
-      word === "kaybetmeler"
+      word === t('keywords.nationalism') ||
+      word === t('keywords.central') ||
+      word === t('keywords.governance') ||
+      word === t('keywords.unitarity') ||
+      word === t('keywords.violations') ||
+      word === t('keywords.torture') ||
+      word === t('keywords.forced_disappearances')
     ) {
       return <b key={index}>{word}</b>;
     }
@@ -69,7 +67,7 @@ const TarihselAciklama = () => {
 
   return (
     <div ref={ref}>
-      <h4 className="mb-4 text-center">TÜRKİYE'NİN İNSAN HAKLARI SİCİLİ</h4>
+      <h4 className="mb-4 text-center">{t('title')}</h4>
       <motion.p
         variants={containerVariants}
         initial="hidden"

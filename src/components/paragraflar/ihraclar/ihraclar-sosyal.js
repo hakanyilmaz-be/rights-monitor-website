@@ -1,15 +1,18 @@
 import React from "react";
+import { useTranslation } from 'react-i18next';
 import "./ihraclar-text.css";
 
 const IhraclarSosyal = () => {
+  const { t } = useTranslation();
+
   return (
     <>
-      <h2 style={{ fontWeight: "bold" }}>Sosyal Soykırım ve Toplumsal Dışlanma</h2>
+      <h2 style={{ fontWeight: "bold" }}>{t('social_genocide_and_exclusion')}</h2>
       <p className="small-paragraph">
-      Haksız yere ihraç edilen kişiler, sadece işlerinden değil, aynı zamanda toplumsal hayattan da dışlanmışlardır. İşlerini kaybeden bu kişiler, ekonomik sıkıntılarla boğuşurken, sosyal çevrelerinden de izole edilmiş, çocuklarının eğitim hakları, sağlık hizmetlerine erişimleri gibi temel insan hakları ihlal edilmiş, sosyal soykırımın mağduru olmuşlardır.
+        {t('dismissed_persons_excluded_from_society')}
       </p>
       <p className="small-paragraph">
-      Haksız ihraç edilenler, iç hukukta öngörülen olağan kanun yollarını tüketmeden Anayasa Mahkemesi’ne ve ardından Avrupa İnsan Hakları Mahkemesi’ne başvuramamaktadır. Ancak, yeni bir KHK ile ya da yargı kararları ile görevlerine dönmeleri mümkündür. 
+        {t('cannot_apply_to_constitutional_court')}
       </p>
     </>
   );

@@ -2,16 +2,17 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { Col, Container, Row } from "react-bootstrap";
 import CountUp from "react-countup";
-import "./kaybetmeler-text.css"
+import { useTranslation } from "react-i18next"; // i18n için import
+import "./kaybetmeler-text.css";
 
 
 const KaybetmelerGiris = () => {
+  const { t } = useTranslation(); // Çeviri hook'u
   const [a5Value, setA5Value] = useState("");
   const [a6Value, setA6Value] = useState("");
   const [a7Value, setA7Value] = useState("");
 
   const gradientTextStyle = {
-    
     background: "linear-gradient(270deg, #ffe985, #ffffff)",
     WebkitBackgroundClip: "text",
     WebkitTextFillColor: "transparent",
@@ -56,54 +57,26 @@ const KaybetmelerGiris = () => {
       className=" d-flex justify-content-center align-items-center ilk-giris"
     >
       <Row className="justify-content-center align-items-center">
-      <h1 className="text-white fw-bold mt-5" style={{ fontSize: "3rem" }}>
-        Zorla Kaybedilmeler
-          </h1>
+        <h1 className="text-white fw-bold mt-5" style={{ fontSize: "3rem" }}>
+          {t("zorla_kaybedilmeler")} {/* Başlık çevirisi */}
+        </h1>
         <Col lg={6} className="text-start">
-       
-          
           <p className="small-paragraph text-white">
-            Zorla kaybetmeler, demokratik değerlerden uzak devletlerin muhalif
-            grupları bastırmak amacıyla uyguladığı bir şiddet yöntemidir.
-            Uluslararası insan hakları hukukuna göre, bir kişi kayıp ise
-            işkenceye maruz kalmış veya öldürülmüş olma ihtimali yüksektir. 15
-            Temmuz öncesi Türkiye tarihinde zorla kaybetme uygulamaları
-            Cumhuriyet'in ilk yıllarına kadar uzanırken, bu suçun yaygın ve
-            sistematik olarak işlendiği dönemler 12 Eylül 1980 darbesi ve
-            1990'lardaki olağanüstü hal dönemleridir.
+            {t("zorla_kaybedilme_paragraph_1")} {/* 1. Paragraf çevirisi */}
           </p>
           <p className="small-paragraph text-white">
-            1980 askeri darbesinin ardından
-            1,300’den fazla kişi kaybolmuş, 1990'larda ise özellikle Kürtler ve
-            solcu siyasi aktivistler hedef alınmıştı. Bu kayıpların çoğunun
-            devlet ajanları veya gizli gruplar tarafından gerçekleştirildigine
-            inanılmaktadır ve bazı mağdurların akıbetleri hala belirsizdir. Bu
-            bağlamda, Cumartesi Anneleri hareketi, kayıp yakınlarının adalet
-            arayışında önemli bir sembol haline gelmiştir. Cumartesi Anneleri,
-            27 Mayıs 1995’ten bu yana her cumartesi günü 90'lı yıllarda
-            gözaltında kaybedilen yakınlarının akıbetini sormak ve faillerin
-            yargılanmasını talep etmek amacı ile Galatasaray Meydanı'nda
-            buluşarak eylem yapmaktadırlar.
+            {t("zorla_kaybedilme_paragraph_2")} {/* 2. Paragraf çevirisi */}
           </p>
           <p className="small-paragraph text-white">
-            1990'lar boyunca veya 2000'lerin başlarında zorla kaybetmelere
-            karışan resmi görevlilerin neredeyse hiçbiri yargılanıp ceza
-            almamıştır. Kayıp yakınları yetkili makamlara başvuruda bulunurken
-            çoğunlukla etkisiz cevaplar almış ve savcılar tarafından tehdit
-            edilmişlerdir. Bu dönemde Avrupa İnsan Hakları Mahkemesi (AİHM),
-            zorla kaybetmelerle ilgili birçok davada Türkiye'yi sorumlu
-            bulmuştur.
+            {t("zorla_kaybedilme_paragraph_3")} {/* 3. Paragraf çevirisi */}
           </p>
         </Col>
         <Col
           lg={6}
           className="d-flex flex-column justify-content-center desktop-margin-top"
-          
         >
           <h2 style={{ ...gradientTextStyle, fontSize: "2.4rem" }}>
-          
-          Hâlâ Kayıp...
-            
+            {t("hala_kayip")} {/* Hala kayıp metni */}
           </h2>
           <div>
             <h2
@@ -111,12 +84,10 @@ const KaybetmelerGiris = () => {
               style={{ fontSize: "2.2rem", paddingTop: "2.5rem" }}
             >
               <CountUp start={700} end={a5Value} duration={5} />{" "}
-              <span style={{ fontSize: "1.2rem" }}>gündür</span>
+              <span style={{ fontSize: "1.2rem" }}>{t("gundur")}</span> {/* Gün sayısı */}
             </h2>
             <h6 style={{ ...gradientTextStyle, fontSize: "1.4rem" }}>
-            
-                Sunay Elmas
-        
+              Sunay Elmas {/* Kayıp kişi ismi */}
             </h6>
           </div>
           <div>
@@ -125,13 +96,10 @@ const KaybetmelerGiris = () => {
               style={{ fontSize: "2.2rem", paddingTop: "2.5rem" }}
             >
               <CountUp start={700} end={a6Value} duration={5} />{" "}
-              <span style={{ fontSize: "1.2rem" }}>gündür</span>
+              <span style={{ fontSize: "1.2rem" }}>{t("gundur")}</span> {/* Gün sayısı */}
             </h2>
             <h6 style={{ ...gradientTextStyle, fontSize: "1.4rem" }}>
-           
-            Ayhan Oran
-           
-             
+              Ayhan Oran {/* Kayıp kişi ismi */}
             </h6>
           </div>
           <div>
@@ -140,13 +108,10 @@ const KaybetmelerGiris = () => {
               style={{ fontSize: "2.2rem", paddingTop: "2.5rem" }}
             >
               <CountUp start={700} end={a7Value} duration={5} />{" "}
-              <span style={{ fontSize: "1.2rem" }}>gündür</span>
+              <span style={{ fontSize: "1.2rem" }}>{t("gundur")}</span> {/* Gün sayısı */}
             </h2>
             <h6 style={{ ...gradientTextStyle, fontSize: "1.4rem" }}>
-           
-            Yusuf Bilge Tunç
-            
-              
+              Yusuf Bilge Tunç {/* Kayıp kişi ismi */}
             </h6>
           </div>
         </Col>

@@ -3,6 +3,7 @@ import axios from 'axios';
 import DataTable from 'react-data-table-component';
 import Papa from 'papaparse';
 import { FormControl } from 'react-bootstrap';
+import { useTranslation } from 'react-i18next'; // i18next hook'u
 import "./advanced-table-cezaevi.css"
 
 function AdvancedTableCezaevi() {
@@ -10,10 +11,14 @@ function AdvancedTableCezaevi() {
     const [allData, setAllData] = useState([]);
     const [columns, setColumns] = useState([]);
     const [filterText, setFilterText] = useState('');
+    const { t, i18n } = useTranslation(); // i18next hook'u
 
     useEffect(() => {
         const fetchCSVData = () => {
-            const csvUrl = "https://docs.google.com/spreadsheets/d/e/2PACX-1vQzCf-jQLEF_RoHvD_LqLKM1GWgZnXhcXq5QHhAAdUMoLCTk3SsgSg6VLrPYVFQnKSFR1y227F7iA5P/pub?gid=1952002039&single=true&output=csv";
+            const csvUrl =
+                i18n.language === 'tr'
+                    ? "https://docs.google.com/spreadsheets/d/e/2PACX-1vQzCf-jQLEF_RoHvD_LqLKM1GWgZnXhcXq5QHhAAdUMoLCTk3SsgSg6VLrPYVFQnKSFR1y227F7iA5P/pub?gid=1952002039&single=true&output=csv"
+                    : "https://docs.google.com/spreadsheets/d/e/2PACX-1vQzCf-jQLEF_RoHvD_LqLKM1GWgZnXhcXq5QHhAAdUMoLCTk3SsgSg6VLrPYVFQnKSFR1y227F7iA5P/pub?gid=336734633&single=true&output=csv";
 
             axios.get(csvUrl)
                 .then((response) => {
@@ -25,7 +30,7 @@ function AdvancedTableCezaevi() {
         };
 
         fetchCSVData();
-    }, []);
+    }, [i18n.language]); // Dil değişikliğini izleyerek uygun CSV'yi çekeriz
 
     function parseCSV(csvText) {
         Papa.parse(csvText, {
@@ -44,7 +49,6 @@ function AdvancedTableCezaevi() {
                     });
 
                     const selectedColumns = [
-                        
                         {
                             name: headers[2],
                             selector: row => row[headers[2]],
@@ -52,7 +56,6 @@ function AdvancedTableCezaevi() {
                             wrap: true,
                             grow: 1
                         },
-                       
                         {
                             name: headers[3],
                             selector: row => row[headers[3]],
@@ -60,7 +63,6 @@ function AdvancedTableCezaevi() {
                             wrap: true,
                             grow: 3
                         },
-                        
                         {
                             name: headers[4],
                             selector: row => row[headers[4]],
@@ -75,7 +77,6 @@ function AdvancedTableCezaevi() {
                             wrap: true,
                             grow: 2
                         },
-                        
                         {
                             name: headers[6],
                             selector: row => row[headers[6]],
@@ -110,9 +111,9 @@ function AdvancedTableCezaevi() {
     };
 
     const paginationOptions = {
-        rowsPerPageText: 'Satır Sayısı:',
-        rangeSeparatorText: 'ile',
-        selectAllRowsItemText: 'Tümünü Göster'
+        rowsPerPageText: t('rowsPerPageText'),
+        rangeSeparatorText: t('rangeSeparatorText'),
+        selectAllRowsItemText: t('selectAllRowsItemText')
     };
 
     const customStyles = {
@@ -120,7 +121,7 @@ function AdvancedTableCezaevi() {
             style: {
                 padding: '8px 0px 8px 8px',
                 background: '#124d74',
-                color: '#fff',
+                color: '#FFF',
                 fontSize: '12px',
             }
         },
@@ -134,45 +135,30 @@ function AdvancedTableCezaevi() {
 
     return (
         <div className="advanced-table-wrapper">
-     <p style={{ fontWeight: 'bold' }}>Arama bölümünü verileri filtrelemek için kullanılabilirsiniz.</p>
-
+            <p style={{ fontWeight: 'bold' }}>{t('filterText')}</p>
             <FormControl
                 type="text"
-                placeholder="Arama yap..."
+                placeholder={t('searchPlaceholder')}
                 className="mb-3"
                 value={filterText}
                 onChange={handleFilter}
             />
-             <div className="advanced-table-container">
-            <DataTable
-                columns={columns}
-                data={dataRows}
-                defaultSortFieldId={1}
-                pagination
-                highlightOnHover
-                responsive
-                striped
-                noDataComponent={<div>Veri yükleniyor ...</div>}
-                paginationComponentOptions={paginationOptions}
-                customStyles={customStyles}
-            />
+            <div className="advanced-table-container">
+                <DataTable
+                    columns={columns}
+                    data={dataRows}
+                    defaultSortFieldId={1}
+                    pagination
+                    highlightOnHover
+                    responsive
+                    striped
+                    noDataComponent={<div>{t('noData')}</div>}
+                    paginationComponentOptions={paginationOptions}
+                    customStyles={customStyles}
+                />
             </div>
         </div>
     );
 }
-
-/* function ExpandableCell({ data }) {
-    const [expand, setExpand] = useState(false);
-    const preview = `${data.substring(0, 170)}...`;
-
-    return (
-        <div>
-            {expand ? data : preview}
-            <button onClick={() => setExpand(!expand)} style={{ marginLeft: '5px', cursor: 'pointer', color: 'blue', textDecoration: 'underline', border: 'none', background: 'none' }}>
-                {expand ? 'Daha az göster' : 'Daha fazla oku'}
-            </button>
-        </div>
-    );
-} */
 
 export default AdvancedTableCezaevi;

@@ -3,6 +3,7 @@ import axios from 'axios';
 import DataTable from 'react-data-table-component';
 import Papa from 'papaparse';
 import { FormControl } from 'react-bootstrap';
+import { useTranslation } from 'react-i18next'; // i18n hook'u
 import "./advanced-table-sosyal.css"
 
 function AdvancedTableSosyal() {
@@ -10,10 +11,14 @@ function AdvancedTableSosyal() {
     const [allData, setAllData] = useState([]);
     const [columns, setColumns] = useState([]);
     const [filterText, setFilterText] = useState('');
+    const { t, i18n } = useTranslation(); // i18next hook'u
 
     useEffect(() => {
         const fetchCSVData = () => {
-            const csvUrl = "https://docs.google.com/spreadsheets/d/e/2PACX-1vQB4rC08lZZ4h8k-JLw3uty31xKCA-M8xZ9Wl9zKjr54QUe5tLGqAllhPscSFjKwY09biwRi2NX4eXI/pub?gid=0&single=true&output=csv";
+            const csvUrl =
+                i18n.language === 'tr'
+                    ? "https://docs.google.com/spreadsheets/d/e/2PACX-1vQB4rC08lZZ4h8k-JLw3uty31xKCA-M8xZ9Wl9zKjr54QUe5tLGqAllhPscSFjKwY09biwRi2NX4eXI/pub?gid=0&single=true&output=csv"
+                    : "https://docs.google.com/spreadsheets/d/e/2PACX-1vQB4rC08lZZ4h8k-JLw3uty31xKCA-M8xZ9Wl9zKjr54QUe5tLGqAllhPscSFjKwY09biwRi2NX4eXI/pub?gid=444513851&single=true&output=csv";
 
             axios.get(csvUrl)
                 .then((response) => {
@@ -25,7 +30,7 @@ function AdvancedTableSosyal() {
         };
 
         fetchCSVData();
-    }, []);
+    }, [i18n.language]); // Dil değişikliklerini izleyerek uygun CSV'yi çekeriz
 
     function parseCSV(csvText) {
         Papa.parse(csvText, {
@@ -58,7 +63,6 @@ function AdvancedTableSosyal() {
                             wrap: true,
                             grow: 4
                         },
-                       
                         {
                             name: headers[3],
                             selector: row => row[headers[3]],
@@ -66,7 +70,6 @@ function AdvancedTableSosyal() {
                             wrap: true,
                             grow: 1
                         },
-                        
                         {
                             name: headers[4],
                             selector: row => row[headers[4]],
@@ -81,7 +84,6 @@ function AdvancedTableSosyal() {
                             wrap: true,
                             grow: 1
                         },
-                        
                         {
                             name: headers[2],
                             selector: row => row[headers[2]],
@@ -116,9 +118,9 @@ function AdvancedTableSosyal() {
     };
 
     const paginationOptions = {
-        rowsPerPageText: 'Satır Sayısı:',
-        rangeSeparatorText: 'ile',
-        selectAllRowsItemText: 'Tümünü Göster'
+        rowsPerPageText: t('rowsPerPageText'),
+        rangeSeparatorText: t('rangeSeparatorText'),
+        selectAllRowsItemText: t('selectAllRowsItemText')
     };
 
     const customStyles = {
@@ -126,7 +128,7 @@ function AdvancedTableSosyal() {
             style: {
                 padding: '8px 0px 8px 8px',
                 background: '#15746f',
-                color: '#fff',
+                color: '#FFF',
                 fontSize: '12px',
             }
         },
@@ -140,45 +142,30 @@ function AdvancedTableSosyal() {
 
     return (
         <div className="advanced-table-wrapper">
-     <p style={{ fontWeight: 'bold' }}>Arama bölümünü verileri filtrelemek için kullanılabilirsiniz.</p>
-
+            <p style={{ fontWeight: 'bold' }}>{t('filterText')}</p>
             <FormControl
                 type="text"
-                placeholder="Arama yap..."
+                placeholder={t('searchPlaceholder')}
                 className="mb-3"
                 value={filterText}
                 onChange={handleFilter}
             />
             <div className="advanced-table-container">
-            <DataTable
-                columns={columns}
-                data={dataRows}
-                defaultSortFieldId={1}
-                pagination
-                highlightOnHover
-                responsive
-                striped
-                noDataComponent={<div>Veri yükleniyor ...</div>}
-                paginationComponentOptions={paginationOptions}
-                customStyles={customStyles}
-            />
+                <DataTable
+                    columns={columns}
+                    data={dataRows}
+                    defaultSortFieldId={1}
+                    pagination
+                    highlightOnHover
+                    responsive
+                    striped
+                    noDataComponent={<div>{t('noData')}</div>}
+                    paginationComponentOptions={paginationOptions}
+                    customStyles={customStyles}
+                />
             </div>
         </div>
     );
 }
-
-/* function ExpandableCell({ data }) {
-    const [expand, setExpand] = useState(false);
-    const preview = `${data.substring(0, 170)}...`;
-
-    return (
-        <div>
-            {expand ? data : preview}
-            <button onClick={() => setExpand(!expand)} style={{ marginLeft: '5px', cursor: 'pointer', color: 'blue', textDecoration: 'underline', border: 'none', background: 'none' }}>
-                {expand ? 'Daha az göster' : 'Daha fazla oku'}
-            </button>
-        </div>
-    );
-} */
 
 export default AdvancedTableSosyal;

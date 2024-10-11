@@ -60,17 +60,9 @@ const CezaeviPage = () => {
       </Row>
     <Spacer/>
 
-     
- 
-    
      <AccordionTextCezaevi/>
-
      <Spacer/>
-
-
    <AdvancedTableCezaevi/>
- 
-
     </Container>
 
     </>

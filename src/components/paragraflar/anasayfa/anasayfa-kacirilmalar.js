@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Col, Row } from "react-bootstrap";
-import interpol from "../../../assets/img/interpol.png";
-import interpolDocument from "../../../assets/img/interpol-document.png";
+import { useTranslation } from 'react-i18next'; // Çeviri için i18next hook'u dahil ettik
 import "./anasayfa-text.css"
 import AnasayfaKayanText from "./anasayfa-kayan-text";
 import axios from "axios";
@@ -9,17 +8,21 @@ import "./buton.css"
 import { useNavigate } from 'react-router-dom';
 import AnasayfaMapSinirDisi from "./anasayfa-map-sinir-disi";
 
-
-
 const AnasayfaKacirilmalar = () => {
+  const { t, i18n } = useTranslation();
   const [a1Value, setA1Value] = useState("");
   const [a2Value, setA2Value] = useState("");
   const [a3Value, setA3Value] = useState("");
   const navigate = useNavigate();
 
   const handleButtonClick = () => {
-    navigate('/illegaliade');
+    if (i18n.language === 'en') {
+      navigate('/en/illegal-deportation');
+    } else {
+      navigate('/tr/illegal-iade');
+    }
   };
+
 
   useEffect(() => {
     const fetchCSVData = () => {
@@ -57,28 +60,21 @@ const AnasayfaKacirilmalar = () => {
   return (
     <>
       <Row>
-      <h2 className="gradient-text mb-5 text-center" style={{ fontWeight: "bold"}}>Hukuka Aykırı Sınır Dışı ve İadeler</h2>
-
+        <h2 className="gradient-text mb-5 text-center" style={{ fontWeight: "bold"}}>{t('illegal_extraditions_title')}</h2>
         <Col className="interpol-resmi" lg={6}>
           <AnasayfaMapSinirDisi/>
-      
-         {/*  <img alt="interpol" src={interpol} className="img-fluid"/>
-           <a href="https://www.patreon.com/posts/adam-kacirmalara-58333013?l=de" target="_blank"> <img alt="interpol-document" src={interpolDocument} className="img-fluid"/></a> 
-          <p className="text-center" style={{fontSize: "10px"}}>
-          Kaçırma olayında görevli polislerin bilgileri ve Bahreyn polisi ile Türk polisi arasındaki teslim tesellüm tutanağı
-          </p> */}
-
         </Col>
         <Col lg={6}>
-        
           <AnasayfaKayanText/>
-          <p >
-          İllegal sınır dışı edilme işlemleri ve iade taleplerinde güncel olarak kaydedilen vaka sayısı en az {a1Value}, mağdur olan ise en az {a3Value} kişidir.</p>
-          <div class="buttons">
-    <button class="btn-hover color-5" onClick={handleButtonClick}>Ulusötesi Baskı</button>
-      </div>
+          <p>
+            {t('illegal_extraditions_text', { a1Value, a3Value })}
+          </p>
+          <div className="buttons">
+            <button className="btn-hover color-5" onClick={handleButtonClick}>
+              {t('transnational_repression_button')}
+            </button>
+          </div>
         </Col>
-    
       </Row>
     </>
   );

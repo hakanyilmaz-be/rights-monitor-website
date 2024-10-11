@@ -1,26 +1,34 @@
 import React, { useEffect, useState } from 'react';
-import "./locker.css"
+import { useTranslation } from 'react-i18next'; // useTranslation hook'u ile dil kontrolü
+import "./locker.css";
 
 const MapSinirDisi = () => {
   const [iframeSrc, setIframeSrc] = useState('');
+  const { i18n, t } = useTranslation(); // i18n ile dil kontrolü ve t fonksiyonu
 
   useEffect(() => {
-    setIframeSrc("https://lookerstudio.google.com/embed/reporting/7a817213-523f-4ebd-8ee5-8b34dcc9459c/page/eQ9zD");
-  }, []);
+    // Dil kontrolüne göre doğru iframe kaynağını belirle
+    const iframeURL = i18n.language === 'tr' 
+      ? "https://lookerstudio.google.com/embed/reporting/7a817213-523f-4ebd-8ee5-8b34dcc9459c/page/eQ9zD" 
+      : "https://lookerstudio.google.com/embed/reporting/44ff313c-6902-4164-9b3f-706de683e77b/page/eQ9zD";
+
+    setIframeSrc(iframeURL);
+  }, [i18n.language]); // Dil değiştiğinde iframe kaynağını yeniden belirler
 
   return (
     <div className='yukseklik' style={{ overflow: 'hidden', position: 'relative' }}> 
-    <p style={{ fontWeight: 'bold' }}>Olay Haritasi: 2016'dan günümüze hukuka aykırı sınır dışı edilmeler ve reddedilen iade talepleri</p>
+      <p style={{ fontWeight: 'bold' }}>
+        {t('map_title12')} {/* Dil tabanlı başlık */}
+      </p>
       {iframeSrc && (
         <iframe
-          title="Looker Studio Report: Kitlesel Gözaltı Serüveni"
+          title={t('iframe_title12')} 
           src={iframeSrc} 
           width="100%"
           height="800px"  
           style={{
             border: '0',
             position: 'absolute',
-            
             left: '0',
             overflow: 'hidden'
           }}

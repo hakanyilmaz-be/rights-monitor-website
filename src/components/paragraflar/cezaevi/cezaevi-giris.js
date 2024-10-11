@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { Col, Container, Row } from "react-bootstrap";
-import { motion } from "framer-motion";
+import { useTranslation } from "react-i18next";
 import AnimatedGradientText from "../../animated-gradient-text/AnimatedGradientText";
-import CountUp from "react-countup"; 
-
+import CountUp from "react-countup";
 
 const CezaeviGiris = () => {
+  const { t, i18n } = useTranslation();
   const [a5Value, setA5Value] = useState("");
   const [a6Value, setA6Value] = useState("");
 
@@ -37,52 +37,56 @@ const CezaeviGiris = () => {
     const rows = csvText
       .split(/\r?\n/)
       .map((row) => row.split(",").map((cell) => cell.trim()));
-    return rows.slice(1); // Başlık satırını atla
+    return rows.slice(1); // Skip the header row
   }
 
   return (
     <Container
-      fluid 
+      fluid
       className=" d-flex justify-content-center align-items-center ilk-giris"
     >
       <Row className="justify-content-center align-items-center">
-        <h1 className="text-white mt-5">Cezaevindeki Hak İhlalleri</h1>
-
-        <h2 className="text-white"> </h2>
+        <h1 className="text-white mt-5">{t("cezaeviGiris.title")}</h1>
         <div style={{ height: "30px" }}></div>
         <Col lg={12} className="text-start">
           <p className="small-paragraph text-white">
-            Uluslararası insan hakları sözleşmeleri dahilinde, hapis cezasının
-            infazı sırasında, hürriyetinden mahrum bırakılan hükümlünün insan
-            onuruna saygı gösterilmelidir ve bu kişilerin barındırıldığı
-            koşullar, asgari yaşam gereklerine uygun olmalıdır. Mahpuslar,
-            cezanın gerektirdiği zorunlu sıkıntının ötesinde, aşırı ıstırap ve
-            zorluklara maruz bırakılmamalıdır. OHAL döneminde, “tehlikeli
-            faillerden” toplumu koruma iddiasıyla, asılsız suçlamalarla karşı
-            karşıya kalan mahpuslar sıkı güvenlik önlemleri altında tecrit
-            edilerek insanlık dışı muamelelerle karşılaştılar. Gözlem Kurulu
-            Raporu ile bu mahpuslar, toplum açısından keyfi olarak tehlikeli
-            kategorisinde değerlendirildiler. Bunun sonucunda ise düşman ceza
-            hukukunun bir yansıması olarak yalnızca tecrit edilmekle kalmayıp
-            aynı zamanda etkisiz hale getirilerek toplumdan dışlandılar.
+            {t("cezaeviGiris.paragraph1")}
           </p>
           <p className="small-paragraph text-white">
-            Cezaevlerinde yaşanan sorunlar ve mahkumların yaşadıkları hak
-            ihlalleri, iktidarın siyasi tercihlerinin sonucudur. Açıktır ki
-            iktidar, kadınlara, çocuklara ve toplumun her kesimine dayattığı
-            baskıcı ve antidemokratik politikaları cezaevlerinde de sürdürmekte,
-            hak ihlallerinin önüne geçemediği gibi ihlallerin ve mağduriyetlerin
-            yaşanmasına sebebiyet vermektedir.
+            {t("cezaeviGiris.paragraph2")}
           </p>
-        <AnimatedGradientText > <p style={{fontSize: "20px"}}>15 Temmuz’dan bugüne cezaevlerinde siyasi mahpuslara yönelik 30
-        farklı kategoride{" "}
-        <CountUp style={{ color: 'red' }} start={0} end={a5Value} duration={5} />
-        {" "}cezaevinde en az {" "}<CountUp start={0} end={a6Value} duration={5} />
-        {" "} hak
-        ihlalinin yaşandığı bilinmektedir.
-        </p></AnimatedGradientText>
-       
-      
+          {i18n.language === "tr" ? (
+            <AnimatedGradientText>
+              <p style={{ fontSize: "20px" }}>
+                15 Temmuz’dan bugüne cezaevlerinde siyasi mahpuslara yönelik 30
+                farklı kategoride{" "}
+                <CountUp
+                  style={{ color: "red" }}
+                  start={0}
+                  end={a5Value}
+                  duration={5}
+                />{" "}
+                cezaevinde en az{" "}
+                <CountUp start={0} end={a6Value} duration={5} /> hak ihlalinin
+                yaşandığı bilinmektedir.
+              </p>
+            </AnimatedGradientText>
+          ) : (
+            <AnimatedGradientText>
+              <p style={{ fontSize: "20px" }}>
+                It is known that at least{" "}
+                <CountUp start={0} end={a6Value} duration={5} /> human rights
+                violations have occurred in 30 different categories in{" "}
+                <CountUp
+                  style={{ color: "red" }}
+                  start={0}
+                  end={a5Value}
+                  duration={5}
+                />{" "}
+                prisons against political prisoners since July 15.
+              </p>
+            </AnimatedGradientText>
+          )}
         </Col>
       </Row>
     </Container>

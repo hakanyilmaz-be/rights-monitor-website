@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import { useTranslation } from 'react-i18next'; // Çeviri için i18next hook'u dahil ettik
 import "./anasayfa-text.css"
 
-
 const AnasayfaKayanText = () => {
+  const { t } = useTranslation(); // Çeviri fonksiyonunu kullanmak için hook
   const [a1Value, setA1Value] = useState("");
   const [a2Value, setA2Value] = useState("");
   const [a3Value, setA3Value] = useState("");
@@ -21,20 +22,10 @@ const AnasayfaKayanText = () => {
           const data = parseCSV(response.data);
           if (data.length > 0) {
             setA1Value(data[0][0]);
-          }
-          if (data.length > 0) {
             setA2Value(data[1][0]);
-          }
-          if (data.length > 0) {
             setA3Value(data[2][0]);
-          }
-          if (data.length > 0) {
             setA4Value(data[4][0]);
-          }
-          if (data.length > 0) {
             setA5Value(data[5][0]);
-          }
-          if (data.length > 0) {
             setA6Value(data[6][0]);
           }
         })
@@ -54,23 +45,19 @@ const AnasayfaKayanText = () => {
   }
 
   return (
-    <>
-          <div className="first-data">
-            <h5 className="header-first11 text-center">
-              Uluslararası Hukuka Aykırı Şekilde Türkiye'ye Götürülme Vakaları
-            </h5>
+    <div className="first-data">
+      <h5 className="header-first11 text-center">
+        {t('illegal_abductions_title')}
+      </h5>
 
-            <div className="i-title">
-              <div className="i-title-wrapper">
-                <div className="i-title-item11"> {a1Value} farklı olayda</div>
-                <div className="i-title-item11">{a2Value} farklı ülkeden</div>
-                <div className="i-title-item11">{a3Value} kişi</div>
-              </div>
-            </div>
-          </div>
-
-
-    </>
+      <div className="i-title">
+        <div className="i-title-wrapper">
+          <div className="i-title-item11">{t('incidents_count', { count: a1Value })}</div>
+          <div className="i-title-item11">{t('countries_count', { count: a2Value })}</div>
+          <div className="i-title-item11">{t('people_count', { count: a3Value })}</div>
+        </div>
+      </div>
+    </div>
   );
 };
 

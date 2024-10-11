@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import Chart from 'react-google-charts';
+import { useTranslation } from 'react-i18next'; // Çeviri için i18next hook'u dahil ettik
 import { Container } from 'react-bootstrap';
 
 const AnasayfaIstatistik = () => {
+    const { t } = useTranslation(); // Çeviri fonksiyonunu kullanmak için hook
     const [data, setData] = useState([]);
 
     useEffect(() => {
@@ -12,7 +14,9 @@ const AnasayfaIstatistik = () => {
             try {
                 const response = await axios.get(csvUrl);
                 const rows = parseCSV(response.data);
-                const chartData = [['Yıl', 'Mahkumiyet', 'Hükmün açıklanmasının geriye bırakılması', 'Beraat']];
+                const chartData = [
+                    [t('year'), t('conviction'), t('deferment'), t('acquittal')]
+                ];
                 rows.slice(3, 13).forEach(row => {
                     chartData.push([row[20], parseInt(row[23]), parseInt(row[22]), parseInt(row[21]) ]);
                 });
@@ -22,7 +26,7 @@ const AnasayfaIstatistik = () => {
             }
         };
         fetchCSVData();
-    }, []);
+    }, [t]);
 
     const parseCSV = (csvText) => {
         const rows = csvText.split(/\r?\n/).map(row => row.split(',').map(cell => cell.trim()));
@@ -35,17 +39,17 @@ const AnasayfaIstatistik = () => {
                 width={'100%'}
                 height={'400px'}
                 chartType="ComboChart"
-                loader={<div>Veri Yükleniyor...</div>}
+                loader={<div>{t('loading_data')}</div>}
                 data={data}
                 options={{
-                    title: 'Yıllara göre kovuşturma aşaması ve karar sayısı grafiği',
+                    title: t('prosecution_chart_title'),
                     vAxis: { 
-                        title: 'Karar Sayısı',
+                        title: t('decision_count'),
                         textStyle: { color: 'white' },
                         titleTextStyle: { color: 'white' }
                     },
                     hAxis: { 
-                        title: 'Yıl',
+                        title: t('year'),
                         textStyle: { color: 'white' },
                         titleTextStyle: { color: 'white' }
                     },
@@ -60,12 +64,14 @@ const AnasayfaIstatistik = () => {
                         textStyle: { color: 'white' }
                     },
                     titleTextStyle: { color: 'white' },
-                    backgroundColor: 'transparent', // Arka plan rengini şeffaf yapar
-                    textStyle: { color: 'white' } // Genel metin rengini beyaz yapar
+                    backgroundColor: 'transparent', 
+                    textStyle: { color: 'white' }
                 }}
             />
             <Container>
-            <p className='mt-3 small-paragraph text-white'>2015'ten 2021'e kadar TCK 309-316 maddeleri arasındaki suçlar ayrı ayrı raporlanmış, bu da spesifik suçlara yönelik detaylı analiz yapılmasını sağlamıştır. Ancak, 2022'den itibaren bu maddeler "Anayasal Düzene ve Bu Düzenin İşleyişine Karşı Suçlar" başlığı altında topluca raporlanmıştır.</p>
+                <p className='mt-3 small-paragraph text-white'>
+                    {t('prosecution_analysis')}
+                </p>
             </Container>
         </div>
     );

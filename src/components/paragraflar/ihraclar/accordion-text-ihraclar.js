@@ -1,28 +1,25 @@
 import { Row } from "react-bootstrap";
 import Accordion from "react-bootstrap/Accordion";
+import { useTranslation } from 'react-i18next'; // Çeviri için ekleme
 import "./ihraclar-text.css";
 
 function AccordionTextIhraclar() {
+  const { t } = useTranslation(); // Çeviri için hook kullanımı
+
   return (
     <div className="ihraclar">
       <Accordion defaultActiveKey="0" className="mb-5 ">
         <Accordion.Item eventKey="0">
           <Accordion.Header className="custom-accordion-header-ihraclar">
-            Metodoloji
+            {t('methodology')}
           </Accordion.Header>
           <Accordion.Body className="accordion-body-text-ihraclar">
             <Row>
               <p className="small-paragraph">
-                Bu sayfada yer alan veriler Resmi Gazete'de yayınlanan kanun
-                hükmünde kararname ve kurul kararları esas alınarak
-                hazırlanmıştır. 
+                {t('data_based_on_official_gazette')}
               </p>
               <p className="small-paragraph">
-              667 Sayılı KHK’ya atfen idari kararla yapılan ve
-                50.000’in üzerinde olduğu tahmin edilen ihraç kararları ve
-                kapatılan kurumlara elkonulması nedeniyle işsiz kalan kişilere
-                ait rakamlar net olarak bilinmediği için bu verilere dahil
-                edilememiştir. 
+                {t('excluded_50k_people')}
               </p>
             </Row>
           </Accordion.Body>

@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import Chart from 'react-google-charts';
+import { useTranslation } from 'react-i18next';
 
 const KitleselYillarGrafik = () => {
+    const { t } = useTranslation();
     const [data, setData] = useState([]);
 
     useEffect(() => {
@@ -11,7 +13,7 @@ const KitleselYillarGrafik = () => {
             try {
                 const response = await axios.get(csvUrl);
                 const rows = parseCSV(response.data);
-                const chartData = [['Yıl', 'Gözaltı Sayısı', 'Operasyon Sayısı']];
+                const chartData = [[t('kitleselYillarGrafik.year'), t('kitleselYillarGrafik.detentionCount'), t('kitleselYillarGrafik.operationCount')]];
                 rows.slice(2, 13).forEach(row => {
                     chartData.push([row[4], parseInt(row[5]), parseInt(row[6])]);
                 });
@@ -21,7 +23,7 @@ const KitleselYillarGrafik = () => {
             }
         };
         fetchCSVData();
-    }, []);
+    }, [t]);
 
     const parseCSV = (csvText) => {
         const rows = csvText.split(/\r?\n/).map(row => row.split(',').map(cell => cell.trim()));
@@ -34,18 +36,18 @@ const KitleselYillarGrafik = () => {
                 width={'100%'}
                 height={'400px'}
                 chartType="ComboChart"
-                loader={<div>Veri Yükleniyor...</div>}
+                loader={<div>{t('kitleselYillarGrafik.loading')}</div>}
                 data={data}
                 options={{
-                    title: 'Yıllara Göre Gözaltı ve Operasyon Sayıları',
-                    vAxis: { title: 'Sayı' },
-                    hAxis: { title: 'Yıl' },
+                    title: t('kitleselYillarGrafik.title'),
+                    vAxis: { title: t('kitleselYillarGrafik.count') },
+                    hAxis: { title: t('kitleselYillarGrafik.year') },
                     seriesType: 'bars',
                     series: { 
                         0: { type: 'bars' },
-                        1: { type: 'line', color: '#d60c0c', lineWidth: 5 } // Çizgi kalınlığı 4 piksel olarak ayarlandı
+                        1: { type: 'line', color: '#d60c0c', lineWidth: 5 } 
                     },
-                    colors: ['#3e8c40', '#d60c0c'], // Sütun için yeşil, çizgi için mavi
+                    colors: ['#3e8c40', '#d60c0c'], 
                     legend: { position: 'bottom' }
                 }}
             />

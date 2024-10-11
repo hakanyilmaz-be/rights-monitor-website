@@ -3,17 +3,22 @@ import axios from 'axios';
 import DataTable from 'react-data-table-component';
 import Papa from 'papaparse';
 import { FormControl } from 'react-bootstrap';
-import "./advanced-table-ihraclar.css"
+import { useTranslation } from 'react-i18next'; // Dil kontrolü için useTranslation eklendi
+import "./advanced-table-ihraclar.css";
 
 function AdvancedTableIhraclar() {
     const [dataRows, setDataRows] = useState([]);
     const [allData, setAllData] = useState([]);
     const [columns, setColumns] = useState([]);
     const [filterText, setFilterText] = useState('');
+    const { i18n, t } = useTranslation(); // useTranslation ile dil kontrolü ve t fonksiyonu alındı
 
     useEffect(() => {
         const fetchCSVData = () => {
-            const csvUrl = "https://docs.google.com/spreadsheets/d/e/2PACX-1vTjWrsx_6YGQEjGDbWCWAn-xsDos5nZZ8sMu9GrEuVZW9bSMh25GSCMHHmra_aKkAZXGwWgvuN50xMG/pub?gid=0&single=true&output=csv";
+            // Dil kontrolü yaparak doğru CSV URL'sini belirliyoruz
+            const csvUrl = i18n.language === 'tr'
+                ? "https://docs.google.com/spreadsheets/d/e/2PACX-1vTjWrsx_6YGQEjGDbWCWAn-xsDos5nZZ8sMu9GrEuVZW9bSMh25GSCMHHmra_aKkAZXGwWgvuN50xMG/pub?gid=0&single=true&output=csv"
+                : "https://docs.google.com/spreadsheets/d/1bd3rMoXQf1kEKQZAWlsJJjouq9M-NsoN6B-j_3kYzOs/pub?gid=372025090&single=true&output=csv";
 
             axios.get(csvUrl)
                 .then((response) => {
@@ -25,7 +30,7 @@ function AdvancedTableIhraclar() {
         };
 
         fetchCSVData();
-    }, []);
+    }, [i18n.language]); // Dil değiştiğinde yeniden veri çekmek için dil bağımlılığı eklendi
 
     function parseCSV(csvText) {
         Papa.parse(csvText, {
@@ -65,7 +70,6 @@ function AdvancedTableIhraclar() {
                             wrap: true,
                             grow: 1
                         },
-                       
                         {
                             name: headers[3],
                             selector: row => row[headers[3]],
@@ -99,9 +103,9 @@ function AdvancedTableIhraclar() {
     };
 
     const paginationOptions = {
-        rowsPerPageText: 'Satır Sayısı:',
-        rangeSeparatorText: 'ile',
-        selectAllRowsItemText: 'Tümünü Göster'
+        rowsPerPageText: t('rows_per_page'), // Dil bazlı metin
+        rangeSeparatorText: t('range_separator'), // Dil bazlı metin
+        selectAllRowsItemText: t('select_all'), // Dil bazlı metin
     };
 
     const customStyles = {
@@ -123,45 +127,31 @@ function AdvancedTableIhraclar() {
 
     return (
         <div className="advanced-table-wrapper">
-     <p style={{ fontWeight: 'bold' }}>Arama bölümünü verileri filtrelemek için kullanılabilirsiniz.</p>
+            <p style={{ fontWeight: 'bold' }}>{t('search_placeholder')}</p>
 
             <FormControl
                 type="text"
-                placeholder="Arama yap..."
+                placeholder={t('search_placeholder')} // Dil bazlı placeholder
                 className="mb-3"
                 value={filterText}
                 onChange={handleFilter}
             />
             <div className="advanced-table-container">
-            <DataTable
-                columns={columns}
-                data={dataRows}
-                defaultSortFieldId={1}
-                pagination
-                highlightOnHover
-                responsive
-                striped
-                noDataComponent={<div>Veri yükleniyor ...</div>}
-                paginationComponentOptions={paginationOptions}
-                customStyles={customStyles}
-            />
+                <DataTable
+                    columns={columns}
+                    data={dataRows}
+                    defaultSortFieldId={1}
+                    pagination
+                    highlightOnHover
+                    responsive
+                    striped
+                    noDataComponent={<div>{t('loading_data')}</div>} // Dil bazlı yükleme mesajı
+                    paginationComponentOptions={paginationOptions}
+                    customStyles={customStyles}
+                />
             </div>
         </div>
     );
 }
-
-/* function ExpandableCell({ data }) {
-    const [expand, setExpand] = useState(false);
-    const preview = `${data.substring(0, 170)}...`;
-
-    return (
-        <div>
-            {expand ? data : preview}
-            <button onClick={() => setExpand(!expand)} style={{ marginLeft: '5px', cursor: 'pointer', color: 'blue', textDecoration: 'underline', border: 'none', background: 'none' }}>
-                {expand ? 'Daha az göster' : 'Daha fazla oku'}
-            </button>
-        </div>
-    );
-} */
 
 export default AdvancedTableIhraclar;

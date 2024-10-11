@@ -1,13 +1,17 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import DataTable from 'react-data-table-component';
+import { useTranslation } from 'react-i18next'; // Çeviri için i18next kullanımı
 
 const KadinlarGrafik = () => {
+    const { t, i18n } = useTranslation(); // Çeviri fonksiyonunu kullanmak için
     const [dataRows, setDataRows] = useState([]);
 
     useEffect(() => {
         const fetchCSVData = async () => {
-            const csvUrl = "https://docs.google.com/spreadsheets/d/e/2PACX-1vQG0Gg1TsKyJ7KBwRkN85W23CnmgICsxPnMS8Xy7iGAlnbME8e3Y2L3wCF2rCNZsYK_UPiWZJ3GH2I4/pub?gid=1891916443&single=true&output=csv";
+            const csvUrl = i18n.language === 'en' 
+                ? "https://docs.google.com/spreadsheets/d/e/2PACX-1vQG0Gg1TsKyJ7KBwRkN85W23CnmgICsxPnMS8Xy7iGAlnbME8e3Y2L3wCF2rCNZsYK_UPiWZJ3GH2I4/pub?gid=1991263772&single=true&output=csv"
+                : "https://docs.google.com/spreadsheets/d/e/2PACX-1vQG0Gg1TsKyJ7KBwRkN85W23CnmgICsxPnMS8Xy7iGAlnbME8e3Y2L3wCF2rCNZsYK_UPiWZJ3GH2I4/pub?gid=1891916443&single=true&output=csv";
             try {
                 const response = await axios.get(csvUrl);
                 const parsedData = parseCSV(response.data);
@@ -18,7 +22,7 @@ const KadinlarGrafik = () => {
         };
 
         fetchCSVData();
-    }, []);
+    }, [i18n.language]); // i18n.language eklendi
 
     const parseCSV = (csvText) => {
         const rows = csvText.split(/\r?\n/).map(row => row.split(',').map(cell => cell.trim()));
@@ -26,8 +30,8 @@ const KadinlarGrafik = () => {
     };
 
     const columns = [
-        { name: 'İhlale Maruz Kalan Anneler', selector: row => row[0], sortable: true, grow: 2 },
-        { name: 'Sayı', selector: row => row[1], sortable: true, grow: 1 },
+        { name: t('mothers_affected_by_violations'), selector: row => row[0], sortable: true, grow: 2 },
+        { name: t('count'), selector: row => row[1], sortable: true, grow: 1 },
     ];
 
     const customStyles = {
@@ -69,7 +73,7 @@ const KadinlarGrafik = () => {
                 data={dataRows}
                 highlightOnHover
                 striped
-                noDataComponent={<div>Veri yükleniyor ...</div>}
+                noDataComponent={<div>{t('loadingData')}</div>}
                 customStyles={customStyles}
                 conditionalRowStyles={conditionalRowStyles} // Apply conditional row styles
             />

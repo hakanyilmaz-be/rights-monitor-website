@@ -1,10 +1,13 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { Chart } from 'react-google-charts';
+import { useTranslation } from 'react-i18next';
 
 const Kovusturma = () => {
+  const { t } = useTranslation();
+
   const [data, setData] = useState([
-    ['Year', 'Kişi Sayısı'],
+    [t('chartc.year'), t('chartc.personCount')],
     ['2015', 0],
     ['2016', 0],
     ['2017', 0],
@@ -14,7 +17,6 @@ const Kovusturma = () => {
     ['2021', 0],
     ['2022', 0],
     ['2023', 0],
-
   ]);
 
   useEffect(() => {
@@ -27,7 +29,7 @@ const Kovusturma = () => {
           const parsedData = parseCSV(response.data);
           if (parsedData.length > 0) {
             setData([
-              ['Year', 'Kişi Sayısı'],
+              [t('chartc.year'), t('chartc.personCount')],
               ['2015', parseFloat(parsedData[15][15])],
               ['2016', parseFloat(parsedData[16][15])],
               ['2017', parseFloat(parsedData[17][15])],
@@ -37,7 +39,6 @@ const Kovusturma = () => {
               ['2021', parseFloat(parsedData[21][15])],
               ['2022', parseFloat(parsedData[22][15])],
               ['2023', parseFloat(parsedData[23][15])],
-
             ]);
           }
         })
@@ -47,7 +48,7 @@ const Kovusturma = () => {
     };
 
     fetchCSVData();
-  }, []);
+  }, [t]);
 
   function parseCSV(csvText) {
     const rows = csvText
@@ -58,19 +59,18 @@ const Kovusturma = () => {
 
   return (
     <div>
-   
       <Chart
         chartType="LineChart"
         width="100%"
         height="400px"
         data={data}
         options={{
-        title: 'Yıllara Göre Hakkında Terör Davası Açılıp Kovuşturmaya Yer Olmadığına Karar Verilen Kişi Sayısı',
+          title: t('chartc.kovusturmaTitle'),
           hAxis: {
-            title: 'Yıl',
+            title: t('chartc.year'),
           },
           vAxis: {
-            title: 'Değer',
+            title: t('chartc.value'),
           },
           legend: { position: 'bottom' },
           animation: {
@@ -79,11 +79,10 @@ const Kovusturma = () => {
             easing: 'out',
           },
           series: {
-          0: { color: '#2fa05e' } // Burada rengi değiştirdim (örneğin, kırmızı olarak ayarlandı)
+            0: { color: '#2fa05e' }
           },
         }}
       />
-     
     </div>
   );
 };

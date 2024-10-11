@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from "react";
 import { Col, Row } from "react-bootstrap";
 import { TypeAnimation } from "react-type-animation";
+import { useTranslation } from 'react-i18next';
 import "./anasayfa-header.css";
 import axios from 'axios';
 
 const AnasayfaHeader = () => {
+  const { t, i18n } = useTranslation();
   const [isVisible, setIsVisible] = useState(false);
   const [a2Value, setA2Value] = useState('');
   const [b2Value, setB2Value] = useState('');
@@ -22,7 +24,7 @@ const AnasayfaHeader = () => {
                       setB2Value(data[0][9]);  
                       setC2Value(data[0][8]); 
                       setD2Value(data[0][11]);  
-                      setIsVisible(true); // Veri çekme tamamlandığında yazıyı görünür yap
+                      setIsVisible(true);
                   }
               })
               .catch(error => {
@@ -31,7 +33,7 @@ const AnasayfaHeader = () => {
       };
 
       fetchCSVData();
-  }, []);
+  }, [i18n.language]); // Dil değişikliği durumunda useEffect'in yeniden tetiklenmesi için i18n.language'i bağımlılığa ekledik
 
   function parseCSV(csvText) {
       const rows = csvText.split(/\r?\n/).map(row => row.split(',').map(cell => cell.trim()));
@@ -39,7 +41,7 @@ const AnasayfaHeader = () => {
   }
 
   const formatNumber = (number) => {
-    return new Intl.NumberFormat('tr-TR').format(number);
+    return new Intl.NumberFormat(i18n.language === 'tr' ? 'tr-TR' : 'en-US').format(number);
   };
 
   return (
@@ -47,14 +49,14 @@ const AnasayfaHeader = () => {
       <Col lg={12} className="responsive-col2">
         <div className="type-animation-wrapper2">
           <TypeAnimation
-            key={`${a2Value}-${b2Value}-${c2Value}-${d2Value}`}
+            key={`${a2Value}-${b2Value}-${c2Value}-${d2Value}-${i18n.language}`} // Dil değişikliğinde yeniden render edilmesi için dil parametresini key'e ekledik
             sequence={[
-              `Toplam Gözaltı Sayısı: ${formatNumber(a2Value)}`,
-              2700, // Waits 3s
-              `Toplam Operasyon Sayısı: ${formatNumber(b2Value)}`,
-              2700, // Waits 3s
-              `Günlük Ortalama Gözaltı Sayısı: ${c2Value}`,
-              2700, // Waits 3s 
+              `${t('total_detention_count')}: ${formatNumber(a2Value)}`,
+              2700,
+              `${t('total_operation_count')}: ${formatNumber(b2Value)}`,
+              2700,
+              `${t('daily_average_detention_count')}: ${c2Value}`,
+              2700, 
               () => {
                 console.log("Sequence completed");
               },

@@ -1,14 +1,17 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import DataTable from 'react-data-table-component';
-
+import { useTranslation } from 'react-i18next'; // i18n import edildi
 
 const GenelKovusturma = () => {
+    const { t, i18n } = useTranslation(); // useTranslation kullanıldı
     const [dataRows, setDataRows] = useState([]);
 
     useEffect(() => {
         const fetchCSVData = async () => {
-            const csvUrl = "https://docs.google.com/spreadsheets/d/e/2PACX-1vSy1KygmD2hp-6GovKzgaucGPfsjalgQ6ArSzpAXAHeN16imXVuURPImNc8dPsNFbrxh2brJXLkVi87/pub?gid=507472835&single=true&output=csv";
+            const turkishUrl = "https://docs.google.com/spreadsheets/d/e/2PACX-1vSy1KygmD2hp-6GovKzgaucGPfsjalgQ6ArSzpAXAHeN16imXVuURPImNc8dPsNFbrxh2brJXLkVi87/pub?gid=507472835&single=true&output=csv";
+            const englishUrl = "https://docs.google.com/spreadsheets/d/e/2PACX-1vSFPmcQbJ4tQWy_QSF__z_lMMQe3xWieJ3Dq20RrwNPZeDTE3ocOelacO27NJ_z_3mh74NeH_gqD2uo/pub?gid=264613796&single=true&output=csv";
+            const csvUrl = i18n.language === 'en' ? englishUrl : turkishUrl;
             try {
                 const response = await axios.get(csvUrl);
                 const parsedData = parseCSV(response.data);
@@ -19,7 +22,7 @@ const GenelKovusturma = () => {
         };
 
         fetchCSVData();
-    }, []);
+    }, [i18n.language]); 
 
     const parseCSV = (csvText) => {
         const rows = csvText.split(/\r?\n/).map(row => row.split(',').map(cell => cell.trim()));
@@ -27,29 +30,27 @@ const GenelKovusturma = () => {
     };
 
     const formatNumber = (number) => {
-        return new Intl.NumberFormat('tr-TR').format(number);
+        return new Intl.NumberFormat(i18n.language === 'en' ? 'en-US' : 'tr-TR').format(number);
     };
 
     const columns = [
-        { name: 'Karar', selector: row => row[13], sortable: true, grow: 1 },
+        { name: t('decision'), selector: row => row[13], sortable: true, grow: 1 },
         { 
-            name: '309-316', 
+            name: t('tfk'), 
             selector: row => formatNumber(row[14]), 
             grow: 1 
         },
         { 
-            name: 'TFK', 
+            name: t('tmk'), 
             selector: row => formatNumber(row[15]), 
-            grow: 1 
+            grow: 0.8 
         },
         { 
-            name: 'TMK', 
+            name: t('articles_309_316'), 
             selector: row => formatNumber(row[16]), 
             grow: 1 
         },
     ];
-
-
 
     const customStyles = {
         rows: {
@@ -73,16 +74,15 @@ const GenelKovusturma = () => {
         },
     };
 
-
     return (
         <div>
-            <p style={{ fontWeight: 'bold' }}>Kovuşturma Neticesinde Verilen Kararlara ait Grafik </p>
+            <p style={{ fontWeight: 'bold' }}>{t('prosecution_graph_title')}</p>
             <DataTable
                 columns={columns}
                 data={dataRows}
                 highlightOnHover
                 striped
-                noDataComponent={<div>Veri yükleniyor ...</div>}
+                noDataComponent={<div>{t('loading_data')}</div>}
                 customStyles={customStyles}
             />
         </div>

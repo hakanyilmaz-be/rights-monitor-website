@@ -3,17 +3,22 @@ import axios from 'axios';
 import DataTable from 'react-data-table-component';
 import Papa from 'papaparse';
 import { FormControl } from 'react-bootstrap';
-import "./advanced-table-hassas.css"
+import { useTranslation } from 'react-i18next'; // useTranslation eklendi
+import "./advanced-table-hassas.css";
 
 function AdvancedTableHassas() {
     const [dataRows, setDataRows] = useState([]);
     const [allData, setAllData] = useState([]);
     const [columns, setColumns] = useState([]);
     const [filterText, setFilterText] = useState('');
+    const { i18n, t } = useTranslation(); // Dil kontrolü ve t fonksiyonu
 
     useEffect(() => {
         const fetchCSVData = () => {
-            const csvUrl = "https://docs.google.com/spreadsheets/d/e/2PACX-1vQG0Gg1TsKyJ7KBwRkN85W23CnmgICsxPnMS8Xy7iGAlnbME8e3Y2L3wCF2rCNZsYK_UPiWZJ3GH2I4/pub?gid=496568060&single=true&output=csv";
+            // Dil kontrolüne göre doğru CSV URL'si seçilir
+            const csvUrl = i18n.language === 'tr'
+                ? "https://docs.google.com/spreadsheets/d/e/2PACX-1vQG0Gg1TsKyJ7KBwRkN85W23CnmgICsxPnMS8Xy7iGAlnbME8e3Y2L3wCF2rCNZsYK_UPiWZJ3GH2I4/pub?gid=496568060&single=true&output=csv"
+                : "https://docs.google.com/spreadsheets/d/e/2PACX-1vQG0Gg1TsKyJ7KBwRkN85W23CnmgICsxPnMS8Xy7iGAlnbME8e3Y2L3wCF2rCNZsYK_UPiWZJ3GH2I4/pub?gid=835127655&single=true&output=csv";
 
             axios.get(csvUrl)
                 .then((response) => {
@@ -25,7 +30,7 @@ function AdvancedTableHassas() {
         };
 
         fetchCSVData();
-    }, []);
+    }, [i18n.language]); // Dil değiştiğinde veriler yeniden çekilir
 
     function parseCSV(csvText) {
         Papa.parse(csvText, {
@@ -33,7 +38,7 @@ function AdvancedTableHassas() {
                 const rows = results.data;
                 if (rows.length > 0) {
                     const headers = rows[0];
-                    const columnsToShow = [0, 1, 2, 3, 4, 5, 6, 7];
+                    const columnsToShow = [0, 1, 2, 3, 4, 5, 6];
 
                     const data = rows.slice(1).map(row => {
                         let rowData = {};
@@ -65,7 +70,6 @@ function AdvancedTableHassas() {
                             wrap: true,
                             grow: 4
                         },
-                       
                         {
                             name: headers[4],
                             selector: row => row[headers[4]],
@@ -73,14 +77,6 @@ function AdvancedTableHassas() {
                             wrap: true,
                             grow: 0.2
                         },
-                        /* {
-                            name: headers[4],
-                            selector: row => row[headers[4]],
-                            sortable: true,
-                            wrap: true,
-                            grow: 4.5,
-                            cell: (row) => <ExpandableCell data={row[headers[4]]} />
-                        }, */
                         {
                             name: headers[5],
                             selector: row => row[headers[5]],
@@ -95,7 +91,6 @@ function AdvancedTableHassas() {
                             wrap: true,
                             grow: 0.3
                         },
-                        
                         {
                             name: headers[3],
                             selector: row => row[headers[3]],
@@ -130,9 +125,9 @@ function AdvancedTableHassas() {
     };
 
     const paginationOptions = {
-        rowsPerPageText: 'Satır Sayısı:',
-        rangeSeparatorText: 'ile',
-        selectAllRowsItemText: 'Tümünü Göster'
+        rowsPerPageText: t('rows_per_page'), 
+        rangeSeparatorText: t('range_separator'), 
+        selectAllRowsItemText: t('select_all'), 
     };
 
     const customStyles = {
@@ -153,46 +148,32 @@ function AdvancedTableHassas() {
     };
 
     return (
-    <div className="advanced-table-wrapper">
-     <p style={{ fontWeight: 'bold' }}>Arama bölümünü verileri filtrelemek için kullanılabilirsiniz.</p>
+        <div className="advanced-table-wrapper">
+            <p style={{ fontWeight: 'bold' }}>{t('search_instruction')}</p>
 
             <FormControl
                 type="text"
-                placeholder="Arama yap..."
+                placeholder={t('search_placeholder')} // Dil bazlı placeholder
                 className="mb-3"
                 value={filterText}
                 onChange={handleFilter}
             />
             <div className="advanced-table-container">
-            <DataTable
-                columns={columns}
-                data={dataRows}
-                defaultSortFieldId={1}
-                pagination
-                highlightOnHover
-                responsive
-                striped
-                noDataComponent={<div>Veri yükleniyor ...</div>}
-                paginationComponentOptions={paginationOptions}
-                customStyles={customStyles}
-            />
+                <DataTable
+                    columns={columns}
+                    data={dataRows}
+                    defaultSortFieldId={1}
+                    pagination
+                    highlightOnHover
+                    responsive
+                    striped
+                    noDataComponent={<div>{t('loading_data')}</div>} // Dil bazlı yükleme mesajı
+                    paginationComponentOptions={paginationOptions}
+                    customStyles={customStyles}
+                />
             </div>
         </div>
     );
 }
-
-/* function ExpandableCell({ data }) {
-    const [expand, setExpand] = useState(false);
-    const preview = `${data.substring(0, 170)}...`;
-
-    return (
-        <div>
-            {expand ? data : preview}
-            <button onClick={() => setExpand(!expand)} style={{ marginLeft: '5px', cursor: 'pointer', color: 'blue', textDecoration: 'underline', border: 'none', background: 'none' }}>
-                {expand ? 'Daha az göster' : 'Daha fazla oku'}
-            </button>
-        </div>
-    );
-} */
 
 export default AdvancedTableHassas;

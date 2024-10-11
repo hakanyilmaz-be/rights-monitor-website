@@ -1,94 +1,80 @@
 import React from "react";
+import { useTranslation } from "react-i18next";
 
 const KitleselGiris = () => {
+  const { t } = useTranslation();
+
   return (
     <>
       <div className="paragraph-kitlesel-giris">
-        Gülen Hareketi mensuplarına yönelik düzenlenen kitlesel gözaltı
-        operasyonları hukuk sınırlarını çoktan aşmıştır. 2017'de{" "}
+        {t('kitleselGiris.paragraph1.part1')}{" "}
         <a
           href="https://www.aa.com.tr/tr/15-temmuz-darbe-girisimi/81-ildeki-fetonun-mahrem-yapilanmasi-operasyonunda-1120-gozalti/805570"
           target="_blank"
+          rel="noopener noreferrer"
         >
-          {" "}
-          tek bir operasyonda
+          {t('kitleselGiris.paragraph1.linkText1')}
         </a>{" "}
-        3,224 kişi, 2016'da bir günde{" "}
+        {t('kitleselGiris.paragraph1.part2')}{" "}
         <a
           href="https://www.aa.com.tr/tr/15-temmuz-darbe-girisimi/-2-bin-745-hakim-ve-savci-hakkinda-gozalti-karari/609308"
           target="_blank"
+          rel="noopener noreferrer"
         >
-          2,745
+          {t('kitleselGiris.paragraph1.linkText2')}
         </a>{" "}
-        hakim ve savcı, 2019'da ise aynı günde{" "}
+        {t('kitleselGiris.paragraph1.part3')}{" "}
         <a
           href="https://www.aa.com.tr/tr/gunun-basliklari/feto-sorusturmasinda-1112-gozalti-karari/1389890"
           target="_blank"
+          rel="noopener noreferrer"
         >
-          1,112
+          {t('kitleselGiris.paragraph1.linkText3')}
         </a>{" "}
-        kişi, Gülen Hareketi'ne mensup olma iddiasıyla gözaltına alınmıştır. BM
-        Keyfi Tutuklamalar Çalışma Grubu
+        {t('kitleselGiris.paragraph1.part4')}{" "}
         <a
           href="https://www.ohchr.org/sites/default/files/documents/issues/detention-wg/opinions/session98/a-hrc-wgad-66-2023-turkiye-aev.pdf"
-          className="paragraph-kitlesel-giris-link"
+          target="_blank"
+          rel="noopener noreferrer"
         >
-          <span> Görüş No. 66/2023 </span>
+          {t('kitleselGiris.paragraph1.linkText4')}
         </a>
-        (Paragraf 63),
+        {t('kitleselGiris.paragraph1.part5')}
         <a
           href="https://www.ohchr.org/sites/default/files/documents/issues/detention-wg/opinions/session96/A-HRC-WGAD-2023-3-AEV.pdf"
-          className="paragraph-kitlesel-giris-link"
+          target="_blank"
+          rel="noopener noreferrer"
         >
-          <span> Görüş No. 3/2023 </span>
+          {t('kitleselGiris.paragraph1.linkText5')}
         </a>
-        (Paragraf 85),
+        {t('kitleselGiris.paragraph1.part6')}
         <a
           href="https://www.ohchr.org/sites/default/files/Documents/Issues/Detention/Opinions/Session89/A_HRC_WGAD_2020_66.pdf"
-          className="paragraph-kitlesel-giris-link"
+          target="_blank"
+          rel="noopener noreferrer"
         >
-          <span> Görüş No. 66/2020 </span>
+          {t('kitleselGiris.paragraph1.linkText6')}
         </a>
-        (Paragraf 67),
+        {t('kitleselGiris.paragraph1.part7')}
         <a
           href="https://www.ohchr.org/sites/default/files/Documents/Issues/Detention/Opinions/Session89/A_HRC_WGAD_2020_67.pdf"
-          className="paragraph-kitlesel-giris-link"
+          target="_blank"
+          rel="noopener noreferrer"
         >
-          <span> Görüş No. 67/2020 </span>
+          {t('kitleselGiris.paragraph1.linkText7')}
         </a>
-        (Paragraf 96) ve
+        {t('kitleselGiris.paragraph1.part8')}
         <a
           href="https://www.ohchr.org/sites/default/files/Documents/Issues/Detention/Opinions/Session89/A_HRC_WGAD_2020_84.pdf"
-          className="paragraph-kitlesel-giris-link"
+          target="_blank"
+          rel="noopener noreferrer"
         >
-          <span> Görüş No. 84/2020 </span>
+          {t('kitleselGiris.paragraph1.linkText8')}
         </a>
-        (Paragraf 76) ve diğer uluslararası kurumlar, Türkiye'nin Gülen Hareketi
-        mensuplarına yönelik tutuklama ve gözaltı uygulamalarını{" "}
-        <b>insanlığa karşı suç</b> olarak nitelendirmiş ve kınamıştır.
+        {t('kitleselGiris.paragraph1.part9')}
       </div>
       <p style={{ color: "red" }}>
-        <b>
-          Bu sayfada yer alan veriler, açık kaynaklar üzerinde kapsamlı bir
-          inceleme yapılarak derlenmiş olup, sadece medyaya yansımış olan toplu
-          gözaltı operasyonları verisini yansıtmaktadır. Bireysel gözaltılar,
-          savcılıklar tarafından çağrı üzerine yapılan gözaltılar ve medyaya
-          yansımamış olan operasyonlar çalışma kapsamı dışındadır. Yapılan
-          gözaltı sayısı burada verilen rakamların çok üzerindedir. Örneğin,
-          Süleyman Soylu Mart 2019 tarihinde Anadolu Ajansına yaptığı{" "}
-          <a
-            href="https://www.sozcu.com.tr/fetoden-gozaltina-332-bin-kisi-alindi-19-bini-tutuklu-wp7233107"
-            target="_blank"
-            style={{ color: "red" }}
-          >
-            <u> açıklamada</u>
-          </a>
-          , 15 Temmuz’dan bu yanan 511 bin kişinin gözaltına alındığını, Temmuz
-          2022’de yaptığı bir konuşmada ise 15 Temmuz 2016’dan 2 Haziran 2022’ye
-          kadar geçen sürede 332 bin 884 kişinin gözaltına alındığını ifade
-          etmiştir. Bu süre içerisinde açık kaynaklarda yer alan gözaltına
-          alınmış kişi sayısı 132 bin 760’tır.
-        </b>
+        <b>{t('kitleselGiris.paragraph2')}</b>
       </p>
     </>
   );

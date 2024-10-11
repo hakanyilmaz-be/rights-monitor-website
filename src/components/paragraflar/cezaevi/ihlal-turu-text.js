@@ -1,28 +1,21 @@
 import React from "react";
+import { useTranslation } from "react-i18next";
 import "./cezaevi-text.css";
 
 const IhlalTuruText = () => {
+  const { t } = useTranslation();
+
   return (
     <>
       <h2 style={{ fontWeight: "bold", marginTop: "2.1rem" }}>
-        Hak İhlallerinin Kapsamı ve Kategorileri
+        {t("ihlalturuText.title")}
       </h2>
       <p className="small-paragraph">
-        Türkiye'deki cezaevlerinde tutulan siyasi tutuklu ve hükümlüler, çok
-        farklı çeşitlerde hak ihlallerine maruz kalmaktadır. Bu sayfa içerisinde
-        yer alan "Hak ihlalleri" verileri, istatistik tablosunda 30 farklı
-        kategori altında toplanmaya çalışılmıştır. 
+        {t("ihlalturuText.paragraph1")}
       </p>
 
       <p className="small-paragraph">
-        
-        Örneğin, dilekçelerin
-        alınmaması, cevap verilmemesi, kayıt yaptırılmaması, gelen evrakların
-        verilmemesi, fakslara el konulması gibi ihlaller genel olarak "Dilekçe
-        verme, evrak alma-gönderme hakkının kısıtlanması" başlığı altında
-        toplanmıştır. Aynı şekilde koronavirüs salgınında yeterli tedbirlerin
-        alınmaması dahil sağlık ve tedavi ile ilgili tüm ihlaller "Sağlık
-        hakkına yönelik ihlaller" başlığı altına eklenmiştir.
+        {t("ihlalturuText.paragraph2")}
       </p>
     </>
   );

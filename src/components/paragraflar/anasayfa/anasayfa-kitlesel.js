@@ -2,22 +2,29 @@ import React, { useEffect, useState } from 'react';
 import { Container } from 'react-bootstrap';
 import { motion } from 'framer-motion';
 import axios from 'axios';
-import "./anasayfa-text.css" 
-import "./buton.css"
+import { useTranslation } from 'react-i18next'; // Çeviri için i18next hook'u dahil ettik
+import "./anasayfa-text.css";
+import "./buton.css";
 import { useNavigate } from 'react-router-dom';
 import AnasayfaIntro from '../../text-header/anasayfa-intro';
 import AnasayfaHeader from '../../ana-sayfa-header/anasayfaHeader';
 
-
 const AnasayfaKitlesel = () => {
+  const { t, i18n } = useTranslation(); // Çeviri fonksiyonunu kullanmak için hook
   const [a1Value, setA1Value] = useState("");
   const [a2Value, setA2Value] = useState("");
   const [a3Value, setA3Value] = useState("");
   const [a4Value, setA4Value] = useState("");
   const navigate = useNavigate();
 
+
+
   const handleButtonClick = () => {
-    navigate('/kitlesel');
+    if (i18n.language === 'en') {
+      navigate('/en/mass-detentions');
+    } else {
+      navigate('/tr/kitlesel-gozaltilar');
+    }
   };
 
   useEffect(() => {
@@ -58,20 +65,18 @@ const AnasayfaKitlesel = () => {
     return new Intl.NumberFormat('tr-TR').format(number);
   };
 
-  const text = `2014 yılı Nisan ayından bugüne kadar, Gülen Hareketi mensuplarını gözaltına almak maksadıyla ülke genelinde toplamda ${formatNumber(a1Value)}’den fazla polis operasyonu düzenlenmiş,Bu operasyonlar sonucunda yaklaşık ${formatNumber(a2Value)} kişi gözaltına alınmıştır. Bu veriler doğrultusunda günde ortalama ${formatNumber(a3Value)} kişi Gülen hareketi ile iltisakli olduğu gerekçesi ile özgürlük ve güvenlik hakkından mahrum edilmektedir.  ${formatNumber(a4Value)}`;
-  
   const [displayedText, setDisplayedText] = useState('');
   const [index, setIndex] = useState(0);
 
   useEffect(() => {
-    if (index < text.length) {
+    if (index < displayedText.length) {
       const timeoutId = setTimeout(() => {
-        setDisplayedText((prev) => prev + text[index]);
+        setDisplayedText((prev) => prev + displayedText[index]);
         setIndex(index + 1);
       }, 100); 
       return () => clearTimeout(timeoutId);
     }
-  }, [index, text]);
+  }, [index, displayedText]);
 
   const highlightedTextVariants = {
     initial: { opacity: 0 },
@@ -94,31 +99,32 @@ const AnasayfaKitlesel = () => {
 
   return (
     <Container>
-          <h2  className="text-center gradient-text mb-4" style={{ fontSize: "2.7rem" }}>Kitlesel Gözaltılar</h2>
+      <h2 className="text-center gradient-text mb-4" style={{ fontSize: "2.7rem" }}>
+        {t('mass_detentions_title')}
+      </h2>
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.5 }}
       >
-        <span><p>
-          {`2014 yılı Nisan ayından bugüne kadar, Gülen Hareketi mensuplarını gözaltına almak maksadıyla ülke genelinde en az `}
-          {highlightedText(formatNumber(a2Value))}
-          {` polis operasyonu düzenlenmiştir. Bu operasyonlar sonucunda yaklaşık `}
-          {highlightedText(formatNumber(a1Value))}
-          {` kişi gözaltına alınmıştır. Bu veriler doğrultusunda günde ortalama `}
-          {highlightedText(formatNumber(a3Value))}
-          {` kişi Gülen hareketi ile iltisakli olduğu gerekçesi ile özgürlük ve güvenlik hakkından mahrum edilmektedir. `}
-     
-          </p></span>
+        <span>
+          <p>
+            {t('mass_detentions_text', {
+              a2Value: highlightedText(formatNumber(a2Value)),
+              a1Value: highlightedText(formatNumber(a1Value)),
+              a3Value: highlightedText(formatNumber(a3Value)),
+            })}
+          </p>
+        </span>
       </motion.div>
 
-      <AnasayfaIntro/>
-      <AnasayfaHeader/>
+      <AnasayfaIntro />
+      <AnasayfaHeader />
 
-
-
-      <div class="buttons">
-    <button class="btn-hover color-5" onClick={handleButtonClick}>Kitlesel Operasyonlar Dataları</button>
+      <div className="buttons">
+        <button className="btn-hover color-5" onClick={handleButtonClick}>
+          {t('mass_detentions_button')}
+        </button>
       </div>
     </Container>
   );

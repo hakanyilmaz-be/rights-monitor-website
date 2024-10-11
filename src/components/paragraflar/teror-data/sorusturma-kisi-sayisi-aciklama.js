@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import { Container } from 'react-bootstrap';
 import axios from 'axios';
+import { useTranslation } from 'react-i18next';
 
 const SorusturmaKisiSayisiAciklama = () => {
+  const { t } = useTranslation();
 
   const [a1Value, setA1Value] = useState("");
   const [a2Value, setA2Value] = useState("");
@@ -41,17 +43,14 @@ const SorusturmaKisiSayisiAciklama = () => {
     return rows.slice(1); // Başlık satırını atla
   }
 
-
   return (
     <Container className='mt-4'>
-
-        <p className="small-paragraph"> 
-        Adalet Bakanlığı'nın yıllık adli sicil raporlarında 2015-2021 yılları arasında Türk Ceza Kanunu'nun (TCK) 309-316 maddeleri arasındaki suçlar ayrı ayrı raporlanmıştır. Ancak 2022 yılından itibaren bu maddeler, "Anayasal Düzene ve Bu Düzenin İşleyişine Karşı Suçlar" başlığı altında toplanarak raporlanmaya başlanmıştır.
-        </p>
-        <p className="small-paragraph"> 
-        2015’den bugüne toplam <b>{a1Value}</b> karar verilmiş, bu kararlardan <b>{a2Value}</b> olanı kamu davası açılması yönünde, <b>{a3Value}</b> olanı ise kovuşturmaya yer olmadığı yönünde olmuştur. 2022'ye kadar olan dönemde her bir maddenin detayları ayrı ayrı raporlanırken, 2022'den itibaren bu maddeler topluca raporlanmıştır.
-        </p>
-
+      <p className="small-paragraph">
+        {t('sorusturma.aciklama1')}
+      </p>
+      <p className="small-paragraph">
+        {t('sorusturma.aciklama2', { a1Value, a2Value, a3Value })}
+      </p>
     </Container>
   );
 };

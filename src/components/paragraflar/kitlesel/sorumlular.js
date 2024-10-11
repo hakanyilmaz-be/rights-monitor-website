@@ -1,31 +1,21 @@
 import React from "react";
+import { useTranslation } from "react-i18next";
 import "./kitlesel-text.css";
 
 const Sorumlular = () => {
+  const { t } = useTranslation();
+
   return (
     <>
       <h4 style={{ fontWeight: "bold" }}>
-        Operasyonlardan Sorumlu olan Görevliler
+        {t('sorumlular.title')}
       </h4>
       <p className="small-paragraph">
-        Türkiye’deki gözaltı operasyonları, iktidar yanlısı olmayan bireylere
-        yönelik sistematik bir baskı ve kriminalizasyon kampanyasının bir
-        parçasıdır. Gülen Hareketi üyelerine yönelik yapılan operasyonlar haksız
-        ve siyasi saiklerle yürütülmekte, temelsiz suçlamalar için kılıf
-        bulunmaya çalışılmaktadır. Hükümetin bu tavrı, Gülen Hareketi
-        mensuplarını susturmayı, hareketi zayıflatmayı ve toplum içindeki
-        itibarını yok etmeyi amaçlamaktadır.
+        {t('sorumlular.paragraph1')}
       </p>
       <p className="small-paragraph">
-        Adalet bakanı, İçişleri Bakanı, il emniyet müdürleri, başsavcılar ve
-        emniyet genel müdürleri gibi yetkililer, hükümetin bu politikasını
-        uygulayan kişiler olarak görülmekte ve bu süreçte hukuki ve demokratik
-        ilkeler ihlal edilmektedir. Türkiye’de ‘makbul’ insan olmak, Gülen
-        Hareketi üyelerine yapılan eziyetle ölçülmektedir. En fazla operasyonda
-        imzası olan isim, halk ve iktidar nezdinde koltuğunu en çok hak eden
-        isim olarak kabul edilmektedir. Sorumluların her operasyonun ardından Gülen Hareketi mensuplarına ‘göz açtırmayacaklarına’ dair nefret ifadeleri, durumun vehametini ve Türkiye’de demokrasi, hukukun üstünlüğü ve insan hakları değerlerinin erozyona uğradığını, toplumsal barış ve uyumun zedelendiğini göstermektedir.
+        {t('sorumlular.paragraph2')}
       </p>
-      
     </>
   );
 };

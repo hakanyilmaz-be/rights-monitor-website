@@ -1,0 +1,33 @@
+.language-switcher {
+    display: flex;
+    align-items: center; /* Tüm öğeleri dikeyde ortalar */
+    gap: 5px; /* Butonlar ve ayrıcı arasında boşluk */
+    padding-left: 7px;
+  }
+  
+  .lang-button {
+    background-color: transparent;
+    border: none;
+    color: rgb(255, 255, 255); /* Metin rengi */
+    font-size: 16px;
+   
+    cursor: pointer;
+    transition: color 0.3s ease;
+    text-decoration: none;
+  }
+  
+  .lang-button:hover {
+    text-decoration: underline; /* Hover sırasında altı çizilsin */
+    color: #ffc107; /* Hover sırasında renk değişikliği (isteğe bağlı) */
+  }
+  
+  .lang-button:focus {
+    outline: none; /* Buton tıklanınca çevresinde çizgi olmasın */
+  }
+  
+  .separator {
+    margin: 0; /* Varsayılan marjı sıfırla */
+    color: white; /* Ayrıcı rengi */
+    font-size: 16px;
+  }
+  

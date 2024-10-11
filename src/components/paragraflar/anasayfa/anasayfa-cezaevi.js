@@ -1,12 +1,13 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import { Col, Container, Row } from "react-bootstrap";
+import { Container } from "react-bootstrap";
+import { useTranslation } from 'react-i18next'; // Çeviri için i18next hook'u dahil ettik
 import AnimatedGradientText from "../../animated-gradient-text/AnimatedGradientText";
 import CountUp from "react-countup"; 
 import "./anasayfa-text.css"
 
-
 const AnasayfaCezaevi = () => {
+  const { t } = useTranslation(); // Çeviri fonksiyonunu kullanmak için hook
   const [a5Value, setA5Value] = useState("");
   const [a6Value, setA6Value] = useState("");
 
@@ -20,8 +21,6 @@ const AnasayfaCezaevi = () => {
           const data = parseCSV(response.data);
           if (data.length > 0) {
             setA5Value(data[0][0]);
-          }
-          if (data.length > 0) {
             setA6Value(data[1][0]);
           }
         })
@@ -41,17 +40,16 @@ const AnasayfaCezaevi = () => {
   }
 
   return (
-    <Container >
-    
-        <h2 className="gradient-text text-center" style={{ fontSize: "2.7rem" }}>Cezaevindeki Hak İhlalleri</h2>
-        <div style={{ height: "30px" }}></div>
-        <AnimatedGradientText > <p className="text-center" style={{fontSize: "18px"}}>15 Temmuz’dan bugüne cezaevlerinde siyasi mahpuslara yönelik 30
-        farklı kategoride{" "}
-        <CountUp style={{ color: 'red' }} start={0} end={a5Value} duration={5} />
-        {" "}cezaevinde en az {" "}<CountUp start={0} end={a6Value} duration={5} />
-        {" "} hak
-        ihlalinin yaşandığı bilinmektedir.
-        </p></AnimatedGradientText>
+    <Container>
+      <h2 className="gradient-text text-center" style={{ fontSize: "2.7rem" }}>
+        {t('prison_rights_violations')}
+      </h2>
+      <div style={{ height: "30px" }}></div>
+      <AnimatedGradientText>
+        <p className="text-center" style={{fontSize: "18px"}}>
+          {t('prison_rights_violations_text', { a5Value, a6Value })}
+        </p>
+      </AnimatedGradientText>
     </Container>
   );
 };

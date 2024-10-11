@@ -1,19 +1,30 @@
 import React, { useEffect, useState } from "react";
+import { useTranslation } from "react-i18next";
 import "./flourish-embed-kitlesel.css";
 
 const FlourishEmbedKitlesel = () => {
   const [iframeSrc, setIframeSrc] = useState("");
+  const { i18n } = useTranslation(); 
 
   useEffect(() => {
-    setIframeSrc("https://public.flourish.studio/story/2296835/");
-  }, []);
+    
+    const src =
+      i18n.language === "tr"
+        ? "https://public.flourish.studio/story/2296835/"
+        : "https://public.flourish.studio/story/2612368/";
+    setIframeSrc(src);
+  }, [i18n.language]); 
 
   return (
     <div className="flourish-container2">
       {iframeSrc && (
         <>
           <iframe
-            title="Looker Studio Report: Kitlesel Gözaltı Serüveni"
+            title={
+              i18n.language === "tr"
+                ? "Looker Studio Raporu: Kitlesel Gözaltı Serüveni"
+                : "Looker Studio Report: Mass Detention Journey"
+            }
             src={iframeSrc}
             allowFullScreen
             sandbox="allow-storage-access-by-user-activation allow-scripts allow-same-origin"

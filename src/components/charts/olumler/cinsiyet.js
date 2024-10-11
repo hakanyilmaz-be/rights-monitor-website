@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { Chart } from "react-google-charts";
+import { useTranslation } from "react-i18next";
 import "./olumler-charts.css";
 
 function Cinsiyet() {
+  const { t } = useTranslation();
   const [a2Value, setA2Value] = useState("");
   const [b2Value, setB2Value] = useState("");
   const [c2Value, setC2Value] = useState("");
@@ -43,10 +45,10 @@ function Cinsiyet() {
   }
 
   const data = [
-    ["Category", "Value"],
-    ["Erkekler", parseFloat(a2Value)],
-    ["Kadınlar", parseFloat(b2Value)],
-    ["Çocuklar", parseFloat(c2Value)],
+    [t("cinsiyet_chart.title"), "Value"],
+    [t("cinsiyet_chart.male"), parseFloat(a2Value)],
+    [t("cinsiyet_chart.female"), parseFloat(b2Value)],
+    [t("cinsiyet_chart.children"), parseFloat(c2Value)],
   ];
 
   const options = {
@@ -58,7 +60,7 @@ function Cinsiyet() {
 
   return (
     <div className="cinsiyet-chart mt-5" style={{ textAlign: 'center' }}>
-      <div className="chart-title">Cinsiyetlere Göre Dağılım Grafiği</div> 
+      <div className="chart-title">{t("cinsiyet_chart.title")}</div> 
       <Chart
         chartType="PieChart"
         data={data}

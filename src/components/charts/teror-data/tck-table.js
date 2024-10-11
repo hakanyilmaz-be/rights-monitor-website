@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import DataTable from 'react-data-table-component';
-
+import { useTranslation } from 'react-i18next';
 
 const TckTable = () => {
+    const { t } = useTranslation();
     const [dataRows, setDataRows] = useState([]);
 
     useEffect(() => {
@@ -23,6 +24,9 @@ const TckTable = () => {
 
     const parseCSV = (csvText) => {
         const rows = csvText.split(/\r?\n/).map(row => row.split(',').map(cell => cell.trim()));
+        if (rows.length > 0) {
+            rows[0][16] = t('table.year');  // "Yıl" ifadesini "Year" olarak değiştir
+        }
         return rows;
     };
 
@@ -31,7 +35,7 @@ const TckTable = () => {
     };
 
     const columns = [
-        { name: 'Yıl', selector: row => row[16], sortable: true, grow: 1 },
+        { name: t('table.year'), selector: row => row[16], sortable: true, grow: 1 },
         { 
             name: '314', 
             selector: row => formatNumber(row[17]), 
@@ -41,9 +45,9 @@ const TckTable = () => {
     ];
 
     const paginationOptions = {
-        rowsPerPageText: 'Satır Sayısı:', 
-        rangeSeparatorText: 'ile',
-        selectAllRowsItemText: 'Tümünü Göster'
+        rowsPerPageText: t('table.rowsPerPageText'), 
+        rangeSeparatorText: t('table.rangeSeparatorText'),
+        selectAllRowsItemText: t('table.selectAllRowsItemText')
     };
 
     const customStyles = {
@@ -72,24 +76,24 @@ const TckTable = () => {
         {
             when: (row, index) => index === dataRows.length - 1,
             style: {
-                backgroundColor: '#0055ff', // Koyu sarı renk
-                color: 'black', // Yazı rengi siyah
+                backgroundColor: '#0055ff', 
+                color: 'black',
             },
         },
     ];
 
     return (
         <div>
-            <p style={{ fontWeight: 'bold' }}>Toplam karar sayısı TCK-TMK-TFK</p>
+            <p style={{ fontWeight: 'bold' }}>{t('table.totalDecisionCount')}</p>
             <DataTable
                 columns={columns}
                 data={dataRows}
                 highlightOnHover
                 striped
-                noDataComponent={<div>Veri yükleniyor ...</div>}
+                noDataComponent={<div>{t('table.loadingData')}</div>}
                 paginationComponentOptions={paginationOptions}
                 customStyles={customStyles}
-                conditionalRowStyles={conditionalRowStyles} // Koşullu satır stilleri
+                conditionalRowStyles={conditionalRowStyles}
             />
         </div>
     );

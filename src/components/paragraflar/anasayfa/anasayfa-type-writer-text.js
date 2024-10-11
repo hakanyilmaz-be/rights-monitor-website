@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import { Container } from 'react-bootstrap';
 import { motion } from 'framer-motion';
+import { useTranslation } from 'react-i18next'; // Çeviri için i18next hook'u dahil ettik
 import axios from 'axios';
 
 const AnasayfaTypewriterText = () => {
+  const { t } = useTranslation(); // Çeviri fonksiyonunu kullanmak için hook
   const [a1Value, setA1Value] = useState("");
   const [a2Value, setA2Value] = useState("");
   const [a3Value, setA3Value] = useState("");
@@ -28,13 +30,6 @@ const AnasayfaTypewriterText = () => {
 
     fetchCSVData();
   }, []);
-
-  function parseCSV(csvText) {
-    const rows = csvText
-      .split(/\r?\n/)
-      .map((row) => row.split(",").map((cell) => cell.trim()));
-    return rows.slice(1); // Başlık satırını atla
-  }
 
   useEffect(() => {
     const fetchCSVData = () => {
@@ -90,8 +85,13 @@ const AnasayfaTypewriterText = () => {
     return new Intl.NumberFormat('tr-TR').format(number);
   };
 
-  const text = `2015’den bugüne toplam ${formatNumber(a1Value)} kişi hakkında soruşturma açılmış, bunlardan ${formatNumber(a2Value)} kişi hakkında kamu davası açılmış, ${formatNumber(a3Value)} kişi hakkında ise mahkumiyet kararı alınmıştır. Mahkumiyet kararına tabi olanlardan ${formatNumber(a4Value)} kişi 18 yaşının altındadır.`;
-  
+  const text = t('typewriter_text', {
+    totalInvestigations: formatNumber(a1Value),
+    publicCases: formatNumber(a2Value),
+    convictions: formatNumber(a3Value),
+    minors: formatNumber(a4Value),
+  });
+
   const [displayedText, setDisplayedText] = useState('');
   const [index, setIndex] = useState(0);
 
@@ -130,19 +130,8 @@ const AnasayfaTypewriterText = () => {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.5 }}
-       
       >
-        <span className='text-white'><h6>
-          {`2015’den bugüne toplam `}
-          {highlightedText(formatNumber(a1Value))}
-          {` kişi hakkında soruşturma açılmış, bunlardan `}
-          {highlightedText(formatNumber(a2Value))}
-          {` kişi hakkında kamu davası açılmış, `}
-          {highlightedText(formatNumber(a3Value))}
-          {` kişi hakkında ise mahkumiyet kararı alınmıştır. Mahkumiyet kararı verilenlerden `}
-          {highlightedText(formatNumber(a4Value))}
-          {` kişi 18 yaşının altındadır.`}
-          </h6></span>
+        <span className='text-white'><h6>{displayedText}</h6></span>
       </motion.div>
     </Container>
   );

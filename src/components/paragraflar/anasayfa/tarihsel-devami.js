@@ -1,13 +1,15 @@
 import React, { useRef, useEffect } from "react";
 import { motion, useAnimation } from "framer-motion";
+import { useTranslation } from 'react-i18next';
 
 const TarihselDevami = () => {
+  const { t } = useTranslation(); // Çeviri fonksiyonunu kullanmak için hook
   const controls1 = useAnimation();
   const controls2 = useAnimation();
   const ref = useRef();
 
-  const text1 = `2000'li yılların başında Türkiye, Avrupa Birliği ile katılım müzakerelerinde önemli ilerlemeler kaydetmiş ve bu durum hukukun üstünlüğü ile işkence ve kötü muameleyi ortadan kaldırma çabalarında belirgin iyileşmelere yol açmıştır. Ancak, 2011'deki üçüncü seçim zaferinden sonra iktidar otoriter eğilimler göstererek yargı bağımsızlığı ile hukukun üstünlüğünü zayıflatmaya başlatmıştır.`;
-  const text2 = `Temmuz 2016'daki darbe girişiminin ardından Türkiye'de insan hakları ve hukukun üstünlüğü ciddi şekilde zedelenmiştir. Dönemin hükümeti, 15 Temmuz darbe girişimine iki yıl süren bir olağanüstü hal ilan ederek yanıt vermiştir. Bu süre zarfında, hakları ve özgürlükleri kısıtlayan, yargı bağımsızlığını ortadan kaldıran ve güçlerini kötüye kullanmakla suçlanan güvenlik güçlerini cesaretlendiren bir cezasızlık iklimi yaratan bir dizi yürütme kararnamesi çıkarılmıştır. Olağanüstü hal, 2018'in ortalarında kaldırılmış olsa da, birçok baskıcı tedbir yasalarla kalıcı hale getirilmiş ve 2017'de gerçekleştirilen anayasa referandumu ile parlamenter sistemden, güçler ayrılığı ve denetim mekanizması neredeyse hiç olmayan bir başkanlık sistemine geçiş yapılmıştır.`;
+  const text1 = t('text1'); // Çevirilen metin 1
+  const text2 = t('text2'); // Çevirilen metin 2
 
   const containerVariants = {
     hidden: { opacity: 0 },

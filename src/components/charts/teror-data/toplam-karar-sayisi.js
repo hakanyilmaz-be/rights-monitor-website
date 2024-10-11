@@ -1,10 +1,13 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { Chart } from 'react-google-charts';
+import { useTranslation } from 'react-i18next';
 
 const ToplamKararSayisi = () => {
+  const { t } = useTranslation();
+  
   const [data, setData] = useState([
-    ['Year', 'Kişi Sayısı'],
+    [t('chart.year'), t('chart.personCount')],
     ['2015', 0],
     ['2016', 0],
     ['2017', 0],
@@ -14,7 +17,6 @@ const ToplamKararSayisi = () => {
     ['2021', 0],
     ['2022', 0],
     ['2023', 0],
-
   ]);
 
   useEffect(() => {
@@ -27,7 +29,7 @@ const ToplamKararSayisi = () => {
           const parsedData = parseCSV(response.data);
           if (parsedData.length > 0) {
             setData([
-              ['Year', 'Kişi Sayısı'],
+              [t('chart.year'), t('chart.personCount')],
               ['2015', parseFloat(parsedData[15][11])],
               ['2016', parseFloat(parsedData[16][11])],
               ['2017', parseFloat(parsedData[17][11])],
@@ -37,7 +39,6 @@ const ToplamKararSayisi = () => {
               ['2021', parseFloat(parsedData[21][11])],
               ['2022', parseFloat(parsedData[22][11])],
               ['2023', parseFloat(parsedData[23][11])],
-
             ]);
           }
         })
@@ -47,7 +48,7 @@ const ToplamKararSayisi = () => {
     };
 
     fetchCSVData();
-  }, []);
+  }, [t]);
 
   function parseCSV(csvText) {
     const rows = csvText
@@ -58,19 +59,18 @@ const ToplamKararSayisi = () => {
 
   return (
     <div>
-   
       <Chart
         chartType="LineChart"
         width="100%"
         height="400px"
         data={data}
         options={{
-        title: 'Yıllara Göre Hakkında Terör Soruşturması Açılan Kişi Sayısı Grafiği',
+          title: t('chart.title'),
           hAxis: {
-            title: 'Yıl',
+            title: t('chart.year'),
           },
           vAxis: {
-            title: 'Değer',
+            title: t('chart.value'),
           },
           legend: { position: 'bottom' },
           animation: {
@@ -80,7 +80,6 @@ const ToplamKararSayisi = () => {
           },
         }}
       />
-     
     </div>
   );
 };

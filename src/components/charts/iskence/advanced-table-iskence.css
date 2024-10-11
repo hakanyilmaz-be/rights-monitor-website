@@ -1,0 +1,15 @@
+@media (max-width: 991px) {
+  .advanced-table-container {
+    transform: scale(0.30);
+    transform-origin: top left;
+    width: 335%;
+    height: auto;
+    overflow: hidden;
+  }
+
+  .advanced-table-wrapper {
+    height: 330px;
+    overflow: hidden;
+    margin-bottom: -1200px; 
+  }
+}

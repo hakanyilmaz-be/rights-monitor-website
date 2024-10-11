@@ -46,8 +46,6 @@ const SosyalEkonomikPage = () => {
 
       <Container style={contentContainerStyle}>
 
-      
-     
 
       <Row>
         <Col lg={12}>
@@ -57,10 +55,6 @@ const SosyalEkonomikPage = () => {
       <Spacer/>
 
       
-
-      
-
-    
      <AccordionTextSosyal/>
 
    <div style={{ height: "20px" }}></div>

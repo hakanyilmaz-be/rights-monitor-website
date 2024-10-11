@@ -1,21 +1,26 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import { Container} from "react-bootstrap";
+import { Container } from "react-bootstrap";
+import { useTranslation } from "react-i18next"; // i18next kullanımı için import
 import AnimatedGradientText from "../../animated-gradient-text/AnimatedGradientText";
 import CountUp from "react-countup";
-import "./anasayfa-text.css"
-import "./buton.css"
-import { useNavigate } from 'react-router-dom';
-
-
+import "./anasayfa-text.css";
+import "./buton.css";
+import { useNavigate } from "react-router-dom";
 
 const AnasayfaIhraclar = () => {
+  const { t, i18n } = useTranslation(); // Çeviri fonksiyonunu kullanmak için hook
   const [a5Value, setA5Value] = useState("");
   const [a6Value, setA6Value] = useState("");
   const navigate = useNavigate();
 
+
   const handleButtonClick = () => {
-    navigate('/ihraclar');
+    if (i18n.language === 'en') {
+      navigate('/en/dismissals');
+    } else {
+      navigate('/tr/ihraclar');
+    }
   };
 
 
@@ -49,36 +54,46 @@ const AnasayfaIhraclar = () => {
     return rows.slice(1); // Başlık satırını atla
   }
 
+  const renderSentence = () => {
+    if (i18n.language === "tr") {
+      return (
+        <>
+          <CountUp style={{ color: "red" }} start={0} end={a6Value} duration={5} />{" "}
+          {t("profession_group")} en az{" "}
+          <CountUp start={0} end={a5Value} duration={5} />{" "}
+          {t("people_dismissed")}.
+        </>
+      );
+    } else {
+      return (
+        <>
+          At least{" "}
+          <CountUp start={0} end={a5Value} duration={5} />{" "}
+          {t("people")} have been dismissed from{" "}
+          <CountUp style={{ color: "red" }} start={0} end={a6Value} duration={5} />{" "}
+          {t("profession_group")}.
+        </>
+      );
+    }
+  };
+
   return (
     <Container>
-        <h2  className="text-center text-white mb-4" style={{ fontSize: "2.7rem" }}>İhraçlar</h2>
+      <h2 className="text-center text-white mb-4" style={{ fontSize: "2.7rem" }}>
+        {t("dismissals")}
+      </h2>
 
-      <h3 className="fw-bold mt-5 baslik ">
-        <AnimatedGradientText>
-          <CountUp
-            style={{ color: "red" }}
-            start={0}
-            end={a6Value}
-            duration={5}
-          />{" "}
-          Meslek grubundan en az{" "}
-          <CountUp start={0} end={a5Value} duration={5} /> kişi ihraç
-          edilmiştir.
-        </AnimatedGradientText>
+      <h3 className="fw-bold mt-5 baslik">
+        <AnimatedGradientText>{renderSentence()}</AnimatedGradientText>
       </h3>
 
       <div style={{ height: "30px" }}></div>
 
-      <p className="text-white">
-        15 Temmuz 2016, ülke tarihindeki en kritik dönüm noktalarından biri
-        olarak kayıtlara geçmiştir. Bu tarihin ardından hükümet, Olağanüstü Hal
-        (OHAL) ilan ederek “tedbir” adını verdiği geniş kapsamlı uygulamalara
-        başvurmuştur. OHAL kapsamında çıkarılan Kanun Hükmünde Kararnameler
-        (KHK) aracılığıyla, 229 Meslek grubundan en az 134258 kişi ihraç
-        edilmiştir.
-      </p>
-      <div class="buttons">
-    <button class="btn-hover color-5" onClick={handleButtonClick}>İhraçlara Dair İstatistikler</button>
+      <p className="text-white">{t("dismissals_context")}</p>
+      <div className="buttons">
+        <button className="btn-hover color-5" onClick={handleButtonClick}>
+          {t("dismissal_statistics")}
+        </button>
       </div>
     </Container>
   );

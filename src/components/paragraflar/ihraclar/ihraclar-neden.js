@@ -1,29 +1,32 @@
 import React from "react";
+import { useTranslation } from 'react-i18next';
 import "./ihraclar-text.css";
 
 const IhraclarNeden = () => {
+  const { t } = useTranslation();
+
   return (
     <>
       <h2 style={{ fontWeight: "bold" }}>
-        İhraç Gerekçeleri
+        {t('dismissal_reasons')}
       </h2>
       <p className="small-paragraph">
-      Adli makamlar tarafından Gülen Hareketi mensuplarına yöneltilen terör suçlaması için gerekçe olarak kabul edilen aşağıdaki hususlar idari makamlar tarafından ihraçlar için de yeterli gerekçe olarak kabul edilmiştir.
+        {t('dismissal_reasons_description')}
       </p>
       <ul className="small-paragraph">
-        <li>- ByLock, Eagle, Telegram gibi programların kullanımı</li>
-        <li>- Çalışılan işyerlerine ait bilgiler</li>
-        <li>- Bank Asya hesapları</li>
-        <li>- Zaman Gazetesi ve Sızıntı Dergisi abonelikleri</li>
-        <li>- Sendika, vakıf, dernek üyelikleri</li>
-        <li>- Sosyal medya paylaşımları</li>
-        <li>- İdari soruşturma geçirme durumu</li>
-        <li>- Diğer dosyalarda isimlerinin geçip geçmediği</li>
-        <li>- Yurtdışı giriş-çıkış kayıtları</li>
-        <li>- Digitürk aboneliğini sonlandırma durumu</li>
-        <li>- Kargo şirketleri kayıtları</li>
-        <li>- MASAK kayıtları</li>
-        <li>- 1.1.2013 tarihinden sonraki HTS kayıtları</li>
+        <li>{t('reason_bylock_etc')}</li>
+        <li>{t('reason_workplace_info')}</li>
+        <li>{t('reason_bank_asya')}</li>
+        <li>{t('reason_newspaper_subscription')}</li>
+        <li>{t('reason_union_membership')}</li>
+        <li>{t('reason_social_media')}</li>
+        <li>{t('reason_administrative_investigation')}</li>
+        <li>{t('reason_mentioned_in_other_cases')}</li>
+        <li>{t('reason_travel_records')}</li>
+        <li>{t('reason_digiturk_cancellation')}</li>
+        <li>{t('reason_courier_records')}</li>
+        <li>{t('reason_masak_records')}</li>
+        <li>{t('reason_hts_records')}</li>
       </ul>
     </>
   );

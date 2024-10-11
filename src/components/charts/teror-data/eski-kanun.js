@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import DataTable from 'react-data-table-component';
+import { useTranslation } from 'react-i18next';
 
 const EskiKanun = () => {
+    const { t } = useTranslation();
     const [dataRows, setDataRows] = useState([]);
 
     useEffect(() => {
@@ -30,19 +32,19 @@ const EskiKanun = () => {
     };
 
     const columns = [
-        { name: 'Yıl', selector: row => row[22], sortable: true, grow: 0.7 },
+        { name: t('tabless.year'), selector: row => row[22], sortable: true, grow: 0.7 },
         { 
-            name: 'Mahkumiyet', 
+            name: t('tabless.conviction'), 
             selector: row => formatNumber(row[23]), 
             grow: 1 
         },
         { 
-            name: 'Beraat', 
+            name: t('tabless.acquittal'), 
             selector: row => formatNumber(row[24]), 
             grow: 1  
         },
         { 
-            name: '*HAGB', 
+            name: t('tabless.hagb'), 
             selector: row => formatNumber(row[25]), 
             grow: 1 
         },
@@ -60,33 +62,31 @@ const EskiKanun = () => {
                 background: 'linear-gradient(to right, #27154c, #331374 )',
                 color: '#FFF', 
                 fontSize: '12px', 
-                whiteSpace: 'normal', // Başlık hücrelerinin metninin sarılması için eklendi
-                wordWrap: 'break-word', // Başlık hücrelerinin metninin sarılması için eklendi
+                whiteSpace: 'normal', 
+                wordWrap: 'break-word', 
             },
         },
         cells: {
             style: {
                 padding: '0px 0px 0px 8px', 
                 fontSize: '11px',
-                whiteSpace: 'normal', // Hücrelerin metninin sarılması için eklendi
-                wordWrap: 'break-word', // Hücrelerin metninin sarılması için eklendi
+                whiteSpace: 'normal', 
+                wordWrap: 'break-word', 
             },
         },
     };
 
     return (
         <div>
-           
             <DataTable
                 columns={columns}
                 data={dataRows}
                 highlightOnHover
                 striped
-                noDataComponent={<div>Veri yükleniyor ...</div>}
+                noDataComponent={<div>{t('tabless.loadingData')}</div>}
                 customStyles={customStyles}
             />
-           <p className='mt-2' style={{ fontSize: '10px' }}>*Hükmün Açıklanmasının Geriye Bırakılması</p>
-
+           <p className='mt-2' style={{ fontSize: '10px' }}>{t('tabless.hagbDescription')}</p>
         </div>
     );
 }

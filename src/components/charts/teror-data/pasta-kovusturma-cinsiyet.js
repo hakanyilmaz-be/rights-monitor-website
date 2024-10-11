@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { Chart } from "react-google-charts";
+import { useTranslation } from "react-i18next";
 
 function PastaKovusturmaCinsiyet() {
+  const { t } = useTranslation();
   const [a2Value, setA2Value] = useState("");
   const [b2Value, setB2Value] = useState("");
-
-
 
   useEffect(() => {
     const fetchCSVData = () => {
@@ -22,8 +22,6 @@ function PastaKovusturmaCinsiyet() {
             if (data.length > 1) {
               setB2Value(data[4][18]);
             }
-           
-        
           }
         })
         .catch((error) => {
@@ -38,7 +36,7 @@ function PastaKovusturmaCinsiyet() {
     const rows = csvText
       .split(/\r?\n/)
       .map((row) => row.split(",").map((cell) => cell.trim()));
-    return rows.slice(1); // Başlık satırını atla
+    return rows.slice(1);
   }
 
   const formatNumber = (number) => {
@@ -46,23 +44,20 @@ function PastaKovusturmaCinsiyet() {
   };
 
   const data = [
-    ["Category", "Value"],
-    
-    ["Erkekler", parseFloat(b2Value)],
-    ["Kadınlar", parseFloat(a2Value)],
-  
+    [t("chartrr.genderCategory"), t("chartrr.value")],
+    [t("chartrr.men"), parseFloat(b2Value)],
+    [t("chartrr.women"), parseFloat(a2Value)],
   ];
 
   const options = {
-    title: "Cinsiyetlere Göre Dağılımı",
+    title: t("chartrr.genderDistributionTitle"),
     is3D: true,
     legend: { position: "bottom", alignment: "center", maxLines: 3 },
     chartArea: { width: "100%", height: "80%" },
   };
 
   return (
-    <div style={{ textAlign: 'center' }}>
-    
+    <div style={{ textAlign: "center" }}>
       <Chart
         chartType="PieChart"
         data={data}
@@ -70,7 +65,6 @@ function PastaKovusturmaCinsiyet() {
         width="100%"
         height="250px"
       />
-     
     </div>
   );
 }

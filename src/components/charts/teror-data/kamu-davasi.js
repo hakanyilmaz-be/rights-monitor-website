@@ -1,10 +1,13 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { Chart } from 'react-google-charts';
+import { useTranslation } from 'react-i18next';
 
 const KamuDavasi = () => {
+  const { t } = useTranslation();
+
   const [data, setData] = useState([
-    ['Year', 'Kişi Sayısı'],
+    [t('chartb.year'), t('chartb.personCount')],
     ['2015', 0],
     ['2016', 0],
     ['2017', 0],
@@ -14,7 +17,6 @@ const KamuDavasi = () => {
     ['2021', 0],
     ['2022', 0],
     ['2023', 0],
-
   ]);
 
   useEffect(() => {
@@ -27,7 +29,7 @@ const KamuDavasi = () => {
           const parsedData = parseCSV(response.data);
           if (parsedData.length > 0) {
             setData([
-              ['Year', 'Kişi Sayısı'],
+              [t('chartb.year'), t('chartb.personCount')],
               ['2015', parseFloat(parsedData[15][13])],
               ['2016', parseFloat(parsedData[16][13])],
               ['2017', parseFloat(parsedData[17][13])],
@@ -37,7 +39,6 @@ const KamuDavasi = () => {
               ['2021', parseFloat(parsedData[21][13])],
               ['2022', parseFloat(parsedData[22][13])],
               ['2023', parseFloat(parsedData[23][13])],
-
             ]);
           }
         })
@@ -47,7 +48,7 @@ const KamuDavasi = () => {
     };
 
     fetchCSVData();
-  }, []);
+  }, [t]);
 
   function parseCSV(csvText) {
     const rows = csvText
@@ -58,19 +59,18 @@ const KamuDavasi = () => {
 
   return (
     <div>
-   
       <Chart
         chartType="LineChart"
         width="100%"
         height="400px"
         data={data}
         options={{
-        title: 'Yıllara Göre Hakkında Terör Davası Açılan (kamu davası açılması kararı verilen) Kişi Sayısı Grafiği',
+          title: t('chartb.kamuDavasiTitle'),
           hAxis: {
-            title: 'Yıl',
+            title: t('chartb.year'),
           },
           vAxis: {
-            title: 'Değer',
+            title: t('chartb.value'),
           },
           legend: { position: 'bottom' },
           animation: {
@@ -79,11 +79,10 @@ const KamuDavasi = () => {
             easing: 'out',
           },
           series: {
-          0: { color: '#FF0000' } // Burada rengi değiştirdim (örneğin, kırmızı olarak ayarlandı)
+            0: { color: '#FF0000' }
           },
         }}
       />
-     
     </div>
   );
 };

@@ -10,7 +10,7 @@ const AdminTemplate = ({ children }) => {
 
   
   const isLargeScreen = window.innerWidth >= 992; 
-  const isHomePage = pathname === '/'; 
+  const isHomePage = pathname === '/tr' || pathname === '/en'; 
 
   return (
     <div className="admin-template">

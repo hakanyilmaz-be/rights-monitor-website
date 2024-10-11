@@ -5,6 +5,7 @@ import "./timeline.css";
 import axios from "axios";
 import Papa from "papaparse";
 import { FormControl, Form } from "react-bootstrap";
+import { useTranslation } from 'react-i18next'; // useTranslation hook'u eklendi
 
 const Timeline = () => {
   const [dataRows, setDataRows] = useState([]);
@@ -13,11 +14,14 @@ const Timeline = () => {
   const [filterText, setFilterText] = useState("");
   const [selectedYear, setSelectedYear] = useState("");
   const [reverseOrder, setReverseOrder] = useState(false);
+  const { i18n, t } = useTranslation(); // Dil kontrolü için useTranslation kullanıyoruz
 
   useEffect(() => {
     const fetchCSVData = () => {
-      const csvUrl =
-        "https://docs.google.com/spreadsheets/d/e/2PACX-1vSc5GNUGM3KuthHw3F_J2JQyACdL8lPc5OHAHF6QlXqUKgX6Pit6wUYaDA1-VR4rjHpfvxmTLcj6Pob/pub?gid=758673166&single=true&output=csv";
+      // Dil kontrolü yaparak doğru CSV URL'sini seçiyoruz
+      const csvUrl = i18n.language === 'tr' 
+        ? "https://docs.google.com/spreadsheets/d/e/2PACX-1vSc5GNUGM3KuthHw3F_J2JQyACdL8lPc5OHAHF6QlXqUKgX6Pit6wUYaDA1-VR4rjHpfvxmTLcj6Pob/pub?gid=758673166&single=true&output=csv"
+        : "https://docs.google.com/spreadsheets/d/1qMDpIeOze2Wu9OBefb3GCJjEQ8qRbRhl_48Gh6tBTnk/pub?gid=1131107077&single=true&output=csv";
 
       axios
         .get(csvUrl)
@@ -30,7 +34,7 @@ const Timeline = () => {
     };
 
     fetchCSVData();
-  }, []);
+  }, [i18n.language]); // Dil değiştiğinde CSV verilerini yeniden çekiyoruz
 
   function parseCSV(csvText) {
     Papa.parse(csvText, {
@@ -156,14 +160,12 @@ const Timeline = () => {
   return (
     <>
       <div className="timeline-background">
-        <h2 className="timeline-title mb-5">Zaman Çizelgesi</h2>
+        <h2 className="timeline-title mb-5">{t('timeline_title')}</h2> {/* Dil bazlı başlık */}
         <div className="search-filter">
-          <p style={{ fontWeight: "bold" }}>
-            Arama bölümünü verileri filtrelemek için kullanabilirsiniz.
-          </p>
+          <p style={{ fontWeight: "bold" }}>{t('search_instruction')}</p> {/* Dil bazlı açıklama */}
           <FormControl
             type="text"
-            placeholder="Anahtar kelime, tarih, başlık veya link araması yapabilirsiniz..."
+            placeholder={t('search_placeholder')} 
             value={filterText}
             onChange={handleFilter}
           />
@@ -171,17 +173,16 @@ const Timeline = () => {
             as="select"
             value={selectedYear}
             onChange={handleYearChange}
-            
             className="mt-3"
           >
-            <option value="">Yıl Seçiniz</option>
+            <option value="">{t('select_year')}</option>
             {Array.from({ length: 11 }, (_, i) => 2013 + i).map((year) => (
               <option key={year} value={year}>{year}</option>
             ))}
           </Form.Control>
           <Form.Check 
             type="checkbox" 
-            label="Yakın tarihten geçmişe doğru sıralama" 
+            label={t('reverse_order')}  
             checked={reverseOrder} 
             onChange={handleReverseOrderChange}
             className="mt-3"

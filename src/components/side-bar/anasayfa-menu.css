@@ -29,13 +29,15 @@
 
   color: rgb(255, 255, 255);
   padding-left: 0.8rem;
+  margin-bottom: -0.25rem;
+
  
   
 }
 
 .navbar-menu2 .nav-link {
   display: block; 
-  padding: 10px;
+  padding: 8px;
   text-decoration: none;
   color: rgb(255, 255, 255);
  

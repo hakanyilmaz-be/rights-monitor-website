@@ -1,10 +1,12 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { Chart } from 'react-google-charts';
+import { useTranslation } from 'react-i18next';  // Import translation hook
 
 const YillarKaybetmeler = () => {
+  const { t } = useTranslation();  // Use translation hook
   const [data, setData] = useState([
-    ['Year', 'Vaka Sayısı'],
+    [t('year'), t('case_count')],
     ['2016', 0],
     ['2017', 0],
     ['2018', 0],
@@ -23,7 +25,7 @@ const YillarKaybetmeler = () => {
           const parsedData = parseCSV(response.data);
           if (parsedData.length > 0) {
             setData([
-              ['Year', 'Vaka Sayısı'],
+              [t('year'), t('case_count')],
               ['2016', parseFloat(parsedData[0][1])],
               ['2017', parseFloat(parsedData[1][1])],
               ['2018', parseFloat(parsedData[2][1])],
@@ -34,35 +36,34 @@ const YillarKaybetmeler = () => {
           }
         })
         .catch((error) => {
-          console.error("Error fetching CSV data:", error);
+          console.error(t('error_fetching_data'), error);
         });
     };
 
     fetchCSVData();
-  }, []);
+  }, [t]);
 
   function parseCSV(csvText) {
     const rows = csvText
       .split(/\r?\n/)
       .map((row) => row.split(",").map((cell) => cell.trim()));
-    return rows.slice(1); // Başlık satırını atla
+    return rows.slice(1); // Skip header row
   }
 
   return (
     <div>
-   
       <Chart
         chartType="LineChart"
         width="100%"
         height="400px"
         data={data}
         options={{
-        title: 'Yıllara Göre Değişim Grafiği',
+          title: t('change_over_years'),
           hAxis: {
-            title: 'Yıl',
+            title: t('year'),
           },
           vAxis: {
-            title: 'Değer',
+            title: t('value'),
           },
           legend: { position: 'bottom' },
           animation: {
@@ -72,7 +73,6 @@ const YillarKaybetmeler = () => {
           },
         }}
       />
-     
     </div>
   );
 };

@@ -1,11 +1,13 @@
 import React, { useState, useRef, useEffect } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom"; // useParams kaldırıldı
+import { useTranslation } from 'react-i18next';
 import logo from "../../assets/img/logo.png";
 import "./side-bar.css";
 import backgroundVideo from "../../assets/video/video.m4v";
 import { Container, Dropdown, Nav, Navbar } from "react-bootstrap";
 import AppInstallPrompt from "../AppInstallPrompt"; // AppInstallPrompt bileşenini içe aktarın
 import { MdOutlineMobileFriendly } from "react-icons/md";
+import LanguageSwitcher from "../LanguageSwitcher";
 
 const SideBar = () => {
   const location = useLocation();
@@ -41,6 +43,46 @@ const SideBar = () => {
     }
   };
 
+  const { t, i18n } = useTranslation(); // i18n.language ile varsayılan dil
+
+  // Her dil için doğru URL yolunu döndüren yardımcı fonksiyon
+  const getLocalizedPath = (path) => {
+    // Eğer dil İngilizce ise URL çevirileri yapılır
+    if (i18n.language === "en") {
+      switch (path) {
+        case "/kitlesel-gozaltilar":
+          return "/en/mass-detentions";
+        case "/iskenceler":
+          return "/en/tortures";
+        case "/olumler":
+          return "/en/deaths";
+        case "/hassasgruplar":
+          return "/en/vulnerable-groups";
+        case "/ihraclar":
+          return "/en/dismissals";
+        case "/illegal-iade":
+          return "/en/illegal-deportation";
+        case "/kaybedilenler":
+          return "/en/missing-people";
+        case "/sosyal-ekonomik-hak-ihlali":
+          return "/en/socio-economic-rights-violations";
+        case "/cezaevi-hak-ihlali":
+          return "/en/prison-rights-violations";
+        case "/kapatilankurumlar":
+          return "/en/closed-institutions";
+        case "/teror-sucu-istatistikleri":
+          return "/en/terror-crime-statistics";
+        case "/yargi-bagimsizligi":
+          return "/en/judicial-independence";
+        default:
+          return `/en${path}`; // Diğer yollar için varsayılan İngilizce rota
+      }
+    }
+
+    // Dil Türkçe ise orijinal yollar döndürülür
+    return `/tr${path}`;
+  };
+
   return (
     <div>
       <video autoPlay loop muted className="video-background">
@@ -50,64 +92,80 @@ const SideBar = () => {
 
       <Navbar expand="lg" className="admin-navbar" variant="dark" expanded={expanded}>
         <Container>
-          <Navbar.Brand as={Link} to="/">
+          <Navbar.Brand as={Link} to={getLocalizedPath("")}>
             <img alt="Turkey Rights Monitor" src={logo} className="img-fluid " />
           </Navbar.Brand>
           <Dropdown.Divider />
           <Navbar.Toggle aria-controls="basic-navbar-nav" onClick={handleToggle} />
           <Navbar.Collapse className="navbar-menu" id="basic-navbar-nav">
             <Nav className="me-auto">
-              <Nav.Link as={Link} to="/" className={currentPath === "/" ? "active" : ""} onClick={handleNavClick}>
-                Ana Sayfa
+              <Nav.Link as={Link} to={getLocalizedPath("")} className={currentPath === `/${i18n.language}` ? "active" : ""} onClick={handleNavClick}>
+                {t('home')}
               </Nav.Link>
-              <Nav.Link as={Link} to="/kitlesel" className={currentPath === "/kitlesel" ? "active" : ""} onClick={handleNavClick}>
-                Kitlesel Gözaltılar 
+              <Nav.Link as={Link} to={getLocalizedPath("/kitlesel-gozaltilar")} className={currentPath === getLocalizedPath("/kitlesel-gozaltilar") ? "active" : ""} onClick={handleNavClick}>
+                {t('mass_detentions')}
               </Nav.Link>
-              <Nav.Link as={Link} to="/olumler" className={currentPath === "/olumler" ? "active" : ""} onClick={handleNavClick}>
-                Yaşam Hakkı İhlalleri
+              <Nav.Link as={Link} to={getLocalizedPath("/iskenceler")} className={currentPath === getLocalizedPath("/iskenceler") ? "active" : ""} onClick={handleNavClick}>
+                {t('torture')}
               </Nav.Link>
-              <Nav.Link as={Link} to="/hassasgruplar" className={currentPath === "/hassasgruplar" ? "active" : ""} onClick={handleNavClick}>
-                Hassas Gruplar
+              <Nav.Link as={Link} to={getLocalizedPath("/olumler")} className={currentPath === getLocalizedPath("/olumler") ? "active" : ""} onClick={handleNavClick}>
+                {t('right_to_life_violations')}
               </Nav.Link>
-              <Nav.Link as={Link} to="/ihraclar" className={currentPath === "/ihraclar" ? "active" : ""} onClick={handleNavClick}>
-                İhraçlar
+              <Nav.Link as={Link} to={getLocalizedPath("/hassasgruplar")} className={currentPath === getLocalizedPath("/hassasgruplar") ? "active" : ""} onClick={handleNavClick}>
+                {t('vulnerable_groups')}
               </Nav.Link>
-              <Nav.Link as={Link} to="/illegaliade" className={currentPath === "/illegaliade" ? "active" : ""} onClick={handleNavClick}>
-                Hukuka Aykırı Sınır Dışı ve İadeler
+              <Nav.Link as={Link} to={getLocalizedPath("/ihraclar")} className={currentPath === getLocalizedPath("/ihraclar") ? "active" : ""} onClick={handleNavClick}>
+                {t('dismissals')}
               </Nav.Link>
-              <Nav.Link as={Link} to="/kaybedilenler" className={currentPath === "/kaybedilenler" ? "active" : ""} onClick={handleNavClick}>
-                Zorla Kaybetmeler
+              <Nav.Link as={Link} to={getLocalizedPath("/illegal-iade")} className={currentPath === getLocalizedPath("/illegal-iade") ? "active" : ""} onClick={handleNavClick}>
+                {t('illegal_extradition')}
               </Nav.Link>
-              <Nav.Link as={Link} to="/sosyal-ekonomik-hak-ihlali" className={currentPath === "/sosyal-ekonomik-hak-ihlali" ? "active" : ""} onClick={handleNavClick}>
-                Sosyal ve Ekonomik Hak İhlalleri
+              <Nav.Link as={Link} to={getLocalizedPath("/kaybedilenler")} className={currentPath === getLocalizedPath("/kaybedilenler") ? "active" : ""} onClick={handleNavClick}>
+                {t('forced_disappearances')}
               </Nav.Link>
-              <Nav.Link as={Link} to="/cezaevi-hak-ihlali" className={currentPath === "/cezaevi-hak-ihlali" ? "active" : ""} onClick={handleNavClick}>
-                Cezaevindeki Hak İhlalleri
+              <Nav.Link as={Link} to={getLocalizedPath("/sosyal-ekonomik-hak-ihlali")} className={currentPath === getLocalizedPath("/sosyal-ekonomik-hak-ihlali") ? "active" : ""} onClick={handleNavClick}>
+                {t('social_economic_rights_violations')}
               </Nav.Link>
-              <Nav.Link as={Link} to="/kapatilankurumlar" className={currentPath === "/kapatilankurumlar" ? "active" : ""} onClick={handleNavClick}>
-                Kapatılan Kurumlar
+              <Nav.Link as={Link} to={getLocalizedPath("/cezaevi-hak-ihlali")} className={currentPath === getLocalizedPath("/cezaevi-hak-ihlali") ? "active" : ""} onClick={handleNavClick}>
+                {t('prison_rights_violations')}
               </Nav.Link>
-              <Nav.Link as={Link} to="/teror-sucu-istatistikleri" className={currentPath === "/teror-sucu-istatistikleri" ? "active" : ""} onClick={handleNavClick}>
-                Terör Suçu İstatistikleri
+              <Nav.Link as={Link} to={getLocalizedPath("/kapatilankurumlar")} className={currentPath === getLocalizedPath("/kapatilankurumlar") ? "active" : ""} onClick={handleNavClick}>
+                {t('closed_institutions')}
               </Nav.Link>
-              <Nav.Link as={Link} to="/yargi-bagimsizligi" className={currentPath === "/yargi-bagimsizligi" ? "active" : ""} onClick={handleNavClick}>
-                Yargı Bağımsızlığı
+              <Nav.Link as={Link} to={getLocalizedPath("/teror-sucu-istatistikleri")} className={currentPath === getLocalizedPath("/teror-sucu-istatistikleri") ? "active" : ""} onClick={handleNavClick}>
+                {t('terror_crime_statistics')}
               </Nav.Link>
+              <Nav.Link as={Link} to={getLocalizedPath("/yargi-bagimsizligi")} className={currentPath === getLocalizedPath("/yargi-bagimsizligi") ? "active" : ""} onClick={handleNavClick}>
+                {t('judicial_independence')}
+              </Nav.Link>
+
+              <Nav.Link
+                href="https://hudoc.turkeyrightsmonitor.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={handleNavClick}
+              >
+                {t('echr_data')}
+              </Nav.Link>
+           
+              <LanguageSwitcher /> 
+            
+
               {/* Yalnızca mobilde gösterilecek "Uygulamayı Yükle" linki */}
               {isMobile && (
-  deferredPrompt ? (
-    <Nav.Link onClick={handleInstallClick}>
-      <MdOutlineMobileFriendly /> Uygulamayı Yükle
-    </Nav.Link>
-  ) : (
-    <Nav.Link onClick={handleInstallClick}>
-    <div className="install-instructions text-white" >
-       <MdOutlineMobileFriendly /> Uygulamayı Yükle
-      <p className="text-white mt-2" style={{fontSize:"9px"}}>(iPhone kullanıyorsanız, Safari'den paylaş simgesine tıklayarak "Ana Ekrana Ekle" seçeneğini kullanınız.)</p>
-    </div>
-    </Nav.Link>
-  )
-)}
+                deferredPrompt ? (
+                  <Nav.Link onClick={handleInstallClick}>
+                    <MdOutlineMobileFriendly /> {t('install_app')}
+                  </Nav.Link>
+                ) : (
+                  <Nav.Link onClick={handleInstallClick}>
+                    <div className="install-instructions text-white">
+                      <MdOutlineMobileFriendly /> {t('install_app')}
+                      <p className="text-white mt-2" style={{ fontSize: "9px" }}>{t('install_instructions')}</p>
+                    </div>
+                  </Nav.Link>
+                )
+              )}
             </Nav>
           </Navbar.Collapse>
         </Container>

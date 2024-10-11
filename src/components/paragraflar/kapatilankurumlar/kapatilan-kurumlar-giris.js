@@ -2,9 +2,11 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { Col, Container, Row } from "react-bootstrap";
 import { motion } from "framer-motion";
-import "./kapatilan-text.css"
+import { useTranslation } from "react-i18next";
+import "./kapatilan-text.css";
 
 const KapatilanKurumlarGiris = () => {
+  const { t } = useTranslation(); // Access the translation function
   const [a5Value, setA5Value] = useState("");
   const [showDots, setShowDots] = useState(true);
 
@@ -32,7 +34,7 @@ const KapatilanKurumlarGiris = () => {
     const rows = csvText
       .split(/\r?\n/)
       .map((row) => row.split(",").map((cell) => cell.trim()));
-    return rows.slice(1); // Başlık satırını atla
+    return rows.slice(1); // Skip header
   }
 
   const dotVariants = {
@@ -54,51 +56,31 @@ const KapatilanKurumlarGiris = () => {
   useEffect(() => {
     const timer = setTimeout(() => {
       setShowDots(false);
-    }, 3000); 
+    }, 3000);
 
     return () => clearTimeout(timer);
   }, []);
 
   return (
     <Container
-      fluid 
+      fluid
       className="d-flex justify-content-center align-items-center ilk-giris"
     >
       <Row className="justify-content-center align-items-center">
-      <h1 className="text-white fw-bold mt-5" style={{ fontSize: "2rem" }}>
-      Kapatılan ve El Konulan Kurumlar
-          </h1>
+        <h1 className="text-white fw-bold mt-5" style={{ fontSize: "2rem" }}>
+          {t("kapatilanKurumlar.title")}
+        </h1>
         <Col lg={6} className="text-start">
           <p className="small-paragraph text-white">
-            Türkiye'de, 2016'dan bu yana olağanüstü hal kararnameleri
-            ve idari kararlar, {" "}{a5Value} kurumun kapatılması ve el konulmasına yol
-            açtı. 16 kategori altında değerlendirilebilecek kurumların
-            kapatılması ve el konulması demokratik değerler ile bağdaşmayan
-            “aşırı” yaptırımlardır. Bahsi geçen “aşırı” yaptırımlar, hükümetin
-            ifade özgürlüğüne, eğitime, sivil topluma ve halk sağlığına olan
-            bağlılığı konusunda endişelere neden olarak Türkiye'nin siyasi ve
-            toplumsal yapısında derin izler bırakmıştır.
+            {t("kapatilanKurumlar.description", { count: a5Value })}
           </p>
           <p className="small-paragraph text-white">
-            Gülen Hareketi'nin kapatılan ve el konulan kurumlarıyla ilgili
-            yaşananlar, hukukun üstünlüğü, ifade özgürlüğü ve mülkiyet hakları
-            gibi temel demokratik prensiplerle çatışan bir dizi olayı
-            içermektedir. Kapatılan ve el konulan kurumların arasında medya
-            kuruluşları, eğitim kurumları, vakıflar ve sağlık tesisleri yer
-            almaktadır. Bu kurumlara uygulanan kapatma ve el koyma işlemleri
-            muhalif sesler üzerinde baskı oluşturarak, etkilenen sektörler
-            üzerinde ciddi tahribata neden olarak, eğitim fırsatlarını azaltarak
-            ve sağlık hizmetlerinde erişimi kısıtlayarak ülkenin demokratik
-            ilkelerini ve sivil toplum gücünü azaltmıştır. Gülen Hareketi
-            mensuplarına yönelik yoğun ve yaygın sistematik tutuklamalar,
-            ihraçlar, işkence ve sosyal lincin yanında tarihte az görülmüş
-            kitlesel mülkiyet hakkı ihlalleri gerçekleştirilmiştir.
+            {t("kapatilanKurumlar.secondParagraph")}
           </p>
         </Col>
         <Col
           lg={6}
           className="d-flex flex-column justify-content-center align-items-center desktop-margin-top"
-          
         >
           {showDots && (
             <motion.div
@@ -147,7 +129,7 @@ const KapatilanKurumlarGiris = () => {
                 animate={{ opacity: 1 }}
                 transition={{ duration: 1 }}
               >
-                Kurum kapatılmıştır
+                {t("kapatilanKurumlar.footer")}
               </motion.h6>
             </>
           )}

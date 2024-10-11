@@ -1,0 +1,910 @@
+{
+    "menu": "Menü",
+    "homepage_title": "İNSAN HAKLARI İHLALLERİ İZLEME PROJESİ",
+    "thematic_reports": "Tematik Raporlar",
+    "weekly_bulletins": "Haftalık Bültenler",
+    "right_to_life_violations": "Yaşam Hakkı İhlalleri",
+    "prison_mistreatment": "Cezaevindeki Kötü Muameleler",
+    "closed_institutions": "Kapatılan Kurumlar",
+    "closed_seized_institutions": "Kapatılan ve El Konulan Kurumlar",
+    "terror_crime_statistics": "Terör Suçu İstatistikleri",
+    "comprehensive_statistics": "Kapsamlı İstatistikler",
+    "judicial_independence": "Yargı Bağımsızlığı",
+    "judicial_independence_description": "1982 Anayasası'na göre hâkimler, görevlerinde bağımsızdır ve hiçbir organ, makam veya kişi yargı yetkisinin kullanılmasında hâkimlere emir ve talimat veremez. Ancak 2016 yılında bir günde 2.745 hâkim ve savcının gözaltına alınmasıyla yargının siyasi baskı ve müdahalelere maruz kaldığı görülmektedir. Aralık 2013’ten bugüne yargı bağımsızlığının erozyona uğradığını gösteren yüzlerce vaka tespit edilerek bu sayfada paylaşılmıştır.",
+    "judicial_independence_timeline": "Yargıya Bağımsızlığı Zaman Çizelgesi",
+    "home": "Ana Sayfa",
+    "mass_detentions": "Kitlesel Gözaltılar",
+    "torture": "İşkenceler",
+    "vulnerable_groups": "Hassas Gruplar",
+    "dismissals": "İhraçlar",
+    "illegal_extradition": "Hukuka Aykırı Sınır Dışı ve İadeler",
+    "forced_disappearances": "Zorla Kaybetmeler",
+    "social_economic_rights_violations": "Sosyal ve Ekonomik Hak İhlalleri",
+    "prison_rights_violations": "Cezaevindeki Hak İhlalleri",
+    "install_app": "Uygulamayı Yükle",
+    "install_instructions": "(iPhone kullanıyorsanız, Safari'den paylaş simgesine tıklayarak \"Ana Ekrana Ekle\" seçeneğini kullanınız.)",
+    "title": "TÜRKİYE'NİN İNSAN HAKLARI SİCİLİ",
+    "historical_description": "Türkiye Cumhuriyeti, milliyetçilik, merkezi yönetim ve üniterlik üzerine kurulduğundan insan hakları üzerinde olumsuz etkiler oluşmuştur. Azınlık hakları, ifade özgürlüğü, medya özgürlüğü, yargı bağımsızlığı sürekli sorunlu alanlar olmuş, 1980'lerde askeri cunta yönetimi, 1990'larda Kürt bölgelerindeki askeri çatışmalar sırasında ciddi hak ihlalleri, işkence ve zorla kaybetmeler yaşanmıştır.",
+    "keywords": {
+      "nationalism": "milliyetçilik,",
+      "central": "merkezi",
+      "governance": "yönetim",
+      "unitarity": "üniterlik",
+      "violations": "ihlalleri,",
+      "torture": "işkence",
+      "forced_disappearances": "zorla"
+    },
+    "july_2016_and_after": "Temmuz 2016 ve Sonrası",
+    "text1": "2000'li yılların başında Türkiye, Avrupa Birliği ile katılım müzakerelerinde önemli ilerlemeler kaydetmiş ve bu durum hukukun üstünlüğü ile işkence ve kötü muameleyi ortadan kaldırma çabalarında belirgin iyileşmelere yol açmıştır. Ancak, 2011'deki üçüncü seçim zaferinden sonra iktidar otoriter eğilimler göstererek yargı bağımsızlığı ile hukukun üstünlüğünü zayıflatmaya başlatmıştır.",
+    "text2": "Temmuz 2016'daki darbe girişiminin ardından Türkiye'de insan hakları ve hukukun üstünlüğü ciddi şekilde zedelenmiştir. Dönemin hükümeti, 15 Temmuz darbe girişimine iki yıl süren bir olağanüstü hal ilan ederek yanıt vermiştir. Bu süre zarfında, hakları ve özgürlükleri kısıtlayan, yargı bağımsızlığını ortadan kaldıran ve güçlerini kötüye kullanmakla suçlanan güvenlik güçlerini cesaretlendiren bir cezasızlık iklimi yaratan bir dizi yürütme kararnamesi çıkarılmıştır. Olağanüstü hal, 2018'in ortalarında kaldırılmış olsa da, birçok baskıcı tedbir yasalarla kalıcı hale getirilmiş ve 2017'de gerçekleştirilen anayasa referandumu ile parlamenter sistemden, güçler ayrılığı ve denetim mekanizması neredeyse hiç olmayan bir başkanlık sistemine geçiş yapılmıştır.",
+    "mass_detentions_title": "Kitlesel Gözaltılar",
+    "mass_detentions_text": "Gülen Hareketi mensuplarına yönelik düzenlenen kitlesel gözaltı operasyonları hukuk sınırlarını çoktan aşmıştır. BM Keyfi Tutuklamalar Çalışma Grubu Türkiye'nin Gülen Hareketi mensuplarına yönelik tutuklama ve gözaltı uygulamalarını insanlığa karşı suç olarak nitelendirmiş ve kınamıştır.",
+    "mass_detentions_button": "Kitlesel Operasyonlar Dataları",
+    "since_2014": "2014 yılından bu yana",
+    "total_detention_count": "Toplam Gözaltı Sayısı",
+    "total_operation_count": "Toplam Operasyon Sayısı",
+    "daily_average_detention_count": "Günlük Ortalama Gözaltı Sayısı",
+    "vulnerable_groups_description": "Hamile ve yeni doğum yapmış kadınlar, ciddi derecede hasta olan bireyler, yaşlılar ve engelli kişilerin tutuklanması keyfi tutuklama olarak değerlendirilmektedir.",
+    "pregnant_women_children": "Hamile Ve Çocuklu Kadınlar",
+    "sick_people": "Hastalar",
+    "disabled_people": "Engelliler",
+    "elderly_people": "Yaşlılar",
+    "people": "kişi",
+    "vulnerable_groups_button": "Hamile, Hasta, Yaşlı ve Engelli Tutuklular",
+    "total_deaths": "Toplam Ölen Kişi Sayısı",
+    "death_description": "2016’dan bugüne kadar Gülen Hareketi ile bağlantılı olmakla suçlanan en az {{count}} kişi hayatını kaybetmiştir.",
+    "children_deaths": "Hayatını kaybeden kişilerden en az 65'i çocuktur.",
+    "life_right_violation_stats": "Yaşam Hakkı İhlal İstatistikleri",
+    "year": "Yıl",
+    "deaths_by_year": "Yıllara Göre Ölüm Nedenleri",
+    "total_count": "Toplam Sayı",
+    "still_missing": "Hâlâ Kayıp...",
+    "days": "gündür",
+    "forced_disappearances_text": "2000'li yıllarda Türkiye'nin AB üyeliği sürecindeki reform çabaları ve işkenceye karşı önlemlerle zorla kaybetmelerin geçmişte kaldığına dair umutlar yeşermişti. Ancak, 15 Temmuz 2016 sonrası bu korkunç uygulama tekrar gündeme geldi. Özellikle Gülen Hareketi ile bağlantılı olduğu iddia edilen kişilere yönelik en az otuz yeni zorla kaybetme vakası rapor edilmiştir.",
+    "forced_disappearances_button": "Zorla Kaybetmeler",
+    "illegal_extraditions_title": "Hukuka Aykırı Sınır Dışı ve İadeler",
+    "illegal_extraditions_text": "İllegal sınır dışı edilme işlemleri ve iade taleplerinde güncel olarak kaydedilen vaka sayısı en az {{a1Value}}, mağdur olan ise en az {{a3Value}} kişidir.",
+    "transnational_repression_button": "Ulusötesi Baskı",
+    "event_map_description": "Olay Haritasi: 2016'dan günümüze hukuka aykırı sınır dışı edilmeler ve reddedilen iade talepleri",
+    "iframe_title": "Looker Studio Raporu: Kitlesel Gözaltı Serüveni",
+    "illegal_abductions_title": "Uluslararası Hukuka Aykırı Şekilde Türkiye'ye Götürülme Vakaları",
+    "incidents_count": "{{count}} farklı olayda",
+    "countries_count": "{{count}} farklı ülkeden",
+    "people_count": "{{count}} kişi",
+    "professions_dismissal": "Meslek grubundan en az {{count}} kişi ihraç edilmiştir.",
+    "dismissal_description": "15 Temmuz 2016, ülke tarihindeki en kritik dönüm noktalarından biri olarak kayıtlara geçmiştir. Bu tarihin ardından hükümet, Olağanüstü Hal (OHAL) ilan ederek “tedbir” adını verdiği geniş kapsamlı uygulamalara başvurmuştur. OHAL kapsamında çıkarılan Kanun Hükmünde Kararnameler (KHK) aracılığıyla, {{professionCount}} Meslek grubundan en az {{dismissedCount}} kişi ihraç edilmiştir.",
+    "dismissal_statistics": "İhraçlara Dair İstatistikler",
+    "profession_group": "Meslek grubundan",
+    "people_dismissed": "kişi ihraç edilmiştir",
+    "dismissals_context": "15 Temmuz 2016, ülke tarihindeki en kritik dönüm noktalarından biri olarak kayıtlara geçmiştir. Bu tarihin ardından hükümet, Olağanüstü Hal (OHAL) ilan ederek “tedbir” adını verdiği geniş kapsamlı uygulamalara başvurmuştur. OHAL kapsamında çıkarılan Kanun Hükmünde Kararnameler (KHK) aracılığıyla, 229 Meslek grubundan en az 134258 kişi ihraç edilmiştir.",
+    "prison_rights_violations_text": "15 Temmuz’dan bugüne cezaevlerinde siyasi mahpuslara yönelik 30 farklı kategoride {{a5Value}} cezaevinde en az {{a6Value}} hak ihlalinin yaşandığı bilinmektedir.",
+    "month": "Ay",
+    "event_count": "Olay Sayısı",
+    "rights_violations_by_month_year": "Yıl ve aylara göre hak ihlalleri grafiği",
+    "social_and_economic_rights_violations": "Sosyal ve Ekonomik Hak İhlalleri ve Mağduriyetler",
+    "social_economic_rights_description": "2016'da Türkiye'de olağanüstü hal (OHAL) ilan edilmesiyle birlikte çıkarılan Kanun Hükmünde Kararnameler (KHK) çerçevesinde yaklaşık 125 bin kamu çalışanının, idari ve adli işleme tabi tutulmadan görevlerine son verildi. Bu süreçte, KHK'lıların karşılaştığı sosyal ve ekonomik hak ihlalleri, insan hakları gözlemcileri tarafından 'sosyal ölüm' olarak tanımlandı.",
+    "social_economic_rights_button": "Sosyal ve Ekonomik Hak İhlalleri",
+    "incident_count": "Olay Sayısı",
+    "incident_description": "KHK'lılar en az 58 farklı olay türünde sosyal ve ekonomik hak ihlali yaşamaktadırlar.",
+    "institution_count": "Kurum Sayısı",
+    "institution_description": "Söz konusu ihlallerden en az 30 farklı kurum ve kuruluş sorumludur.",
+    "confiscated_institutions_title": "El Konulan Kurumlara Ne Oldu?",
+    "confiscated_institutions_description1": "Kapatılan ve el konulan kurumlar, iktidar ve yanlıları tarafından farklı amaçlarla kullanılmaya başlanmıştır. İzmir Şifa Üniversitesi’nin rektörlük binası, AKP İzmir İl Başkanlığı’na tahsis edilirken, Antalya'nın Kemer ilçesinde hazineye devredilen bir okul adliye binasına dönüştürülmüştür.",
+    "confiscated_institutions_description2": "Benzer şekilde, Zaman Gazetesi’nin İstanbul’daki merkez binası Bakırköy Adliyesi Ek Binası olarak kullanılmaya başlanmıştır. Gülen Hareketi’ne ait okulların çoğu imam hatip liselerine çevrilirken, Elazığ’daki Güzide Hanım İlkokulu Elazığ İl Emniyet Müdürlüğü’ne, Sakarya’daki Fatih Koleji Akyazı İlçe Emniyet Müdürlüğü’ne, Ankara Beypazarı’ndaki bir anaokulu ise 15 Temmuz Şehitleri Anaokulu’na dönüştürülmüştür. Ankara Balgat'taki Ülkü Ulusoy Kız Öğrenci Yurdu binası ise Ülkü Ocakları Genel Merkezi’ne verilmiştir.",
+    "institution_type": "Kurum Türü",
+    "closed_institution_count": "Kapatılan Kurum Sayısı",
+    "typewriter_text": "2015’den bugüne toplam {{totalInvestigations}} kişi hakkında soruşturma açılmış, bunlardan {{publicCases}} kişi hakkında kamu davası açılmış, {{convictions}} kişi hakkında ise mahkumiyet kararı alınmıştır. Mahkumiyet kararı verilenlerden {{minors}} kişi 18 yaşının altındadır.",
+    "conviction": "Mahkumiyet",
+    "deferment": "Hükmün açıklanmasının geriye bırakılması",
+    "acquittal": "Beraat",
+    "loading_data": "Veri Yükleniyor...",
+    "prosecution_chart_title": "Yıllara göre kovuşturma aşaması ve karar sayısı grafiği",
+    "decision_count": "Karar Sayısı",
+    "prosecution_analysis": "2015'ten 2021'e kadar TCK 309-316 maddeleri arasındaki suçlar ayrı ayrı raporlanmış, bu da spesifik suçlara yönelik detaylı analiz yapılmasını sağlamıştır. Ancak, 2022'den itibaren bu maddeler 'Anayasal Düzene ve Bu Düzenin İşleyişine Karşı Suçlar' başlığı altında topluca raporlanmıştır.",
+    "mass": "Kitlesel",
+    "detentions": "Gözaltılar",
+    "total_detentions": "Toplam Gözaltı Sayısı",
+    "total_operations": "Toplam Operasyon Sayısı",
+    "daily_avg_detentions": "Günlük Ortalama Gözaltı Sayısı",
+    "kitleselGiris": {
+      "paragraph1": {
+        "part1": "Gülen Hareketi mensuplarına yönelik düzenlenen kitlesel gözaltı operasyonları hukuk sınırlarını çoktan aşmıştır. 2017'de",
+        "linkText1": "tek bir operasyonda",
+        "part2": "3,224 kişi, 2016'da bir günde",
+        "linkText2": "2,745",
+        "part3": "hakim ve savcı, 2019'da ise aynı günde",
+        "linkText3": "1,112",
+        "part4": "kişi, Gülen Hareketi'ne mensup olma iddiasıyla gözaltına alınmıştır. BM Keyfi Tutuklamalar Çalışma Grubu",
+        "linkText4": "Görüş No. 66/2023",
+        "part5": "(Paragraf 63),",
+        "linkText5": "Görüş No. 3/2023",
+        "part6": "(Paragraf 85),",
+        "linkText6": "Görüş No. 66/2020",
+        "part7": "(Paragraf 67),",
+        "linkText7": "Görüş No. 67/2020",
+        "part8": "(Paragraf 96) ve",
+        "linkText8": "Görüş No. 84/2020",
+        "part9": "(Paragraf 76) ve diğer uluslararası kurumlar, Türkiye'nin Gülen Hareketi mensuplarına yönelik tutuklama ve gözaltı uygulamalarını insanlığa karşı suç olarak nitelendirmiş ve kınamıştır."
+      },
+      "paragraph2": "Bu sayfada yer alan veriler, açık kaynaklar üzerinde kapsamlı bir inceleme yapılarak derlenmiş olup, sadece medyaya yansımış olan toplu gözaltı operasyonları verisini yansıtmaktadır. Bireysel gözaltılar, savcılıklar tarafından çağrı üzerine yapılan gözaltılar ve medyaya yansımamış olan operasyonlar çalışma kapsamı dışındadır. Yapılan gözaltı sayısı burada verilen rakamların çok üzerindedir. Örneğin, Süleyman Soylu Mart 2019 tarihinde Anadolu Ajansına yaptığı açıklamada, 15 Temmuz’dan bu yanan 511 bin kişinin gözaltına alındığını, Temmuz 2022’de yaptığı bir konuşmada ise 15 Temmuz 2016’dan 2 Haziran 2022’ye kadar geçen sürede 332 bin 884 kişinin gözaltına alındığını ifade etmiştir. Bu süre içerisinde açık kaynaklarda yer alan gözaltına alınmış kişi sayısı 132 bin 760’tır."
+    },
+    "kitleselIller": {
+      "title": "İllere Göre Gözaltı ve Operasyon Tablosu",
+      "columns": {
+        "city": "İl",
+        "detentions": "Gözaltı Sayısı",
+        "operations": "Operasyon Sayısı"
+      },
+      "pagination": {
+        "rowsPerPage": "Satır Sayısı:",
+        "rangeSeparator": "ile",
+        "selectAllRows": "Tümünü Göster"
+      },
+      "noData": "Veri yükleniyor ..."
+    },
+    "illerAciklama": {
+      "subtitle": "2014 YILINDAN BU YANA",
+      "title": "Çıkışı Olmayan Labirent",
+      "paragraph1": "Türkiye’de, Gülen Hareketi’ne mensup bireylere yönelik gerçekleştirilen polis operasyonları, özellikle Ankara, İstanbul ve İzmir gibi önemli metropollerde yoğunlaşmış durumdadır. Bu durumun başlıca sebeplerinden biri, operasyonların keyfi niteliğini de gösteren bir olgu olarak, operasyon kararlarının çoğunlukla Ankara merkezli İçişleri Bakanlığı, Emniyet Genel Müdürlüğü ve Ankara Cumhuriyet Başsavcılığı gibi merkezi kurumlar tarafından alınması ve bu kararların söz konusu kurumlarca denetlenerek yürütülmesidir. İkinci bir sebep olarak, bu şehirlerde kamu sektörü çalışanı sayısının yüksek olması ve geniş çaplı operasyonların, hükümetin keyfi ‘arındırma’ politikasının bir yansıması olarak, genellikle kamu görevlilerini hedef alması gösterilebilir.",
+      "paragraph2": "Son yıllarda Edirne ve Ege Bölgesi’nde operasyon ve gözaltı sayılarında bir artış eğilimi gözlemlenmektedir. Bu artış, Türkiye’deki baskılardan kaçmaya çalışan bireylerin Meriç Nehri veya Ege Denizi üzerinden yurt dışına çıkma teşebbüslerine paralel olarak, söz konusu bölgelerdeki operasyonların yoğunlaşmasına işaret etmektedir.",
+      "paragraph3": "Sonuç olarak, Türkiye Gülen Hareketi üyeleri için adeta çıkışı olmayan bir labirente dönüşmüş ve bu kişilere, cezaevleri dışında bir yaşam alanı bırakmamıştır."
+    },
+    "yillarAciklama": {
+      "title": "Cadı Avının Kronolojisi",
+      "paragraph1": "Gülen hareketi üyelerine yönelik kitlesel polis operasyonları 2014 yılı Nisan ayında 8 polisin gözaltına alındığı",
+      "operationLink": "operasyon",
+      "paragraph2": "ile başlamıştır. Gülen hareketine yönelik zulüm, iktidar tarafından, Türkiye'de önemli bir kırılma anına işaret eden 15 Temmuz 2016'ya dayandırılarak meşrulaştırılmaya çalışılmaktadır. Ancak, veriler bu iddianın aksini göstermektedir. Gülen hareketi mensuplarına yönelik operasyonlar, 15 Temmuz 2016 öncesi zaten 72 ile yayılmış durumdaydı. Darbe girişiminden önce 250'den fazla operasyonda 5 bine yakın kişi gözaltına alınmıştı. Darbe girişimi sonrasında ise Gülen hareketi mensuplarına yönelik operasyonlar adeta 'kazıma' şeklinde gerçekleşmeye başlamıştır.",
+      "paragraph3": "Bu kapsamda 2016, 2017 ve 2018 seneleri boyunca gerçekleşen binlerce operasyonda onbinlerce kişi keyfi şekilde gözaltına alınmıştır. İlerleyen yıllarda gözaltına alınan insanların sayısında göreceli bir düşüş gözlemlense de bu düşüşün istikrarlı olmadığı ve Gülen hareketi ile bir şekilde 'iltisaklı' olan herkesin hala hukuksuzca gözaltına alındığı bir gerçektir. 2024 senesi içerisinde ise bugüne kadar en az",
+      "paragraph4": "kişi gözaltına alınmıştır."
+    },
+    "kitleselYillarGrafik": {
+      "title": "Yıllara Göre Gözaltı ve Operasyon Sayıları",
+      "year": "Yıl",
+      "detentionCount": "Gözaltı Sayısı",
+      "operationCount": "Operasyon Sayısı",
+      "count": "Sayı",
+      "loading": "Veri Yükleniyor..."
+    },
+    "sorumlular": {
+      "title": "Operasyonlardan Sorumlu olan Görevliler",
+      "paragraph1": "Türkiye’deki gözaltı operasyonları, iktidar yanlısı olmayan bireylere yönelik sistematik bir baskı ve kriminalizasyon kampanyasının bir parçasıdır. Gülen Hareketi üyelerine yönelik yapılan operasyonlar haksız ve siyasi saiklerle yürütülmekte, temelsiz suçlamalar için kılıf bulunmaya çalışılmaktadır. Hükümetin bu tavrı, Gülen Hareketi mensuplarını susturmayı, hareketi zayıflatmayı ve toplum içindeki itibarını yok etmeyi amaçlamaktadır.",
+      "paragraph2": "Adalet bakanı, İçişleri Bakanı, il emniyet müdürleri, başsavcılar ve emniyet genel müdürleri gibi yetkililer, hükümetin bu politikasını uygulayan kişiler olarak görülmekte ve bu süreçte hukuki ve demokratik ilkeler ihlal edilmektedir. Türkiye’de ‘makbul’ insan olmak, Gülen Hareketi üyelerine yapılan eziyetle ölçülmektedir. En fazla operasyonda imzası olan isim, halk ve iktidar nezdinde koltuğunu en çok hak eden isim olarak kabul edilmektedir. Sorumluların her operasyonun ardından Gülen Hareketi mensuplarına ‘göz açtırmayacaklarına’ dair nefret ifadeleri, durumun vehametini ve Türkiye’de demokrasi, hukukun üstünlüğü ve insan hakları değerlerinin erozyona uğradığını, toplumsal barış ve uyumun zedelendiğini göstermektedir."
+    },
+    "accordion": {
+      "title": "Türkiye’nin Kitlesel Gözaltı Serüveni",
+      "section1": {
+        "title": "Türkiye’nin Kitlesel Gözaltı Serüveni",
+        "content": "Türkiye’de iktidarın sosyal muhalefeti bastırmak için kullandığı araçlardan belki de en etkilisi olarak öne çıkan ve Türkiye’de kolluk kuvvetleri tarafından icra edilen toplu gözaltıların Erdoğan iktidarındaki ilk belirgin örneği, İstanbul Taksim Meydanı’nda gerçekleştirilen 'Gezi Parkı protestoları' sırasında görülmüştür. 2013 yılı Mayıs ayında, Gezi Parkı’nın yıkılarak yerine başka bir yapı inşa edilmesinin gündeme gelmesi üzerine parkın yıkımına itiraz eden göstericilere polisin orantısız güç kullanarak müdahale etmesi sonrasında bütün Türkiye’ye yayılan protestolar yaklaşık bir ay sürmüştür. Protesto eylemlerinde biri polis, sekiz kişi yaşamını yitirirken, 10 bine yakın insan da yaralanmıştır. İstanbul’da 715 ve Ankara’da 765 olmak üzere ülke genelinde Gezi Parkı protestolarına katılan 5,513 kişi gözaltına alınmıştır. 17 Aralık 2013 tarihi itibari ile ise sivillere ve bürokrasiye yönelik bir kıyım başlamıştır. Muhalifleri ve Gülen Hareketine mensup kişileri hedef alarak yapılan hukuk dışı gözaltılar hızla artarak toplumda korku ve nefret iklimine neden olmuştur. Gülen Hareketi'ne yönelik ilk kapsamlı gözaltı operasyonu 22 Temmuz 2014’de gerçekleştirilmiş, toplam 115 emniyet mensubu hakkında yakalama kararı verilmiştir. İktidarın hukuk dışı talimatları doğrultusunda hareket eden yargı mensupları, Anayasa ile temel hak ve hürriyetler kapsamında garanti altına alınan ve hiçbir suç unsuru içermeyen yasal faaliyetleri, 'iltisak delili' kabul ederek hüküm vermişlerdir. Hükümet ve devletin yetkili organları tarafından faaliyetlerine izin verilen ve devletin ilgili kurumlarının denetiminde faaliyet yürüten Harekete yakın kurumlarla resmi ilişki içinde olmak, ihtiyaç sahiplerine insani yardım ulaştırılması amacıyla Kimse Yok Mu Derneği’ne bağışta bulunmak, Bank Asya’da banka hesabı açtırarak para yatırmak, gazete ve dergiye abone olmak, eğitim kurumlarına çocuğunu göndermek ve/veya evinde Fethullah Gülen’in hakkında yayın yasağı bulunmayan kitaplarını bulundurmak gibi, 2013 yılı Aralık ayına kadar başta Erdoğan olmak üzere tüm AKP mensuplarının överek teşvik ettikleri faaliyetler, rüşvet ve yolsuzluk operasyonu sonrasında bir anda 'suç delili' olarak kabul edilmeye başlanmıştır. Bahsi geçen 'suç delilleri' sebebiyle on binlerce insanın özgürlük ve güvenlik hakkı ihlal edilmiştir."
+      },
+      "section2": {
+        "title": "AİHM kararlarını uygulama noktasında Türkiye",
+        "content": "AİHM’nin 26 Eylül 2023 tarihli Yüksel Yalçınkaya v Türkiye kararı 'FETÖ/PDY' kaynaklı ceza yargılamalarının bütününe dair ilk karardır. Karar ile, Türkiye’de tüm ceza mahkemelerinde gerek ispat yükü gerekse de ispat standardı açısından benimsenen yaklaşımın AİHS madde 6 (Adil yargılanma hakkı) hükmünü ihlal ettiği açıkça ortaya konulmuştur. Keza AİHM anılı kararla, geçmişteki bir dizi yasal faaliyet açısından, suç isnadının delili olduğuna yönelik ulusal mahkemelerce geriye dönük yapılan yorumun da AİHS madde 11 (Toplantı ve dernek kurma özgürlüğü) ve özellikle de AİHS madde 7 (Kanunsuz ceza olmaz) hükmüne aykırı olduğunu hüküm altına alarak, özellikle TCK madde 314/1 ve madde 314/2 kapsamında kalan iddia ve mahkumiyetlerin hukuksal dayanaklarını ortadan kaldırmıştır. Kısacası AİHM, Yalçınkaya kararıyla Bylock kullanmanın, Bank Asya’da hesap sahibi olmanın, KHK ile kapatılan sendikaya üye olmanın, KHK ile ihraç edilmenin, gizli tanık beyanı esas alınarak terör örgütü üyesi olarak adlandırılmanın suç olmadığını, ve bu fiiller çerçevesinden verilen mahkumiyetlerin de Avrupa İnsan Hakları Sözleşmesi'nin 6, 7 ve 11. Maddelerinin ihlali olduğu yönünde hüküm vermiştir. Ancak bahsi geçen faaliyetler günümüzde hala kolluk ve yargı mensupları tarafından kişiyi hürriyetinden mahrum bırakacak 'suç delilleri' olarak kabul görmektedir."
+      },
+      "section3": {
+        "title": "Hukuki Çerçeve",
+        "content": "Birleşmiş Milletler’in Kişisel ve Siyasal Haklar Uluslararası Sözleşmesi başta olmak üzere bütün uluslararası insan hakları sözleşmelerinde insan onuru ve haysiyeti esas alınmıştır. İnsanın onurlu ve haysiyetli yaşayabilmesi için ifade edilen temel haklardan birisi ise özgürlük hakkıdır. Bu hak, başta Birleşmiş Milletler İnsan Hakları Bildirgesi ve Avrupa İnsan Hakları Sözleşmesi olmak üzere uluslararası ve ulusal tüm metinlerde yer almaktadır. Medeni ve Siyasal Haklara İlişkin Milletlerarası Sözleşme’ nin 9. maddesi özgürlük ve güvenlik hakkını oldukça detaylı olarak ortaya koymaktadır. Birleşmiş Milletler İnsan Hakları Evrensel Bildirgesi’ nin 3 ve 9. Maddeleri de bu hususu düzenlemektedir. Avrupa İnsan Hakları Sözleşmesi (AİHS) de 'özgürlük ve güvenlik hakkı' başlığını taşıyan 5. maddesinde bu hakkı ele almaktadır. Ulusal mevzuatın temel kaynağı olan Anayasa, 19. maddesinde AİHS’ e paralel bir şekilde 'Kişi hürriyeti ve güvenliği' ni hüküm altına almaktadır. Kitlesel gözaltılar baskıcı rejimin en belirgin araçlarından biri olarak, toplumda yaygın bir korku ve endişe yaratmakta, bireylerin ifade özgürlüğünü ve toplumsal muhalefeti ciddi şekilde kısıtlamaktadır. Türkiye, kitlesel gözaltılar yoluyla beslenen bir korku ve baskı ortamına evrilmiştir. Bu korku ikliminin arkasında, yürütme yetkisini keyfi bir şekilde kullanarak toplumsal yapıyı dönüştürmeye çalışan otoriter bir hükümet bulunmaktadır."
+      },
+      "section4": {
+        "title": "Metodoloji",
+        "content": "Bu sayfada yer alan veriler, açık kaynaklar üzerinde kapsamlı bir inceleme yapılarak derlenmiş, illere ve faaliyet tarihlerine göre listelenip analiz edilmiştir. Elde edilen veriler toplu gözaltı operasyonlarının tamamını yansıtmamaktadır. Ancak kitlesel gözaltıların korku yaymak amacıyla bilinçli olarak kamuoyuna açıklandığı değerlendirildiğinden hata payının düşük olduğu tahmin edilmektedir."
+      }
+    },
+    "advanced_table": {
+      "columns": {
+        "city": "İl",
+        "detention_count": "Gözaltı Sayısı",
+        "date": "Tarih",
+        "full_news_text": "Haber Tam Metni",
+        "link": "Link"
+      },
+      "search_prompt": "Arama bölümünü verileri filtrelemek için kullanabilirsiniz.",
+      "search_placeholder": "Arama yap...",
+      "loading": "Veri yükleniyor...",
+      "pagination": {
+        "rows_per_page": "Satır Sayısı:",
+        "range_separator": "ile",
+        "select_all_rows": "Tümünü Göster"
+      },
+      "read_more": "Daha fazla oku",
+      "show_less": "Daha az göster"
+    },
+    "olumler_giris": {
+      "title": "Yaşam Hakkı İhlalleri",
+      "paragraph1": "15 Temmuz 2016 sonrasında Gülen Hareketi mensupları yoğun baskı ve takibat altında kalmış, Türkiye’deki siyasi ve toplumsal değişimlerin odak noktası olmuşlardır. Bu süreçte Gülen Hareketi mensupları sosyal ve ekonomik ayrımcılığa maruz kalmış, erkek, kadın ve çocuk ayrımı olmaksızın çeşitli hak ihlalleri ile karşılaşmışlardır. Ulusal ve uluslararası güvenceler altına alınmış insan hakları ihlal edilen Gülen Hareketi mensuplarının yaşama hakları da 2016 Temmuz'dan sonra doğrudan veya dolaylı yollarla ihlal edilmiştir.",
+      "paragraph2": "Gülen Hareketi mensuplarına yönelik toplumsal algı, bu kişilerin ve ailelerinin can güvenliğine değer verilmemesi yönünde değişmiştir. 2016’dan bugüne kadar Gülen Hareketi ile bağlantılı olmakla suçlanan en az {{count}} kişi hayatını kaybetmiştir. Hayatını kaybedenlerden en az 65'i çocuktur.",
+      "total_deaths": "Toplam Ölen Kişi Sayısı"
+    },
+    "cinsiyet_chart": {
+      "title": "Cinsiyetlere Göre Dağılım Grafiği",
+      "male": "Erkekler",
+      "female": "Kadınlar",
+      "children": "Çocuklar"
+    },
+    "cinsiyet_aciklama": {
+      "heading": "KADINLAR VE ÇOCUKLAR HEDEFTE",
+      "title": "Vefatların Cinsiyete Göre Dağılımı",
+      "paragraph1": "İstatistiksel olarak erkeklerin daha çok hedef alındığı gözlemlense de, kadın ve çocuklar da hak ihlallerinden etkilenmiştir. Gülen hareketi mensupları için politikacıların kullandığı 'malları ve eşleri bize helaldir' söylemleri kamuoyu algısına yerleştirilmeye çalışılmıştır. Bu algı doğrultusunda halkın Gülen Hareketi mensuplarına olan tavrı değişmiş, yaşanan hak ihlallerine karşı duyarsızlaşmış ve hatta destekler hale gelmişlerdir.",
+      "paragraph2": "15 Temmuz’dan bugüne kadar en az 65 çocuk hayatını kaybetmiştir. Ulusal ve uluslararası düzenlemeler ile korunan çocuk hakları Gülen Hareketi mensuplarının çocuklarına uygulanmamış, sözleşmeler doğrultusunda gerekli tedbirler ve yaptırımlar gözardı edilmiştir. Gülen Hareketi mensubu kadınların onurları ve haysiyetleri de yaşanan süreçte her zaman hedef alınmış, ölümleri ise Türk hukuk sisteminde bir yankı bulamamıştır. Kronik rahatsızlığı bulunan ve cezaevi yönetimine hastalığını belirttiği halde gerekli ilaç ve tedaviye ulaşmasına engel olunan Halime Gülsu bunun örneklerindendir."
+    },
+    "meslek_aciklama": {
+      "title": "Meslek Gruplarına Göre Dağılım",
+      "paragraph1": "Gülen Hareketine yönelik topyekun tasfiyeler, sosyal soykırım, fiziki ve psikolojik baskılar 15 Temmuz 2016 sonrasında artmıştır. Sivil veya asker fark etmeksizin Gülen Hareketi mensuplarının doğrudan veya dolaylı olarak 15 Temmuz’da yaşananlar nedeniyle hayatlarını kaybediyor oluşları endişe verici olduğu kadar, hükümet politikasındaki sebep-sonuç ilişkilerinin sorgulanmasına da sebep olmaktadır.",
+      "paragraph2": "Kamu personeli veya sivil fark etmeksizin ağır hastaların tahliye taleplerinin ertelenmesi, Gülen Hareketi mensuplarına ve çocuklarına yönelik gerçekleştirilen kurumsal ve toplumsal psikolojik baskılar bu süreçteki hak ihlallerini gözler önüne sermektedir."
+    },
+    "meslek": {
+      "title": "Asker/Polis ve Sivil Can Kayıpları",
+      "soldier_police": "Asker/Polis",
+      "civilian": "Sivil"
+    },
+    "traffic_accident": "Trafik Kazası",
+    "suspicious_death": "Şüpheli Ölüm",
+    "court_death": "Mahkemede Ölüm",
+    "law_enforcement_death": "Kollukta Ölüm",
+    "escape_death": "Kaçış Yollarında Ölüm",
+    "work_accident": "İş Kazası",
+    "suicide": "İntihar",
+    "illness_death": "Hastalık Nedeniyle Ölüm",
+    "other": "Diğer",
+    "prison_death": "Cezaevinde Ölüm",
+    "july_15": "15 Temmuz Olayları",
+    "years_since_2014": "2014 YILINDAN BU YANA",
+    "distribution_by_year": "Yıllara Göre Dağılım",
+    "paragraph_1": "15 Temmuz 2016’da kimin silahı ile kimin vurulduğunun belirsiz kaldığı bir çatışma ortamı içerisinde ölümler yaşanmış, toplamda 277 kişi hayatını kaybetmiştir. Ancak bu tarih akabinde tekrar bir çatışma yaşanmadığı halde Gülen Hareketi mensupları 15 Temmuz nedeni ile hayatlarını kaybetmeye devam etmiş, doğrudan veya dolaylı olarak ölümleri 15 Temmuz hadisesi ile ilişkilendirilmiştir. Bu noktada, 15 Temmuz akabinde süregelen ölümler çatışmanın değil, maruz kalınan hak ihlallerinin sonuçları olarak karşımıza çıkmaktadır.",
+    "paragraph_2": "Türk hükümeti Avrupa İnsan Hakları Sözleşmesi altında sahip olduğu pozitif ve negatif yükümlülükleri, söz konusu Gülen Hareketi mensupları olduğunda yerine getirmekten uzak kalmış ve hatta ihlal etmekten de geri durmamıştır. 15 Temmuz hadisesi sonrasında cezaevinde maruz kalınan hak ihlalleri, toplumsal soykırımın kopardığı canlar ve kaçış yollarının keşfedilmesi ve yaygınlaşması ile beraber 2018 yılında vefat edenlerin sayısında bir artış yaşanmış ve en az 178 kişi hayatını kaybetmiştir.",
+    "paragraph_3": "2020 yılının Nisan ayında korona pandemisi sebebi ile Af Yasası ve Ceza İnfaz Düzenlemesi kapsamında birçok adli mahkum tahliye edilirken koronavirüs salgını sürecinde siyasi suçlular olarak nitelendirilen Gülen Hareketi mensuplarına bu hak tanınmamış ve gerekli sağlık hizmetlerine ulaşmalarına da mani olunmuştur. 2020 Mayıs ayına gelindiğinde yalnızca Silivri Cezaevi’nde 8 tutuklu veya hükümlünün yoğun bakımda olduğu, cezaevinde toplam 191 tutuklu ve hükümlünün enfekte olduğu iddialarının olduğu kaydedilmiş, TBMM İnsan Haklarını İnceleme Komisyonu Üyesi Ömer Faruk Gergerlioğlu Silivri Cezaevindeki korona vakalarıyla ilgili 27 soru önergesi, İnsan Haklarını İnceleme Komisyonuna ise 27 dilekçe ve konunun araştırılması için Araştırma Önergesi vermiştir. Bu süreçte mahpuslar 7 kişilik koğuşlarda 45 kişi kalarak insanlık dışı bir muameleye tabi tutulmuşlardır. 2020 yılında en az 165 kişinin hayatını kaybettiği kayıtlara geçmiştir.",
+    "death_reasons": "Ölüm Sebepleri",
+    "paragraph_1a": "Gülen Hareketi mensuplarının maruz kaldığı hak ihlallerinin farklı kategorilere ayrılıyor olması farklı sebeplerle doğrudan ve dolaylı olarak vefat etme sebeplerinin 15 Temmuz hadisesi olduğunu göstermektedir. Gülen Hareketi mensuplarının yaşamına yönelik değersizleştirme ve maruz kaldıkları sosyal soykırım, onların normal hayatlarını sürdürmelerinin önüne geçmiş ve hem doğrudan hem de dolaylı yollardan ölümlerine sebep olmuştur.",
+    "paragraph_2a": "15 Temmuz günü gerek Erdoğan'ın çağrısı ile sokaklara inen gerekse 'darbeci' oldukları iddia edilen yüzlerce kişi yaşanan şiddet olayları nedeniyle hayatlarını kaybetmişlerdir. Neden o gün orada olduğunu bilmeyen, silahını bırakıp halka teslim olmak isteyen askeri öğrenciler provokatif grupların orantısız gücüyle katledilmiştir.",
+    "paragraph_3a": "Gülen Hareketi mensubu olmakla suçlandığı için cezaevlerinde kalan tutuklu ve hükümlüler, işkence, kötü muamele ve tedavi hakkının engellenmesi gibi hak ihlalleri nedeniyle hayatlarını kaybetmişlerdir. Bu durum cezaevindeki Gülen Hareketi mensuplarının bir adalet sisteminin değil, siyasi bir intikam aracının hedefi olduğunu göstermektedir.",
+    "paragraph_4a": "Uluslararasi İnsan Hakları hukukunda işkence yasağı emredici (jus cogens) nitelikte bir kuraldır, taviz verilmesi mümkün değildir. Ancak Gülen Hareketi mensubu oldukları iddiasıyla gözaltına alınan kişiler kollukta gördükleri işkence ya da uzun süre ve ağır şartlarda kaldıkları nezarethanelerdeki kötü muameleler nedeniyle hayatlarını kaybetmişlerdir. Bu durum, uluslararası insan hakları standartlarına açık bir şekilde aykırıdır ve sorumluların hesap vermesi gerekmektedir. İşkence ve kötü muamele yasağı Türkiye'de kolluk güçleri tarafından ihlal edilmiş bunun sonucunda ise Gülen Hareketi mensuplarının yaşam hakları açıkça ihlal edilmiştir.",
+    "death_cause": "Ölüm Nedeni",
+    "count": "Sayı",
+    "court_failures": "Mahkemelerin hukuki ve vicdani muhakemeden uzak bir şekilde çalıştığı bu süreçte sanıklar, duruşmalar esnasında, yaşanan ağır hak ihlalleri karşısında geçirdikleri psikolojik ve fiziki travmalardan kaynaklı kalp krizi ve benzeri nedenlerle hayatlarını kaybetmişlerdir.",
+    "escape_deaths": "Hain olmakla suçlanan birçok sivil ve kamu personeli yaşam hakkına ve beden bütünlüklerine yönelik var olan ağır baskılar ve tehditler neticesinde ülkelerini terketmek zorunda kalkmışlardır. Bir gecede hain ilan edilerek hayatı tamamen değişen bu insanlar, kaçış yollarında karşılaştıkları tehlikeler nedeniyle hayatlarını kaybetmişlerdir. Bu durum, insan hakları ihlallerinin yaygın olduğu ülkelerdeki siyasi atmosferin ne kadar tehlikeli olduğunu göstermektedir.",
+    "suicide_due_to_pressures": "Gerek devlet tarafından gerekse toplumsal olarak yaşatılan ağır baskılar siyasi ve sosyal bir soykırıma dönüşmüştür. Türkiye'deki siyasi atmosferin gölgesi altında yıkılan adalet sistemi insanların hukuki çerçevede haklarını arayabileceklerine yönelik umutlari söndürmüş, bunun sonucunda ise yaşanan psikolojik travmalar nedeniyle çok sayıda insan intihar etmiştir.",
+    "deaths_due_to_khks": "15 Temmuz 2016 sonrasında birçok insanın meslekleri KHK'lar ile ellerinden alınmıştır. Kendilerine hiçbir güvence verilmeyen bu insanlar geçimlerini sağlamak için eğitim ve gelişimleri ile elde ettikleri meslekler yerine başka işlerde çalışmak zorunda kalmış ve bu işlerde yaşadıkları iş kazaları nedeniyle hayatlarını kaybetmişlerdir. KHK'lar dolaylı yollarla insanların hayatlarını kaybetmelerine neden olmuştur.",
+    "healthcare_rights_violation": "Gülen Hareketi'ne yönelik uygulanan politikalar sonucunda birçok insanın yurt içinde tedaviye ulaşma hakkı kısıtlanmış, tedavi amacıyla yurtdışına çıkış yapmak isteyen insanlar ise pasaportlarının iptal edilmesi gibi durumlar ile karşılaşarak yurt dışındaki sağlık hizmetlerine ulaşamamışlardır. Yaşanan bu sağlık hakkı ihlalleri nedeniyle insanlar hayatlarını kaybetmişlerdir.",
+    "suspicious_deaths": "Bazı KHK mağdurları, kamuoyuna cinayet olarak yansıtılan ancak tam olarak aydınlatılamayan şüpheli ölümler neticesinde hayatlarını kaybetmiştir. Bu durum, KHK mağdurlarının haklarının güvence altında olmadığını gözler önüne sererek can güvenliğine yönelik endişeleri arttırmıştır. KHK mağdurlarının adalet arayışlarının ne kadar zorlu ve riskli olduğunu göstermiştir.",
+    "methodology": "Metodoloji",
+    "methodology_text1": "Bu sayfada yer alan veriler, açık kaynaklar üzerinde kapsamlı bir inceleme yapılarak derlenmiş, vefat eden bireylerin cinsiyetleri, meslek grupları ve vefat yılları göz önüne alınarak incelenmiş, vefat etme sebepleri kategorize edilerek analiz edilmiştir.",
+    "methodology_text2": "Yayınlanan bilgiler açık kaynaklardan elde edilen verilere dayandığı için kayıpların tamamını yansıtmamaktadır. Açık kaynaklarda yer almayan ölümlerin de olduğu göz önünde bulundurulmalıdır.",
+    "column_name_1": "İsim",
+    "column_name_2": "Cinsiyet",
+    "column_name_3": "Meslek",
+    "column_name_4": "Statü",
+    "column_name_5": "Ölüm Tarihi",
+    "column_name_6": "İl",
+    "column_name_7": "Ölüm Nedeni",
+    "column_name_8": "Kaynak",
+    "rows_per_page": "Satır Sayısı:",
+    "range_separator": "ile",
+    "select_all_rows": "Tümünü Göster",
+    "filter_instruction": "Arama bölümünü verileri filtrelemek için kullanabilirsiniz.",
+    "search_placeholder": "Arama yap...",
+    "sensitive_groups": "Hassas Gruplar",
+    "sensitive_groups_description_1": "Uluslararası literatürde 'keyfi' teriminin kesin bir tanımı bulunmasa da, özgürlüğünden keyfi olarak mahrum bırakılma ve tutuklanma durumlarında yasal savunma hakkının sınırsız olduğu kabul edilir. Hükümetlerin savunmaları, tedbirlerinin 'gerekli' ve 'orantılı' olduğunu iddia etseler de, bu iddiaların değerlendirilmesinde çeşitli faktörler göz önünde bulundurulur. Ancak, hükümetin bu tutuklamaların 'adaletsiz', 'yasadışı' ve 'öngörülemez' doğasını göz ardı etmesi durumunda, uluslararası teamül hukuku uyarınca tutukluluğun keyfi olduğuna hükmedilir.",
+    "sensitive_groups_description_2": "Bu bilgiler ve ulusal hukuk çerçevesinde, hamile ve yeni doğum yapmış kadınlar, ciddi derecede hasta olan bireyler, yaşlılar ve engelli kişilerin tutuklanması keyfi tutuklama olarak değerlendirilmelidir.",
+    "sensitive_groups_description_3": "BM Keyfi Tutuklamalar Çalışma Grubu Görüş No. 66/2023 (Paragraf 63), Görüş No. 3/2023 (Paragraf 85), Görüş No. 66/2020 (Paragraf 67), Görüş No. 67/2020 (Paragraf 96) ve Görüş No. 84/2020 (Paragraf 76) Türkiye'nin Gülen Hareketi mensuplarına yönelik tutuklama ve gözaltı uygulamalarını insanlığa karşı suç olarak nitelendirmiş ve kınamıştır.",
+    "sensitive_groups_description_4": "2016'dan bu yana Türkiye'de keyfi tutuklamalara maruz kalan insanların yaşadığı mağduriyetler, adaletin ve insan haklarının ihlal edilmesinin acı bir yansımasıdır. Bu tutuklamalar, sadece bireylerin özgürlüğünü kısıtlamakla kalmayıp, aynı zamanda toplumun genel huzurunu ve güvenini de zayıflatmaktadır.",
+    "sensitive_groups_description_5": "Gülen Hareketi mensuplari, bireysel durumları göz önüne alınmaksızın hukuksuzca özgürlüklerinden mahrum bırakılarak, fiziki durumlarına uygun düşmeyen şartlar altında insanlık suçu kurbanları olarak hayatta kalmaya çalışmaktadırlar.",
+    "pregnant_women": "Hamile ve Çocuklu Kadınlar",
+    "patients": "Hastalar",
+    "mothers_affected_by_violations": "İhlale Maruz Kalan Anneler",
+    "pregnant_and_recently_delivered_women": "Hamile ve Yeni Doğum Yapmış Kadınlar",
+    "since_2016_thousands_of_women": "2016'dan bu yana, özellikle Gülen Hareketi ile ilişkilendirilen binlerce kadın, genellikle somut deliller olmaksızın tutuklanıp alıkonulmuştur. Aralık 2016 sonu itibarıyla, Türkiye'deki ceza kurumlarında 201.139 hükümlü ve tutuklu bulunmaktadır. Bunlardan 8.315'i kadın hükümlü ve tutuklular olup, toplam hükümlü ve tutukluların %4.1'ini oluşturmaktadır. 2016’dan bugüne, Gülen Hareketi ile ilişkilendirildiği için tutuklanan hamile ve yeni doğum yapmış en az",
+    "known_pregnant_women": "kadın olduğu bilinmektedir.",
+    "international_law_framework": "Uluslararası hukuk çerçevesinde, Türkiye, Kadına Karşı Her Türlü Ayrımcılığın Ortadan Kaldırılması Sözleşmesi (CEDAW) ve Çocuk Hakları Sözleşmesini imzalayarak kadınlar ve çocuklar için belirli haklar ve korumalar konusunda taahhütte bulunmuştur. Bu sözleşmeler, kadınları her türlü şiddet ve ayrımcılıktan korumayı ve çocukların çıkarlarının her zaman göz önünde bulundurulmasını gerektirir. Ancak, Gülen Hareketi mensuplarina yönelik keyfi gözaltı ve tutuklamalar, bu taahhütlerle çelişmektedir.",
+    "turkish_law_protection": "Türkiye'nin iç hukukunda, özellikle 5275 sayılı Ceza İnfaz Kanunu'nda, hamile kadınların ve altı aydan küçük bebekleri olan kadınların tutuklanması yasaktır. Kanunun 16/4 maddesi, hamile kadınlar ve yeni annelerin cezalarının ertelenmesini öngörmektedir. Ancak, uygulamada, bu hükümler Gülen Hareketi ile ilişkilendirilen kişiler için rafa kaldırılmış, adaletsiz ve keyfi tutuklamalar ön plana çıkmıştır. Bu durum hem Anayasa'nın prensipleriyle hem de Avrupa İnsan Hakları Sözleşmesi (AİHS) ile çelişmektedir.",
+    "arbitrary_detentions": "AİHM içtihatlarına, Anayasa'nın 19. maddesine ve AİHS'nin 5. Maddesine aykırı olarak Gülen Hareketi ile ilişkilendirilen kadınlar sık sık keyfi tutuklamalar ve adil olmayan yargılamalarla karşı karşıya kalmakta, sağlık ve hijyen düzenlemeleri yetersiz olan alanlarda kalmak zorunda bırakılarak, fiziksel ve psikolojik şiddetin mağduru olmaktadırlar. Bu durum uluslararasi hukuk nezdinde insanlık dışı ve aşağılayıcı muamele teşkil etmektedir.",
+    "sick_elderly_disabled_prisoners": "Hasta, Yaşlı ve Engelli Tutuklular",
+    "proportionality_principle_violation": "Ceza hukukunun temelinde yer alan 'orantılılık' ilkesi, Türk ceza sisteminde her şekilde ihlal edilmektedir.",
+    "necessity_of_proportionality": "Ceza hukukunda suç/suçluyu tespit ve cezalandırma faaliyetinin en büyük sınırlamalarından biri, bu faaliyetin amaçlananla orantılı şekilde yürütülmesi zorunluluğudur. Birey menfaati ve kamu menfaati arasındaki denge kurulmalı, ceza yargılamasının amacına ulaşmada daha hafif bir önlem alınabilecekken, daha ağır bir önlemden kaçınılmalıdır. Bu kapsamda hasta, yaşlı ve engelli bireyler için alternatifleri eleyerek cezaevinde tutsak etmek orantılılık ilkesine aykırıdır.",
+    "united_nations_declaration": "BM Engelli Kişilerin Haklarına Dair Bildiri (1975)’nin 1. maddesine göre; 'Engelli kişi, fiziksel ve zihinsel yeteneklerinde doğuştan veya sonradan meydana gelen yoksunlukların sonucu olarak, kısmen veya tamamen kendi başına normal bireysel ve/veya sosyal yaşam yaşayamayan kişileri' ifade etmektedir. 2023 yılında dönemin adalet bakanının imzasıyla yayınlanan genelge doğrultusunda yaşlılar 'kocamış' şeklinde ifade edilmiş ve altmış beş yaşını bitirmiş bireyler olarak tanımlanmıştır. Cezaevinde olup, sürekli hastalığı olan bireylerin ise, 'hasta' kategorisi altında değerlendirilebilmeleri için Ceza İnfaz Kanunu'na göre Adli Tıp Kurumundan rapor almaları gerekmektedir.",
+    "health_rights_for_prisoners": "Cezaevinde tutulan mahpuslar için sağlık hakkı, Birleşmiş Milletler'in çeşitli standartları ile tanımlanmaktadır. Devletler hasta ve engelli bireylerin sağlık hizmetlerine eşit erişim hakkını sağlamakla yükümlüdürler. Türkiye'nin iç hukukunda, özellikle 5275 sayılı Ceza İnfaz Kanunu'nda hayati tehlikesi bulunan hastaların tutuklanmasının önüne geçilmeye çalışılmıştır. Kanunun 16/2 maddesi, hasta tutukluların cezalarının ertelenmesini öngörmektedir. 2023 yılında dönemin adalet bakanının imzasıyla yayınlanan genelge doğrultusunda, sürekli hastalığı veya sakatlığı olan kişilerin ve kocamış olarak ifade edilen yaşlı bireylerin cezaları mahkumların talebi olmaksızın hafifletilmeli veya kaldırılmalıdır.",
+    "united_nations_rules": "Birleşmiş Milletler'in 17 Aralık 2015'te toplanan genel kurulunda kabul edilen Mahpuslara Yönelik Muameleye İlişkin Birleşmiş Milletler Asgari Standart Kuralları (Nelson Mandela Kuralları) mahpus hakları bakımından en önemli ve ayrıntılı düzenlemeleri içermektedir. İnfaz kanunuyla ilgili düzenlemeler yapılırken Anayasa 90. madde uyarınca BM Mandela Kuralları'nın göz önüne alınması gerekliliği açıktır. Bu kapsamda kuralların temel ilkeleri rehber alınmalıdır. Bu ilkeler bütün mahpuslara insanlık onuru ve değerine uygun davranılması, ayrımcılık yasağı, dış dünyayla ilişkilerinin muhafaza altına alınması gibi çok sayıda ilkeden oluşur.",
+    "treatment_of_prisoners": "Türkiye'de Gülen Hareketi ile ilişkilendirilen hasta, yaşlı ve engelli bireylerin büyük çoğunluğu somut deliller olmaksızın özgürlük ve güvenlik hakkından mahrum edilmekte bunun yanı sıra cezaevi koşullarında üçüncü şahısların desteği olmadan temizlik ve dezenfekte ihtiyaçlarını karşılamak zorunda bırakılmaktadır. Hasta ve engelli bireyler cezaevi koşullarında almaları gereken sağlık ve bakım hizmetlerinden de yararlanamamaktadırlar. Bu durum insan onuru ile bağdaşmayacak bir şekilde hayatlarını devam ettirdikleri ve insanlık dışı muameleye maruz kaldıkları anlamına gelmektedir.",
+    "turkish_authorities_practice": "Türk otoriteleri, uluslararası hukuk kapsamında üstlendikleri pozitif yükümlülükleri, çıkardıkları yasalar ve genelgelerle yerine getiriyor gibi görünse de, pratikte bu yasaların istismar edildiği veya amaçları doğrultusunda kullanılmadığı açıktır. Özellikle hasta mahkumların kanunlardan yararlanabilmesi için Adli Tıp Kurumu'ndan 'cezaevinde kalamaz' raporu almaları gerekmektedir. Ancak, 2016'dan bu yana Adli Tıp Kurumu, Gülen Hareketi ile ilişkilendirilen mahkumlar için bu raporu vermekte çekimser davranmış, ciddi hastalıkları olan kişilere rapor vermemiş ve 'cezaevinde kalabilir' şeklinde görüş bildirmiştir. 2016’dan bugüne, Gülen Hareketi ile ilişkilendirilen en az",
+    "patientsa": "hasta",
+    "disabled_individuals": "engelli birey",
+    "elderly": "yaşlı tutuklanmış ve hem hakları ihlal edilmiş hem de cezaevlerinde yeterli sağlık ve bakım hizmetlerine erişimleri engellenmiştir. Avrupa Konseyi’nin 2020 cezaevi istatistiklerine göre, Avrupa’da cezaevlerinde nüfusa oranla en fazla tutuklu ve hükümlü Türkiye’de bulunmuş. Aynı zamanda cezaevindeki ölümlerde de Türkiye ikinci sırada yer almıştır.",
+    "hassas_methodology_paragraph_1": "Bu sayfada yer alan veriler, açık kaynaklar üzerinde kapsamlı bir inceleme yapılarak derlenmiş, mahpusların bireysel durumlarına göre listelenip analiz edilmiştir. Aynı isim her iki kategoriye de uyum sağladığında toplam veride hata payını azaltmak için yalnızca bir kategori altında değerlendirilmiştir.",
+    "hassas_methodology_paragraph_2": "Örneğin, hem yaşlı hem de sürekli hastalığı olan bir birey yalnızca hasta kategorisi altında yer almaktadır. Elde edilen veriler keyfi gözaltı ve tutuklamaların tamamını yansıtmamaktadır. Ancak toplumun “savunmasız” kesimi olarak nitelendirilen yaşlıların, engellilerin, hastaların, hamile ve yeni doğum yapmış kadınların özgürlüklerinden alıkonulmuş olmalarının korku yaymak amacıyla bilinçli olarak kamuoyuna açıklandığı değerlendirildiğinden hata payının düşük olduğu tahmin edilmektedir.",
+    "mother_violation": "İhlale Maruz Kalan Anneler",
+    "details": "Detaylar",
+    "link": "Bağlantı",
+    "date": "Tarih",
+    "location": "Konum",
+    "category": "Kategori",
+    "of": "ile",
+    "show_all": "Tümünü Göster",
+    "search_prompt": "Arama bölümünü verileri filtrelemek için kullanılabilirsiniz.",
+    "search_label": "Arama bölümünü verileri filtrelemek için kullanılabilirsiniz.",
+    "select_all": "Tümünü Göster",
+    "occupational_groups": "{{count}} meslek grubundan",
+    "at_least": "en az",
+    "dismissed_paragraph_1": "15 Temmuz 2016, ülke tarihindeki en kritik dönüm noktalarından biri olarak kayıtlara geçmiştir. Bu tarihin ardından hükümet, Olağanüstü Hal (OHAL) ilan ederek “tedbir” adını verdiği geniş kapsamlı uygulamalara başvurmuştur. OHAL kapsamında çıkarılan Kanun Hükmünde Kararnameler (KHK) aracılığıyla, birçok kamu personeli ve özel kurumlarda çalışan kişiler çeşitli gerekçelerle görevlerinden ihraç edilmiş ve toplumsal hayatın dışına itilmiştir.",
+    "value": "Değer",
+    "men": "Erkekler",
+    "women": "Kadınlar",
+    "unknown": "Bilinmiyor",
+    "gender_distribution_chart": "İhraçların Cinsiyetlere Göre Dağılım Grafiği",
+    "informant_mechanism_title": "İhbar Mekanizmasının Etkileri",
+    "informant_mechanism_description1": "OHAL döneminde, Cumhurbaşkanı Recep Tayyip Erdoğan’ın talimatlarıyla, vatandaşların ihbar mekanizmasına katılımı teşvik edilmiştir.",
+    "erdogan_speech_link": "Erdoğan 10 Ağustos 2016 tarihinde yaptığı bir konuşmasında:",
+    "informant_mechanism_description2": " “O camiadan dostlarınız, arkadaşlarınız olabilir. Ben diyorum ki, bunları ifşa edin! Savcılıklara bildirmeniz lazım. Bu bir vatanseverlik borcudur. Herkesi, istihbarat bilemeyebilir, emniyet bilemeyebilir, ya da yetişemeyebilir, bakın adamlar kaçıyor.” şeklindeki beyanıyla yeni bir ihbar furyasını başlatmış oldu.",
+    "informant_mechanism_description3": "Bu süreçte Gülen Hareketi mensupları başta olmak üzere birçok kişi, asılsız ve delilsiz ihbarlar sonucunda gözaltına alınmış, tutuklanmış ve kamu görevlerinden ihraç edilmiştir. İhbar mekanizmasının kötüye kullanımı, yetersiz hukuki denetim ve geniş kapsamlı KHK uygulamaları, binlerce kişinin hayatını olumsuz yönde etkilemiştir.",
+    "dismissals_scope_legal_process": "İhraçların Boyutu ve Hukuki Süreç",
+    "ohal_legal_process_intro": "OHAL sürecinde çıkarılan KHK'lar, kamu görevinden ihraç için iki temel yöntem sunmuştur:",
+    "dismissal_with_appendix": "KHK Ek’li Liste ile İhraç:",
+    "dismissal_with_appendix_description": "Bu yol ile ihraç edilenler, KHK'ların ekinde yer alan listeler aracılığıyla doğrudan ihraç edilmiştir.",
+    "dismissal_with_institution_decision": "KHK’lara Dayanarak Kurum Kararıyla İhraç:",
+    "dismissal_with_institution_decision_description": "Kamu Kurumları, 667 sayılı KHK ile tanınan yetkiye dayanarak binlerce personeli idari kararlar ile ihraç etmiştir.",
+    "legal_review_insufficient": "Bu süreçte hukuki denetim mekanizmalarının yetersiz kalması ve yargı yolunun kapalı olması, birçok kişinin mağduriyetine yol açmıştır. 667 sayılı KHK gibi düzenlemelerle, idari işlemle ihraç edilenlerin hukuki denetim hakkı bulunsa da, KHK ile doğrudan ihraç edilenler için bu yol kapalı kalmıştır.",
+    "ohal_commission_created": "Türkiye, OHAL KHK'larına yapılan itirazları incelemek üzere Olağanüstü Hal İşlemleri İnceleme Komisyonu adında bir idari kurum oluşturmuştur. Komisyon, toplam 127.292 başvuru almıştır. ve tamamını karara bağlamıştır. Başvuruların %86'sı reddedilirken %14'ü kabul edilmiştir. Görünüşte hak ihlallerine karşı bir siper görevi görmesi için tasarlanan Komisyon'un itirazları ezici bir çoğunlukla reddetmesi, Komisyon'un etkili bir denetim organı olmadığını ve törensel bir kurum olarak işlev gördüğünü ortaya koymuştur. Ayrıca, binlerce hakim ve savcının da HSK (eski HSYK) kararları ile meslekten çıkarıldığını ve itiraz süreçlerinde KHK’lılar ile aynı zorluklarla karşılaştıklarını da not etmek gereklidir.",
+    "dismissal_reasons": "İhraç Gerekçeleri",
+    "dismissal_reasons_description": "Adli makamlar tarafından Gülen Hareketi mensuplarına yöneltilen terör suçlaması için gerekçe olarak kabul edilen aşağıdaki hususlar idari makamlar tarafından ihraçlar için de yeterli gerekçe olarak kabul edilmiştir.",
+    "reason_bylock_etc": "- ByLock, Eagle, Telegram gibi programların kullanımı",
+    "reason_workplace_info": "- Çalışılan işyerlerine ait bilgiler",
+    "reason_bank_asya": "- Bank Asya hesapları",
+    "reason_newspaper_subscription": "- Zaman Gazetesi ve Sızıntı Dergisi abonelikleri",
+    "reason_union_membership": "- Sendika, vakıf, dernek üyelikleri",
+    "reason_social_media": "- Sosyal medya paylaşımları",
+    "reason_administrative_investigation": "- İdari soruşturma geçirme durumu",
+    "reason_mentioned_in_other_cases": "- Diğer dosyalarda isimlerinin geçip geçmediği",
+    "reason_travel_records": "- Yurtdışı giriş-çıkış kayıtları",
+    "reason_digiturk_cancellation": "- Digitürk aboneliğini sonlandırma durumu",
+    "reason_courier_records": "- Kargo şirketleri kayıtları",
+    "reason_masak_records": "- MASAK kayıtları",
+    "reason_hts_records": "- 1.1.2013 tarihinden sonraki HTS kayıtları",
+    "dismissal_reasons_continued": "Bahsi geçen kriterlere ek olarak, eşlerden birinin KHK’li olması diğeri hakkında da soruşturma başlatılması ve ihraç edilmesi için yeterli delil olarak kabul edilmiştir. Bu kriterler kapsamında birçok kişi, somut delil olmaksızın terör suçlamasıyla yargılanmış ve cezalandırılmıştır. Soruşturma geçiren bireyler ihraç edilmis, ihraç edilen bireyler hakkında ise soruşturma başlatılmıştır. Bu yolla basta Gülen Hareketi mensupları olmak üzere muhalifler için içinden çıkmaları mümkün olmayan kısır bir döngü kurulmustur.",
+    "social_genocide_and_exclusion": "Sosyal Soykırım ve Toplumsal Dışlanma",
+    "dismissed_persons_excluded_from_society": "Haksız yere ihraç edilen kişiler, sadece işlerinden değil, aynı zamanda toplumsal hayattan da dışlanmışlardır. İşlerini kaybeden bu kişiler, ekonomik sıkıntılarla boğuşurken, sosyal çevrelerinden de izole edilmiş, çocuklarının eğitim hakları, sağlık hizmetlerine erişimleri gibi temel insan hakları ihlal edilmiş, sosyal soykırımın mağduru olmuşlardır.",
+    "cannot_apply_to_constitutional_court": "Haksız ihraç edilenler, iç hukukta öngörülen olağan kanun yollarını tüketmeden Anayasa Mahkemesi’ne ve ardından Avrupa İnsan Hakları Mahkemesi’ne başvuramamaktadır. Ancak, yeni bir KHK ile ya da yargı kararları ile görevlerine dönmeleri mümkündür.",
+    "data_based_on_official_gazette": "Bu sayfada yer alan veriler Resmi Gazete'de yayınlanan kanun hükmünde kararname ve kurul kararları esas alınarak hazırlanmıştır.",
+    "excluded_50k_people": "667 Sayılı KHK’ya atfen idari kararla yapılan ve 50.000’in üzerinde olduğu tahmin edilen ihraç kararları ve kapatılan kurumlara elkonulması nedeniyle işsiz kalan kişilere ait rakamlar net olarak bilinmediği için bu verilere dahil edilememiştir.",
+    "dismissal_responsibles": "İhraç listelerinde imzası olan sorumlular",
+    "select_responsible": "Sorumlu seçin",
+    "person": "kişi",
+    "illegal_deportation_title": "Hukuka Aykırı Sınır Dışı ve İadeler",
+    "illegal_deportation_paragraph1": "15 Temmuz 2016’dan sonra özgürlük ve güvenlik haklarını muhafaza etmek amacıyla Türkiye’den kaçarak yurt dışına sığınan ya da daha önceden oradaki Gülen Hareketi’ne bağlı kuruluşlarda çalışan kişilerin hukuk dışı yollarla, kaçırılarak Türkiye’ye getirilmeleri hadiseleri vuku bulmaya başladı.",
+    "illegal_deportation_paragraph2": "Erdoğan hükümeti, 2016’dan sonra Gülen Hareketi’ne yönelik cadı avını, uluslararası alanda da sürdürme yoluna giderek bu konuyu dış politika ajandasının önemli bir maddesi hâline getirdi, ikili ilişkilerinde bu konuda sürekli talepkâr davrandı ve yurt dışında yaşayan Gülen Hareketi mensuplarını her fırsatta açıktan tehdit etti.",
+    "illegal_deportation_paragraph3": "OHAL döneminin ilk kararlarından biri İçişleri Bakanlığı kararıyla önce 50 bin ardından toplamda 250 bin pasaportun iptal edilmesi oldu. İptal edilen pasaportlar Türk Emniyeti tarafından hızla Interpol sistemine girildi.",
+    "illegal_deportation_paragraph4": "Eylül 2016’da, Erdoğan, Gulen hareketi üyeleri için hiçbir ülkenin güvenli olmadığını duyurdu. Eylül 2018’de Erdoğan’ın sözcüsü İbrahim Kalın, yurt dışında Hizmet Hareketi mensuplarına yönelik operasyonlar olabileceğini söyledi.",
+    "illegal_deportation_paragraph5": "Bu operasyonlar çoğunlukla Türkiye’nin iyi ilişkiler içinde olduğu Afrika, Asya ve Balkan ülkelerinde gerçekleşti. Hareket mensupları o ülkelerin yasalarına aykırı şekilde alıkonulmuş ve Türk yetkililere teslim edilmişlerdir.",
+    "illegal_cases_title": "Uluslararası Hukuka Aykırı Şekilde Türkiye'ye Götürülme Vakaları",
+    "rejected_requests_title": "Reddedilen İade Talepleri",
+    "different_cases": "farklı olayda",
+    "different_countries": "farklı ülkeden",
+    "inandi_caption": "Kırgızistan'dan kaçırılarak Türkiye’ye getirilen Orhan İnandı’nın işkence gördüğünü ispat eden ve kolunun kırıldığı açıkça anlaşılan görüntüsü",
+    "illegal_abductions_titlea": "Yasa Dışı Kaçırma Çalışmaları",
+    "illegal_abductions_paragraph1": "2016 yılında İsviçre’de Hizmet’le ilişkili olduğu düşünülen bir işadamı, Türkiye büyükelçiliği çalışanı iki kişi tarafından kaçırılmaya çalışıldı. Ancak İsviçreli yetkililer konuyla ilgili soruşturma başlatarak, elçilik çalışanları hakkında tutuklama kararı çıkardı.",
+    "illegal_abductions_paragraph2": "26 Ekim 2016’da İhsan Nuri Akpınar ve Murat Acar isimli iki akademisyenin, BM sığınma başvuruları olmasına rağmen, Bahreyn Interpol'ü tarafından Türkiye’ye teslim edildikleri iddia edildi. Acar’ın ortaya çıkan mahkeme ifadesine göre, Türkiye’ye getirildikten sonraki gözaltı sürecinde işkence gördü ve bir yıl iddianamesi olmaksızın hapiste tutuldu.",
+    "illegal_abductions_paragraph3": "Akpınar’ı Türkiye’ye getiren polis ekibi Türk Interpol Birimine bağlı polis ekibiydi. Acar ve Akpınar’ın dosyalarına giren resmi yazılara göre, Türk Interpol polisleri görevlendirme yazısıyla Bahreyn’e gitmiş ve Bahreyn’in iade ettiği kişileri alıp Türkiye’ye getirmişti. Ancak dosyada iade prosedürüne ilişkin herhangi bir yazışma ya da Bahreyn’in iade ettiğine ilişkin hiçbir belge bulunmuyordu.",
+    "illegal_abductions_paragraph4": "Kaçırılma sürecinde tüm belgelerin Interpol polisleri tarafından düzenlenmesi üzerine Acar cezaevinde kaldığı süreçte, Interpol Genel Merkezine bir mektup yazdı ve durumdan haberdar olup olmadıklarını sordu. Gelen yanıtta; Türkiye veya Bahreyn polisi tarafından Interpol veri tabanında herhangi bir veri kaydının sözkonusu olmadığı belirtildi. Acar mahkemedeki savunmasında durumu; “Interpol’ün haberi olmadan, Interpol Birimindeki polislerin görev aldığı bir kaçırma” olarak tanımladı.",
+    "illegal_abductions_paragraph5": "Acar gibi pek çok vakanın ortaya çıkmasının ardından Interpol, Türkiye’deki toplu pasaport iptallerinin siyasi olduğu gerekçesiyle, Türkiye’nin bildirdiği pasaport iptallerini tanımadı. Dönemin İçişleri Bakanı Süleyman Soylu duruma sert tepki gösterse de Interpol’ün bu konudaki tavrı değişmedi.",
+    "illegal_abductions_paragraph6": "2017’de Erdoğan hükümetinin aracılar vasıtasıyla ABD’de Fethullah Gülen’in kaçırılması için pazarlık yaptığı öğrenildi. ABD Başkanı Donald Trump’ın ilk Ulusal Güvenlik Danışmanı olan Mike Flynn’i de kapsayan plan dahilinde, önce Gülen’in ABD’deki itibarının yok edilmesi için bir kampanya başlatılması, akabinde de kaçırılarak Türkiye’ye götürülmesi konuşuldu.",
+    "illegal_abductions_paragraph7": "Siyasi saikli taciz korkusuyla ülkeden kaçan kişilerin yakınları, güvenlik güçlerinin, kişinin yerini açıklamaları veya kişiyi Türkiye’ye dönmesi için teşvik etmeleri için baskı yapmak amacıyla tehdit edildiklerini ve kendilerine gözdağı verildiğini aktardı.",
+    "international_response_title": "Uluslararası Tepki",
+    "international_response_paragraph1": "Birçok uluslararası kurum ve kuruluş başta Gülen Hareketi mensupları olmak üzere Türkiye'nin ulusötesi baskı uygulamalarını rapor etmiş ve kınamıştır.",
+    "international_response_paragraph2": "BM özel raportörleri tarafından 2020 Mayıs ayında yayınlanan bir raporda, hükümetin 2016 darbe girişiminden beri 100’den fazla Türk vatandaşını Türkiye’ye zor kullanarak nakletmek için diğer devletlerle iş birliği yaptığı bildirildi.",
+    "international_response_paragraph3": "Avrupa Konseyi Parlamenterler Meclisi (AKPM), Gülen Hareketi üyelerine karşı ulus ötesi baskı taktiklerinin kullanılmasını açıkça ",
+    "international_response_link_text": "kınamıştır.",
+    "international_response_paragraph3_continued": " Türkiye'nin ulusötesi baskı kampanyasında, iade işlemlerinin kötüye kullanılması, INTERPOL Kırmızı Bültenleri ve terörün finansmanıyla mücadele tedbirlerine başvurulduğu ve kişilerin hukuka aykırı bir şekilde sınır dışı edilmesi ya da nakledilmesi için diğer devletlerle işbirliği yapıldığı tespit edilmiştir.",
+    "freedom_house_report_part1": "Freedom House ",
+    "freedom_house_report_link": "raporuna",
+    "freedom_house_report_part2": " göre, muhaliflere yönelik ulusötesi baskı uygulayan ülkeler sıralamasında Türkiye ilk beşte yer almaktadır.",
+    "government_requests_title": "Hükümetin iade talepleri",
+    "government_requests_paragraph1_part1": "2021 yılında ABD Büyükelçiliği tarafından yayımlanan insan hakları",
+    "government_requests_paragraph1_link": "raporunda",
+    "government_requests_paragraph1_part2": ", Türk hükümetinin 2016 darbe girişimi ile ilişkilendirilen bazı kişilere karşı az sayıda kanıta dayanarak uluslararası düzeyde İnterpol kırmızı bültenlerini kullanma çabası olduğu belirtildi. Freedom House ise, 15 Temmuz 2016’dan bu yana, Türk hükümetinin Gülen hareketine bağlı olarak tanımladığı kişiler hakkında İnterpol’e on binlerce talep gönderdiğini",
+    "government_requests_paragraph2_link": "belirtti",
+    "government_requests_paragraph3": "2016’yı takip eden yıllarda Gülen hareketinin destekçisi olduğundan şüphelenilen kişilerin pasaportlarının kayıp veya çalıntı olduğuna dair hükümetin yanlış bildirimlerde bulunması nedeniyle bazı kişilerin çeşitli zorluklar yaşadığı da bilinmektedir. İnterpol’e yapılan bildirimler, bu kişilerin gözaltına alınmasına ya da seyahat etmelerinin engellenmesine yol açmıştır.",
+    "government_requests_paragraph4": "2021 yılında ABD Büyükelçiliği tarafından yayımlanan insan hakları raporunda Türkiye hükûmetinin, tam bir yasal süreç işletilmeden gerçekleştirilen iadeler kapsamında yardımlarını güvence altına almak amacıyla diğer ülkelere ikili ilişkilerde baskı uyguladığına dair kanıtların mevcut olduğuna yer verilmiştir.",
+    "image_alt_text": "İade görselleri",
+    "image_caption": "2017 yılında Malezya’dan kaçırılarak Türkiye’ye getirilen İhsan Aslan, İsmet Özçelik ve Turgay Karaman",
+    "interpol_image_caption": "Kaçırma olayında görevli polislerin bilgileri ve Bahreyn polisi ile Türk polisi arasındaki teslim tesellüm tutanağı",
+    "interpol_title": "İnterpolün Tavrı",
+    "interpol_paragraph1": "Türk İnterpol birimi, 15 Temmuz 2016’dan sonra Gülen Hareketi üyelerini hedef alarak, birçok kişinin pasaportlarını iptal etmek ve  aynı zamanda binlerce kişi için uluslararası arama kararı olan Kırmızı Bülten çıkarılması amacıyla dosyaları Fransa'nın Lyon kentinde bulunan İnterpol Genel Sekreterliğine iletti. Ancak İnterpol Genel Sekreterliği, Türkiye'den gelen bu başvuruların siyasi nitelik taşıdığını ve yeterli hukuki dayanağa sahip olmadığını belirterek bu talepleri reddetti. Ret kararının ardında, İnterpol Yasası’nın askeri, siyasi, dini veya ırkçılıkla ilgili suçlarla ilgilenilmesini yasaklayan 3. Maddesi bulunmaktaydı. Buna rağmen Türk yetkililer, bu taleplerin siyasi veya askeri suçlar kategorisinde olmadığını, terörle mücadele kapsamında değerlendirilmesi gerektiğini iddia ettiler. Türkiye, Genel Sekreterliği ikna etmek için Lyon'a çeşitli heyetler gönderdi ancak bu girişimler başarısız oldu ve talepler kabul edilmedi.",
+    "interpol_paragraph2": "Ardından Türkiye, 2017 yılında yöntemini değiştirerek, siyasi olarak hedef aldığı Gülen Hareketi üyelerinin pasaportlarına 'kayıp' ya da 'çalıntı' şerhi koyarak İnterpol’ün ilgili veri bankasına giriş yaptı. Ancak İnterpol’e gelen çok sayıda şikayet üzerine durumu inceleyen İnterpol Genel Sekreterliği, bu kişilerin pasaportlarının kayıp ya da çalıntı olduğuna dair herhangi bir müracatlarının olmadığını, Türk İnterpol’ü tarafından kurallara aykırı şekilde veribankasına kayıp/çalıntı girdileri yapıldığını belirleyerek Türkiye’den veri girişi yapılmasına kısıtlama koydu.",
+    "interpol_paragraph3_part1": "Dönemin Dışişleri Bakan Yardımcısı Yavuz Selim Kıran, 03 Haziran 2021 tarihinde Meclis'te yaptığı",
+    "interpol_paragraph3_link": "konuşmada",
+    "interpol_paragraph3_part2": "; 'İnterpol üzerine düşeni yapmamaktadır. İnterpol ile çalışmalarımızda, kırmızı bülten ve iade taleplerimizin reddi, kırmızı bültenlerin silinmesi ve Türkiye tarafından İnterpol’ün Çalıntı ve Kayıp Seyahat Belgeleri Veritabanına (SLTD) yapılan veri girişlerinin engellenmesi gibi sorunlarla karşılaşıyoruz.' ifadelerini kullanmıştı.",
+    "iade_methodology_description": "Bu sayfada yer alan veriler, insan hakları kuruluşlarının raporlarından ve medyaya yansıyan haberler üzerinden kapsamlı bir inceleme yapılarak derlenmiş, ülkelere, olay kategorilerine ve tarihlerine göre listelenip analiz edilmiştir.",
+    "zorla_kaybedilmeler": "Zorla Kaybedilmeler",
+    "zorla_kaybedilme_paragraph_1": "Zorla kaybetmeler, demokratik değerlerden uzak devletlerin muhalif grupları bastırmak amacıyla uyguladığı bir şiddet yöntemidir. Uluslararası insan hakları hukukuna göre, bir kişi kayıp ise işkenceye maruz kalmış veya öldürülmüş olma ihtimali yüksektir. 15 Temmuz öncesi Türkiye tarihinde zorla kaybetme uygulamaları Cumhuriyet'in ilk yıllarına kadar uzanırken, bu suçun yaygın ve sistematik olarak işlendiği dönemler 12 Eylül 1980 darbesi ve 1990'lardaki olağanüstü hal dönemleridir.",
+    "zorla_kaybedilme_paragraph_2": "1980 askeri darbesinin ardından 1,300’den fazla kişi kaybolmuş, 1990'larda ise özellikle Kürtler ve solcu siyasi aktivistler hedef alınmıştı. Bu kayıpların çoğunun devlet ajanları veya gizli gruplar tarafından gerçekleştirildiğine inanılmaktadır ve bazı mağdurların akıbetleri hala belirsizdir. Bu bağlamda, Cumartesi Anneleri hareketi, kayıp yakınlarının adalet arayışında önemli bir sembol haline gelmiştir. Cumartesi Anneleri, 27 Mayıs 1995’ten bu yana her cumartesi günü 90'lı yıllarda gözaltında kaybedilen yakınlarının akıbetini sormak ve faillerin yargılanmasını talep etmek amacı ile Galatasaray Meydanı'nda buluşarak eylem yapmaktadırlar.",
+    "zorla_kaybedilme_paragraph_3": "1990'lar boyunca veya 2000'lerin başlarında zorla kaybetmelere karışan resmi görevlilerin neredeyse hiçbiri yargılanıp ceza almamıştır. Kayıp yakınları yetkili makamlara başvuruda bulunurken çoğunlukla etkisiz cevaplar almış ve savcılar tarafından tehdit edilmişlerdir. Bu dönemde Avrupa İnsan Hakları Mahkemesi (AİHM), zorla kaybetmelerle ilgili birçok davada Türkiye'yi sorumlu bulmuştur.",
+    "hala_kayip": "Hâlâ Kayıp...",
+    "gundur": "gündür",
+    "case_count": "Vaka Sayısı",
+    "error_fetching_data": "Veri alınırken hata oluştu",
+    "change_over_years": "Yıllara Göre Değişim Grafiği",
+    "kaybetmelerAciklama": {
+      "title": "Türkiye'de 15 Temmuz 2016 Sonrası Muhaliflere Yönelik Zorla Kaçırma ve Kaybetme Vakaları",
+      "paragraph1": "2000'li yıllarda Türkiye'nin AB üyeliği sürecindeki reform çabaları ve işkenceye karşı önlemlerle zorla kaybetmelerin geçmişte kaldığına dair umutlar yeşermişti. Ancak, 15 Temmuz 2016 sonrası bu korkunç uygulama tekrar gündeme geldi. Özellikle Gülen Hareketi ile bağlantılı olduğu iddia edilen kişilere yönelik en az otuz yeni zorla kaybetme vakası rapor edilmiştir. 2016 sonrası meydana gelen 25 vakada, mağdurların profillerindeki benzerlikler, polis ve savcıların soruşturmaları ihmal etmeleri ve olayların düzenli olarak tekrarlanması gibi ortak noktalar öne çıkmıştır.",
+      "paragraph2": "Bazı kayıplar, aylar sonra polis gözetiminde yeniden ortaya çıkmış ve bu kişilerin fiziksel ve zihinsel olarak zayıflamış durumda oldukları ve nerede tutulduklarına dair konuşmaktan kaçındıkları gözlemlenmiştir.",
+      "paragraph3": "Mağdurlar genellikle evlerinden veya iş yerlerinden gözaltına alınmış ve aylar sonra işkence belirtileriyle tekrar ortaya çıkmışlardır. Mustafa Yılmaz, Salim Zeybek, Özgür Kaya, Gökhan Türkmen, Erkan Irmak, Yasin Ugan ve Yusuf Bilge Tunç, 2019 yılında peş peşe siyah transporterla kaçırılmış ve bazıları aylar sonra Ankara Emniyet Müdürlüğü'ne teslim edilmiştir. Yusuf Bilge Tunç ise hala kayıptır.",
+      "paragraph4": "Bu süreçte kaçırılan kişilerin Milli İstihbarat Teşkilatı (MİT)’na ait olduğu iddia edilen 'Çiftlik' adlı bölgede işkenceye maruz kaldıkları belirtilmektedir. Mağdurlar ve mağdur yakınları tarafından yapılan suç duyuruları savcılıklar tarafından çoğu zaman işleme konulmamış, soruşturma açıldığı durumlarda ise hiç bir zaman etkili bir soruşturma yürütülmemiş ve sorumlular adli makamlar tarafından korunmuştur.",
+      "paragraph5": "Zorla kaybetme vakaları, mağdurların fiziksel ve psikolojik sağlığı üzerinde derin izler bırakmakta, ailelerinin acılarını artırmakta ve toplumda genel bir güvensizlik yaratmaktadır. Türkiye’de etkili soruşturmaların yapılmaması, bu suçların cezasız kalmasına neden olmaktadır. Bu durum, Türkiye'nin uluslararası hukuk çerçevesindeki yükümlülüklerine tamamen aykırıdır ve mağdurların adalet arayışını engellemektedir.",
+      "paragraph6": "Birleşmiş Milletler'in zorla kaybetmelere ilişkin tanımı, Türkiye'deki kayıp ve kaçırılma vakaları ile birebir örtüşmektedir. BM, zorla kaybetmeleri 'kişilerin devlet tarafından veya devlet adına hareket eden gruplar tarafından özgürlüklerinden yoksun bırakılması ve bu durumun gizlenmesi' olarak tanımlar. Türkiye'de de mağdurlar, devlet yetkilileri veya devletle bağlantılı gruplar tarafından kaçırılmakta ve gözaltında tutuldukları inkar edilmektedir. Bu uygulamalar, BM tarafından uluslararası hukuk çerçevesinde yasaklanmıştır.",
+      "paragraph7": "Özellikle yeniden ortaya çıkan mağdurların yaşadığı işkence ve kötü muamele, insan hakları ihlallerinin boyutlarını gözler önüne sermektedir. Ümit Horzum, çıkarıldığı mahkemede, kaçırıldığı dönemde işkence gördüğünü ve tanımadığı kişilerle ilgili suçlayıcı ifadeler imzalamaya zorlandığını belirtmiştir. Benzer şekilde Gültekin, kendisine yapılan işkenceler sonucu suçlayıcı ifadeler vermek zorunda kaldığını ifade etmiştir. Bu durum, zorla kaybetmelerin yanı sıra işkence uygulamalarının da yaygın olduğunu göstermektedir.",
+      "paragraph8": "Zorla kaybetme mağdurlarının yeniden ortaya çıktıktan sonra maruz kaldıkları muamele, Türkiye'deki insan hakları ihlallerinin boyutlarını gözler önüne sermektedir. Mağdurlar, resmi gözaltı merkezlerinde yeniden ortaya çıktıklarında, serbestçe avukat seçme hakları ellerinden alınmakta ve genellikle devletin çıkarları doğrultusunda hareket eden avukatlar atanmaktadır. Bu durum, adil yargılanma hakkının ihlalidir ve Türkiye’nin uluslararası yükümlülükleri ile bağdaşmamaktadır."
+    },
+    "illerGrafik": {
+      "column1": "İl/Ülke",
+      "column2": "Vaka Sayısı",
+      "noData": "Veri yükleniyor ..."
+    },
+    "accordionKaybetmeler": {
+      "header": "Metodoloji",
+      "bodyText": "Bu sayfada yer alan veriler, başta Solidarity With Others olmak üzere çeşitli insan hakları derneklerinin raporları ve çalışmaları ile açık kaynaklardan derlenmiştir."
+    },
+    "sosyalGiris": {
+      "title": "Sosyal ve Ekonomik Hak İhlalleri ve Mağduriyetler",
+      "introText": "2016'da Türkiye'de olağanüstü hal (OHAL) ilan edilmesiyle birlikte çıkarılan Kanun Hükmünde Kararnameler (KHK) çerçevesinde yaklaşık 125 bin kamu çalışanının, idari ve adli işleme tabi tutulmadan görevlerine son verildi. Bu süreçte, KHK'lıların karşılaştığı sosyal ve ekonomik hak ihlalleri, insan hakları gözlemcileri tarafından 'sosyal ölüm' olarak tanımlandı.",
+      "caseCountTitle": "Olay Sayısı",
+      "caseCountDescription": "KHK'lılar en az 58 farklı olay türünde sosyal ve ekonomik hak ihlali yaşamaktadırlar.",
+      "institutionCountTitle": "Kurum Sayısı",
+      "institutionCountDescription": "Söz konusu ihlallerden en az 30 farklı kurum ve kuruluş sorumludur."
+    },
+    "sosyalAciklama": {
+      "title": "Sosyal ve Ekonomik Hak İhlalleri",
+      "intro": "OHAL dönemi ve sonrasında KHK ile görevlerinden ihraç edilen kişiler, çeşitli sosyal ve ekonomik hak ihlalleriyle karşı karşıya kalmıştır. Bu ihlallerin bilinen net bir sayısı bulunmamakla birlikte en az 30 kurum ve kuruluşun ihlallerden sorumlu olduğu görülmektedir. Geniş bir yelpazede kendini gösteren ihlaller bu sayfada ana başlıklar altında anlatılmıştır:",
+      "financialRestrictions": {
+        "title": "1. Finansal Kısıtlamalar ve Bankacılık İşlemleri:",
+        "example1": "- Kredi kartlarının iptali, banka hesaplarına bloke konulması, kredi verilmemesi gibi uygulamalar KHK'lıların ekonomik bağımsızlıklarını ciddi şekilde etkilemiştir. KHK'lı Baykal Tunç'un kamu bankası tarafından banka kartı ve kredi kartlarının iptal edilmesi, bu mağduriyetin bir örneğidir.",
+        "example2": "- Öğretmen Cemil Özen’in SGK çıkış kodu nedeniyle özel sektörde iş bulamaması ve sağlık hizmetlerinden yararlanamaması, ekonomik ve sosyal haklarının ihlal edildiğini göstermektedir."
+      },
+      "employment": {
+        "title": "2. İstihdam ve Çalışma Hakları:",
+        "detail": "- KHK'lıların özel sektörde iş bulmaları zorlaştırılmış, işten çıkarılmaları kolaylaştırılmıştır. İşsizlik maaşı verilmemesi, iş başvurularının reddedilmesi, öğretmen lisanslarının iptali gibi uygulamalar, KHK'lıların çalışma hayatını ciddi şekilde kısıtlamıştır."
+      },
+      "education": {
+        "title": "3. Eğitim ve Sağlık Hakları:",
+        "detail1": "- KHK'lıların yüksek lisans yapmaları, uzmanlık eğitimi almaları, öğrenci affından yararlanmaları gibi hakları engellenmiştir. Ayrıca, sağlık hizmetlerinden yararlanamamak, yeşil kart başvurularının reddedilmesi gibi sorunlar yaşanmıştır.",
+        "detail2": "- KHK'lılar, mültecilere sağlanan sağlık imkanlarından yararlanamamakta, kendi ülkelerinde sağlık hizmetlerine bile erişim sağlayamamaktadır."
+      },
+      "socialRights": {
+        "title": "4. Sosyal Haklar ve Toplumsal Dışlanma:",
+        "detail1": "- KHK'lılar ve aileleri sosyal çevreleri tarafından dışlanmış, yalnızlaştırılmış ve toplumsal baskıya maruz kalmışlardır. Bu durum, ciddi psikolojik sorunlara yol açmıştır.",
+        "detail2": "- Mağdur yakınlarının çektiği sıkıntıların başında psikolojik sorunlar, ekonomik sorunlar ve toplumsal baskı ve dışlanma gelmektedir."
+      },
+      "supportDeprivation": {
+        "title": "5. Maddi ve Manevi Desteklerden Mahrum Bırakılma:",
+        "detail1": "- KHK'lılar, doğum yardımı, iş kazası nedeniyle mağduriyet, emekli ikramiyesi, afet yardımı gibi çeşitli desteklerden mahrum bırakılmıştır. Trafik sigortası ödemelerinin yapılmaması, vergi indirimlerinden yararlandırılmama gibi uygulamalar da bu mağduriyetlere eklenmiştir.",
+        "detail2": "- Miras haklarının engellenmesi, tapu işlemlerinin yapılmaması gibi hukuki hak ihlalleri de yaşanmıştır."
+      },
+      "internationalLawTitle": "Sosyal ve Ekonomik Hakların Uluslararası İnsan Hakları Hukukundaki Yeri",
+      "internationalLawParagraph1": "Sosyal ve ekonomik haklar, uluslararası insan hakları hukukunda önemli bir yere sahiptir. Bu haklar, Uluslararası İnsan Hakları Sözleşmeleri'nde güvence altına alınmıştır. Birleşmiş Milletler Ekonomik, Sosyal ve Kültürel Haklar Sözleşmesi (ICESCR), sosyal ve ekonomik hakları koruma altına alır. Bu sözleşme, herkesin sağlık, eğitim, sosyal güvenlik ve çalışma haklarına sahip olduğunu belirtir.",
+      "internationalLawParagraph2": "Ayrıca Avrupa İnsan Hakları Sözleşmesi (AİHS) ve Avrupa Sosyal Şartı, Avrupa Konseyi üyesi ülkeler tarafından imzalanmış ve onaylanmıştır. Bu belgeler, sosyal ve ekonomik hakları güvence altına alır ve koruma mekanizmaları oluşturur. Ekonomik haklar, bireylerin yaşam standartlarını yükseltmeleri, yoksulluk ve açlıkla mücadele etmeleri için önemlidir. KHK'lıların yaşadığı ekonomik kısıtlamalar, bu hakların ihlal edildiğini göstermektedir. Sosyal haklar ise, bireylerin toplumsal hayata katılımını sağlar ve toplumsal dışlanmayı önler. KHK'lıların yaşadığı sosyal dışlanma ve psikolojik sorunlar, bu hakların da ihlal edildiğini ortaya koymaktadır."
+    },
+    "accordionTextSosyal": {
+      "title": "Metodoloji",
+      "body": "Bu sayfada yer alan veriler açık kaynaklara yansıyan vakaların incelenmesi ile derlenerek listelenmiştir. Sayfa içerisinde yer alan tablolarda, 'Hak ihlali' yaşanan haksızlığın genel tanımını; 'Detay' meydana gelen olayın ayrıntılarını ve varsa örneklerini; 'Kurum' söz konusu ihlalden sorumlu olan kurumu; 'İl' ihlalin yaşandığı yeri ifade etmektedir. Ancak 'İl' tanımlanırken sorumlu kurumun bulunduğu il baz alındığından ihlalin başka illerde de yaşanmadığı anlamına gelmemektedir. 'Tarih' olarak, şayet ihlalin yaşandığı spesifik bir tarih varsa belirtilmiş, aksi durumlarda OHAL ilan tarihi verilmiştir. Son olarak da söz konusu ihlal ile ilgili bilgilerin yer aldığı 'Link' verilmiştir."
+    },
+    "cezaeviGiris": {
+      "title": "Cezaevindeki Hak İhlalleri",
+      "paragraph1": "Uluslararası insan hakları sözleşmeleri dahilinde, hapis cezasının infazı sırasında, hürriyetinden mahrum bırakılan hükümlünün insan onuruna saygı gösterilmelidir ve bu kişilerin barındırıldığı koşullar, asgari yaşam gereklerine uygun olmalıdır. Mahpuslar, cezanın gerektirdiği zorunlu sıkıntının ötesinde, aşırı ıstırap ve zorluklara maruz bırakılmamalıdır. OHAL döneminde, asılsız suçlamalarla karşı karşıya kalan mahpuslar sıkı güvenlik önlemleri altında tecrit edilerek insanlık dışı muamelelerle karşılaştılar.",
+      "paragraph2": "Cezaevlerinde yaşanan sorunlar ve mahkumların yaşadıkları hak ihlalleri, iktidarın siyasi tercihlerinin sonucudur. Açıktır ki iktidar, kadınlara, çocuklara ve toplumun her kesimine dayattığı baskıcı ve antidemokratik politikaları cezaevlerinde de sürdürmekte, hak ihlallerinin önüne geçemediği gibi ihlallerin ve mağduriyetlerin yaşanmasına sebebiyet vermektedir."
+    },
+    "ihlalturuText": {
+      "title": "Hak İhlallerinin Kapsamı ve Kategorileri",
+      "paragraph1": "Türkiye'deki cezaevlerinde tutulan siyasi tutuklu ve hükümlüler, çok farklı çeşitlerde hak ihlallerine maruz kalmaktadır. Bu sayfa içerisinde yer alan 'Hak ihlalleri' verileri, istatistik tablosunda 30 farklı kategori altında toplanmaya çalışılmıştır.",
+      "paragraph2": "Örneğin, dilekçelerin alınmaması, cevap verilmemesi, kayıt yaptırılmaması, gelen evrakların verilmemesi, fakslara el konulması gibi ihlaller genel olarak 'Dilekçe verme, evrak alma-gönderme hakkının kısıtlanması' başlığı altında toplanmıştır. Aynı şekilde koronavirüs salgınında yeterli tedbirlerin alınmaması dahil sağlık ve tedavi ile ilgili tüm ihlaller 'Sağlık hakkına yönelik ihlaller' başlığı altına eklenmiştir."
+    },
+    "hakIhlali": {
+      "unjustArrestsTitle": "Haksız Tutuklamalar ve Adaletsiz Yargılama Süreçleri",
+      "unjustArrestsText": "Türkiye’de cezaevleri, özellikle AKP hükümeti ile yaşanan sorunların ve maruz kalınan hak ihlallerinin katlanarak arttığı bir hale gelmiştir. Cezaevleri ıslah edici özelliklerini yitirmiş, sadece cezalandırma işleminin uygulandığı yerler haline dönüşmüştür.",
+      "trialProcessText": "Yargılama süreçlerinde adil yargılama ilkeleri ihlal edilmekte, savunma hakları kısıtlanmaktadır. Denetimli serbestlik ve şartlı tahliye gibi erken tahliye mekanizmaları, siyasi mahpuslar için ayrımcı bir şekilde uygulanmamaktadır.",
+      "prisonConditionsTitle": "Cezaevlerindeki Yaşam Koşulları ve Sağlık Hizmetleri",
+      "prisonConditionsText": "Cezaevlerindeki yaşam koşulları, insan onuruna aykırı bir şekilde sürdürülmektedir. Türkiye, Avrupa Konseyi üyesi ülkeler arasında cezaevlerinde bulunan nüfusun en fazla olduğu ülkedir.",
+      "healthServicesText": "Sağlık hizmetlerine erişim konusunda ciddi sorunlar yaşanmaktadır. Mahpuslar, elleri kelepçeli muayeneye zorlanmakta, yeterli sayıda doktor bulunmamaktadır. Halime Gülsu gibi mahpuslar, gerekli ilaçlara erişemedikleri için hayatlarını kaybetmektedir.",
+      "tortureTitle": "İşkence - Kötü Muamele ve Cezaevlerinde Şüpheli Ölümler",
+      "tortureText": "Cezaevlerinde işkence ve kötü muamele, Türkiye tarihinde her daim varlığını sürdüren bir olgudur. Ancak, OHAL sonrası bu vakalarda ciddi bir artış yaşanmıştır.",
+      "specialNeedsPrisonersTitle": "Özel İhtiyaca Sahip Mahpusların Durumu",
+      "specialNeedsPrisonersText": "Özel ihtiyaca sahip mahpuslar, gerekli ihtiyaçlarını karşılayamamaktadırlar. Cezaevlerinde tıbbi ve özel bakım yeterli değildir.",
+      "earlyReleaseTitle": "Erken Tahliye ve Denetimli Serbestlik Mekanizmalarının Uygulanmaması",
+      "earlyReleaseText": "Denetimli serbestlik ve şartlı tahliye gibi erken tahliye mekanizmaları, siyasi mahpuslar için ayrımcı bir şekilde uygulanmamaktadır.",
+      "monitoringTitle": "Denetim Mekanizmalarının Eksikliği",
+      "monitoringText": "Cezaevi İzleme Komisyonları ve bağımsız denetim mekanizmaları 673 sayılı KHK ile engellenmiştir.",
+      "covidPrisonsTitle": "Koronavirüs Pandemisi Döneminde Cezaevleri",
+      "covidPrisonsText": "Türkiye’de 14 Nisan 2020 tarihinde cezaevindeki korona tehdidinden mahpusları korumak için af niteliğinde infaz yasası değişikliği yapılmıştır. Ancak siyasi suçlular bu aftan yararlandırılmamıştır."
+    },
+    "accordionTextCezaevi": {
+      "methodology": "Metodoloji",
+      "bodyText": "Bu sayfada yer alan veriler, özellikle 15 Temmuz 2016 sonrasında Türkiye'deki cezaevlerinde kalan siyasi tutuklu ve mahkumların yaşadığı insan hakları ihlallerinin açık kaynaklara yansıyan kısmı kayıt altına alınarak hazırlanmıştır. Tutuklu ve hükümlülerin maruz kaldıkları ihlaller; hak ihlalinin tipi, il, tarih ve cezaevi kriterlerine göre raporlanmakta, herhangi bir kişisel veriye yer verilmemektedir."
+    },
+    "kapatilanKurumlar": {
+      "title": "Kapatılan ve El Konulan Kurumlar",
+      "description": "Türkiye'de, 2016'dan bu yana olağanüstü hal kararnameleri ve idari kararlar ile toplamda {{count}} kurumun kapatılması ve el konulmasına yol açtı. 16 kategori altında değerlendirilebilecek kurumların kapatılması ve el konulması demokratik değerler ile bağdaşmayan 'aşırı' yaptırımlardır. Bahsi geçen 'aşırı' yaptırımlar, hükümetin ifade özgürlüğüne, eğitime, sivil topluma ve halk sağlığına olan bağlılığı konusunda endişelere neden olarak Türkiye'nin siyasi ve toplumsal yapısında derin izler bırakmıştır.",
+      "secondParagraph": "Gülen Hareketi'nin kapatılan ve el konulan kurumlarıyla ilgili yaşananlar, hukukun üstünlüğü, ifade özgürlüğü ve mülkiyet hakları gibi temel demokratik prensiplerle çatışan bir dizi olayı içermektedir. Kapatılan ve el konulan kurumların arasında medya kuruluşları, eğitim kurumları, vakıflar ve sağlık tesisleri yer almaktadır. Bu kurumlara uygulanan kapatma ve el koyma işlemleri muhalif sesler üzerinde baskı oluşturarak, etkilenen sektörler üzerinde ciddi tahribata neden olarak, eğitim fırsatlarını azaltarak ve sağlık hizmetlerinde erişimi kısıtlayarak ülkenin demokratik ilkelerini ve sivil toplum gücünü azaltmıştır. Gülen Hareketi mensuplarına yönelik yoğun ve yaygın sistematik tutuklamalar, ihraçlar, işkence ve sosyal lincin yanında tarihte az görülmüş kitlesel mülkiyet hakkı ihlalleri gerçekleştirilmiştir.",
+      "footer": "Kurum kapatılmıştır"
+    },
+    "tarihselAciklamaTitle": "2013’den Bügüne",
+    "tarihselAciklamaParagraph1": "Gülen hareketi ile ilişkilendirilen kurumların kapatılma ve el konulma süreçleri, 2013 yılında ortaya çıkan yolsuzluk operasyonları sonrasında Türk hükümeti’nin, Gülen Hareketi'ni sorumlu tutması ve harekete yönelik baskıları arttırması ile başlamıştır. 15 Temmuz 2016'daki başarısız darbe girişimi, Türk hükümeti için bir dönüm noktası olmuş, bu hadiseden beş gün sonra, hiçbir çatışmanın kalmadığı ve ihtiyaç olmayan bir zeminde olağanüstü hal ilan edilmiştir. Hükümet, darbe girişimini Gülen Hareketi'ne bağlamış ve bu olayı fırsat bilerek geniş çaplı bir 'kıyım' operasyonu başlatmıştır. Bu operasyon, Türkiye'nin çeşitli sektörlerinde faaliyet gösteren binlerce kurumu etkilemiştir.",
+    "tarihselAciklamaParagraph2": "Operasyonun bir sonucu olarak, Gülen Hareketi'ne ait olduğu iddia edilen medya kuruluşları, eğitim kurumları, vakıflar, sağlık tesisleri ve diğer birçok kurum kapatılmış veya el konulmuştur. Kapatılan kurumlar arasında özel eğitim kurumları, üniversiteler, medya kuruluşları ve vakıf işletmeleri bulunmaktadır. Bu süreçte, kurumların yöneticileri ve çalışanları tutuklanmış, mal varlıklarına el konulmuş ve işleri sonlandırılmıştır. Kapatılan özel öğretim kuruluşlarında çalışan 22 bin 474 yönetici, eğitimci, öğretmen, uzman öğretici, usta öğretici ve diğer personelin çalışma izni onayları iptal edilmiş ve bu personele başka bir özel öğretim kurumunda çalışma izin onayı düzenlenmemesi yönünde uygulamalar yapılmıştır.",
+    "tarihselAciklamaParagraph3": "2014 yılında 6545 sayılı Kanunla sulh ceza hakimlikleri oluşturulmuş ve bu hakimlikler hükumet tarafından önce “paralel yapı” daha sonra ise “silahlı terör örgütü” olarak tanımlanan Gülen Hareketi ile ilişkili olduğu düşünülen kurum, kuruluş ve şirketlere kayyım atayarak yönetimlerini ve tüm tasarruf haklarını gerçek sahiplerinden almışlardır. Burada öncelikle medya ve basın-yayın kuruluşları (başta Bugün ve Zaman Gazeteleri, Samanyolu TV vs.), daha sonra eğitim ve öğretim kurumları hedef alınmıştır.",
+    "sorumlularAciklamaTitle": "OHAL ve KHK’lar",
+    "sorumlularAciklamaParagraph1": "Oluşabilecek tepkiler karşısında itidallı bir biçimde Gülen Hareketi ile ilişkili kurum ve mülkleri gasp eden iktidar, asıl kitlesel hak ihlallerini ise darbe girişiminden sonra yapmıştır. Bu süreçte OHAL ilan edilmiş, ülkede kaos atmosferi oluşturulmuş ve bu atmosfer içerisinde hak ihlallerinin kamuya yansıması engellenmiş veya bu ihlaller meşrulaştırılmıştır.",
+    "sorumlularAciklamaParagraph2": "Bu süreçte Gülen Hareketi’ne bağlı vakıfların veya Hareket ile ilişkili olduğu iddia edilen şirketlerin sahip olduğu tüm okullar kapatılmış ve bu kurumlarda çalışan birçok kişi ise tutuklanmıştır.",
+    "sorumlularAciklamaParagraph3": "22 Temmuz 2016 tarihli 667 sayılı KHK ile Gülen Hareketi ile ilişkili olduğu iddia edilen birçok kurum ve kuruluş kapatılmış ve daha sonra yapılacak kapatmalarda ise ilgili bakanlıklara yetki verilmiştir. İnsan Hakları Ortak Platformu’nun Olağanüstü Hal Uygulamaları Durum ",
+    "sorumlularAciklamaLink": "Raporunda",
+    "sorumlularAciklamaParagraph4": " yer alan verilere göre; Mart 2018 tarihi itibarıyla 1064 özel eğitim kurumu (anaokulu, ilkokul, ortaokul ve lise), 360 özel kurs ve etüd merkezi, 847 öğrenci yurdu, 47 özel sağlık merkezi, 15 özel vakıf üniversitesi, 2 konfederasyona bağlı 29 sendika, 1419 dernek, 145 vakıf, 174 medya ve yayın kuruluşu kapatılmıştır.",
+    "sorumularDevamParagraph1": "25 Temmuz 2016 tarihli 668 sayılı Kanun Hükmünde Kararname ile 3 haber ajansı, 16 televizyon kanalı, 23 radyo kanalı, 45 gazete, 15 dergi ve 29 yayın evi kapatılmıştır. Ayrıca RTÜK (Radyo ve Televizyon Üst Kurulu) bünyesinde oluşturulan Komisyon kararı ile de kapatılan kuruluşlar bulunmaktadır. 15 Ağustos 2016 tarihli 674 sayılı Kanun Hükmünde Kararname ile bu medya kuruluşlarının satış ve devri için Tasarruf Mevduatı Sigorta Fonu'na (TMSF) yetki verilmiştir. TMSF verilerine göre kapatılan medya kuruluşu sayısı 177'dir.",
+    "sorumularDevamParagraph2": "Gülen Hareketiyle ilişkilendirilen veya faaliyetlerine yardım ettiği düşünülen kişilere ait özel şirketlere öncelikle yargı tarafından kayyım atanarak müdahale edilmiş, şirketlerin yönetimi sahiplerinden alınarak atanmış kayyımlara devredilmiştir. 674 sayılı KHK'nın 19 ve 20. maddeleriyle kayyım yetkileri TMSF'ye devredilmiş ve ayrıca bu şirketlerin satışı ve tasfiyesi ile ilgili hükümler getirilerek TMSF'ye tam yetki verilmiştir. Kayyımlara ciddi bir muafiyet sağlanmış ve atandıkları kurumlara zarar verme veya suç işleme durumunda cezai, idari veya mali olarak herhangi bir sorumluluk taşımayacakları belirtilmiştir.",
+    "sorumularDevamParagraph3": "Şirketlere kayyım atanması kesinlikle hukuk dışı bir müdahaledir ve açık bir şekilde mülkiyet hakkı ihlalidir. Ceza Muhakemesi Kanunu'nun 133. maddesi gereğince şirketlere kayyım atanabilmesi için, şirketin faaliyetleri çerçevesinde suç işlendiğine dair kuvvetli suç şüphesi bulunması gereklidir. Ancak bu şirketlere kayyım atanmasına sebep olacak somut bir suç iddiası dahi bulunmamaktadır. Bu şirketlerin sahiplerinin örgüt üyesi oldukları veya örgüte maddi destekte bulundukları şeklindeki suçlamalar ise tutarsızdir. Kayyım ataması yapılmadan önce, bu şirketler tamamen yasal çerçevede faaliyetlerini sürdürmüşlerdir. Basın-yayın organı bulunan şirketlere yapılan kayyım atamaları ise açıkça muhalif basını susturma ve cezalandırma amaçlı olup Anayasa'nın açık bir ihlalidir.",
+    "sorumularDevamParagraph4": "Kapatma ve el koyma süreçleri, Türkiye'deki hukukun üstünlüğü ilkesine ve uluslararası hukuk normlarına uygun olup olmadığı açısından ciddi endişelere yol açmaktadır. Özellikle Anayasa'nın mülkiyet hakkını koruyan 35. maddesi ve Avrupa İnsan Hakları Sözleşmesi'nin mülkiyet hakkını düzenleyen 1 nolu Protokol’ün 1. maddesi göz önünde bulundurulmalıdır.",
+    "sorumularDevamParagraph5": "Bu süreçte yaşananlar, mülkiyet haklarının sistematik ve yaygın bir şekilde ihlal edildiğini göstermektedir. Ayrıca, kapatılan kurumların yöneticileri ve çalışanları adli süreçlere maruz kalmış ve adaletin sağlanması konusunda ciddi endişeler ortaya çıkmıştır.",
+    "sorumularDevamParagraph6": "Türk yargısı ve AYM, KHK ile mağdur edilenlerin başvurularını reddetmiş, ancak daha sonra bu davaların AİHM önüne taşınması ve ihlal kararlarının çıkacağının anlaşılması ile 7075 sayılı Kanunla 2018 yılında Olağanüstü Hal İşlemleri İnceleme Komisyonu kurularak ihraçlar ve kapatmalara karşı bir başvuru yolu açılmıştır. Fakat 7075 sayılı Kanun KHK’larda yer alan ilave tedbirlere karşı başvuru yollarının kapalılığı durumu devam ettirmiştir. Etkili bir denetim organı olarak görev yapmaktan çok uzak olan Komisyon, başvuruların %86'sını reddedirken ancak %14'ü kabul edilmiştir.",
+    "kapatilanKurumlarMethodologyHeader": "Metodoloji",
+    "kapatilanKurumlarMethodologyText": "Bu sayfada yer alan veriler, Resmi Gazete'de yayınlanan Kanun Hükmünde Kararnameler (KHK) ve kurumların web sitelerinde paylaşılan listelerden toplanarak derlenmiştir. Kurumların yapıları, bulundukları iller ve kuruluş amaçları dışına çıkmalarında imzası olanlar belirlenip analiz edilmiştir.",
+    "terorData": {
+      "investigations": "Soruşturmalar",
+      "prosecutions": "Kovuşturmalar",
+      "lawSummary": "Bu tablo, TCK 309-316 maddeleri, Terörle Mücadele Kanunu (TMK), ve Terörizmin Finansmanı ile Mücadele Kanunu (TFK) kapsamında terör soruşturmalarına ilişkin kararları özetlemektedir. Bu veriler, TCK 309-316 maddeleri kapsamında yapılan soruşturmaların sayısının çok yüksek olduğunu ve bu suçlarla ilgili davaların sıkça açıldığını ancak önemli bir kısmında kovuşturma için yeterli gerekçe olmadığını göstermektedir.",
+      "generalCasesExplanation": "Bu tablolar, Türkiye'deki Terörle Mücadele Kanunu (TMK) ve Türk Ceza Kanunu (TCK) altında yargılanan davaların sonuçlarını göstermektedir.",
+      "genderCasesExplanation": "Bu veriler, yasaların suistimal edilebileceği iddialarını göz önüne alarak incelendiğinde önemli içgörüler sunmaktadır.",
+      "tckArticle314": "TCK Madde 314 - Kovuşturma",
+      "children": "Çocuklar"
+    },
+    "terorDatab": {
+      "girisTitle": "Türkiye'de Anti-Terör Yasalarının Suistimali: Hukuki ve İnsan Hakları Boyutları",
+      "girisDescription": "Türkiye'de terörle mücadele yasalarının suistimali, son yıllarda önemli bir endişe kaynağı haline gelmiştir. Terör yasası her zaman eleştiri konusu olmuş ve öngörülemez olmasından kaynaklı mağduriyetler ciddi sorun olmuştur. 15 Temmuz 2016 ardından ise terör yasalarının uygulanmasında belirgin bir artış gözlemlenmiştir. Terör suçlamasının ‘silah’ olarak kullanılması hukukun üstünlüğü ve insan hakları açısından ciddi sorunlar doğurmuştur."
+    },
+    "typewriterText": {
+      "since2015": "2015’den bugüne toplam ",
+      "peopleInvestigated": " kişi hakkında soruşturma açılmış, bunlardan ",
+      "peopleSued": " kişi hakkında kamu davası açılmış, ",
+      "peopleConvicted": " kişi hakkında ise mahkumiyet kararı alınmıştır. Mahkumiyet kararı verilenlerden ",
+      "peopleUnder18": " kişi 18 yaşının altındadır."
+    },
+    "accordionc": {
+      "header1": "Anti-Terör Mevzuatı ve Uygulamadaki Belirsizlikler",
+      "body1": {
+        "paragraph1": "Türkiye'deki terörle mücadele mevzuatı, esas olarak 5237 sayılı Türk Ceza Kanunu (TCK) ve 3713 sayılı Terörle Mücadele Kanunu'ndan (TMK) oluşmaktadır. TCK’nın 314. maddesi, silahlı terör örgütü kurmayı ve yönetmeyi (314/1) ve silahlı örgüte üye olmayı (314/2) suç saymaktadır. Bu suçlar, 7,5 yıldan 22,5 yıla kadar hapis cezası ile cezalandırılmaktadır. Ancak, bu maddelerin tanımlarındaki belirsizlikler, keyfi uygulamalara ve suistimallere açık kapı bırakmaktadır.",
+        "paragraph2": "TCK 314. madde, silahlı terör örgütü ve üyelik suçunu tanımlarken, örgüt ve üyelik kavramlarının ne olduğu konusunda net bir açıklama getirmemektedir. Terörle Mücadele Kanunu da öngörülemez şekilde terör tanımlaması yaparak, terör suçlamasının geniş kullanımına imkan sağlamaktadır. Bu belirsizlik ve öngörülemezlik, savcılar ve hakimler tarafından geniş yorumlamalara ve muhaliflerin hedef alınmasına neden olmaktadır."
+      },
+      "header2": "AİHM Kararları",
+      "body2": {
+        "paragraph1": "Türkiye'nin anti-terör yasalarının geniş ve belirsiz tanımlamaları, uluslararası düzeyde ciddi eleştirilere neden olmuştur. Birleşmiş Milletler, Avrupa Konseyi ve Avrupa Birliği, Türkiye’yi bu yasaların insan haklarına uygun hale getirilmesi konusunda defalarca uyarmıştır.",
+        "paragraph2": "Avrupa İnsan Hakları Mahkemesi (AİHM), Türkiye’nin 15 Temmuz 2016’da sonrasi başlattığı operasyonlar kapsamında birçok davada, tutuklamaların hukuka aykırı olduğunu ve yeterli delil bulunmadığını tespit etmiştir. Örneğin, Acar ve Diğerleri v. Türkiye davasında, başvurucuların ByLock kullanımı gerekçe gösterilerek tutuklanmalarının hukuki olmadığına karar verilmiştir. Nazlı Ilıcak v. Türkiye davasında ise, gazetecinin Gülen bağlantılı medya kuruluşlarında çalışmasının suç olarak kabul edilemeyeceği vurgulanmıştır.",
+        "paragraph3": "Taner Kılıç v. Türkiye davasında, AİHM, Amnesty International Türkiye şubesinin eski başkanı olan avukatın ByLock uygulamasını indirmesinin tek başına terör örgütü üyeliği suçlaması için yeterli delil teşkil edemeyeceğine hükmetmiştir. Mahkeme, diğer davalarda da olduğu gibi, tutuklamaların hukuka aykırı ve keyfi olduğunu belirlemiştir.",
+        "paragraph4": "Avrupa İnsan Hakları Mahkemesi (AİHM), Türkiye’nin terörle mücadele uygulamalarını defalarca eleştirmiş ve birçok kararında Türkiye'yi mahkum etmiştir. AİHM, özellikle darbe girişimi sonrasında yapılan toplu tutuklamalar ve yargılamalar konusunda ciddi endişeler dile getirmiştir. Örneğin, Yasin Özdemir v. Türkiye davasında, AİHM, başvurucunun sosyal medya paylaşımlarının terör propagandası olarak nitelendirilemeyeceğine karar vermiştir. Bu karar, Türkiye'deki ifade özgürlüğü ihlallerine karşı önemli bir uyarı niteliğindedir.",
+        "paragraph5": "AİHM Büyük Dairesi tarafından 26 Eylül 2023 tarihinde verilen Yüksel Yalçınkaya kararında, kanunsuz suç ve ceza olmaz ilkesinin ihlal edildiği belirtilerek mahkeme önünde bekleyen 8.000’in üzerinde dosyanın ve Türkiye’de iç hukuk aşamasında olan 100.000’in üzerinde dosyanın aynı ihlalleri taşıdığını belirterek terör suçlamasından kaynaklı sistematik bir sorun olduğunu belirtmiştir."
+      },
+      "header3": "2016 Sonrası Durum ve Uygulamadaki Sorunlar",
+      "body3": {
+        "paragraph1": "2016 ardından, Türkiye’de terörle mücadele yasalarının uygulanmasında ciddi bir artış yaşanmıştır. DEVA Partisi Genel Başkanı Ali Babacan, 2016-2020 yılları arasında 1,5 milyon insanın silahlı terör örgütü suçlamasıyla soruşturulduğunu belirtmiştir. Bu sayı 2024 itibariyle 2 milyonu aşmıştır. Bu, Türkiye'nin terörle mücadele stratejisinin ne kadar geniş kapsamlı ve keyfi bir şekilde uygulandığını göstermektedir.",
+        "paragraph2": "15 Temmuz’dan sonra, terörle mücadele yasalarının uygulanması, terör örgütü üyelerinden ziyade, hükümete muhalif olan ve anayasal haklarını kullanan vatandaşları hedef almıştır. Bu durum, terörle mücadeleyi sulandıran ve temel ceza hukuku prensiplerini göz ardı eden bir tablo ortaya çıkarmıştır.",
+        "paragraph3": "Türkiye'deki bu durum, sadece muhalifleri değil, aynı zamanda akademisyenleri, avukatları, gazetecileri, insan hakları savunucularını ve sivil toplum aktivistlerini de etkilemiştir. Akademisyenler Bildirisi olarak bilinen bildiriyi imzalayan birçok akademisyen, 'terör örgütü propagandası' yapmakla suçlanmış ve çeşitli cezalar almıştır.",
+        "paragraph4": "Birleşmiş Milletler Özel Raportörü Mary Lawlor, Türkiye’nin insan hakları savunucularını terör suçlamalarıyla susturmaya çalıştığını belirtmiştir. Lawlor, bu yasaların insan hakları savunucularının meşru faaliyetlerini kriminalize etmek için kullanıldığını vurgulamıştır.",
+        "paragraph5": "Ayrıca, Türkiye’de gazeteciler de bu yasalardan ciddi şekilde etkilenmektedir. Sınır Tanımayan Gazeteciler (RSF) örgütüne göre, Türkiye'de birçok gazeteci terörle mücadele yasaları kapsamında tutuklanmış veya mahkum edilmiştir. Bu durum, basın özgürlüğünü ciddi şekilde kısıtlamakta ve halkın haber alma hakkını ihlal etmektedir.",
+        "paragraph6": "Türkiye’de terörle mücadele mevzuatının geniş ve belirsiz tanımları, hukukun üstünlüğü ilkesini zedelemekte ve insan hakları ihlallerine yol açmaktadır. Özellikle, basın özgürlüğü, ifade özgürlüğü, masumiyet karinesi ve adil yargılanma hakkı bu süreçte ciddi şekilde ihlal edilmektedir."
+      },
+      "header4": "Metodoloji",
+      "body4": {
+        "paragraph1": "Bu sayfada yer alan veriler Adli Sicil İstatistik Genel Müdürlüğünden alınmıştır."
+      },
+      "header5": "Kısaltmalar ve Açıklamalar",
+      "body5": {
+        "item1": "TCK: Türk Ceza Kanunu",
+        "item2": "TMK: Terörle Mücadele Kanunu",
+        "item3": "TFK: Terörizmin Finansmanının Önlenmesi Hakkında Kanun",
+        "item4": "Kovuşturmaya yer olmadığına dair karar: Soruşturma neticesinde dava açılmayarak takipsizlik kararı verilmesi.",
+        "item5": "Kamu davası açılması kararı: Soruşturma sonucunda iddianame düzenlenerek dava açılması.",
+        "item6": "Hapis cezası kararı: Yargılama sonucunda mahkeme tarafından verilen yaptırım kararı.",
+        "item7": "Hapis cezasının ertelenmesi kararı: İki yıl ve daha az süreli hapis cezasının belirli koşullar altında ertelenmesine karar verilmesi.",
+        "item8": "Para cezası kararı: Kısa süreli hapis cezasının belirli koşullarda adli para cezasına çevrilmesi.",
+        "item9": "Güvenlik tedbiri uygulanması kararı: Hapis cezası dışında uygulanan tedbir kararları. (Müsadere, akıl hastalarına özgü tedbirler vs.)",
+        "item10": "Diğer mahkumiyet kararı: Terör kapsamında olmayıp bağlantı nedeniyle birlikte görülen suçlamalar hakkında verilen mahkumiyet kararları.",
+        "item11": "Beraat kararı: Yargılama sonucunda sanığın suçlu olmadığına dair verilen karar.",
+        "item12": "Hükmün açıklanmasının geriye bırakılması kararı (HAGB): Sanığa verilen ceza, iki yıl ve daha az süreli hapis veya adli para cezası ise belirli koşullar altında hükmün açıklanmasının 5 yıl ertelenmesi.",
+        "item13": "Mahkumiyet kararları: Yargılama sonucunda sanığın suçlu olduğuna karar verilmesi. Hapis cezası, adli para cezası, erteleme kararı, güvenlik tedbiri uygulanması, diğer mahkûmiyet kararları mahkumiyet kararlarını oluşturmaktadır."
+      }
+    },
+    "chart": {
+      "title": "Yıllara Göre Hakkında Terör Soruşturması Açılan Kişi Sayısı Grafiği",
+      "year": "Yıl",
+      "personCount": "Kişi Sayısı",
+      "value": "Değer"
+    },
+    "chartb": {
+      "kamuDavasiTitle": "Yıllara Göre Hakkında Terör Davası Açılan (kamu davası açılması kararı verilen) Kişi Sayısı Grafiği",
+      "year": "Yıl",
+      "personCount": "Kişi Sayısı",
+      "value": "Değer"
+    },
+    "chartc": {
+      "kovusturmaTitle": "Yıllara Göre Hakkında Terör Davası Açılıp Kovuşturmaya Yer Olmadığına Karar Verilen Kişi Sayısı",
+      "year": "Yıl",
+      "personCount": "Kişi Sayısı",
+      "value": "Değer"
+    },
+    "sorusturma": {
+      "aciklama1": "Adalet Bakanlığı'nın yıllık adli sicil raporlarında 2015-2021 yılları arasında Türk Ceza Kanunu'nun (TCK) 309-316 maddeleri arasındaki suçlar ayrı ayrı raporlanmıştır. Ancak 2022 yılından itibaren bu maddeler, 'Anayasal Düzene ve Bu Düzenin İşleyişine Karşı Suçlar' başlığı altında toplanarak raporlanmaya başlanmıştır.",
+      "aciklama2": "2015’den bugüne toplam {{a1Value}} karar verilmiş, bu kararlardan {{a2Value}} olanı kamu davası açılması yönünde, {{a3Value}} olanı ise kovuşturmaya yer olmadığı yönünde olmuştur. 2022'ye kadar olan dönemde her bir maddenin detayları ayrı ayrı raporlanırken, 2022'den itibaren bu maddeler topluca raporlanmıştır."
+    },
+    "kanun": {
+      "category": "Kategori",
+      "totalDecisionTitle": "Toplam karar sayısı TCK-TMK-TFK",
+      "totalCount": "Toplam Sayı"
+    },
+    "kanunb": {
+      "category": "Kategori",
+      "publicProsecutionTitle": "Kamu davası açılması kararı TCK-TMK-TFK",
+      "totalCount": "Toplam Sayı"
+    },
+    "kanunc": {
+      "category": "Kategori",
+      "nonProsecutionTitle": "Toplam kovuşturmaya yer olmadığına dair karar TCK-TMK-TFK",
+      "totalCount": "Toplam Sayı"
+    },
+    "table": {
+      "year": "Yıl",
+      "rowsPerPageText": "Satır Sayısı:",
+      "rangeSeparatorText": "ile",
+      "selectAllRowsItemText": "Tümünü Göster",
+      "totalDecisionCount": "Toplam karar sayısı TCK-TMK-TFK",
+      "loadingData": "Veri yükleniyor ..."
+    },
+    "tck": {
+      "title": "TCK Madde 314",
+      "description1": "Türkiye'deki terörle mücadele mevzuatı, esas olarak 5237 sayılı Türk Ceza Kanunu (TCK) ve 3713 sayılı Terörle Mücadele Kanunu'ndan (TMK) oluşmaktadır. TCK’nın 314. maddesi, silahlı terör örgütü kurmayı ve yönetmeyi (314/1) ve silahlı örgüte üye olmayı (314/2) suç saymaktadır. Bu suçlar, 7,5 yıldan 22,5 yıla kadar hapis cezası ile cezalandırılmaktadır.",
+      "description2": "Ayrıca, TMK'nın sağladığı bazı istisnai hükümler, güvenlik güçlerine geniş yetkiler tanımaktadır. Bunlar özellikle gözaltı sürelerinin uzatılması ve genişletilmiş arama gibi, kötüye kullanılma riski taşıyan yetkilerdir. Bu durum, adil yargılama hakkının ve diğer temel insan haklarının ihlaline yol açabilecek pratiklerin önünü açmaktadır."
+    },
+    "graph": {
+      "year": "Yıl",
+      "conviction": "Mahkumiyet",
+      "suspendedSentence": "Hükmün açıklanmasının geriye bırakılması",
+      "acquittal": "Beraat",
+      "loading": "Veri Yükleniyor...",
+      "title": "Yıllara göre kovuşturma aşaması ve karar sayısı grafiği",
+      "verdictCount": "Karar Sayısı",
+      "explanation": "2015'ten 2021'e kadar TCK 309-316 maddeleri arasındaki suçlar ayrı ayrı raporlanmış, bu da spesifik suçlara yönelik detaylı analiz yapılmasını sağlamıştır. Ancak, 2022'den itibaren bu maddeler \"Anayasal Düzene ve Bu Düzenin İşleyişine Karşı Suçlar\" başlığı altında topluca raporlanmıştır."
+    },
+    "chartss": {
+      "category": "Kategori",
+      "value": "Değer",
+      "title": "Kovuşturma Açılan Kanunların Dağılımı",
+      "totalText": "Toplamda <span style='color: red;'>{{total}}</span> kişi hakkında kamu davası açılmıştır."
+    },
+    "chartrr": {
+      "genderCategory": "Kategori",
+      "value": "Değer",
+      "men": "Erkekler",
+      "women": "Kadınlar",
+      "genderDistributionTitle": "Cinsiyetlere Göre Dağılım"
+    },
+    "tabless": {
+      "year": "Yıl",
+      "conviction": "Mahkumiyet",
+      "acquittal": "Beraat",
+      "hagb": "*HAGB",
+      "loadingData": "Veri yükleniyor ...",
+      "hagbDescription": "*Hükmün Açıklanmasının Geriye Bırakılması"
+    },
+    "chartff": {
+      "category": "Kategori",
+      "value": "Değer",
+      "acquittal": "Beraat",
+      "conviction": "Mahkumiyet",
+      "hagb": "Hükmün Açıklanmasının Geriye Bırakılması",
+      "title": "TCK md. 314 Kovuşturma Kararları"
+    },
+    "eskiKanun": {
+      "description1": "TCK 314. maddesi, Türkiye'nin terörle mücadele mevzuatının önemli bir parçasını oluşturmaktadır. Bu madde, silahlı terör örgütü kurmayı, yönetmeyi ve bu örgüte üye olmayı suç saymakta ve bu suçlara 7,5 yıldan 22,5 yıla kadar hapis cezası öngörmektedir. Ancak, maddenin tanımlarındaki belirsizlikler, geniş yorumlamalara ve potansiyel suistimallere yol açabilmektedir. Bu analiz, 2015-2021 yılları arasındaki TCK 314. madde kapsamındaki kovuşturma verilerini değerlendirmektedir.",
+      "description2": "TCK 314. maddenin tanımlarındaki belirsizlikler, savcılar ve hakimler tarafından geniş yorumlamalara yol açabilmekte ve bu durum, terörle mücadele adı altında yasa maddelerinin suistimal edilmesini kolaylaştırmaktadır. Örgüt ve üyelik kavramlarının net bir şekilde tanımlanmaması, bu suçların belirlenmesinde ve kovuşturulmasında keyfi uygulamalara açık kapı bırakmaktadır.",
+      "description3": "Bu geniş yorumlama potansiyeli, özellikle 2017 ve 2018 yıllarındaki yüksek mahkumiyet kararlarında kendini göstermektedir. 15 Temmuz 2016 ardından, hükümetin 'terörle mücadele politikası' adı altında geniş çaplı operasyonlar başlatması, TCK 314 kapsamında verilen kararların sayısında ciddi artışa yol açmıştır.",
+      "description4": "Son yıllarda Türkiye'de terörle mücadele adı altında yürütülen politikaların genç bireyler üzerindeki etkileri giderek daha fazla tartışma konusu haline gelmektedir. Özellikle 18 yaş altı bireylerin sınırları net olarak belirlenmemiş terör suçlamaları ile mahkum edilmesi, adalet sisteminin gençlere yönelik yaklaşımını sorgulatmaktadır. Aşağıdaki tablo, 18 yaş altı kadın ve erkeklere verilen çeşitli yargı kararlarını özetlemektedir. Bu kararlar, TCK 309-316 maddeleri ile Terörle Mücadele Kanunu (TMK) ve Terörle Mücadele Faaliyetleri (TFK) kapsamındaki suçlamalar üzerinden verilmiştir."
+    },
+    "tablehh": {
+      "verdict": "Karar",
+      "under18Girls": "18 yaş altı kızlar",
+      "title": "18 Yaş Altı Kızlara Yönelik Yürütülen Kovuşturma İstatistiği",
+      "loadingData": "Veri yükleniyor ..."
+    },
+    "tablegg": {
+      "verdict": "Karar",
+      "under18Boys": "18 yaş altı erkekler",
+      "titleBoys": "18 Yaş Altı Erkeklere Yönelik Yürütülen Kovuşturma İstatistiği",
+      "loadingData": "Veri yükleniyor ..."
+    },
+    "chartmm": {
+      "category": "Kategori",
+      "value": "Değer",
+      "conviction": "Mahkumiyet",
+      "acquittal": "Beraat",
+      "hagb": "Hükmün Açıklanmasının Geriye Bırakılması",
+      "childProsecutionTitle": "Çocuklara Yönelik Yürütülen Kovuşturma Kararlarının Dağılımı",
+      "totalChildrenProsecuted": "Toplamda <span style='color: red;'>{{total}}</span> çocuk hakkında kamu davası açılmıştır."
+    },
+    "cocuk": {
+      "description1": "2015-2021 yılları arasında 18 yaş altı bireyler için verilen toplam mahkumiyet kararı sayısı 1,755'tir. Bu sayı, devletin terörle mücadele politikalarının genç bireyleri de hedef aldığını göstermektedir. TCK 309-316 maddeleri gibi terörle mücadele yasalarının belirsiz tanımlamaları, genç bireylerin geniş yorumlamalarla suçlanmasına ve mahkum edilmesine yol açmaktadır. Bu durum, adalet sisteminde keyfi uygulamalara açık kapı bırakmakta ve gençlerin adil yargılanma haklarını zedelemektedir.",
+      "description2": "TFK ve TMK kapsamındaki suçlamalar da benzer belirsizlikler ve geniş yorumlama potansiyeli taşımaktadır, bu da gençlerin suçlama ve mahkumiyet oranlarını artırmaktadır. Devletin terörle mücadele politikaları, sınırları belli olmayan suç tanımları ile genç bireyleri hedef alarak onları adalet sistemine dahil etmektedir. Bu politikaların sonucunda, gençler suçlamalarla yüzleşmekte ve mahkumiyet kararlarıyla karşı karşıya kalmaktadır."
+    },
+    "filterText": "Arama bölümünü verileri filtrelemek için kullanılabilirsiniz.",
+    "noData": "Veri yükleniyor ...",
+    "readMore": "Daha fazla oku",
+    "readLess": "Daha az göster",
+    "searchPlaceholder": "Yazınız...",
+    "rowsPerPageText": "Satır Sayısı:",
+    "rangeSeparatorText": "ile",
+    "selectAllRowsItemText": "Tümünü Göster",
+    "yargi": {
+      "baslik": "Türkiye'de Yargı Bağımsızlığı ve Tarafsızlığı Sorunu",
+      "paragraf1": "Yargı bağımsızlığı, yargının çevresel etkilere karşı korunmasını yani ‘uygunsuz’ müdahalelerden korunmasını ifade ederken, tarafsızlık ise yargı mensubunun peşin hükümlerden, ideolojik eğilimlerden kurtulmasını anlatır.",
+      "paragraf2": "İnsan hak ve özgürlüklerinin temel koruyucusu bağımsız yargıdır. Çünkü bağımsız olmayan bir yargı gerçek anlamda bir yargı olamaz ve adaleti sağlayamaz. Bu özellikten yoksun bir yargı başka güçlerin tahakkümü altındadır. Yargı bağımsız, güvenceli ve tarafsız değilse demokrasi içi boş bir kavram haline gelir. Yargı bağımsızlığı, yargının yasama, yürütme, sivil toplum, medya, kamuoyu, siyasi partiler ve bir davanın tarafları gibi diğer kişi ve kurumların etkisinde kalmadan adalet dağıtabilmesi anlamına gelir.",
+      "paragraf3": "Yargının bağımsızlığı, yasaların anayasaya uygunluğunun ve idarenin hukuka bağlılığının denetlenmesinde son derece önemlidir. Yargı ancak bağımsız ve tarafsız olduğu takdirde topluma karşı sorumluluklarını açık ve tartışmasız bir şekilde yerine getirebilir. Adalet, bağımsız bir yargı ile sağlanır.",
+      "paragraf4": "Türkiye’de 15 Temmuz 2016 öncesinde toplam 14.729 hakim ve savcı görev yapmaktaydı. Bu hakim ve savcılardan 4.384’ü savunmaları alınmadan Hakimler ve Savcılar (Yüksek) Kurulu karalarıyla ihraç edilmiştir. 2023 sonu itibariyle toplam hakim savcı sayısı 23.923 olmuştur. 15 Temmuz sürecinden sonra 14.000 civarında hakim ve savcı ataması iktidar tarafından yapılmıştır. Yeni göreve atanan hakimlerden bazılarının AKP siyasi teşkilatlarında görev yapmış kişiler olması atamaların liyakate göre değil ideolojik önceliklere göre yapıldığı eleştirilerini gündeme getirmiştir.",
+      "paragraf5": "\"Türkiye'de Yargının Bağımsızlığı ve Tarafsızlığı\" başlığı altında hazırlanan bu zaman çizelgesinde, 2014 yılından bu yana yargının bağımsızlığını ve tarafsızlığını yitirerek iktidara bağımlı bir yapıya dönüşmesini ve bazı hakimlerin tarafsızlığa aykırı olarak ideolojik saiklerle hareket ettiğini kronolojik olarak gösterilmektedir. 2014 yılı öncesinde de yargının bağımsızlığı ve tarafsızlığı tartışma konusuydu. 2014 yılından itibaren yaşanan gelişmeler konuyu tartışılmaz bir hale getirdiği için zaman çizelgesi 2014 yılından başlatılmıştır.",
+      "zamanCizelgesi": "Zaman Çizelgesinde veriler 7 ayrı başlık altında toplanmıştır:",
+      "madde1": "- Yürütmenin yargıya müdahalesi,",
+      "madde2": "- Yasamanın yargıya müdahalesi,",
+      "madde3": "- HS(Y)K’nın yürütmenin etkisiyle verdiği kararlar,",
+      "madde4": "- Hakim/Savcıların görev yerlerinin değiştirilmesi,",
+      "madde5": "- Yürütmenin yargı kararlarını eleştirmesi,",
+      "madde6": "- Hakim/Savcıların iktidar yanlısı açıklamaları,",
+      "madde7": "- Uzmanların eleştirileri.",
+      "accordionTitle": "Yargıya Müdahale Süreçleri",
+      "accordion1Title": "OHAL Döneminde Yargıya Müdahale",
+      "accordion1Text1": "HSYK'nın yargı mensuplarını görevden alma ve yer değiştirme uygulamaları...",
+      "accordion1Text2": "Özellikle OHAL dönemi ve sonrasında yapılan operasyonlar...",
+      "accordion1Text3": "Avrupa Birliği'nin 2020 Türkiye Raporu'nda...",
+      "accordion1Text4": "Anayasa Mahkemesi ve Avrupa İnsan Hakları Mahkemesi kararlarının uygulanmaması...",
+      "accordion1Text5": "2020 yılında Türkiye'den AİHM'e yapılan başvuru sayısının...",
+      "accordion1Text6": "Türkiye'de yargı bağımsızlığı ve tarafsızlığının sağlanması...",
+      "accordion2Title": "Yeni Düzen",
+      "accordion2Text1": "Türkiye'de yasama, yürütme ve yargı erklerinin birbirinden bağımsız olması...",
+      "accordion2Text2": "Cumhurbaşkanlığı Hükümet Sistemi'ne geçişle birlikte...",
+      "accordion2Text3": "2017 yılında HSK tarafından aralarında Yargıçlar Sendikası üyelerinin...",
+      "accordion2Text4": "Yargı mensuplarının iktidar yanlısı ve keyfi kararlar aldığına dair...",
+      "accordion2Text5": "Son dönemde, Gezi Parkı, Osman Kavala, Selahattin Demirtaş...",
+      "accordion2Text6": "Türkiye'de yargı bağımsızlığının zedelenmesi...",
+      "accordion2Text7": "Türkiye'nin, demokratik değerleri ve hukukun üstünlüğünü..."  
+    },
+      "export_data": "İhraç Dataları",
+      "iframe_title0": "Looker Studio Raporu: Kitlesel Gözaltı Serüveni",
+      "map_title12": "Olay Haritası: 2016'dan günümüze hukuka aykırı sınır dışı edilmeler ve reddedilen iade talepleri",
+      "search_instruction": "Arama bölümünü verileri filtrelemek için kullanabilirsiniz.",
+        "iskence_intro_1": "1980 darbesi sonrasında Türkiye’de işkence yaygın bir şekilde kullanılmaya başlandı. Özellikle 1990’larda, Uluslararası Af Örgütü (AİÖK) ve Birleşmiş Milletler (BM) Komitesi tarafından yayınlanan raporlar, polis ve güvenlik güçlerinin sistematik olarak işkenceye başvurduğunu belgeledi. Bu dönemde, özellikle Güneydoğu Anadolu Bölgesi’nde terörle mücadele adı altında birçok kişi işkenceye maruz kaldı.",
+        "iskence_intro_2": "2000'li yılların başında, Recep Tayyip Erdoğan hükümeti tarafından işkenceye karşı 'sıfır tolerans' politikası ilan edildi. Uluslararası kuruluşlar, bu dönemde Türkiye’deki işkence vakalarının sayısında bir azalma olduğunu ve işkence yöntemlerinin daha az şiddet içerdiğini rapor etti. Ancak bu olumlu gelişmeler, özellikle 2016'daki başarısız darbe girişiminden sonra ciddi bir gerileme yaşadı.",
+        "iskence_summary_1": "15 Temmuz 2016 ardından, Gülen hareketi üyelerine yönelik baskı ve işkence iddiaları arttı. OHAL sürecinde ve sonrasında birçok Gülen hareketi mensubu, terör suçlamasıyla gözaltına alındı ve bu süreçte ciddi işkence vakaları rapor edildi. Gözaltındaki bireyler, polis ve jandarma tarafından fiziksel kötü muameleye maruz kaldıklarını, aşırı güç kullanımıyla karşılaştıklarını ve itiraf almak amacıyla işkence gördüklerini belirttiler.",
+        "iskence_summary_2": "Bu işkence iddiaları, sadece bireysel polis memurlarının anlık tepkileri olarak değerlendirilmemelidir. Aksine, bu durum, güvenlik güçleri içinde düzenlenmiş ve sistematik hale gelmiş bir uygulamayı göstermektedir. İşkenceye maruz kalanlar arasında yalnızca Gülen hareketi üyeleri değil, aynı zamanda Kürtler, sol görüşlü aktivistler ve diğer muhalif gruplar da bulunmaktadır.",
+        "iskence_summary_3": "Türkiye'de işkence ve kötü muamele uygulamalarının sistematik olduğu, uluslararası insan hakları kuruluşları tarafından da vurgulanmaktadır. Avrupa Konseyi'ne bağlı İşkence ve Kötü Muameleyi Önleme Komitesi (CPT), 2019 yılında Türkiye'deki cezaevleri ve polis merkezlerinde yaptığı denetimlerde, gözaltındaki bireylere karşı aşırı güç kullanımı ve kötü muamele vakalarına rastlamıştır.",
+        "solidarity_survey_summary": "Haziran 2020'de Solidarity With Others Derneği tarafından yapılan ve 938 kişinin katıldığı 'Türkiye’de Nezarethanelerde ve Cezaevlerinde Sistematik İşkencenin Tespitine Dair' ankette elde edilen bulgular, Türkiye'deki gözaltı ve cezaevi süreçlerindeki işkencenin sistematik olduğunu göstermektedir. Katılımcıların %83'ü gözaltında işkence ve kötü muamele gördüğünü ifade etmiştir.",
+        "torture_methods_title": "İşkence Yöntemleri ve Koşullar",
+        "torture_methods_summary": "Ankete katılanlar arasında en sık karşılaşılan işkence yöntemleri arasında fiziksel şiddet (dayak), tehdit, çıplak arama, uyutmama, yemek ve su verilmemesi gibi yöntemler öne çıkmaktadır.",
+        "prison_torture_summary": "Cezaevlerinde de benzer şekilde kötü muamele ve işkence yaygın olarak rapor edilmiştir. Katılımcıların %36,5'i cezaevlerinde işkence veya kötü muameleye maruz kaldıklarını belirtmiştir.",
+        "complaints_legal_processes_summary": "İşkenceye maruz kalanların çoğunluğu (%87) herhangi bir şikayette bulunmamıştır. Şikayetçi olmamalarının başlıca nedenleri arasında işkencecilerin korunacağını düşünmeleri (%43,5), başlarına daha kötü şeyler gelmesinden korkmaları (%36,5) ve aile üyelerine zarar verilmesinden endişe etmeleri (%26,2) yer almaktadır.",
+        "govt_response_title": "İşkence İddialarına Karşı Hükümetin Tutumu",
+        "govt_response_summary": "Türk hükümeti, işkence iddialarını sistematik olarak reddetmektedir. Resmi makamlar, işkence şikayetlerinde bulunan kişilerin genellikle rejime muhalif olduklarını ve bu nedenle yanlış bilgi yaymakta çıkarları olduğunu iddia etmektedir.",
+        "govt_response_additional": "Son yıllarda, işkence vakalarının sayısı artmaya devam ederken, bu suçların cezasız kalması Türkiye’de işkencenin yaygınlaşmasındaki en büyük nedenlerden biri olarak öne çıkmaktadır.",
+        "intl_organizations_findings_title": "Uluslararası Kuruluşların Bulguları",
+        "intl_organizations_findings_summary": "Avrupa İşkence ve Kötü Muameleyi Önleme Komitesi (CPT), Türkiye'de gerçekleştirdiği ziyaretler ve hazırladığı raporlarla, ülkedeki işkence ve kötü muamele vakalarına dikkat çekmiştir.",
+        "intl_organizations_findings_details": "CPT'nin 2017 yılında Türkiye'de gerçekleştirdiği ziyaret sırasında, gözaltına alınan kişilerden, özellikle İstanbul ve Güneydoğu bölgelerinde, polis ve jandarma tarafından fiziksel kötü muamele gördüklerine dair önemli sayıda suçlama almıştır.",
+        "intl_organizations_findings_medical": "CPT, tıbbi kontrollerin genellikle kolluk kuvvetlerinin nezaretinde yapıldığını, bu durumun da işkence ve kötü muamele vakalarının etkin bir şekilde belgelenmesini engellediğini belirtmiştir.",
+        "un_committee_report": "2024 yılında Birleşmiş Milletler (BM) İşkenceye Karşı Komite (CAT) tarafından yayınlanan Türkiye'ye yönelik beşinci periyodik raporu, Türkiye'deki işkence iddialarını ve özellikle güvenlik güçleri tarafından gerçekleştirilen kötü muamele ve işkence vakalarını ele almaktadır.",
+        "un_report_link": "yayınlanan Türkiye'ye yönelik beşinci periyodik raporu",
+        "report_additional_findings": "Raporda, güvenlik güçleri tarafından gözaltına alınan kişilere yönelik dayak, cinsel saldırı, elektrik şoku ve suyla işkence gibi yöntemlerin kullanıldığı iddiaları yer almakta ve bu iddiaların bağımsız ve etkin bir şekilde soruşturulması gerektiği vurgulanmaktadır.",
+        "anti_terror_laws_summary": "Terörle mücadele yasalarının, temel yasal güvenceleri zayıflattığı ve işkence gibi kötü muamelelerin soruşturulmasını engellediği belirtilmektedir.",
+        "european_council_title": "Avrupa Konseyi Parlamenterler Meclisi'nin (AKPM) Değerlendirmeleri",
+        "european_council_summary": "AKPM, Türkiye'deki işkence ve kötü muamele vakalarının son yıllarda arttığını ve bu durumun geçmişte kaydedilen ilerlemeleri gölgelediğini belirtmiştir.",
+          "torture_allegations_1": "Bu işkence iddiaları, sadece bireysel polis memurlarının anlık tepkileri olarak değerlendirilmemelidir. Aksine, bu durum, güvenlik güçleri içinde düzenlenmiş ve sistematik hale gelmiş bir uygulamayı göstermektedir. İşkenceye maruz kalanlar arasında yalnızca Gülen hareketi üyeleri değil, aynı zamanda Kürtler, sol görüşlü aktivistler ve diğer muhalif gruplar da bulunmaktadır. İnsan Hakları Derneği’nin (İHD) 2013-2018 dönemine ilişkin raporlarına göre, yıllık ortalama 2,063 işkence şikayeti alınmıştır. Ancak bu rakamlar, Türkiye genelindeki tüm işkence vakalarını kapsamamakta ve gerçek sayının çok daha yüksek olabileceği tahmin edilmektedir.",
+          "torture_systematic_1": "Türkiye'de işkence ve kötü muamele uygulamalarının sistematik olduğu, uluslararası insan hakları kuruluşları tarafından da vurgulanmaktadır. Avrupa Konseyi'ne bağlı İşkence ve Kötü Muameleyi Önleme Komitesi (CPT), 2019 yılında Türkiye'deki cezaevleri ve polis merkezlerinde yaptığı denetimlerde, gözaltındaki bireylere karşı aşırı güç kullanımı ve kötü muamele vakalarına rastlamıştır. Bu bulgular, Türkiye’deki işkence uygulamalarının uluslararası standartlardan ne kadar uzak olduğunu göstermektedir.",
+            "solidarity_survey_title": "Solidarity With Others Derneği'nin Anketine Göre İşkence Bulguları",
+            "solidarity_survey_text": "Haziran 2020'de Solidarity With Others Derneği tarafından yapılan ve 938 kişinin katıldığı “Türkiye’de Nezarethanelerde ve Cezaevlerinde Sistematik İşkencenin Tespitine Dair” ankette elde edilen bulgular, Türkiye'deki gözaltı ve cezaevi süreçlerindeki işkencenin sistematik olduğunu göstermektedir. Katılımcıların %83'ü gözaltında işkence ve kötü muamele gördüğünü ifade etmiştir. Buna karşın, mağdurların %87’si herhangi bir şikayette bulunmadığını, %96’sı ise işkence ve kötü muameleye dair herhangi bir tıbbi rapor almadığını belirtmiştir. Bu bulgular, işkence mağdurlarının adalete erişim konusundaki yetersizliklerini ve korkularını gözler önüne sermektedir​.",
+              "torture_methods_conditions_title": "İşkence Yöntemleri ve Koşullar",
+              "torture_methods_conditions_text": "Ankete katılanlar arasında en sık karşılaşılan işkence yöntemleri arasında fiziksel şiddet (dayak), tehdit, çıplak arama, uyutmama, yemek ve su verilmemesi gibi yöntemler öne çıkmaktadır. Katılımcıların %61,6’sı çıplak aramaya maruz kaldığını belirtmiştir. Ayrıca, %53,5'i fiziksel şiddet gördüğünü, %46,4’ü ise uyutulmadığını ifade etmiştir. Diğer yaygın işkence yöntemleri arasında yüksek ışık ve sese maruz bırakılma, tuvalete çıkartılmama ve sürekli tehdit edilme yer almaktadır.",
+              "prison_torture_title": "Cezaevlerinde İşkence ve Kötü Muamele",
+              "prison_torture_text": "Cezaevlerinde de benzer şekilde kötü muamele ve işkence yaygın olarak rapor edilmiştir. Katılımcıların %36,5'i cezaevlerinde işkence veya kötü muameleye maruz kaldıklarını belirtmiştir. Cezaevlerinde en yaygın kötü muamele türleri arasında hakaret (%28,5), tehdit (%16), su ve yemek verilmemesi, çıplak arama gibi uygulamalar bulunmaktadır​. Bu veriler, hem gözaltı hem de cezaevi aşamasında işkence ve kötü muamelenin devam ettiğini ve bu durumun sistematik bir şekilde uygulandığını ortaya koymaktadır.",
+
+                "complaints_legal_processes_title": "Şikayet ve Hukuki Süreçler",
+                "complaints_legal_processes_text": "İşkenceye maruz kalanların çoğunluğu (%87) herhangi bir şikayette bulunmamıştır. Şikayetçi olmamalarının başlıca nedenleri arasında işkencecilerin korunacağını düşünmeleri (%43,5), başlarına daha kötü şeyler gelmesinden korkmaları (%36,5) ve aile üyelerine zarar verilmesinden endişe etmeleri (%26,2) yer almaktadır. İşkence mağdurları, yargı ve kolluk kuvvetlerinin bu süreçlerde mağdurları koruma görevini yerine getirmediğini düşünmektedir.",
+                "government_attitude_toward_torture_title": "İşkence İddialarına Karşı Hükümetin Tutumu",
+                "government_attitude_toward_torture_text_1": "Türk hükümeti, işkence iddialarını sistematik olarak reddetmektedir. Resmi makamlar, işkence şikayetlerinde bulunan kişilerin genellikle rejime muhalif olduklarını ve bu nedenle yanlış bilgi yaymakta çıkarları olduğunu iddia etmektedir. Ayrıca, tıbbi delil eksikliği ve mahkemelerin nadiren mahkumiyet kararı vermesi, hükümetin bu iddiaları reddetmesinde dayanak olarak kullanılmaktadır.",
+                "government_attitude_toward_torture_text_2": "Son yıllarda, işkence vakalarının sayısı artmaya devam ederken, bu suçların cezasız kalması Türkiye’de işkencenin yaygınlaşmasındaki en büyük nedenlerden biri olarak öne çıkmaktadır. İşkenceyle suçlanan kamu görevlileri nadiren yargılanmakta, yargılananların ise büyük çoğunluğu ceza almamaktadır. Bu durum, işkencenin güvenlik güçleri içinde tolere edildiğini ve cezasızlık kültürünün işkenceyi teşvik ettiğini göstermektedir.",
+       
+       
+                  "internationalOrganizationsFindings": "Uluslararası Kuruluşların Bulguları",
+                  "paragraph1": "Avrupa İşkence ve Kötü Muameleyi Önleme Komitesi (CPT), Türkiye'de <0>gerçekleştirdiği ziyaretler ve hazırladığı raporlarla</0>, ülkedeki işkence ve kötü muamele vakalarına dikkat çekmiştir. CPT'nin 2017 yılında Türkiye'de gerçekleştirdiği ziyaret sırasında, gözaltına alınan kişilerden, özellikle İstanbul ve Güneydoğu bölgelerinde, polis ve jandarma tarafından fiziksel kötü muamele gördüklerine dair önemli sayıda suçlama almıştır. Raporda, gözaltı sırasında veya hemen sonrasında aşırı güç kullanımı, dayak ve cinsel aşağılanma gibi vakalar ayrıntılı bir şekilde belgelenmiştir.",
+                  "paragraph2": "Bunun yanı sıra, CPT, tıbbi kontrollerin genellikle kolluk kuvvetlerinin nezaretinde yapıldığını, bu durumun da işkence ve kötü muamele vakalarının etkin bir şekilde belgelenmesini engellediğini belirtmiştir. Ayrıca, bazı tutukluların doktorlara kötü muamele hakkında şikayette bulunmaktan korktukları, polis memurlarının doktorlara baskı uygulayarak yaralanmaları kaydetmemelerini sağladıkları ve bazı durumlarda tutukluların hiç doktora gösterilmeden hastane raporları alındığı gibi ciddi iddialar raporda yer almaktadır.",
+                  "paragraph3": "2024 yılında Birleşmiş Milletler (BM) İşkenceye Karşı Komite (CAT) tarafından <0>yayınlanan Türkiye'ye yönelik beşinci periyodik raporu</0>, Türkiye'deki işkence iddialarını ve özellikle güvenlik güçleri tarafından gerçekleştirilen kötü muamele ve işkence vakalarını ele almaktadır. Raporda, Türkiye'de gözaltı merkezlerinde ve cezaevlerinde yaygın olarak işkence ve kötü muamele yapıldığı iddiaları yer almaktadır. Özellikle 2016 sonrası artan işkence iddiaları, 2023'teki deprem sonrasında da tekrar gündeme gelmiştir.",
+              
+                    "paragraph4": "Raporda, güvenlik güçleri tarafından gözaltına alınan kişilere yönelik dayak, cinsel saldırı, elektrik şoku ve suyla işkence gibi yöntemlerin kullanıldığı iddiaları yer almakta ve bu iddiaların bağımsız ve etkin bir şekilde soruşturulması gerektiği vurgulanmaktadır. Komite, Türkiye'ye bu tür iddiaların üzerine gitmesi ve sorumluların adil bir şekilde yargılanması gerektiğini tavsiye etmektedir.",
+                    "paragraph5": "Ayrıca, terörle mücadele yasalarının, temel yasal güvenceleri zayıflattığı ve işkence gibi kötü muamelelerin soruşturulmasını engellediği belirtilmektedir. Bu nedenle, Türkiye'nin terörle mücadele yasalarını gözden geçirmesi ve uluslararası insan hakları standartlarına uygun hale getirmesi gerektiği ifade edilmektedir.",
+                    "assessmentOfPACE": "Avrupa Konseyi Parlamenterler Meclisi'nin (AKPM) Değerlendirmeleri",
+                    "paragraph6": "AKPM, Türkiye'deki işkence ve kötü muamele vakalarının son yıllarda arttığını ve bu durumun geçmişte kaydedilen ilerlemeleri gölgelediğini belirtmiştir. Özellikle tutuklama, gözaltı, sorgulama ve barışçıl gösterilerin dağıtılması esnasında güvenlik güçlerinin uyguladığı işkence ve kötü muamele vakalarının, AİHM gündemine taşınan davalarla doğrulandığı vurgulanmıştır.",
+
+              
+                      "titlei": "Türkiye'de İşkence Gerçeği",
+                      "paragraph1i": "Türkiye'de işkence ve kötü muamele, hem kolluk kuvvetlerinin gözaltı süreçlerinde hem de cezaevlerinde uzun yıllardır süregelen ciddi bir insan hakları ihlali olarak karşımıza çıkmaktadır. Avrupa İnsan Hakları Mahkemesi’nin (AİHM) resmi istatistiklerine göre, Türkiye, Rusya’dan sonra Avrupa İnsan Hakları Sözleşmesi'nin (AİHS) 3. maddesinin ihlal edildiği en çok karara sahip ikinci ülke konumundadır. 1991’den Mayıs 2020’ye kadar AİHS’nin 3. maddesine ilişkin olarak Türkiye hakkında karara bağlanan 620 davadan 441’inde ihlal tespit edilmiştir; bu da işkence ve kötü muamele vakalarının yaygınlığını açıkça gözler önüne sermektedir.",
+                      "paragraph2i": "2014’de gerçekleşen 1 vaka haricinde 2016’dan bugüne kadar Gülen Hareket’i ile iltisaklı olmak sebebiyle en az <span>{{a5Value}}</span> vakada <span>{{a6Value}}</span> kişinin işkence mağduru olduğu kayıtlara geçmiştir. Ancak realitede işkence mağduru sayısının çok daha fazla olduğu tahmin edilmektedir.",
+                      "gender": "Cinsiyet",
+                      "numberOfVictims": "Mağdur Sayısı",
+                      "loadingData": "Veri yükleniyor ...",
+                      "methodologyi": "Metodoloji",
+                      "methodologyParagraph1": "Bu sayfada yer alan veriler, açık kaynaklar üzerinde kapsamlı bir inceleme yapılarak derlenmiş, vefat eden bireylerin cinsiyetleri, meslek grupları ve vefat yılları göz önüne alınarak incelenmiş, vefat etme sebepleri kategorize edilerek analiz edilmiştir.",
+                      "methodologyParagraph2": "Yayınlanan bilgiler açık kaynaklardan elde edilen verilere dayandığı için kayıpların tamamını yansıtmamaktadır. Açık kaynaklarda yer almayan ölümlerin de olduğu göz önünde bulundurulmalıdır.",
+                      "numberOfPeople": "Kişi Sayısı",
+                      "chartTitle": "İşkencelerin yapıldığı yıllara göre dağılımı",
+                      "judiciary": "Adliye",
+                      "military": "Askeriye",
+                      "police": "Polis",
+                      "prisons": "Cezaevleri",
+                      "detention": "Gözaltı",
+                      "otherInstitutions": "Diğer Kurumlar",
+                      "tortureLocationsTitle": "İşkencelerin Gerçekleştiği Yerler",
+                      "city": "Şehir",
+                      "searchInstruction": "Arama bölümünü verileri filtrelemek için kullanabilirsiniz.",
+                      "showLess": "Daha az göster",
+                      "profession": "Meslek",
+                      "numberOfDismissals": "İhraç Sayısı",
+                      "dismissalsByProfession": "Mesleklere Göre İhraç Tablosu",
+                      "institution": "Kurum",
+                      "dismissalsByInstitution": "Kurumlara Göre İhraç Tablosu",
+                      "violation": "Hak İhlali",
+                      "violationCount": "Hak İhlali Sayısı",
+                      "prisonViolationsTypes": "Hak İhlali Türleri",
+                      "lookerReportTitle": "Looker Studio Raporu: Kitlesel Gözaltı Serüveni",
+                        "lookerReportTitlec": "Looker Studio Raporu: Cezaevi İsimleri",
+                         "closedInstitutionsTitle": "OHAL sürecinde KHK'lar ile kapatılan Türkiye geneli kurumlar",
+                       "lookerReportTitlem": "Looker Studio Raporu: Kitlesel Gözaltı Serüveni",
+                        "lookerReportTitles": "Looker Studio Raporu: Sorumlular",
+                        "decision": "Karar",
+                        "articles_309_316": "309-316",
+                        "tfk": "TFK",
+                        "tmk": "TMK",
+                        "prosecution_graph_title": "Kovuşturma Neticesinde Verilen Kararlara ait Grafik",
+                        "prosecution_decision_statistics": "Kovuşturma Karar İstatistiği",
+                        "total": "Genel toplam",
+                        "prosecution_statistics_women": "Kadınlara Yönelik Yürütülen Kovuşturma İstatistiği",
+                        "prosecution_statistics_men": "Erkeklere Yönelik Yürütülen Kovuşturma İstatistiği",
+                        "verdict": "Karar",
+                        "under18Girls": "18 Yaş Altı Kız",
+                        "childWomenProsecutionStatistics": "Çocuk Kadınlara Yönelik Kovuşturma İstatistiği",
+                        "under18Boys": "18 Yaş Altı Erkek",
+                        "prosecutionStatisticsBoys": "Çocuk Erkeklere Yönelik Kovuşturma İstatistiği",
+                         "select_year" : "Yıl seçiniz",
+                         "reverse_order" : "Yeni tarihten eski tarihe doğru sırala",
+                         "timeline_title" : "Zaman Çizelgesi",
+                         "echr_data": "AİHM Verileri"
+
+            
+
+                    
+
+                     
+                  
+               
+                   
+               
+                 
+             
+                    
+                 
+                  
+       
+                
+                
+  
+              
+            
+          
+        
+        
+      
+      
+
+    
+  
+
+  
+  
+
+    
+
+    
+
+      
+  }
+  
