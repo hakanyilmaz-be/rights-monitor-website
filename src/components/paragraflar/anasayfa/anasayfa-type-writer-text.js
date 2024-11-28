@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import { Container } from 'react-bootstrap';
 import { motion } from 'framer-motion';
-import { useTranslation } from 'react-i18next'; // Çeviri için i18next hook'u dahil ettik
+import { useTranslation } from 'react-i18next'; 
 import axios from 'axios';
 
 const AnasayfaTypewriterText = () => {
-  const { t } = useTranslation(); // Çeviri fonksiyonunu kullanmak için hook
+  const { t, i18n } = useTranslation(); // i18n nesnesine erişim
   const [a1Value, setA1Value] = useState("");
   const [a2Value, setA2Value] = useState("");
   const [a3Value, setA3Value] = useState("");
@@ -105,11 +105,17 @@ const AnasayfaTypewriterText = () => {
     }
   }, [index, text]);
 
+  // Dil değişikliğini izleyen useEffect
+  useEffect(() => {
+    setDisplayedText(""); // Mevcut yazıyı sıfırla
+    setIndex(0); // Yazma işlemini baştan başlat
+  }, [i18n.language]); // Dil değişikliğini izler
+
   const highlightedTextVariants = {
     initial: { opacity: 0 },
     animate: {
       opacity: [0, 1, 0],
-      transition: { duration: 1.4, repeat: Infinity } // Daha yavaş animasyon için süre artırıldı
+      transition: { duration: 1.4, repeat: Infinity }
     }
   };
 

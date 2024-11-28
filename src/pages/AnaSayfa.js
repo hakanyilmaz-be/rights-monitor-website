@@ -26,6 +26,7 @@ import logo from "../assets/img/logo.png";
 import { BiMenuAltRight } from "react-icons/bi";
 import AnasayfaMenu from '../components/side-bar/anasayfa-menu'
 import { useTranslation } from 'react-i18next';
+import AnasayfaTanitim from '../components/paragraflar/anasayfa/anasayfa-tanitim';
 
 
 const AnaSayfa = () => {
@@ -132,6 +133,7 @@ const AnaSayfa = () => {
       <div className="mobile-only" style={{ height: "20px" }}></div>
 
       <Container style={{ paddingLeft: "5%", paddingRight: "5%" }}>
+   
         <TarihselAciklama />
       </Container>
       <div style={{ height: "50px" }}></div>
