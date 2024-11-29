@@ -46,7 +46,7 @@ const AnasayfaKaybetmeler = () => {
             setA6Value(data[1][4]);
           }
           if (data.length > 0) {
-            setA7Value(data[2][4]);
+            setA7Value(data[25][4]);
           }
         })
         .catch((error) => {
