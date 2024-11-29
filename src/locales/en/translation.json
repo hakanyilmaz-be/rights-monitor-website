@@ -132,15 +132,15 @@
       "linkText3": "1,112",
       "part4": "individuals were detained on allegations of being affiliated with the Gülen Movement. The UN Working Group on Arbitrary Detention in",
       "linkText4": "Opinion No. 66/2023",
-      "part5": "(Paragraph 63),",
+      "part5": " (Paragraph 63), ",
       "linkText5": "Opinion No. 3/2023",
-      "part6": "(Paragraph 85),",
+      "part6": " (Paragraph 85), ",
       "linkText6": "Opinion No. 66/2020",
-      "part7": "(Paragraph 67),",
+      "part7": " (Paragraph 67), ",
       "linkText7": "Opinion No. 67/2020",
-      "part8": "(Paragraph 96) and",
+      "part8": " (Paragraph 96) and ",
       "linkText8": "Opinion No. 84/2020",
-      "part9": "(Paragraph 76) and other international bodies have condemned Turkey's detention practices against members of the Gülen Movement as crimes against humanity."
+      "part9": " (Paragraph 76) and other international bodies have condemned Turkey's detention practices against members of the Gülen Movement as crimes against humanity."
     },
     "paragraph2": "The data on this page has been compiled through a comprehensive review of open sources and reflects only the collective detention operations reported in the media. Individual detentions, detentions made upon summons by prosecutors, and operations not covered by the media are outside the scope of this study. The actual number of detentions is far higher than the figures provided here. For example, in a statement made to Anadolu Agency in March 2019, Süleyman Soylu stated that 511,000 people had been detained since July 15, and in a speech in July 2022, he stated that 332,884 people had been detained from July 15, 2016, to June 2, 2022. The number of people detained as reported in open sources during this period is 132,760."
   },
@@ -884,7 +884,13 @@
                        "select_year" : "Select year",
                        "reverse_order": "Sort from newest date to oldest date",
                        "timeline_title" : "Timeline",
-                        "echr_data": "ECHR Data"
+                        "echr_data": "ECHR Data",
+                        "filterByCity" :"filter by City",
+                        "filterByDateRange" : "Filter by Date Range",
+                        "filterByNumber" : "filte by number",
+                        "selectCity" : "select city",
+                        "showAllCities" : "show all cities",
+                        "showAllDates" : "show all dates"
                 
 
             

@@ -884,7 +884,13 @@
                          "select_year" : "Yıl seçiniz",
                          "reverse_order" : "Yeni tarihten eski tarihe doğru sırala",
                          "timeline_title" : "Zaman Çizelgesi",
-                         "echr_data": "AİHM Verileri"
+                         "echr_data": "AİHM Verileri",
+                        "filterByCity" :"İl'e göre filtrele",
+                        "filterByDateRange" : "Tarihe göre filtrele",
+                        "filterByNumber" : "Sayıya göre filtrele",
+                        "selectCity" : "İl seçiniz",
+                        "showAllCities" : "Tüm İlleri Görüntüle",
+                        "showAllDates" : "Tüm Tarihler"
 
             
 

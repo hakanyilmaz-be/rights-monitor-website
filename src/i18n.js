@@ -1,5 +1,6 @@
 import i18n from 'i18next';
 import { initReactI18next } from 'react-i18next';
+import LanguageDetector from 'i18next-browser-languagedetector';
 import translationEN from './locales/en/translation.json';
 import translationTR from './locales/tr/translation.json';
 
@@ -13,11 +14,15 @@ const resources = {
 };
 
 i18n
+  .use(LanguageDetector)
   .use(initReactI18next)
   .init({
     resources,
-    lng: 'tr', // Varsayılan dil Türkçe
-    fallbackLng: 'tr', // Dil bulunamazsa Türkçe kullanılır
+    fallbackLng: 'tr', // Dil algılanamazsa Türkçe kullanılır
+    detection: {
+      order: ['path', 'localStorage', 'cookie', 'navigator'], // Dil algılama sırası
+      caches: ['localStorage', 'cookie'] // Algılanan dili saklama yöntemleri
+    },
     interpolation: {
       escapeValue: false // React için özel olarak escape işlemi yapılmaz
     }

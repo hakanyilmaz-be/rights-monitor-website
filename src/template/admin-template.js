@@ -14,11 +14,7 @@ const AdminTemplate = ({ children }) => {
 
   return (
     <div className="admin-template">
-     {/* {(isHomePage && isLargeScreen) && ( 
-         
-            <HamburgerMenu />
 
-        )} */}
       <Row className='admin-row'>
   
 

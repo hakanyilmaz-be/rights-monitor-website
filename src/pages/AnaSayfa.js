@@ -27,6 +27,7 @@ import { BiMenuAltRight } from "react-icons/bi";
 import AnasayfaMenu from '../components/side-bar/anasayfa-menu'
 import { useTranslation } from 'react-i18next';
 import AnasayfaTanitim from '../components/paragraflar/anasayfa/anasayfa-tanitim';
+import LanguageSwitcher from '../components/LanguageSwitcher';
 
 
 const AnaSayfa = () => {
@@ -94,10 +95,14 @@ const AnaSayfa = () => {
       <div className="image-header-container">
         <Image src={rightsMonitorImage} fluid className="centered-image" />
         <div className="homepageheader">
-          <img alt="Turkey Rights Monitor" src={logo} className="img-fluid " />
+          <img alt="Turkey Rights Monitor" src={logo} className="img-fluid"/>
           <div className='homepagemenu' onClick={toggleMenu} style={{ cursor: 'pointer' }}>
             <span style={{ fontSize: "30px" }}>{t('menu')}</span> <BiMenuAltRight />
           </div>
+          <div className='homepagelanguage' style={{ cursor: 'pointer' }}>
+             <LanguageSwitcher/>
+          </div>
+       
           <div className="homepagemenucontent">
             {showMenu && <AnasayfaMenu />}
           </div>
