@@ -16,7 +16,7 @@ const SebeplerGrafik = () => {
             try {
                 const response = await axios.get(csvUrl);
                 const parsedData = parseCSV(response.data);
-                setDataRows(parsedData.slice(18, 29)); 
+                setDataRows(parsedData.slice(18, 30)); 
             } catch (error) {
                 console.error('Error fetching CSV data:', error);
             }

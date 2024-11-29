@@ -5,11 +5,11 @@ import { useTranslation } from 'react-i18next';
 
 function YillarGrafik() {
   const { t } = useTranslation();
-  const [rawData, setRawData] = useState(null); // Ham veri
-  const [chartData, setChartData] = useState(null); // İşlenmiş grafik verisi
-  const [error, setError] = useState(null); // Hata durumu
+  const [rawData, setRawData] = useState(null); 
+  const [chartData, setChartData] = useState(null); 
+  const [error, setError] = useState(null); 
 
-  // Veri çekme işlemi sadece bileşen ilk yüklendiğinde gerçekleşir
+  
   useEffect(() => {
     const fetchCSVData = async () => {
       const csvUrl =
@@ -48,22 +48,23 @@ function YillarGrafik() {
   function formatDataForChart(data) {
     const headers = [
       t('year'),
-      t('traffic_accident'),
-      t('suspicious_death'),
-      t('court_death'),
-      t('law_enforcement_death'),
-      t('escape_death'),
-      t('work_accident'),
-      t('suicide'),
-      t('illness_death'),
+      t('july_15'), //dogru
+      t('deathonthewaytoprison'), //dogru
+      t('prison_death'), //dogru
       t('other'),
-      t('prison_death'),
-      t('july_15')
+      t('illness_death'), //dogru
+      t('suicide'), //dogru
+      t('work_accident'), //dogru
+      t('escape_death'), //dogru
+      t('law_enforcement_death'), //dogru
+      t('court_death'),//dogru
+      t('suspicious_death'),
+      t('traffic_accident')//dogru
     ];
 
     const formattedData = [headers];
 
-    for (let i = 4; i <= 12; i++) {
+    for (let i = 4; i <= 13; i++) {
       if (data[i]) {
         formattedData.push([
           data[i][0],
@@ -99,7 +100,8 @@ function YillarGrafik() {
     '#95A5A6',
     '#D35400',
     '#34495E',
-    '#7F8C8D'
+    '#7F8C8D',
+    '#360042'
   ];
 
   const options = {
