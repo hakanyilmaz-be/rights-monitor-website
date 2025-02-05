@@ -886,6 +886,7 @@
                        "reverse_order": "Sort from newest date to oldest date",
                        "timeline_title" : "Timeline",
                         "echr_data": "ECHR Data",
+                        "un_data": "UN Data",
                         "filterByCity" :"filter by City",
                         "filterByDateRange" : "Filter by Date Range",
                         "filterByNumber" : "filte by number",

@@ -64,12 +64,22 @@ const AnasayfaMenu = () => {
           <li><Link to={getLocalizedPath("/yargi-bagimsizligi")} className="nav-link">{t('judicial_independence')}</Link></li>
           <li>
               <a
-                href="https://hudoc.turkeyrightsmonitor.com"
+                href="https://database.turkeyrightsmonitor.com/echr/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="nav-link"
               >
                 {t('echr_data')}
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://database.turkeyrightsmonitor.com/un-reports/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="nav-link"
+              >
+                {t('un_data')}
               </a>
             </li>
 

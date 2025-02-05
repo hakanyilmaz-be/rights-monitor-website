@@ -140,12 +140,21 @@ const SideBar = () => {
               </Nav.Link>
 
               <Nav.Link
-                href="https://hudoc.turkeyrightsmonitor.com"
+                href="https://database.turkeyrightsmonitor.com/echr/"
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={handleNavClick}
               >
                 {t('echr_data')}
+              </Nav.Link>
+
+              <Nav.Link
+                href="https://database.turkeyrightsmonitor.com/un-reports/"
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={handleNavClick}
+              >
+                {t('un_data')}
               </Nav.Link>
            
               <LanguageSwitcher /> 

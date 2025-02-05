@@ -886,6 +886,7 @@
                          "reverse_order" : "Yeni tarihten eski tarihe doğru sırala",
                          "timeline_title" : "Zaman Çizelgesi",
                          "echr_data": "AİHM Verileri",
+                         "un_data": "Birleşmiş Milletler Verileri",
                         "filterByCity" :"İl'e göre filtrele",
                         "filterByDateRange" : "Tarihe göre filtrele",
                         "filterByNumber" : "Sayıya göre filtrele",
