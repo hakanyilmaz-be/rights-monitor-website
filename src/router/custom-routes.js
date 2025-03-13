@@ -15,6 +15,7 @@ import YargiPage from "../pages/YargiPage";
 import IskencePage from "../pages/IskencePage";
 import AnaSayfa from "../pages/AnaSayfa";
 import ScrollToTop from "./ScrollToTop";
+import Page2024 from "../pages/Page2024";
 
 const CustomRoutes = () => {
   return (
@@ -38,6 +39,7 @@ const CustomRoutes = () => {
         <Route path="/tr/sosyal-ekonomik-hak-ihlali" element={<AdminTemplate> <SosyalEkonomikPage/> </AdminTemplate>} />       
         <Route path="/tr/teror-sucu-istatistikleri" element={<AdminTemplate> <TerorDataPage/> </AdminTemplate>} />       
         <Route path="/tr/yargi-bagimsizligi" element={<AdminTemplate> <YargiPage/> </AdminTemplate>} /> 
+        <Route path="/tr/2024-almanak" element={<AdminTemplate> <Page2024/> </AdminTemplate>} /> 
          
 
         {/* İngilizce rotalar */}
