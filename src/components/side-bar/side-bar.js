@@ -74,6 +74,8 @@ const SideBar = () => {
           return "/en/terror-crime-statistics";
         case "/yargi-bagimsizligi":
           return "/en/judicial-independence";
+        case "/2024-almanak":
+          return "/en/2024-almanac";
         default:
           return `/en${path}`; // Diğer yollar için varsayılan İngilizce rota
       }
@@ -137,6 +139,10 @@ const SideBar = () => {
               </Nav.Link>
               <Nav.Link as={Link} to={getLocalizedPath("/yargi-bagimsizligi")} className={currentPath === getLocalizedPath("/yargi-bagimsizligi") ? "active" : ""} onClick={handleNavClick}>
                 {t('judicial_independence')}
+              </Nav.Link>
+
+              <Nav.Link as={Link} to={getLocalizedPath("/2024-almanak")} className={currentPath === getLocalizedPath("/2024-almanak") ? "active" : ""} onClick={handleNavClick}>
+                {t('almanac_2024')}
               </Nav.Link>
 
               <Nav.Link

@@ -36,6 +36,8 @@ const AnasayfaMenu = () => {
           return "/en/terror-crime-statistics";
         case "/yargi-bagimsizligi":
           return "/en/judicial-independence";
+        case "/2024-almanak":
+            return "/en/2024-almanac";
         default:
           return `/en${path}`; // Diğer yollar için varsayılan İngilizce rota
       }
@@ -62,6 +64,8 @@ const AnasayfaMenu = () => {
           <li><Link to={getLocalizedPath("/kapatilankurumlar")} className="nav-link">{t('closed_institutions')}</Link></li>
           <li><Link to={getLocalizedPath("/teror-sucu-istatistikleri")} className="nav-link">{t('terror_crime_statistics')}</Link></li>
           <li><Link to={getLocalizedPath("/yargi-bagimsizligi")} className="nav-link">{t('judicial_independence')}</Link></li>
+          <li><Link to={getLocalizedPath("/2024-almanak")} className="nav-link">{t('almanac_2024')}</Link></li>
+
           <li>
               <a
                 href="https://database.turkeyrightsmonitor.com/echr/"

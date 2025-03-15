@@ -6,6 +6,11 @@ import P2024KitleselAciklama from "../components/paragraflar/2024/p2024-aciklama
 import P2024HassasAciklama from "../components/paragraflar/2024/p2024-aciklama-hassas";
 import P2024MalvarligiAciklama from "../components/paragraflar/2024/p2024-aciklama-malvarligi";
 import P2024YasamAciklama from "../components/paragraflar/2024/p2024-aciklama-yasam";
+import P2024ZorlaKaybedilmeAciklama from "../components/paragraflar/2024/p2024-aciklama-zorla-kaybedilme";
+import P2024TerIstatistikAciklama from "../components/paragraflar/2024/p2024-aciklama-ter-istatistik";
+import P2024CezaeviAciklama from "../components/paragraflar/2024/p2024-aciklama-cezaevi";
+import P2024YargiAciklama from "../components/paragraflar/2024/p2024-aciklama-yargi";
+import P2024SonucAciklama from "../components/paragraflar/2024/p2024-aciklama-sonuc";
 
  
 const Page2024 = () => {
@@ -72,7 +77,35 @@ const Page2024 = () => {
             <P2024YasamAciklama/>
           </Col>
         </Row>
+        <Row>
+          <Col lg={12}>
+            <P2024ZorlaKaybedilmeAciklama/>
+          </Col>
+        </Row>
 
+        <Row>
+          <Col lg={12}>
+            <P2024TerIstatistikAciklama/>
+          </Col>
+        </Row>
+
+        <Row className="mt-4">
+          <Col lg={12}>
+            <P2024CezaeviAciklama/>
+          </Col>
+        </Row>
+
+        <Row className="mt-4">
+          <Col lg={12}>
+            <P2024YargiAciklama/>
+          </Col>
+        </Row>
+
+        <Row className="mt-4">
+          <Col lg={12}>
+            <P2024SonucAciklama/>
+          </Col>
+        </Row>
         
       </Container>
     </>

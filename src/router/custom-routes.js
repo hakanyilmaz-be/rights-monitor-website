@@ -54,7 +54,9 @@ const CustomRoutes = () => {
         <Route path="/en/prison-rights-violations" element={<AdminTemplate> <CezaeviPage/> </AdminTemplate>} /> 
         <Route path="/en/socio-economic-rights-violations" element={<AdminTemplate> <SosyalEkonomikPage/> </AdminTemplate>} />       
         <Route path="/en/terror-crime-statistics" element={<AdminTemplate> <TerorDataPage/> </AdminTemplate>} />       
-        <Route path="/en/judicial-independence" element={<AdminTemplate> <YargiPage/> </AdminTemplate>} />  
+        <Route path="/en/judicial-independence" element={<AdminTemplate> <YargiPage/> </AdminTemplate>} /> 
+        <Route path="/en/2024-almanac" element={<AdminTemplate> <Page2024/> </AdminTemplate>} />  
+
 
         {/* Varsayılan rota */}
         <Route path="/" element={<Navigate to="/tr" />} />
