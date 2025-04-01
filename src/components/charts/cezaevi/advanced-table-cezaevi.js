@@ -106,7 +106,7 @@ function AdvancedTableCezaevi() {
             });
             setDataRows(filteredData);
         } else {
-            setDataRows(allData);
+            setDataRows(allData); 
         }
     };
 

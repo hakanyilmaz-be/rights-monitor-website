@@ -108,7 +108,7 @@ function AdvancedTableSosyal() {
         if (value) {
             const filteredData = allData.filter(item => {
                 return Object.keys(item).some(key =>
-                    item[key].toString().toLowerCase().includes(value.toLowerCase())
+                    (item[key] || '').toString().toLowerCase().includes(value.toLowerCase())
                 );
             });
             setDataRows(filteredData);
@@ -116,6 +116,7 @@ function AdvancedTableSosyal() {
             setDataRows(allData);
         }
     };
+    
 
     const paginationOptions = {
         rowsPerPageText: t('rowsPerPageText'),
