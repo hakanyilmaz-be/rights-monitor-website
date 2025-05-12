@@ -129,7 +129,7 @@ const AnaSayfa = () => {
           </h1>
 
           <div className="buttons buton-mobile">
-          <button style={{ width: "180px", marginRight: "20px", fontSize: "14px", fontWeight: "400" }} className="btn-hover color-1" onClick={handleButtonClick6}>
+          <button style={{ width: "230px", marginRight: "20px", fontSize: "14px", fontWeight: "400" }} className="btn-hover color-1" onClick={handleButtonClick6}>
               {t('yalcinkaya_decison_results')}
             </button>
            
