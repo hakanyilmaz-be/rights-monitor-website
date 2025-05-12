@@ -64,7 +64,7 @@ const AnasayfaMenu = () => {
           <li><Link to={getLocalizedPath("/kapatilankurumlar")} className="nav-link">{t('closed_institutions')}</Link></li>
           <li><Link to={getLocalizedPath("/teror-sucu-istatistikleri")} className="nav-link">{t('terror_crime_statistics')}</Link></li>
           <li><Link to={getLocalizedPath("/yargi-bagimsizligi")} className="nav-link">{t('judicial_independence')}</Link></li>
-          <li><Link to={getLocalizedPath("/2024-almanak")} className="nav-link">{t('almanac_2024')}</Link></li>
+        {/*   <li><Link to={getLocalizedPath("/2024-almanak")} className="nav-link">{t('almanac_2024')}</Link></li>
 
           <li>
               <a
@@ -85,7 +85,7 @@ const AnasayfaMenu = () => {
               >
                 {t('un_data')}
               </a>
-            </li>
+            </li> */}
 
           <li><LanguageSwitcher /></li>
         </ul>

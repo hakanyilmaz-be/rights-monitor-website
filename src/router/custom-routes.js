@@ -16,6 +16,7 @@ import IskencePage from "../pages/IskencePage";
 import AnaSayfa from "../pages/AnaSayfa";
 import ScrollToTop from "./ScrollToTop";
 import Page2024 from "../pages/Page2024";
+import RaporKiskac from "../pages/RaporKiskac";
 
 const CustomRoutes = () => {
   return (
@@ -40,6 +41,8 @@ const CustomRoutes = () => {
         <Route path="/tr/teror-sucu-istatistikleri" element={<AdminTemplate> <TerorDataPage/> </AdminTemplate>} />       
         <Route path="/tr/yargi-bagimsizligi" element={<AdminTemplate> <YargiPage/> </AdminTemplate>} /> 
         <Route path="/tr/2024-almanak" element={<AdminTemplate> <Page2024/> </AdminTemplate>} /> 
+        <Route path="/tr/rapor-kiskac" element={<AdminTemplate> <RaporKiskac/> </AdminTemplate>} /> 
+
          
 
         {/* İngilizce rotalar */}
@@ -56,6 +59,8 @@ const CustomRoutes = () => {
         <Route path="/en/terror-crime-statistics" element={<AdminTemplate> <TerorDataPage/> </AdminTemplate>} />       
         <Route path="/en/judicial-independence" element={<AdminTemplate> <YargiPage/> </AdminTemplate>} /> 
         <Route path="/en/2024-almanac" element={<AdminTemplate> <Page2024/> </AdminTemplate>} />  
+        <Route path="/en/report-operations" element={<AdminTemplate> <RaporKiskac/> </AdminTemplate>} />  
+
 
 
         {/* Varsayılan rota */}

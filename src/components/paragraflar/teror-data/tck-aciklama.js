@@ -15,6 +15,10 @@ const TckAciklama = () => {
       <p className="small-paragraph">
         {t('tck.description2')}
       </p>
+
+      <p className="small-paragraph">
+        {t('tck.description3')}
+      </p>
     </div>
   );
 };

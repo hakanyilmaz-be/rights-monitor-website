@@ -2,7 +2,6 @@ import React from "react";
 import { useTranslation } from 'react-i18next';
 import "./page-text-2024.css";
 import { Col, Row } from "react-bootstrap";
-import Kitlesel2024 from "../../charts/2024/kitlesel-2024";
 import Yasam20241 from "../../charts/2024/yasam-2024-1";
 import Yasam20242 from "../../charts/2024/yasam-2024-2";
 

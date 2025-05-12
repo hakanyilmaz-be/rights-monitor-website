@@ -72,18 +72,33 @@ const AnaSayfa = () => {
 
   const handleButtonClick5 = () => {
     if (i18n.language === 'en') {
-      window.open('https://www.solidaritywithothers.com/our-reports-and-publications', '_blank');
+      window.location.href = 'https://www.turkeyrightsmonitor.com/en/2024-almanac';
     } else {
-      window.open('https://tr.solidaritywithothers.com/our-reports-and-publications', '_blank');
+      window.location.href = 'https://www.turkeyrightsmonitor.com/tr/2024-almanak';
     }
   };
   
+  const handleButtonClick7 = () => {
+    if (i18n.language === 'en') {
+      window.location.href = 'https://database.turkeyrightsmonitor.com/echr/';
+    } else {
+      window.location.href = 'https://database.turkeyrightsmonitor.com/echr/';
+    }
+  };
+
+  const handleButtonClick8 = () => {
+    if (i18n.language === 'en') {
+      window.location.href = 'https://database.turkeyrightsmonitor.com/un-reports/';
+    } else {
+      window.location.href = 'https://database.turkeyrightsmonitor.com/un-reports/';
+    }
+  };
 
   const handleButtonClick6 = () => {
     if (i18n.language === 'en') {
-      window.open('https://www.solidaritywithothers.com/turkey-rights-monitor/', '_blank');
+      window.location.href = 'https://database.turkeyrightsmonitor.com/yuksel-yalcinkaya/';
     } else {
-      window.open('https://tr.solidaritywithothers.com/turkey-rights-monitor', '_blank');
+      window.location.href = 'https://database.turkeyrightsmonitor.com/yuksel-yalcinkaya/';
     }
   };
 
@@ -114,11 +129,18 @@ const AnaSayfa = () => {
           </h1>
 
           <div className="buttons buton-mobile">
-            <button style={{ width: "150px", marginRight: "20px", fontSize: "14px", fontWeight: "400" }} className="btn-hover color-5" onClick={handleButtonClick5}>
-              {t('thematic_reports')}
+          <button style={{ width: "180px", marginRight: "20px", fontSize: "14px", fontWeight: "400" }} className="btn-hover color-1" onClick={handleButtonClick6}>
+              {t('yalcinkaya_decison_results')}
             </button>
-            <button style={{ width: "150px", marginRight: "20px", fontSize: "14px", fontWeight: "400" }} className="btn-hover color-5" onClick={handleButtonClick6}>
-              {t('weekly_bulletins')}
+           
+            <button style={{ width: "150px", marginRight: "20px", fontSize: "14px", fontWeight: "400" }} className="btn-hover color-5" onClick={handleButtonClick7}>
+              {t('ehcr_page')}
+            </button>
+            <button style={{ width: "150px", marginRight: "20px", fontSize: "14px", fontWeight: "400" }} className="btn-hover color-5" onClick={handleButtonClick8}>
+              {t('un_page')}
+            </button>
+            <button style={{ width: "150px", marginRight: "20px", fontSize: "14px", fontWeight: "400" }} className="btn-hover color-5" onClick={handleButtonClick5}>
+              {t('homepage_reports')}
             </button>
           </div>
         </div>

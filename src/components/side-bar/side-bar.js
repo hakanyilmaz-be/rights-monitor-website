@@ -141,7 +141,7 @@ const SideBar = () => {
                 {t('judicial_independence')}
               </Nav.Link>
 
-              <Nav.Link as={Link} to={getLocalizedPath("/2024-almanak")} className={currentPath === getLocalizedPath("/2024-almanak") ? "active" : ""} onClick={handleNavClick}>
+         {/*      <Nav.Link as={Link} to={getLocalizedPath("/2024-almanak")} className={currentPath === getLocalizedPath("/2024-almanak") ? "active" : ""} onClick={handleNavClick}>
                 {t('almanac_2024')}
               </Nav.Link>
 
@@ -161,7 +161,7 @@ const SideBar = () => {
                 onClick={handleNavClick}
               >
                 {t('un_data')}
-              </Nav.Link>
+              </Nav.Link> */}
            
               <LanguageSwitcher /> 
             
