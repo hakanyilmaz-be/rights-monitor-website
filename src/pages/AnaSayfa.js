@@ -72,33 +72,33 @@ const AnaSayfa = () => {
 
   const handleButtonClick5 = () => {
     if (i18n.language === 'en') {
-      window.location.href = 'https://www.turkeyrightsmonitor.com/en/2024-almanac';
+      window.location.href = 'https://www.turkeyrightsmonitor.com/en/reports';
     } else {
-      window.location.href = 'https://www.turkeyrightsmonitor.com/tr/2024-almanak';
+      window.location.href = 'https://www.turkeyrightsmonitor.com/tr/raporlar';
     }
   };
   
   const handleButtonClick7 = () => {
     if (i18n.language === 'en') {
-      window.location.href = 'https://database.turkeyrightsmonitor.com/echr/';
+      window.location.href = 'https://database.turkeyrightsmonitor.com/en/echr/';
     } else {
-      window.location.href = 'https://database.turkeyrightsmonitor.com/echr/';
+      window.location.href = 'https://database.turkeyrightsmonitor.com/tr/echr/';
     }
   };
 
   const handleButtonClick8 = () => {
     if (i18n.language === 'en') {
-      window.location.href = 'https://database.turkeyrightsmonitor.com/un-reports/';
+      window.location.href = 'https://database.turkeyrightsmonitor.com/en/un-reports/';
     } else {
-      window.location.href = 'https://database.turkeyrightsmonitor.com/un-reports/';
+      window.location.href = 'https://database.turkeyrightsmonitor.com/tr/un-reports/';
     }
   };
 
   const handleButtonClick6 = () => {
     if (i18n.language === 'en') {
-      window.location.href = 'https://database.turkeyrightsmonitor.com/yuksel-yalcinkaya/';
+      window.location.href = 'https://database.turkeyrightsmonitor.com/en/yuksel-yalcinkaya/';
     } else {
-      window.location.href = 'https://database.turkeyrightsmonitor.com/yuksel-yalcinkaya/';
+      window.location.href = 'https://database.turkeyrightsmonitor.com/tr/yuksel-yalcinkaya/';
     }
   };
 

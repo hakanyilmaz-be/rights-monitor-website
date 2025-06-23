@@ -17,6 +17,7 @@ import AnaSayfa from "../pages/AnaSayfa";
 import ScrollToTop from "./ScrollToTop";
 import Page2024 from "../pages/Page2024";
 import RaporKiskac from "../pages/RaporKiskac";
+import Raporlar from "../pages/Raporlar";
 
 const CustomRoutes = () => {
   return (
@@ -40,8 +41,10 @@ const CustomRoutes = () => {
         <Route path="/tr/sosyal-ekonomik-hak-ihlali" element={<AdminTemplate> <SosyalEkonomikPage/> </AdminTemplate>} />       
         <Route path="/tr/teror-sucu-istatistikleri" element={<AdminTemplate> <TerorDataPage/> </AdminTemplate>} />       
         <Route path="/tr/yargi-bagimsizligi" element={<AdminTemplate> <YargiPage/> </AdminTemplate>} /> 
+        <Route path="/tr/raporlar" element={<AdminTemplate> <Raporlar/> </AdminTemplate>} /> 
         <Route path="/tr/2024-almanak" element={<AdminTemplate> <Page2024/> </AdminTemplate>} /> 
         <Route path="/tr/rapor-kiskac" element={<AdminTemplate> <RaporKiskac/> </AdminTemplate>} /> 
+
 
          
 
@@ -58,6 +61,7 @@ const CustomRoutes = () => {
         <Route path="/en/socio-economic-rights-violations" element={<AdminTemplate> <SosyalEkonomikPage/> </AdminTemplate>} />       
         <Route path="/en/terror-crime-statistics" element={<AdminTemplate> <TerorDataPage/> </AdminTemplate>} />       
         <Route path="/en/judicial-independence" element={<AdminTemplate> <YargiPage/> </AdminTemplate>} /> 
+        <Route path="/en/reports" element={<AdminTemplate> <Raporlar/> </AdminTemplate>} /> 
         <Route path="/en/2024-almanac" element={<AdminTemplate> <Page2024/> </AdminTemplate>} />  
         <Route path="/en/report-operations" element={<AdminTemplate> <RaporKiskac/> </AdminTemplate>} />  
 

@@ -1,0 +1,14 @@
+.raporlar-hero {
+
+}
+
+.rapor-card {
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+
+.gradient-button:hover {
+  background: linear-gradient(135deg, #ffa726, #fb8c00, #f44336) !important;
+  color: rgb(0, 0, 0) !important;
+  border: none;
+}

@@ -81,6 +81,22 @@
   "total_count": "Total Count",
   "still_missing": "Still Missing...",
   "days": "days",
+ "pageTitleR": "Reports",
+  "pageDescriptionR": "With the support of Solidarity with OTHERS based in Brussels, Turkey Rights Monitor functions as an independent and impartial platform documenting and analyzing human rights violations targeting members of the Gülen Movement and others accused of similar connections. On this page, you can access our reports.",
+  "buttonLabelR": "View Report",
+  "reports": [
+    {
+      "title": "2024 Almanac",
+      "description": "This report focuses on mass detentions, arbitrary arrests, confiscations and enforced disappearances targeting the Gülen Movement in 2024, while also highlighting broader justice issues like judicial independence and prison conditions.",
+    "link": "/en/2024-almanac"
+    },
+    {
+      "title": "Clampdown Operations",
+      "description": "This report reveals how the series of operations labeled 'Clampdown' during late 2023 to early 2025 were part of a broader crackdown strategy in Turkey, using historical repression patterns and modern-day media control tactics...",
+    "link": "/en/report-operations"
+    }
+  ],
+
   "forced_disappearances_text": "In the 2000s, there were hopes that enforced disappearances were a thing of the past, thanks to Turkey's EU accession process and measures against torture. However, after the July 15, 2016 coup attempt, this dreadful practice reemerged. At least thirty new cases of enforced disappearances, particularly against individuals accused of being connected to the Gülen Movement, have been reported.",
   "forced_disappearances_button": "Enforced Disappearances",
   "illegal_extraditions_title": "Illegal Extraditions and Deportations",
