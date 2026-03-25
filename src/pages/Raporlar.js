@@ -82,58 +82,58 @@ const reports = t('reports', { returnObjects: true });
      
       <div className="bg-white py-5">
         <Container>
-<Row className="g-4" style={{paddingLeft: "1rem", paddingRight: "2rem"}}>
-  {reports.map((report, idx) => (
-    <Col key={idx} md={6}>
-      <motion.div
-        className="rapor-card h-100"
-        whileHover={{ scale: 1.03 }}
-        whileTap={{ scale: 0.98 }}
-        transition={{ type: 'spring', stiffness: 300 }}
-      >
-        <div
-          className="gradient-border rounded-4 h-100 p-1"
+        <Row className="g-4" style={{paddingLeft: "1rem", paddingRight: "2rem"}}>
+          {reports.map((report, idx) => (
+            <Col key={idx} md={6}>
+              <motion.div
+                className="rapor-card h-100"
+                whileHover={{ scale: 1.03 }}
+                whileTap={{ scale: 0.98 }}
+                transition={{ type: 'spring', stiffness: 300 }}
+              >
+                <div
+                  className="gradient-border rounded-4 h-100 p-1"
+                  style={{
+                    background: 'linear-gradient(135deg, #f44336, #ffa726, #fb8c00)',
+                    padding: '2px',
+                    borderRadius: '1rem'
+                  }}
+                >
+                  <Card className="h-100 text-dark border-0 rounded-4">
+                    <Card.Body className="d-flex flex-column justify-content-between p-4">
+                      <div>
+                        <Card.Title className="fs-4 fw-bold text-dark mb-3">
+                          {report.title}
+                        </Card.Title>
+                        <Card.Text style={{ fontSize: '0.92rem', lineHeight: '1.6' }}>
+                          {report.description}
+                        </Card.Text>
+                      </div>
+                      <div className="text-end mt-4">
+          <div
           style={{
-            background: 'linear-gradient(135deg, #f44336, #ffa726, #fb8c00)',
+            display: 'inline-block',
             padding: '2px',
-            borderRadius: '1rem'
+            borderRadius: '999px',
+            background: 'linear-gradient(135deg, #ffa726, #fb8c00, #f44336)'
           }}
         >
-          <Card className="h-100 text-dark border-0 rounded-4">
-            <Card.Body className="d-flex flex-column justify-content-between p-4">
-              <div>
-                <Card.Title className="fs-4 fw-bold text-dark mb-3">
-                  {report.title}
-                </Card.Title>
-                <Card.Text style={{ fontSize: '0.92rem', lineHeight: '1.6' }}>
-                  {report.description}
-                </Card.Text>
-              </div>
-              <div className="text-end mt-4">
-  <div
-  style={{
-    display: 'inline-block',
-    padding: '2px',
-    borderRadius: '999px',
-    background: 'linear-gradient(135deg, #ffa726, #fb8c00, #f44336)'
-  }}
->
-  <button
-    onClick={() => navigate(report.link)}
-    className="btn btn-light btn-sm rounded-pill px-4 py-2 border-0 gradient-button"
-    style={{ background: '#fff', borderRadius: '999px', transition: 'all 0.3s ease' }}
-  >
-     {t('buttonLabelR')}
-  </button>
-</div>
-              </div>
-            </Card.Body>
-          </Card>
+          <button
+            onClick={() => navigate(report.link)}
+            className="btn btn-light btn-sm rounded-pill px-4 py-2 border-0 gradient-button"
+            style={{ background: '#fff', borderRadius: '999px', transition: 'all 0.3s ease' }}
+          >
+            {t('buttonLabelR')}
+          </button>
         </div>
-      </motion.div>
-    </Col>
-  ))}
-</Row>
+                      </div>
+                    </Card.Body>
+                  </Card>
+                </div>
+              </motion.div>
+            </Col>
+          ))}
+        </Row>
         </Container>
       </div>
     </>

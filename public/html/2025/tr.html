@@ -1,0 +1,2599 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2025 Almanağı | Turkey Rights Monitor</title>
+    <meta name="description" content="2025 yılı boyunca Türkiye'de yaşanan hak ihlallerinin Gülen Hareketine bakan yüzünü ele alan kapsamlı rapor.">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;800&family=Source+Sans+3:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    
+
+    
+    <style>
+        :root {
+            --bg-primary: #0a1628;
+            --bg-secondary: #111d32;
+            --bg-tertiary: #1a2744;
+            --bg-card: #152238;
+            --accent-primary: #00d4aa;
+            --accent-secondary: #4ade80;
+            --accent-warning: #f59e0b;
+            --accent-danger: #ef4444;
+            --text-primary: #ffffff;
+            --text-secondary: #94a3b8;
+            --text-muted: #64748b;
+            --border-color: #2a3f5f;
+            --sidebar-width: 280px;
+            --header-height: 70px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: calc(var(--header-height) + 20px);
+        }
+
+        body {
+            font-family: 'Source Sans 3', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.7;
+            font-size: 17px;
+        }
+
+        /* Typography */
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-weight: 700;
+            line-height: 1.2;
+        }
+
+        h1 { font-size: clamp(2.5rem, 5vw, 4rem); }
+        h2 { font-size: clamp(1.8rem, 3vw, 2.5rem); margin-bottom: 1.5rem; }
+        h3 { font-size: clamp(1.3rem, 2vw, 1.6rem); margin-bottom: 1rem; }
+        h4 { font-size: 1.2rem; margin-bottom: 0.75rem; }
+
+        p {
+            margin-bottom: 1.25rem;
+            color: var(--text-secondary);
+        }
+
+        a {
+            color: var(--accent-primary);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        a:hover {
+            color: var(--accent-secondary);
+        }
+
+        /* Header */
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: var(--header-height);
+            background: rgba(10, 22, 40, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border-color);
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 2rem;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-weight: 700;
+            font-size: 1.1rem;
+        }
+
+        .logo-icon {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            font-size: 1.2rem;
+        }
+
+        .logo-text span {
+            color: var(--accent-primary);
+        }
+
+        .header-actions {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 20px;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: all 0.2s;
+            border: none;
+            font-family: inherit;
+        }
+
+        .btn-primary {
+            background: var(--accent-primary);
+            color: var(--bg-primary);
+        }
+
+        .btn-primary:hover {
+            background: var(--accent-secondary);
+            transform: translateY(-2px);
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 1px solid var(--border-color);
+            color: var(--text-primary);
+        }
+
+        .btn-outline:hover {
+            border-color: var(--accent-primary);
+            color: var(--accent-primary);
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--text-primary);
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* Sidebar Navigation */
+        .sidebar {
+            position: fixed;
+            top: var(--header-height);
+            left: 0;
+            width: var(--sidebar-width);
+            height: calc(100vh - var(--header-height));
+            background: var(--bg-secondary);
+            border-right: 1px solid var(--border-color);
+            overflow-y: auto;
+            padding: 1.5rem 0;
+            z-index: 900;
+            transition: transform 0.3s ease;
+        }
+
+        .sidebar-nav {
+            list-style: none;
+        }
+
+        .sidebar-nav li {
+            margin-bottom: 2px;
+        }
+
+        .sidebar-nav a {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 12px 1.5rem;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: all 0.2s;
+            border-left: 3px solid transparent;
+        }
+
+        .sidebar-nav a:hover,
+        .sidebar-nav a.active {
+            background: var(--bg-tertiary);
+            color: var(--text-primary);
+            border-left-color: var(--accent-primary);
+        }
+
+        .sidebar-nav a .nav-number {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.75rem;
+            color: var(--accent-primary);
+            min-width: 24px;
+        }
+
+        .sidebar-nav .sub-nav {
+            padding-left: 2.5rem;
+        }
+
+        .sidebar-nav .sub-nav a {
+            font-size: 0.85rem;
+            padding: 8px 1.5rem;
+        }
+
+        /* Main Content */
+        .main-content {
+            margin-left: var(--sidebar-width);
+            margin-top: var(--header-height);
+            min-height: calc(100vh - var(--header-height));
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--bg-secondary) 0%, var(--bg-primary) 100%);
+            padding: 4rem 3rem;
+            border-bottom: 1px solid var(--border-color);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 50%;
+            height: 100%;
+            background: radial-gradient(circle at 70% 30%, rgba(0, 212, 170, 0.1) 0%, transparent 50%);
+            pointer-events: none;
+        }
+
+        .hero-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(0, 212, 170, 0.1);
+            border: 1px solid rgba(0, 212, 170, 0.3);
+            padding: 8px 16px;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--accent-primary);
+            margin-bottom: 1.5rem;
+        }
+
+        .hero-badge::before {
+            content: '';
+            width: 8px;
+            height: 8px;
+            background: var(--accent-primary);
+            border-radius: 50%;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+
+        .hero h1 {
+            margin-bottom: 1.5rem;
+            background: linear-gradient(135deg, var(--text-primary) 0%, var(--accent-primary) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-subtitle {
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+            max-width: 700px;
+            margin-bottom: 2.5rem;
+            line-height: 1.8;
+        }
+
+        /* Stats Grid */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .stat-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 1.5rem;
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.3s, border-color 0.3s;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-4px);
+            border-color: var(--accent-primary);
+        }
+
+        .stat-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: var(--accent-primary);
+        }
+
+        .stat-card.warning::before { background: var(--accent-warning); }
+        .stat-card.danger::before { background: var(--accent-danger); }
+
+        .stat-number {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            line-height: 1;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            font-weight: 500;
+        }
+
+        .stat-change {
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            font-size: 0.8rem;
+            margin-top: 0.5rem;
+            padding: 4px 8px;
+            border-radius: 4px;
+            background: rgba(239, 68, 68, 0.1);
+            color: var(--accent-danger);
+        }
+
+        .stat-change.positive {
+            background: rgba(74, 222, 128, 0.1);
+            color: var(--accent-secondary);
+        }
+
+        /* Content Sections */
+        .content-wrapper {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 3rem;
+        }
+
+        .section {
+            margin-bottom: 4rem;
+            padding-bottom: 3rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .section:last-child {
+            border-bottom: none;
+        }
+
+        .section-header {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .section-number {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--accent-primary);
+            background: rgba(0, 212, 170, 0.1);
+            padding: 8px 12px;
+            border-radius: 8px;
+            flex-shrink: 0;
+        }
+
+        /* Subsections */
+        .subsection {
+            margin: 2.5rem 0;
+            padding-left: 1.5rem;
+            border-left: 2px solid var(--border-color);
+        }
+
+        .subsection h3 {
+            color: var(--text-primary);
+        }
+
+        .subsection h4 {
+            color: var(--text-secondary);
+            font-family: 'Source Sans 3', sans-serif;
+            font-weight: 600;
+        }
+
+        /* Charts */
+        .chart-container {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .chart-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .chart-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+
+        .chart-legend {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+        }
+
+        .legend-color {
+            width: 12px;
+            height: 12px;
+            border-radius: 3px;
+        }
+
+        .chart-wrapper {
+            position: relative;
+            height: 300px;
+        }
+
+        /* Data Tables */
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+            font-size: 0.95rem;
+        }
+
+        .data-table th,
+        .data-table td {
+            padding: 12px 16px;
+            text-align: left;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .data-table th {
+            background: var(--bg-tertiary);
+            font-weight: 600;
+            color: var(--text-primary);
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .data-table td {
+            color: var(--text-secondary);
+        }
+
+        .data-table tr:hover td {
+            background: var(--bg-card);
+        }
+
+        .data-table .number {
+            font-family: 'JetBrains Mono', monospace;
+            color: var(--accent-primary);
+            font-weight: 600;
+        }
+
+        /* Footnotes */
+        .footnote-ref {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.75rem;
+            color: var(--accent-primary);
+            cursor: pointer;
+            vertical-align: super;
+            padding: 2px 4px;
+            background: rgba(0, 212, 170, 0.1);
+            border-radius: 3px;
+            margin: 0 2px;
+            transition: all 0.2s;
+        }
+
+        .footnote-ref:hover {
+            background: rgba(0, 212, 170, 0.2);
+        }
+
+        .footnote-tooltip {
+            position: fixed;
+            max-width: 400px;
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 12px 16px;
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            line-height: 1.5;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+            z-index: 10000;
+            display: none;
+        }
+
+        .footnote-tooltip.visible {
+            display: block;
+            animation: fadeIn 0.2s ease;
+        }
+
+        .footnote-tooltip::before {
+            content: '';
+            position: absolute;
+            top: -6px;
+            left: 20px;
+            width: 12px;
+            height: 12px;
+            background: var(--bg-card);
+            border-left: 1px solid var(--border-color);
+            border-top: 1px solid var(--border-color);
+            transform: rotate(45deg);
+        }
+
+        .footnote-tooltip a {
+            word-break: break-all;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-5px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Info Boxes */
+        .info-box {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            position: relative;
+        }
+
+        .info-box.highlight {
+            border-left: 4px solid var(--accent-primary);
+        }
+
+        .info-box.warning {
+            border-left: 4px solid var(--accent-warning);
+            background: rgba(245, 158, 11, 0.05);
+        }
+
+        .info-box.danger {
+            border-left: 4px solid var(--accent-danger);
+            background: rgba(239, 68, 68, 0.05);
+        }
+
+        .info-box-title {
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        /* Case Studies */
+        .case-study {
+            background: var(--bg-tertiary);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+        }
+
+        .case-study-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 1rem;
+        }
+
+        .case-study-icon {
+            width: 40px;
+            height: 40px;
+            background: rgba(239, 68, 68, 0.1);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--accent-danger);
+            font-size: 1.2rem;
+        }
+
+        .case-study-title {
+            font-weight: 600;
+            color: var(--text-primary);
+            font-size: 1rem;
+        }
+
+        .case-study-meta {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        /* Timeline */
+        .timeline {
+            position: relative;
+            padding-left: 2rem;
+            margin: 2rem 0;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: var(--border-color);
+        }
+
+        .timeline-item {
+            position: relative;
+            padding-bottom: 2rem;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -2rem;
+            top: 6px;
+            width: 12px;
+            height: 12px;
+            background: var(--accent-primary);
+            border-radius: 50%;
+            border: 3px solid var(--bg-primary);
+        }
+
+        .timeline-date {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.85rem;
+            color: var(--accent-primary);
+            margin-bottom: 0.5rem;
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--bg-secondary);
+            border-top: 1px solid var(--border-color);
+            padding: 3rem;
+            margin-left: var(--sidebar-width);
+        }
+
+        .footer-content {
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .footer-logo {
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .footer-logo span {
+            color: var(--accent-primary);
+        }
+
+        .footer-text {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        /* References Section */
+        .references-section {
+            background: var(--bg-secondary);
+            border-radius: 12px;
+            padding: 2rem;
+            margin-top: 3rem;
+        }
+
+        .references-section h3 {
+            margin-bottom: 1.5rem;
+        }
+
+        .reference-item {
+            display: flex;
+            gap: 1rem;
+            padding: 0.75rem 0;
+            border-bottom: 1px solid var(--border-color);
+            font-size: 0.9rem;
+        }
+
+        .reference-item:last-child {
+            border-bottom: none;
+        }
+
+        .reference-number {
+            font-family: 'JetBrains Mono', monospace;
+            color: var(--accent-primary);
+            font-weight: 600;
+            min-width: 30px;
+        }
+
+        .reference-text {
+            color: var(--text-secondary);
+            line-height: 1.5;
+        }
+
+        .reference-text a {
+            word-break: break-all;
+        }
+
+        /* Progress Indicator */
+        .progress-bar {
+            position: fixed;
+            top: var(--header-height);
+            left: var(--sidebar-width);
+            right: 0;
+            height: 3px;
+            background: var(--bg-tertiary);
+            z-index: 999;
+        }
+
+        .progress-bar-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--accent-primary), var(--accent-secondary));
+            width: 0%;
+            transition: width 0.1s;
+        }
+
+        /* Print Styles - Comprehensive */
+        @media print {
+            /* Hide non-essential elements */
+            .header, .sidebar, .progress-bar, .btn, .scroll-top, 
+            .footnote-tooltip, .loading-overlay, .sidebar-overlay, .footer,
+            .mobile-menu-btn {
+                display: none !important;
+            }
+
+            /* Reset layout */
+            .main-content {
+                margin-left: 0 !important;
+                margin-top: 0 !important;
+            }
+
+            /* Base styles - Light theme */
+            * {
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+            }
+
+            body {
+                background: #ffffff !important;
+                color: #1a1a1a !important;
+                font-size: 11pt !important;
+                line-height: 1.5 !important;
+            }
+
+            /* Hero section */
+            .hero {
+                background: #f5f7fa !important;
+                padding: 1.5rem !important;
+                border-bottom: 3px solid #00d4aa !important;
+                page-break-after: avoid;
+            }
+
+            .hero::before {
+                display: none !important;
+            }
+
+            .hero h1 {
+                background: none !important;
+                -webkit-text-fill-color: #0a1628 !important;
+                color: #0a1628 !important;
+                font-size: 24pt !important;
+            }
+
+            .hero-badge {
+                background: #e8f5f1 !important;
+                border: 1px solid #00d4aa !important;
+                color: #047857 !important;
+            }
+
+            .hero-subtitle {
+                color: #374151 !important;
+                font-size: 11pt !important;
+            }
+
+            /* Stats cards */
+            .stats-grid {
+                display: grid !important;
+                grid-template-columns: repeat(2, 1fr) !important;
+                gap: 0.75rem !important;
+            }
+
+            .stat-card {
+                background: #f8fafc !important;
+                border: 1px solid #d1d5db !important;
+                padding: 1rem !important;
+                page-break-inside: avoid !important;
+            }
+
+            .stat-card::before {
+                background: #00d4aa !important;
+            }
+
+            .stat-card.warning::before {
+                background: #f59e0b !important;
+            }
+
+            .stat-card.danger::before {
+                background: #ef4444 !important;
+            }
+
+            .stat-number {
+                color: #0a1628 !important;
+                font-size: 18pt !important;
+            }
+
+            .stat-label {
+                color: #4b5563 !important;
+                font-size: 9pt !important;
+            }
+
+            .stat-change {
+                font-size: 8pt !important;
+            }
+
+            /* Content wrapper */
+            .content-wrapper {
+                padding: 1rem !important;
+                max-width: 100% !important;
+            }
+
+            /* Sections */
+            .section {
+                page-break-inside: avoid !important;
+                margin-bottom: 1.5rem !important;
+                padding-bottom: 1rem !important;
+                border-bottom: 1px solid #e5e7eb !important;
+            }
+
+            .section-header {
+                page-break-after: avoid !important;
+            }
+
+            .section-number {
+                background: #e8f5f1 !important;
+                color: #047857 !important;
+            }
+
+            /* Typography */
+            h2 {
+                color: #0a1628 !important;
+                font-size: 16pt !important;
+                page-break-after: avoid !important;
+            }
+
+            h3 {
+                color: #1f2937 !important;
+                font-size: 13pt !important;
+                page-break-after: avoid !important;
+            }
+
+            h4 {
+                color: #374151 !important;
+                font-size: 11pt !important;
+                page-break-after: avoid !important;
+            }
+
+            p {
+                color: #374151 !important;
+                font-size: 10pt !important;
+            }
+
+            strong {
+                color: #1f2937 !important;
+            }
+
+            /* Subsections */
+            .subsection {
+                border-left: 2px solid #d1d5db !important;
+                page-break-inside: avoid !important;
+            }
+
+            /* Charts - Hide canvas, they don't print well */
+            .chart-container {
+                background: #f8fafc !important;
+                border: 1px solid #d1d5db !important;
+                page-break-inside: avoid !important;
+                min-height: 150px !important;
+            }
+
+            .chart-title {
+                color: #0a1628 !important;
+            }
+
+            .chart-wrapper canvas {
+                max-height: 200px !important;
+            }
+
+            /* Tables */
+            .data-table {
+                page-break-inside: avoid !important;
+                font-size: 9pt !important;
+            }
+
+            .data-table th {
+                background: #f1f5f9 !important;
+                color: #0a1628 !important;
+                border: 1px solid #d1d5db !important;
+            }
+
+            .data-table td {
+                color: #374151 !important;
+                border: 1px solid #e5e7eb !important;
+            }
+
+            .data-table .number {
+                color: #047857 !important;
+            }
+
+            /* Info boxes */
+            .info-box {
+                background: #f8fafc !important;
+                border: 1px solid #d1d5db !important;
+                page-break-inside: avoid !important;
+                padding: 1rem !important;
+            }
+
+            .info-box.highlight {
+                border-left: 4px solid #00d4aa !important;
+            }
+
+            .info-box.warning {
+                border-left: 4px solid #f59e0b !important;
+                background: #fffbeb !important;
+            }
+
+            .info-box.danger {
+                border-left: 4px solid #ef4444 !important;
+                background: #fef2f2 !important;
+            }
+
+            .info-box-title {
+                color: #0a1628 !important;
+            }
+
+            .info-box p, .info-box li {
+                color: #374151 !important;
+            }
+
+            /* Case studies */
+            .case-study {
+                background: #f1f5f9 !important;
+                page-break-inside: avoid !important;
+                padding: 1rem !important;
+            }
+
+            .case-study-title {
+                color: #0a1628 !important;
+            }
+
+            .case-study-meta {
+                color: #6b7280 !important;
+            }
+
+            .case-study p {
+                color: #374151 !important;
+            }
+
+            /* Timeline */
+            .timeline {
+                page-break-inside: avoid !important;
+            }
+
+            .timeline::before {
+                background: #d1d5db !important;
+            }
+
+            .timeline-item::before {
+                background: #00d4aa !important;
+                border-color: #ffffff !important;
+            }
+
+            .timeline-date {
+                color: #047857 !important;
+            }
+
+            .timeline-item p {
+                color: #374151 !important;
+            }
+
+            /* Footnotes */
+            .footnote-ref {
+                background: #e8f5f1 !important;
+                color: #047857 !important;
+            }
+
+            /* References */
+            .references-section {
+                background: #f8fafc !important;
+                border: 1px solid #d1d5db !important;
+                page-break-before: always !important;
+            }
+
+            .references-section h3 {
+                color: #0a1628 !important;
+            }
+
+            .reference-item {
+                border-bottom: 1px solid #e5e7eb !important;
+                page-break-inside: avoid !important;
+                font-size: 8pt !important;
+            }
+
+            .reference-number {
+                color: #047857 !important;
+            }
+
+            .reference-text {
+                color: #374151 !important;
+            }
+
+            .reference-text a {
+                color: #0369a1 !important;
+            }
+
+            /* Links */
+            a {
+                color: #0369a1 !important;
+                text-decoration: underline !important;
+            }
+
+            /* Lists */
+            ul, ol, li {
+                color: #374151 !important;
+            }
+
+            /* Page breaks */
+            h2, h3 {
+                page-break-after: avoid !important;
+            }
+
+            .stat-card, .info-box, .case-study, .data-table, .chart-container {
+                page-break-inside: avoid !important;
+            }
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            :root {
+                --sidebar-width: 0px;
+            }
+
+            .sidebar {
+                transform: translateX(-100%);
+                width: 280px;
+            }
+
+            .sidebar.open {
+                transform: translateX(0);
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .main-content {
+                margin-left: 0;
+            }
+
+            .footer {
+                margin-left: 0;
+            }
+
+            .progress-bar {
+                left: 0;
+            }
+
+            .hero {
+                padding: 2rem 1.5rem;
+            }
+
+            .content-wrapper {
+                padding: 2rem 1.5rem;
+            }
+
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 640px) {
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .stat-number {
+                font-size: 2rem;
+            }
+
+            .header {
+                padding: 0 1rem;
+            }
+
+            .header-actions .btn span {
+                display: none;
+            }
+
+            .data-table {
+                font-size: 0.85rem;
+            }
+
+            .data-table th,
+            .data-table td {
+                padding: 8px 10px;
+            }
+        }
+
+        /* Overlay for mobile menu */
+        .sidebar-overlay {
+            position: fixed;
+            top: var(--header-height);
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.5);
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s;
+            z-index: 850;
+        }
+
+        .sidebar-overlay.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        /* Scroll to top */
+        .scroll-top {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            width: 48px;
+            height: 48px;
+            background: var(--accent-primary);
+            color: var(--bg-primary);
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 1.2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s;
+            z-index: 800;
+        }
+
+        .scroll-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .scroll-top:hover {
+            background: var(--accent-secondary);
+            transform: translateY(-4px);
+        }
+
+        /* Loading Animation */
+        .loading-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: var(--bg-primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 9999;
+            transition: opacity 0.5s;
+        }
+
+        .loading-overlay.hidden {
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        .loading-spinner {
+            width: 50px;
+            height: 50px;
+            border: 3px solid var(--border-color);
+            border-top-color: var(--accent-primary);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+    <!-- Loading Overlay -->
+    <div class="loading-overlay" id="loadingOverlay">
+        <div class="loading-spinner"></div>
+    </div>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="logo">
+            <div class="logo-icon">TR</div>
+            <div class="logo-text">Turkey <span>Rights</span> Monitor</div>
+        </div>
+        <div class="header-actions">
+            <button class="btn btn-outline" onclick="downloadPDF()">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                    <polyline points="7 10 12 15 17 10"/>
+                    <line x1="12" y1="15" x2="12" y2="3"/>
+                </svg>
+                <span>Yazdır / PDF</span>
+            </button>
+            <button class="mobile-menu-btn" onclick="toggleSidebar()">☰</button>
+        </div>
+    </header>
+
+    <!-- Progress Bar -->
+    <div class="progress-bar">
+        <div class="progress-bar-fill" id="progressBar"></div>
+    </div>
+
+    <!-- Sidebar Overlay -->
+    <div class="sidebar-overlay" id="sidebarOverlay" onclick="toggleSidebar()"></div>
+
+    <!-- Sidebar Navigation -->
+    <aside class="sidebar" id="sidebar">
+        <nav>
+            <ul class="sidebar-nav">
+                <li><a href="#giris"><span class="nav-number">00</span> Giriş</a></li>
+                <li><a href="#kitlesel-gozaltilar"><span class="nav-number">01</span> Kitlesel Gözaltılar</a></li>
+                <li class="sub-nav"><a href="#resmi-iletisim">1.1 Resmî İletişim</a></li>
+                <li class="sub-nav"><a href="#gerekce-setleri">1.2 Gerekçe Setleri</a></li>
+                <li class="sub-nav"><a href="#2024-kiyas">1.3 2024 ile Kıyas</a></li>
+                <li><a href="#hassas-gruplar"><span class="nav-number">02</span> Hassas Gruplar</a></li>
+                <li class="sub-nav"><a href="#hamile-kadinlar">2.1 Hamile ve Çocuklu Kadınlar</a></li>
+                <li class="sub-nav"><a href="#hasta-engelli">2.2 Hasta, Engelli ve Yaşlılar</a></li>
+                <li><a href="#iskence"><span class="nav-number">03</span> İşkence Gerçeği</a></li>
+                <li><a href="#mal-varligi"><span class="nav-number">04</span> Mal Varlığı Dondurma</a></li>
+                <li><a href="#yasam-hakki"><span class="nav-number">05</span> Yaşam Hakkı İhlalleri</a></li>
+                <li><a href="#zorla-kaybedilenler"><span class="nav-number">06</span> Zorla Kaybedilenler</a></li>
+                <li><a href="#teror-istatistikleri"><span class="nav-number">07</span> Terör İstatistikleri</a></li>
+                <li><a href="#cezaevi-ihlalleri"><span class="nav-number">08</span> Cezaevi İhlalleri</a></li>
+                <li><a href="#yargi-bagimsizligi"><span class="nav-number">09</span> Yargı Bağımsızlığı</a></li>
+                <li><a href="#kapatilan-kurumlar"><span class="nav-number">10</span> Kapatılan Kurumlar</a></li>
+                <li><a href="#sonuc"><span class="nav-number">11</span> Sonuç</a></li>
+                <li><a href="#kaynakca"><span class="nav-number">—</span> Kaynakça</a></li>
+            </ul>
+        </nav>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content" id="mainContent">
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-content">
+                <div class="hero-badge">
+                    2025 Yıllık Rapor
+                </div>
+                <h1>2025'de Neler Oldu?</h1>
+                <p class="hero-subtitle">
+                    Bu rapor, 2025 yılı boyunca Türkiye'de yaşanan hak ihlallerinin Gülen Hareketine bakan yüzünü ele almak amacıyla hazırlanmıştır. Kitlesel gözaltılar, keyfi tutuklamalar, zorla kaybetmeler, hukuka aykırı sınır dışı işlemler, mal varlıklarının dondurulması, terör istatistikleri, işkence ve yaşam hakkı ihlalleri incelenmektedir.
+                </p>
+                
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-number">4,916</div>
+                        <div class="stat-label">2025 Yılı Gözaltı</div>
+                        <div class="stat-change">↑ %21 artış (2024'e göre)</div>
+                    </div>
+                    <div class="stat-card warning">
+                        <div class="stat-number">152,199</div>
+                        <div class="stat-label">Toplam Gözaltı (2016'dan beri)</div>
+                        <div class="stat-change">Günlük ortalama: 44 kişi</div>
+                    </div>
+                    <div class="stat-card danger">
+                        <div class="stat-number">950+</div>
+                        <div class="stat-label">Cezaevi Hak İhlali Vakası</div>
+                        <div class="stat-change">80+ farklı cezaevi</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">11,640</div>
+                        <div class="stat-label">Tutuklu/Hükümlü</div>
+                        <div class="stat-change">Halen cezaevinde</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Content Wrapper -->
+        <div class="content-wrapper">
+            
+            <!-- Giriş -->
+            <section class="section" id="giris">
+                <div class="section-header">
+                    <span class="section-number">00</span>
+                    <div>
+                        <h2>Giriş</h2>
+                    </div>
+                </div>
+                <p>Bu rapor, 2025 yılı boyunca Türkiye'de yaşanan hak ihlallerinin Gülen Hareketine bakan yüzünü ele almak amacıyla hazırlanmıştır. İncelenen başlıklar arasında, kitlesel gözaltılar, keyfi tutuklamalar, zorla kaybetmeler, hukuka aykırı sınır dışı işlemler, mal varlıklarının dondurulması, terör istatistikleri, işkence ve yaşam hakkı ihlalleri yer almaktadır.</p>
+                
+                <p>Bu başlıklar altında özellikle Gülen Hareketi'ne yönelik uygulamalar üzerinden somut vaka ve verilerle devletin izlediği yöntemler irdelenirken, yargı bağımsızlığı ve cezaevi hak ihlalleri başlıkları, yalnızca belirli bir grup üzerinden örneklendirilmek yerine, Türkiye genelindeki yapısal ve sistematik sorunları ortaya koyacak şekilde ele alınmıştır.</p>
+                
+                <div class="info-box highlight">
+                    <div class="info-box-title">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="10"/>
+                            <path d="M12 16v-4"/>
+                            <path d="M12 8h.01"/>
+                        </svg>
+                        Raporun Amacı
+                    </div>
+                    <p style="margin-bottom: 0; color: var(--text-secondary);">2025 yılına ilişkin elde edilen somut veriler ve vaka analizleri ışığında, Türkiye'de uygulanan hak ihlallerinin kapsamını ve bu uygulamaların uluslararası normlar ile uyumsuzluğunu belgeleyerek, kamuoyu ve ilgili kurumların bilgilendirilmesine katkı sağlamaktır.</p>
+                </div>
+            </section>
+
+            <!-- Kitlesel Gözaltılar -->
+            <section class="section" id="kitlesel-gozaltilar">
+                <div class="section-header">
+                    <span class="section-number">01</span>
+                    <div>
+                        <h2>Kitlesel Gözaltılar</h2>
+                    </div>
+                </div>
+                
+                <p>Kitlesel gözaltılar eski çağlardan beri iktidar gücünü elinde tutanların kullandığı bir kılıçtır. Bu kılıcı tutan kişi veya kişiler tarih sayfasında ismen değişse de amaç hep aynıdır: muhalif sesi susturmak, biat etmeyeni ibret olsun diye cezalandırmak.<span class="footnote-ref" data-footnote="1">1</span></p>
+                
+                <p>17–25 Aralık dönemi ile başlayıp, kırılma noktası 15 Temmuz 2016 olan süreçte; belirli bir gruba ait olduğu iddia edilen binlerce kişi, sistematik hak ihlalleri zinciriyle beraber hürriyetlerinden mahrum bırakılmıştır.</p>
+                
+                <p>2025 yılı, Gülen Hareketi mensupları ve "Gülen Hareketi ile bağlantı" (irtibat/iltisak) iddiasıyla hedef alınan kişiler bakımından kitlesel gözaltı pratiğinin süreklilik kazandığı bir yıl olarak kayda geçmiştir. Açık kaynakların sistematik taramasına dayanan Turkey Rights Monitor verilerine göre <strong>1 Ocak 2025–1 Ocak 2026</strong> döneminde <strong>4.916 kişi</strong> gözaltına alınmıştır.<span class="footnote-ref" data-footnote="2">2</span>Bu yıllık toplam, gözaltının münferit bir tedbir olmaktan çıkıp yılın geneline yayılan bir baskı mekanizmasına dönüştüğünü göstermektedir.</p>
+
+                <!-- Chart: 2025 Gözaltı Dağılımı -->
+                <div class="chart-container">
+                    <div class="chart-header">
+                        <span class="chart-title">2025 Yılı Aylık Gözaltı Sayıları</span>
+                    </div>
+                    <div class="chart-wrapper">
+                        <canvas id="monthlyDetentionsChart"></canvas>
+                    </div>
+                </div>
+
+                <!-- Subsection 1.1 -->
+                <div class="subsection" id="resmi-iletisim">
+                    <h3>1.1 Resmî İletişim ve Normalleştirme</h3>
+                    <p>Kitlesel gözaltıların 2025'teki en belirgin boyutlarından biri, uygulamanın yalnızca sahada yürütülmemesi; aynı zamanda resmî makamların tekrar eden sayısal toplamlarla bu pratiği kamusal alanda sürekli görünür kılmasıdır.</p>
+                    
+                    <p>Bu normalleştirme mekanizması, İçişleri Bakanı Ali Yerlikaya'nın açıklamalarında açık biçimde izlenebilmektedir:</p>
+
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <div class="timeline-date">21 Şubat 2024</div>
+                            <p>Kabine dönemi için 4.022 operasyon yapıldığı ve 6.045 kişinin gözaltına alındığı belirtilmiştir.<span class="footnote-ref" data-footnote="3">3</span></p>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-date">13 Temmuz 2024</div>
+                            <p>Aynı kabine dönemi için toplam 6.025 operasyon ve 9.738 gözaltı verisi paylaşılmıştır.<span class="footnote-ref" data-footnote="4">4</span></p>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-date">15 Temmuz 2025</div>
+                            <p>Bu kabine döneminde 10.968 operasyon yapıldığı ve 17.890 kişinin gözaltına alındığı ifade edilmiştir.<span class="footnote-ref" data-footnote="5">5</span></p>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-date">21 Eylül 2025</div>
+                            <p>Kabine dönemi toplamı 11.667 operasyon ve 19.025 şüpheli yakalama/gözaltı işlemi şeklinde güncellenmiştir.<span class="footnote-ref" data-footnote="6">6</span></p>
+                        </div>
+                    </div>
+
+                    <div class="info-box warning">
+                        <div class="info-box-title">Uzun Dönemli Rakamlar</div>
+                        <p style="margin-bottom: 0;">Turkey Rights Monitor'un açık kaynaklardan derlediği veri setine göre Gülen Hareketine karşı kitlesel gözaltılar kapsamında:<span class="footnote-ref" data-footnote="7">7</span></p>
+                        <ul style="margin-top: 1rem; color: var(--text-secondary);">
+                            <li><strong>Toplam gözaltı sayısı:</strong> 152.199</li>
+                            <li><strong>Toplam operasyon sayısı:</strong> 7.215</li>
+                            <li><strong>Ortalama günlük gözaltı:</strong> 44 kişi</li>
+                        </ul>
+                    </div>
+                    <p>2025 yılında operasyonların biçimi ve coğrafi yayılımı, kitlesel gözaltıların nasıl “dalgalar” halinde işlediğini göstermektedir. 6 Mayıs 2025 tarihinde Gaziantep merkezli 47 ilde yürütülen eş zamanlı operasyonda 208 kişinin yakalandığı resmî olarak açıklanmıştır. Bu tür “çok il / eş zamanlı” operasyonlar, gözaltı tedbirinin pratikte bireysel şüphe değerlendirmesi yerine geniş ölçekli güvenlik tasarrufu şeklinde uygulanabildiğini göstermesi bakımından, yılın hafızaya kazınan olayları arasındadır. Aynı operasyon bağlamında hassas gruplara ilişkin kamuoyuna yansıyan örnekler de dikkat çekmiştir; örneğin operasyon kapsamında gözaltına alınanlardan 4 aylık hamile Hatice Doğru’nun tutuklandığı bilgisi paylaşılmıştır. Bu tür örnekler, kitlesel gözaltıların hedef grup üzerinde yalnızca kısa süreli özgürlük kısıtlaması değil; sağlık, aile düzeni ve kırılganlıklar üzerinde uzun etkiler doğurabilen bir baskı mekanizması olduğunu gösterir.</p>
+
+                </div>
+
+                <!-- Subsection 1.2 -->
+                <div class="subsection" id="gerekce-setleri">
+                    <h3>1.2 Gerekçe Setleri ve Tekrar Eden Şablonlar</h3>
+                    <p>Kitlesel gözaltıların analizi yalnızca toplam sayılara indirgenemez. Belirleyici soru, gözaltıların hangi gerekçe setleri etrafında sürekli üretildiği ve bu gerekçelerin nasıl "tekrar eden şablonlar" yarattığıdır.</p>
+                    
+                    <p>Resmî seri operasyon duyurularına göre <strong>8 Ocak 2025–21 Şubat 2025</strong> döneminde toplam <strong>885 kişi</strong> gözaltına alınmıştır.<span class="footnote-ref" data-footnote="8">8</span></p>
+
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>Gerekçe</th>
+                                <th>Gözaltı Sayısı</th>
+                                <th>Oran</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>ByLock / Kriptolu Haberleşme</td>
+                                <td class="number">377</td>
+                                <td>%42.6</td>
+                            </tr>
+                            <tr>
+                                <td>Finansman</td>
+                                <td class="number">92</td>
+                                <td>%10.4</td>
+                            </tr>
+                            <tr>
+                                <td>Diğer</td>
+                                <td class="number">416</td>
+                                <td>%47.0</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <p>Tekrar eden gerekçeler, hedef grup üzerinde iki yönlü bir baskı üretir. Birincisi, gerekçelerin standartlaşması, gözaltı tehdidinin “kişiye özgü” bir risk olmaktan çıkıp “herkese uygulanabilir” bir şablona dönüşmesi sonucunu doğurur. İkincisi, yıl içindeki operasyonların dalgalar halinde yoğunlaşmasına eşlik ederek, toplumda “belirsizlik” duygusunu derinleştirir. Nitekim Turkey Rights Monitor’un 2025 zaman serisi görselleştirmesinde, yıl içinde belirli tarihlerde gözaltı sayısının belirgin biçimde yükseldiği tepe noktaları görülmektedir.</p>
+
+                    <!-- Interactive Chart -->
+                    <div class="chart-container">
+                        <div class="chart-header">
+                            <span class="chart-title">2025 Yılı Gözaltı Dalgaları</span>
+                        </div>
+                        <div class="chart-wrapper">
+                            <canvas id="detentionWavesChart"></canvas>
+                        </div>
+                    </div>
+                    <p>Bu tablo, 2025’te gözaltıların homojen dağılmadığını; belli dönemlerde “operasyon dalgası” şeklinde yoğunlaştığını göstermesi bakımından önemlidir.</p>
+
+                </div>
+
+                <!-- Subsection 1.3 -->
+                <div class="subsection" id="2024-kiyas">
+                    <h3>1.3 2024 ile Kıyas</h3>
+                    <p>Turkey Rights Monitor'un yıllara göre karşılaştırmalı grafiğinde <strong>2024 yılı gözaltı sayısı 4.058</strong>, <strong>2025 yılı gözaltı sayısı ise 4.915</strong> olarak yer almaktadır.</p>
+                    
+                    <div class="chart-container">
+                        <div class="chart-header">
+                            <span class="chart-title">Yıllık Gözaltı Karşılaştırması</span>
+                        </div>
+                        <div class="chart-wrapper">
+                            <canvas id="yearlyComparisonChart"></canvas>
+                        </div>
+                    </div>
+
+                    <div class="info-box highlight">
+                        <p style="margin-bottom: 0;"><strong>Sonuç:</strong> 2025, açık kaynak verilerine göre 4.916 gözaltı ile kaydedilen; resmî dönemsel toplamlarla sürekli gündemde tutulan; yıl içinde dalgalar halinde yoğunlaşan ve gerekçe şablonlarının tekrarıyla standardize edilen bir kitlesel gözaltı pratiğini ortaya koymaktadır.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Hassas Gruplar -->
+            <section class="section" id="hassas-gruplar">
+                <div class="section-header">
+                    <span class="section-number">02</span>
+                    <div>
+                        <h2>Hassas Gruplara Yönelik Keyfi Gözaltı ve Tutuklamalar</h2>
+                    </div>
+                </div>
+                
+                <p>Uluslararası literatürde 'keyfi' terimi kesin tanımlara sahip olmamakla birlikte, tutuklama ve özgürlük kısıtlamalarında yasal savunma hakları ile due process ilkesinin tam korunması esastır. BM, 'keyfi' kavramını, mevcut yasa ve prosedürlere uygun olsa bile, hedefe orantılı, makul, gerekli ve due process ilkelerine uygun olmayan uygulamalar şeklinde tanımlamaktadır.<span class="footnote-ref" data-footnote="9">9</span><span class="footnote-ref" data-footnote="10">10</span><span class="footnote-ref" data-footnote="11">11</span></p>
+                
+                <div class="info-box danger">
+                    <div class="info-box-title">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/>
+                            <line x1="12" y1="9" x2="12" y2="13"/>
+                            <line x1="12" y1="17" x2="12.01" y2="17"/>
+                        </svg>
+                        BM Keyfi Tutuklamalar Çalışma Grubu Kararı
+                    </div>
+                    <p style="margin-bottom: 0;">BM Keyfi Tutuklamalar Çalışma Grubu, Türkiye'nin Gülen Hareketi mensuplarına yönelik tutuklama ve gözaltı uygulamalarını <strong>insanlığa karşı suç</strong> olarak nitelendirmiş ve kınamıştır.<span class="footnote-ref" data-footnote="12">12</span></p>
+                </div>
+
+                <!-- Subsection 2.1 -->
+                <div class="subsection" id="hamile-kadinlar">
+                    <h3>2.1 Parmaklıklar Ardındaki Hamile ve Çocuklu Kadınlar</h3>
+                    <p>2025 yılında açık kaynaklara yansıyan vakalar, hamile kadınlar ile 0–6 yaş arası çocuğu bulunan annelerin tutuklanmasının münferit olaylar olmaktan çıkarak süreklilik arz eden bir uygulamaya dönüştüğünü göstermektedir.</p>
+
+                    <h4>2.1.1 Hamilelik Döneminde Tutuklama</h4>
+                    <div class="case-study">
+                        <div class="case-study-header">
+                            <div class="case-study-icon">⚠</div>
+                            <div>
+                                <div class="case-study-title">Hatice Doğru</div>
+                                <div class="case-study-meta">4 aylık hamile</div>
+                            </div>
+                        </div>
+                        <p style="margin-bottom: 0; color: var(--text-secondary);">Gaziantep merkezli ve çok sayıda ili kapsayan operasyonlar kapsamında gözaltına alınanlar arasında yer alan dört aylık hamile Hatice Doğru'nun tutuklanması, kitlesel gözaltı pratiği ile hassas gruplara yönelik ihlallerin nasıl kesiştiğini göstermektedir.</p>
+                    </div>
+
+                    <div class="case-study">
+                        <div class="case-study-header">
+                            <div class="case-study-icon">⚠</div>
+                            <div>
+                                <div class="case-study-title">Merve Zayım</div>
+                                <div class="case-study-meta">9 aylık hamile</div>
+                            </div>
+                        </div>
+                        <p style="margin-bottom: 0; color: var(--text-secondary);">Dosyasının uzun süredir Yargıtay aşamasında olmasına rağmen doğuma günler kala cezaevine gönderilmiştir.</p>
+                    </div>
+
+                    <div class="case-study">
+                        <div class="case-study-header">
+                            <div class="case-study-icon">⚠</div>
+                            <div>
+                                <div class="case-study-title">Leyla Arslan</div>
+                                <div class="case-study-meta">5 aylık hamile</div>
+                            </div>
+                        </div>
+                        <p style="margin-bottom: 0; color: var(--text-secondary);">Beş aylık hamile Leyla Arslan Edirne’de tutuklanmıştır.</p>
+                    </div>
+
+                    <h4>2.1.2 Bebek ve Küçük Çocukla Birlikte Cezaevi</h4>
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>İsim</th>
+                                <th>Durum</th>
+                                <th>Cezaevi</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Özlem Düzenli</td>
+                                <td>6 aylık bebeğiyle tutuklu</td>
+                                <td>Edirne L Tipi</td>
+                            </tr>
+                            <tr>
+                                <td>Deniz Gündoğdu</td>
+                                <td>16 aylık kızıyla tutuklu</td>
+                                <td>Edirne L Tipi</td>
+                            </tr>
+                            <tr>
+                                <td>Türkan Alemdar</td>
+                                <td>19 aylık çocuğuyla tutuklu</td>
+                                <td>Eskişehir L Tipi</td>
+                            </tr>
+                            <tr>
+                                <td>Fatma Öztimur</td>
+                                <td>Otizmli 4 yaşında + 20 aylık çocuk</td>
+                                <td>Bakırköy Kadın Kapalı</td>
+                            </tr>
+                            <tr>
+                                <td>Şeyma Aslan</td>
+                                <td>12 aylık bebeğiyle tutuklu</td>
+                                <td>Edirne L Tipi</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <p>Ayrıca, H.Ç.’nin, iki küçük çocuğu ve eşiyle birlikte uzun süredir Edirne L Tipi Cezaevi’nde tutulması ise aile bütünlüğünün sistematik biçimde zedelendiği bir başka örnek olarak öne çıkmaktadır.</p>
+                </div>
+
+                <!-- Subsection 2.2 -->
+                <div class="subsection" id="hasta-engelli">
+                    <h3>2.2 Hasta, Engelli ve Yaşlı Tutuklular</h3>
+                    
+                    <div class="case-study">
+                        <div class="case-study-header">
+                            <div class="case-study-icon" style="background: rgba(239, 68, 68, 0.2);">§</div>
+                            <div>
+                                <div class="case-study-title">İbrahim Güngör</div>
+                                <div class="case-study-meta">72 yaşında, Alzheimer hastası</div>
+                            </div>
+                        </div>
+                        <p style="color: var(--text-secondary);">Cezası onandıktan sonra tutuklanan Güngör'ün sağlık durumu cezaevinde hızla kötüleşmiş; yapılan açık görüşte üniversite öğrencisi kızını dahi tanıyamamıştır. Cezaevi koşullarında gerekli sağlık ve bakım hizmetlerine erişemeden yaşamını yitirmiştir.</p>
+                        <p style="margin-bottom: 0; color: var(--accent-danger); font-weight: 600;">Bu vaka, sağlık durumu cezaevi koşullarıyla bağdaşmayan mahpusların özgürlükten yoksun bırakılmasının yalnızca bir hak ihlali değil, aynı zamanda önlenebilir bir ölüm riskine dönüştüğünü göstermektedir.</p>
+                    </div>
+
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>İsim</th>
+                                <th>Yaş</th>
+                                <th>Sağlık Durumu</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Gülten Nene</td>
+                                <td>—</td>
+                                <td>Kanser teşhisi aylar sürdü</td>
+                            </tr>
+                            <tr>
+                                <td>Abdullah Tırpan</td>
+                                <td>72</td>
+                                <td>Şeker ve zatürre hastası</td>
+                            </tr>
+                            <tr>
+                                <td>Kadriye Işık</td>
+                                <td>74</td>
+                                <td>Kanser hastası, infaz erteleme reddedildi</td>
+                            </tr>
+                            <tr>
+                                <td>Mehmet Hanifi Emeç</td>
+                                <td>—</td>
+                                <td>MS hastası, tekerlekli sandalye</td>
+                            </tr>
+                            <tr>
+                                <td>D.S.</td>
+                                <td>—</td>
+                                <td>Psikiyatrik rahatsızlık</td>
+                            </tr>
+                            <tr>
+                                <td>Ali Aki</td>
+                                <td>—</td>
+                                <td>Yüzde 78 engelli</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <p>2025 yılı boyunca Türkiye’de hassas gruplara yönelik gözaltı ve tutuklama uygulamaları, özgürlükten yoksun bırakma tedbirinin istisnai niteliğini fiilen ortadan kaldırmıştır. Hamile kadınlar, küçük çocuk sahibi anneler, ağır hasta, engelli ve ileri yaştaki bireyler bakımından tutuklama kararlarının ölçülülük ve gereklilik ilkeleri çerçevesinde ayrı bir değerlendirmeye tabi tutulmadığı; alternatif adli tedbirlerin ise sistematik biçimde göz ardı edildiği görülmüştür.</p>
+                    <p>Özellikle hamilelik döneminde veya bebekle birlikte cezaevinde tutulan kadınlara ilişkin vakalar, anne ve çocuğun korunmasına yönelik temel hukuki güvencelerin pratikte etkisizleştiğini ortaya koymaktadır. Benzer şekilde, ağır hasta ve nörolojik rahatsızlığı bulunan mahpusların cezaevi koşullarında tutulmaya devam edilmesi, sağlık hakkının ihlaliyle sınırlı kalmayarak yaşam hakkını doğrudan tehdit eden bir boyuta ulaşmıştır. Alzheimer hastası İbrahim Güngör’ün cezaevinde yaşamını yitirmesi, bu sürecin ulaştığı noktayı simgeleyen en çarpıcı örneklerden biri olmuştur.</p>
+                    <p>2025 yılı verileri, hassas gruplara yönelik tutuklama ve infaz uygulamalarının münferit hatalar veya istisnai kararlar olarak değerlendirilemeyeceğini; aksine, insan onurunu merkeze alan koruma mekanizmalarının sistematik biçimde aşındırıldığı yapısal bir soruna işaret ettiğini göstermektedir. Bu tablo, Türkiye’de ceza adalet sisteminin, özellikle kırılgan gruplar bakımından, hak temelli bir yaklaşım yerine cezalandırıcı ve caydırıcı bir pratiğe evrildiğini ortaya koymaktadır.</p>
+                </div>
+            </section>
+
+            <!-- İşkence -->
+            <section class="section" id="iskence">
+                <div class="section-header">
+                    <span class="section-number">03</span>
+                    <div>
+                        <h2>Türkiye'de İşkence Gerçeği</h2>
+                    </div>
+                </div>
+                
+                <p>Bu bölüm, 2025 yılı içinde yayımlanan uluslararası raporlar ve kamuya yansıyan örnek olaylar temelinde, Türkiye'de işkence ve kötü muamele iddialarının devam ettiğini; özellikle KHK rejimiyle tasfiye edilenler ile Gülen Hareketi’yle bağlantı iddiası altında yürütülen soruşturmalarda gözaltı–tutuklama süreçlerinin yüksek risk alanı olmaya devam ettiğini ortaya koymayı amaçlamaktadır.</p>
+
+                <div class="info-box highlight">
+                    <div class="info-box-title">Uluslararası Değerlendirmeler</div>
+                    <ul style="color: var(--text-secondary); margin-bottom: 0;">
+                        <li><strong>AB 2025 Türkiye Raporu:</strong> İşkence ve kötü muamelenin önlenmesine ilişkin hukuki güvencelerin yetersizliğine dikkat çekilmiştir.<span class="footnote-ref" data-footnote="13">13</span></li>
+                        <li><strong>İHD 26 Haziran 2025 Raporu:</strong> İşkencenin güncel görünümü ve cezasızlık dinamikleri değerlendirilmiştir.<span class="footnote-ref" data-footnote="14">14</span></li>
+                        <li><strong>OMCT Global Torture Index 2025:</strong> Türkiye yüksek risk grubunda sınıflandırılmıştır.<span class="footnote-ref" data-footnote="15">15</span></li>
+                    </ul>
+                </div>
+
+                <h3>3.1 Örnek Vakalar</h3>
+                
+                <div class="case-study">
+                    <div class="case-study-header">
+                        <div class="case-study-icon">⚡</div>
+                        <div>
+                            <div class="case-study-title">6 Mayıs Operasyonları</div>
+                            <div class="case-study-meta">47 ilde eş zamanlı operasyon</div>
+                        </div>
+                    </div>
+                    <p style="color: var(--text-secondary);">Çoğunluğu üniversite öğrencisi olan 77 kişi tutuklandı. Gözaltı ve tutuklama sürecinde psikolojik işkenceye maruz bırakıldıkları, birbirleri aleyhine ifade vermeye zorlandıkları yönünde iddialar gündeme geldi.<span class="footnote-ref" data-footnote="16">16</span></p>
+                </div>
+
+                <div class="case-study">
+                    <div class="case-study-header">
+                        <div class="case-study-icon">⚖</div>
+                        <div>
+                            <div class="case-study-title">Eyüp Birinci Davası</div>
+                            <div class="case-study-meta">KHK'lı Öğretmen - AYM İhlal Kararı</div>
+                        </div>
+                    </div>
+                    <p style="color: var(--text-secondary);">2016 yılında Antalya'da gözaltında işkenceye maruz kaldığı iddiasıyla açılan davada, 18 Nisan 2025'te tanıklar dinlenmiştir. Aynı nezarethanede kalan bir başka KHK'lı öğretmen, Birinci'yi kanlar içinde ve bilinci kapalı halde gördüğünü beyan etmiştir.<span class="footnote-ref" data-footnote="17">17</span></p>
+                </div>
+
+                <h3>3.2 Örnek Karar: Zabit Kişi Vakası</h3>
+                <p>2017'de Kazakistan'dan zorla Türkiye'ye getirildiği ve Ankara'da bir konteyner içinde 108 gün işkence gördüğü ileri sürülen Zabit Kişi bakımından Anayasa Mahkemesi hak ihlali kararı verdi; soruşturma yükümlülüğünün gereği gibi yerine getirilmemesi nedeniyle manevi tazminata hükmetti.<span class="footnote-ref" data-footnote="18">18</span></p>
+                <h3>3.3 Cezasızlık ve Soruşturma Eşiği: İlhan Talu Vakası</h3>
+                <p>Genelkurmay çatı davasında yargılanan ve ağırlaştırılmış müebbet hapis cezasına çarptırılan Korgeneral İlhan Talu’nun “işkence ve kötü muamele” iddialarına ilişkin suç duyurusunun Ankara Cumhuriyet Savcılığı tarafından “kovuşturmaya yer olmadığı” gerekçesiyle sonuçlandırıldığı kamuoyuna yansıdı.</p>
+                
+            </section>
+
+            <!-- Mal Varlığı -->
+            <section class="section" id="mal-varligi">
+                <div class="section-header">
+                    <span class="section-number">04</span>
+                    <div>
+                        <h2>Mal Varlığın Dondurulması Kararı ve Terör Arananlar Listesi</h2>
+                    </div>
+                </div>
+                
+                <p>2025 yılı boyunca da Gülen Hareketi ile ilişkilendirilen kişi ve tüzel yapılara yönelik mal varlığının dondurulması kararlarının sürdüğü görülmüştür. Bu kararlar, Resmî Gazete'de yayımlanan Cumhurbaşkanı kararları ve ilgili idari işlemler aracılığıyla, ağırlıklı olarak "terörizmin finansmanının önlenmesi" ve "ulusal güvenlik" gerekçelerine dayandırılmıştır.<span class="footnote-ref" data-footnote="21">21</span></p>
+                
+                <p>Mal varlığının dondurulması tedbiri, hukuki niteliği itibarıyla geçici ve istisnai bir önlem olarak düzenlenmiş olsa da, 2025 yılı itibarıyla bu tedbirin kalıcı sonuçlar doğuran fiilî bir yaptırım işlevi gördüğü gözlemlenmektedir. Ancak uygulama pratiği, bu tedbirlerin yalnızca finansal suçlarla mücadele amacıyla sınırlı kalmadığını; muhalif kişi ve yapıları ekonomik olarak tasfiye etmeye yönelik yapısal bir baskı aracına dönüştüğünü göstermektedir.</p>
+
+                <h3>4.1 Terör Arananlar Listesi</h3>
+                <p>2025 yılında da İçişleri Bakanlığı tarafından işletilen "terör arananlar listesi" sistemi, gerçek ve somut terör tehdidiyle mücadele mekanizması olmaktan ziyade, özellikle yurt dışında yaşayan muhalif kişi ve grupları hedef alan siyasi nitelikli bir damgalama aracı olarak işlev görmeye devam etmiştir.<span class="footnote-ref" data-footnote="22">22</span></p>
+                
+                <div class="info-box danger">
+                    <div class="info-box-title">BM Eleştirisi</div>
+                    <p style="margin-bottom: 0;">Birleşmiş Milletler mekanizmaları, Türkiye'nin bu tür izleme ve listeleme sistemlerini insan hakları savunucuları, gazeteciler, avukatlar ve siyasi muhalifler üzerinde baskı aracı olarak kullandığını açık biçimde eleştirmiş; listeleme prosedürlerinin keyfîlik riski taşıdığını vurgulamıştır.<span class="footnote-ref" data-footnote="23">23</span></p>
+                </div>
+            </section>
+
+            <!-- Yaşam Hakkı -->
+            <section class="section" id="yasam-hakki">
+                <div class="section-header">
+                    <span class="section-number">05</span>
+                    <div>
+                        <h2>Yaşam Hakkı İhlalleri</h2>
+                    </div>
+                </div>
+                
+                <p>2025 yılı boyunca açık kaynaklara yansıyan veriler, Gülen Hareketi ile iltisaklı olduğu iddia edilen bireylerin yaşam hakkına ilişkin ihlallerin çok boyutlu bir görünüm arz ettiğini ortaya koymaktadır.</p>
+                <p>Bu ihlaller yalnızca cezaevi ölümleriyle sınırlı olmayıp; cezaevi koşullarının dolaylı etkileri, sürgün ve zorunlu göç bağlamında gerçekleşen ölümler, ekonomik ve psikolojik baskıların tetiklediği intihar vakaları ile iş ve trafik kazaları şeklinde geniş bir yelpazeye yayılmaktadır.</p>
+                <!-- Chart: Ölüm Nedenleri -->
+                <div class="chart-container">
+                    <div class="chart-header">
+                        <span class="chart-title">2025 Yaşam Hakkı İhlalleri - Ölüm Nedenleri</span>
+                    </div>
+                    <div class="chart-wrapper">
+                        <canvas id="deathCausesChart"></canvas>
+                    </div>
+                </div>
+
+                <h3>5.1 Cezaevinde Ölüm Vakaları</h3>
+                <p>2025 yılı içerisinde Gülen Hareketi ile bağlantılı olduğu iddia edilen çok sayıda kişinin cezaevinde hayatını kaybettiği tespit edilmiştir. Bu vakaların önemli bir bölümünde, ölümlerin önlenebilir nitelikte olduğu görülmektedir.</p>
+
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>İsim</th>
+                            <th>Ölüm Nedeni</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Hüsamettin Karadeniz</td><td>Cezaevinde ölüm</td></tr>
+                        <tr><td>Ertuğrul Yavaşça</td><td>Cezaevinde ölüm</td></tr>
+                        <tr><td>Ramazan Aktaş</td><td>Cezaevinde ölüm</td></tr>
+                        <tr><td>Cengiz Çakıltepe</td><td>Cezaevinde ölüm</td></tr>
+                        <tr><td>İbrahim Güngör</td><td>Cezaevinde ölüm</td></tr>
+                        <tr><td>Asaleddin Çelik</td><td>Cezaevinde ölüm</td></tr>
+                        <tr><td>Hüseyin Parlak</td><td>Cezaevinde ölüm</td></tr>
+                        <tr><td>Süleyman Yıldırım</td><td>Cezaevinde ölüm</td></tr>
+                        <tr><td>Mehmet Çataklı</td><td>Cezaevinde ölüm</td></tr>
+                    </tbody>
+                </table>
+                <p>Özellikle İbrahim Güngör vakası, cezaevlerinde sağlık hakkının sistematik biçimde ihlal edildiğini gösteren çarpıcı örneklerden biridir. Alzheimer hastası olan Güngör, yoğun bakımda tedavi görmesi gerekirken cezaevine geri gönderilmiş, ailesinin tüm tahliye çağrıları karşılıksız bırakılmış ve nihayetinde hayatını kaybetmiştir. Benzer şekilde Asaleddin Çelik vakası, Adli Tıp tarafından infaz erteleme uygun bulunmasına rağmen mahkemelerin tahliye yönünde karar vermemesi nedeniyle yaşam hakkının ihlaliyle sonuçlanan yargısal ihmalleri gözler önüne sermektedir.</p>
+
+                <h3>5.2 Hastalık Nedeniyle Ölüm Vakaları (Cezaevi Dışı)</h3>
+                <p>2025 yılı verileri, çok sayıda kişinin cezaevi dışında ancak KHK süreciyle bağlantılı sosyal, ekonomik ve psikolojik yıkımın doğrudan sonucu olarak hastalık nedeniyle hayatını kaybettiğini ortaya koymaktadır. İhraç sonrası sağlık hizmetlerine erişimde yaşanan güçlükler, sigortasızlık, işsizlik, sosyal dışlanma ve uzun süreli stres, ölümcül hastalıkların ilerlemesini hızlandıran temel faktörler olarak öne çıkmaktadır.</p>
+                <div class="info-box danger">
+                    <p style="margin-bottom: 0;">Bu kapsamda; Uğur Kömeçoğlu, Yusuf Olca, Ali Altınpınar, Murat Eryılmaz, Devrim Sönmez, Dursun Ali Kurt, Bülent Adıgüzel, Kazım Doğan, Derya Çelik, Vakkas Karakoyun, Ramazan Ünal, Arif Taşçılar ve Bekir Esen gibi birçok kişinin, kanser, kalp krizi, beyin kanaması ve çoklu kronik hastalıklar nedeniyle yaşamını yitirdiği kayda geçmiştir. Bu vakaların büyük bölümünde, hastalıkların ihraç sonrası dönemde ağırlaştığı ve kişilerin düzenli tedaviye erişemediği görülmektedir.</p>
+                </div>
+
+                <h3>5.3 İntihar Vakaları</h3>
+                <p>KHK ile ihraç edilen ve uzun süreli işsizlik, damgalanma, yoksulluk ve psikolojik baskı altında yaşayan bireylerin, devlet tarafından sunulması gereken sosyal ve psikolojik destek mekanizmalarından yoksun bırakıldığı görülmektedir.</p>
+                <div class="info-box danger">
+                    <p style="margin-bottom: 0;">Bu bağlamda Gazi Bahargülü, Erdal Mehmet Uzun, Ömer S. ve Ali Ülker'in yaşamlarına son verdikleri tespit edilmiştir. Vakaların ortak noktası, bireylerin hukuki belirsizlik, ekonomik çöküş ve toplumsal dışlanma ile baş başa bırakılmış olmalarıdır.</p>
+                </div>
+
+                <h3>5.4 Trafik ve İş Kazaları</h3>
+                <p>2025 yılı verileri, KHK sürecinin dolaylı etkilerinin iş ve trafik kazaları yoluyla da yaşam hakkı ihlallerine dönüştüğünü göstermektedir. İhraç edilen birçok kişinin, mesleki uzmanlıkları dışında, güvencesiz ve tehlikeli işlerde çalışmak zorunda bırakıldığı görülmektedir.</p>
+                <div class="info-box danger">
+                    <p style="margin-bottom: 0;">Bu kapsamda; Ali Osman Çırak ve ailesi, Mehmet İraz, Burak Kayacı, Hüseyin Şen ve Ramazan Korkut trafik kazalarında; Musa Üçgül, Yusuf Çetin, Orhan Çöl ve Hüseyin Açıkyörük ise iş kazaları sonucunda hayatını kaybetmiştir. Bu vakalar, KHK ile ihraç edilen bireylerin yaşamlarını sürdürebilmek için insan onuruna aykırı ve riskli koşullarda çalışmaya zorlandığını açıkça ortaya koymaktadır.</p>
+                </div>
+
+                <h3>5.5 Çocukların Yaşam Hakkı</h3>
+                <div class="info-box danger">
+                    <p style="margin-bottom: 0;">2025 yılında yaşam hakkı ihlallerinin çocukları da doğrudan etkilediği görülmektedir. Ahmet Çetiz’in üç çocuğu ve Sümeyra Gelir gibi vakalar, ebeveynlerin cezaevinde bulunmasının ve aile bütünlüğünün bozulmasının çocuklar üzerinde ölümcül sonuçlar doğurabildiğini göstermektedir. Sümeyra Gelir’in, annesinin cezaevinde olması nedeniyle kardeşlerine bakmak zorunda bırakılması ve devletin koruyucu sosyal politikalarının devreye sokulmaması, çocuğun üstün yararı ilkesinin ağır ihlali niteliğindedir.</p>
+                </div>
+
+            </section>
+
+            <!-- Zorla Kaybedilenler -->
+            <section class="section" id="zorla-kaybedilenler">
+                <div class="section-header">
+                    <span class="section-number">06</span>
+                    <div>
+                        <h2>Zorla Kaybedilenler & Hukuka Aykırı Sınır Dışı ve İadeler</h2>
+                    </div>
+                </div>
+                
+                <p>Birleşmiş Milletler, zorla kaybedilmeyi, devlet ajanları tarafından veya devletin yetkilendirmesi, desteği ya da hoşgörüsü ile hareket eden kişiler veya gruplar tarafından yapılan tutuklama, gözaltı, kaçırma veya özgürlüğün herhangi bir biçimde kısıtlanması ve ardından özgürlüğün kısıtlanmasının kabul edilmemesi veya kaybolan kişinin akıbeti veya nerede olduğunun gizlenmesi olarak tanımlamaktadır.<span class="footnote-ref" data-footnote="25">25</span></p>
+
+                <div class="info-box warning">
+                    <div class="info-box-title">Halen Kayıp Olan Kişiler</div>
+                    <p style="color: var(--text-secondary);">2016 yılından 2025 yılı sonuna kadar Gülen Hareketi mensubu olan en az 36 kişinin kaçırıldığı bilinmektedir. Bu kişilerden üçü halen kayıp statüsündedir:</p>
+                    <ul style="color: var(--text-secondary); margin-bottom: 0;">
+                        <li><strong>Sunay Elmas</strong> - Öğretmen, 27 Ocak 2016'dan beri kayıp<span class="footnote-ref" data-footnote="27">27</span></li>
+                        <li><strong>Ayhan Oran</strong> - MİT görevlisi, 1 Kasım 2016'dan beri kayıp<span class="footnote-ref" data-footnote="28">28</span></li>
+                        <li><strong>Yusuf Bilge Tunç</strong> - Savunma Sanayi çalışanı, 6 Ağustos 2019'dan beri kayıp<span class="footnote-ref" data-footnote="29">29</span></li>
+                    </ul>
+                </div>
+
+                <h3>6.1 2025 Yılına İlişkin Vakalar</h3>
+                
+                <div class="case-study">
+                    <div class="case-study-header">
+                        <div class="case-study-icon">🇰🇪</div>
+                        <div>
+                            <div class="case-study-title">Kenya – Mustafa Güngör Vakası</div>
+                            <div class="case-study-meta">Aralık 2025</div>
+                        </div>
+                    </div>
+                    <p style="color: var(--text-secondary);">Kenya'da mülteci statüsüne sahip Türk vatandaşı Mustafa Güngör, Türkiye'nin talebi üzerine Kenya makamları tarafından gözaltına alınmıştır. Kenya mahkemesi, 30 Aralık 2025'te serbest bırakılmasına karar vermiştir.<span class="footnote-ref" data-footnote="30">30</span><span class="footnote-ref" data-footnote="31">31</span></p>
+                </div>
+
+                <div class="case-study">
+                    <div class="case-study-header">
+                        <div class="case-study-icon">🇲🇿</div>
+                        <div>
+                            <div class="case-study-title">Mozambik – Emre Çınar Vakası</div>
+                            <div class="case-study-meta">2025</div>
+                        </div>
+                    </div>
+                    <p style="color: var(--text-secondary);">Avukat Emre Çınar, Türkiye'nin iade talebi üzerine Mozambik'te gözaltına alınmıştır. Mozambik mahkemesi, iade talebinin siyasi saiklerle yapıldığına dair ciddi emareler bulunduğunu belirterek serbest bırakılmasına karar vermiştir.<span class="footnote-ref" data-footnote="32">32</span><span class="footnote-ref" data-footnote="33">33</span></p>
+                </div>
+            </section>
+
+            <!-- Terör İstatistikleri -->
+            <section class="section" id="teror-istatistikleri">
+                <div class="section-header">
+                    <span class="section-number">07</span>
+                    <div>
+                        <h2>Terör İstatistikleri</h2>
+                    </div>
+                </div>
+                
+                <p>Bu bölüm, 2025 yılı içerisinde Adalet Bakanlığı ve İçişleri Bakanlığı tarafından 15 Temmuz 2016 hadisesine dayandırılarak kamuoyuna yapılan resmî açıklamalara dayanmaktadır.<span class="footnote-ref" data-footnote="34">34</span></p>
+
+                <h3>7.1 15 Temmuz 2016 Olaylarına İlişkin Yargılamalar</h3>
+                <p>Adalet Bakanı Yılmaz Tunç'un 13 Temmuz 2025 tarihli açıklamasına göre, 289 fiilî olay dosyasının tamamında karar verilmiştir:</p>
+
+                <div class="stats-grid" style="grid-template-columns: repeat(3, 1fr);">
+                    <div class="stat-card">
+                        <div class="stat-number">4,891</div>
+                        <div class="stat-label">Mahkûmiyet</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">2,870</div>
+                        <div class="stat-label">Beraat</div>
+                    </div>
+                    <div class="stat-card danger">
+                        <div class="stat-number">1,634</div>
+                        <div class="stat-label">Ağırlaştırılmış Müebbet</div>
+                    </div>
+                </div>
+
+                <h3>7.2 Cezaevlerindeki Tutuklu ve Hükümlü Sayıları</h3>
+                <p>Adalet Bakanlığı'nın Temmuz 2025 itibarıyla paylaştığı verilere göre:<span class="footnote-ref" data-footnote="35">35</span></p>
+
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>Kategori</th>
+                            <th>Sayı</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Hükümlü veya Hükümözlü</td>
+                            <td class="number">11,085</td>
+                        </tr>
+                        <tr>
+                            <td>Tutuklu</td>
+                            <td class="number">555</td>
+                        </tr>
+                        <tr>
+                            <td>Yargılaması Devam Eden</td>
+                            <td class="number">24,000</td>
+                        </tr>
+                        <tr>
+                            <td>Soruşturması Devam Eden</td>
+                            <td class="number">58,000</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h3>7.3 Kamudan İhraçlar</h3>
+                <p>15 Temmuz 2016 sonrasında Gülen Hareketi ile iltisak veya irtibat iddiasıyla <strong>127.000 kişi</strong> kamu görevinden çıkarılmıştır.<span class="footnote-ref" data-footnote="36">36</span></p>
+
+                <!-- Chart: İhraç Dağılımı -->
+                <div class="chart-container">
+                    <div class="chart-header">
+                        <span class="chart-title">Kuruma Göre İhraç Sayıları</span>
+                    </div>
+                    <div class="chart-wrapper">
+                        <canvas id="dismissalsChart"></canvas>
+                    </div>
+                </div>
+
+                <h3>7.4 Gözaltı, Tutuklama ve Adli Kontrol</h3>
+                <p>İçişleri Bakanı Ali Yerlikaya'nın açıklamalarına göre, 15 Temmuz 2016'dan bu yana:<span class="footnote-ref" data-footnote="37">37</span></p>
+
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-number">390,322</div>
+                        <div class="stat-label">Toplam Gözaltı</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">113,844</div>
+                        <div class="stat-label">Tutuklanan</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">118,822</div>
+                        <div class="stat-label">Adli Kontrol</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">153,382</div>
+                        <div class="stat-label">Serbest Bırakılan</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Cezaevi İhlalleri -->
+            <section class="section" id="cezaevi-ihlalleri">
+                <div class="section-header">
+                    <span class="section-number">08</span>
+                    <div>
+                        <h2>Cezaevlerinde Hak İhlalleri</h2>
+                    </div>
+                </div>
+                
+                <p>Uluslararası insan hakları sözleşmeleri uyarınca, hapis cezasının infazı sürecinde hürriyetinden yoksun bırakılan kişilerin insan onuruna saygı gösterilmesi, devletin temel yükümlülükleri arasındadır.</p>
+                <p>Cezaevlerinde tutulan mahpusların barındırıldığı koşullar, asgari yaşam standartlarına uygun olmalı; cezanın kaçınılmaz sonucu olan özgürlük kısıtlamasının ötesinde, aşırı ıstırap ve zorluk yaratacak uygulamalardan kaçınılmalıdır. Buna rağmen Türkiye’de cezaevlerinde uzun süredir devam eden yapısal sorunlar, 2025 yılında da yaygın ve sistematik hak ihlallerine yol açmıştır.</p>
+                <div class="info-box highlight">
+                    <div class="info-box-title">2025 Yılı Genel Görünüm</div>
+                    <ul style="color: var(--text-secondary); margin-bottom: 0;">
+                        <li><strong>Toplam vaka sayısı:</strong> 950+</li>
+                        <li><strong>Etkilenen cezaevi sayısı:</strong> 80+</li>
+                        <li><strong>Farklı ihlal türü:</strong> 25+</li>
+                    </ul>
+                </div>
+
+                <!-- Chart: Cezaevi İhlalleri -->
+                <div class="chart-container">
+                    <div class="chart-header">
+                        <span class="chart-title">2025 Cezaevi Hak İhlalleri Dağılımı</span>
+                    </div>
+                    <div class="chart-wrapper">
+                        <canvas id="prisonViolationsChart"></canvas>
+                    </div>
+                </div>
+
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>İhlal Türü</th>
+                            <th>Vaka Sayısı</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Sağlık hakkına yönelik ihlaller</td>
+                            <td class="number">300+</td>
+                        </tr>
+                        <tr>
+                            <td>Tahliye hakkının engellenmesi</td>
+                            <td class="number">180+</td>
+                        </tr>
+                        <tr>
+                            <td>Aşırı doluluk ve barınma koşulları</td>
+                            <td class="number">160+</td>
+                        </tr>
+                        <tr>
+                            <td>Keyfi disiplin cezaları</td>
+                            <td class="number">120+</td>
+                        </tr>
+                        <tr>
+                            <td>Kötü muamele, darp, çıplak arama</td>
+                            <td class="number">90+</td>
+                        </tr>
+                        <tr>
+                            <td>Yetersiz beslenme, hijyen vb.</td>
+                            <td class="number">100+</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+
+            <!-- Yargı Bağımsızlığı -->
+            <section class="section" id="yargi-bagimsizligi">
+                <div class="section-header">
+                    <span class="section-number">09</span>
+                    <div>
+                        <h2>Yargı Bağımsızlığı</h2>
+                    </div>
+                </div>
+                
+                <p>Yargı bağımsızlığı, yasama, yürütme ve yargı erklerinin birbirinden ayrılarak bağımsız ve tarafsız karar alma yetisine sahip olmasıyla ölçülen temel demokratik ilkelerdendir.</p>
+                <p>Türkiye’nin mevzuatında bu ilke açıkça yer almakla birlikte, ulusal ve uluslararası raporlar 2025 yılı itibarıyla bu ilkenin uygulamada ciddi baskı ve riskler altında olduğunu göstermektedir.</p>
+                <h3>9.1 Uluslararası Değerlendirmeler</h3>
+                <p>2025 Avrupa Komisyonu'nun "Türkiye Raporu"nda, Türkiye'de hukukun üstünlüğü ve yargı bağımsızlığı konusundaki endişelerin giderilemediği vurgulanmıştır.<span class="footnote-ref" data-footnote="38">38</span><span class="footnote-ref" data-footnote="39">39</span></p>
+
+                <div class="info-box danger">
+                    <div class="info-box-title">Avrupa Parlamentosu Raportörü</div>
+                    <p style="margin-bottom: 0;">Türkiye'nin <strong>"tarihsel olarak benzeri görülmemiş bir demokratik gerilemeyle"</strong> karşı karşıya olduğunu ifade etmiştir.<span class="footnote-ref" data-footnote="41">41</span></p>
+                </div>
+
+                <h3>9.2 Uluslararası Hak ve Adalet Örgütlerinin Eleştirileri</h3>
+                <p>Human Rights Watch ve diğer uluslararası sivil toplum örgütleri, Türkiye'de yargı bağımsızlığı ve hukukun üstünlüğünün 2025 itibarıyla ciddi baskı altında olduğunu belirten raporlar yayınlamışlardır.<span class="footnote-ref" data-footnote="42">42</span><span class="footnote-ref" data-footnote="43">43</span></p>
+
+                <h3>9.3 Somut Vakalar</h3>
+                <p>2025'in son çeyreğinde İstanbul'daki bir ağır ceza mahkemesi, Anayasa Mahkemesi'nin "yeniden yargılama" emrini yerine getirmeyerek ilgili davada yeniden duruşma yapılmasını reddetmiştir.<span class="footnote-ref" data-footnote="44">44</span></p>
+                <p>İstanbul Büyükşehir Belediye Başkanı Ekrem İmamoğlu’nun tutuklanması ve yargılanması, geniş halk tepkisine yol açmış ve bunun “siyasi motivasyonlu yargı kullanımı” tartışmasını güçlendirdiği ileri sürülmüştür.</p>
+                <p>2025’in Temmuz–Eylül döneminde yargı süreçleri nedeniyle 150’den fazla gazetecinin mahkeme önüne çıkması medya özgürlüğü üzerinden yargı bağımsızlığı tartışmalarını beslemiştir.<span class="footnote-ref" data-footnote="45">45</span></p>
+
+
+                <h3>9.4 Yargı Bağımsızlığı Endeksleri</h3>
+                <p>Türkiye, 2025 Küresel Hukukun Üstünlüğü Endeksi'nde <strong>118. sıraya</strong> düşmüştür.</p>
+                <p>Uluslararası raporlar Türkiye’de yargı bağımsızlığını doğrudan etkileyen temel sorun alanlarının şöyle olduğunu belirtmektedir:• İktidarın yürütme organının yargı üzerindeki dolaylı/siyasi etkisi ve hakim atamalarına ilişkin şeffaflık eksikliği. • AİHM kararlarının yerel mahkemeler tarafından uygulanmaması ve iç hukuka aktarılmasındaki gecikmeler. • Yargı sürecinde siyasi dava algısının güçlenmesi, özellikle yüksek profilli siyasi davalarda.</p>
+                <p>2025 yılı itibarıyla uluslararası ve ulusal izleme raporları, Türkiye’de yargı bağımsızlığının sistematik baskı ve siyasi etki algısıyla karşı karşıya olduğunu ortaya koymaktadır. Bu durum, uluslararası insan hakları mekanizmaları ile Avrupa hukuku çevrelerinde ciddi eleştirilere konu olmuş ve hukukun üstünlüğü, temel haklar ile demokratik katılım açısından önemli bir risk faktörü olarak tanımlanmıştır. Yargı bağımsızlığının güçlendirilmesi, AİHM kararlarının uygulanması ve siyasi etkiden arındırılmış bir yargı kültürünün tesis edilmesi, Türkiye’nin hem iç hukuk sisteminin güvenilirliği hem de uluslararası yükümlülükleri bakımından önemini korumaktadır.</p>
+
+
+            </section>
+
+            <!-- Kapatılan Kurumlar -->
+            <section class="section" id="kapatilan-kurumlar">
+                <div class="section-header">
+                    <span class="section-number">10</span>
+                    <div>
+                        <h2>Kapatılan ve El Konulan Kurumlar</h2>
+                    </div>
+                </div>
+                
+                <p>Türkiye'de Gülen hareketine yönelik kapatma ve el koyma uygulamaları, 2016 yılında ilan edilen Olağanüstü Hâl (OHAL) döneminde çıkarılan Kanun Hükmünde Kararnameler (KHK) ile kurumsal bir nitelik kazanmıştır.</p>
+                <p>KHK rejimi sona ermiş olmasına rağmen, Gülen hareketiyle iltisak veya irtibat iddiası temelinde yürütülen mülkiyete el koyma ve yönetimi devralma uygulamaları, sonraki yıllarda farklı hukuki mekanizmalar aracılığıyla devam etmiştir. Bu noktada Tasarruf Mevduatı Sigorta Fonu (TMSF), kayyum atamaları yoluyla özel şirketlerin yönetim ve varlıkları üzerinde belirleyici bir aktör hâline gelmiştir.</p>
+                <div class="info-box highlight">
+                    <div class="info-box-title">OHAL Döneminde Kapatılan Kurumlar</div>
+                    <p style="color: var(--text-secondary);">11 farklı KHK ile, Türkiye genelinde 81 ilde, farklı alanlarda faaliyet gösteren <strong>en az 3.942 kurum</strong> kapatılmıştır:</p>
+                </div>
+
+                <!-- Chart: Kapatılan Kurumlar -->
+                <div class="chart-container">
+                    <div class="chart-header">
+                        <span class="chart-title">Kapatılan Kurum Türleri</span>
+                    </div>
+                    <div class="chart-wrapper">
+                        <canvas id="closedInstitutionsChart"></canvas>
+                    </div>
+                </div>
+
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>Kurum Türü</th>
+                            <th>Sayı</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Dernek</td><td class="number">1,410</td></tr>
+                        <tr><td>Özel Okul</td><td class="number">1,034</td></tr>
+                        <tr><td>Öğrenci Yurdu</td><td class="number">835</td></tr>
+                        <tr><td>Dershane</td><td class="number">301</td></tr>
+                        <tr><td>Vakıf</td><td class="number">109</td></tr>
+                        <tr><td>Gazete</td><td class="number">53</td></tr>
+                        <tr><td>Sağlık Kuruluşu</td><td class="number">47</td></tr>
+                        <tr><td>Yayınevi</td><td class="number">29</td></tr>
+                        <tr><td>Radyo</td><td class="number">22</td></tr>
+                        <tr><td>Dergi</td><td class="number">20</td></tr>
+                        <tr><td>Televizyon</td><td class="number">19</td></tr>
+                        <tr><td>Sendika</td><td class="number">19</td></tr>
+                        <tr><td>Federasyon</td><td class="number">19</td></tr>
+                        <tr><td>Üniversite</td><td class="number">15</td></tr>
+                    </tbody>
+                </table>
+
+                <h3>10.1 2025'te Güncel El Koyma Uygulamaları</h3>
+                <div class="case-study">
+                    <div class="case-study-header">
+                        <div class="case-study-icon">🏢</div>
+                        <div>
+                            <div class="case-study-title">Maydonoz Döner</div>
+                            <div class="case-study-meta">2025 - TMSF Kayyum Ataması</div>
+                        </div>
+                    </div>
+                    <p style="color: var(--text-secondary); margin-bottom: 0;">Maydonoz Döner adlı restoran zinciri hakkında yürütülen soruşturma kapsamında, şirketin Gülen hareketine finansman sağladığı iddiasıyla kayyum atanmış, çok sayıda şubesi ve bağlı şirketiyle birlikte fiilen devlet kontrolüne geçirilmiştir.</p>
+                </div>
+            </section>
+
+            <!-- Sonuç -->
+            <section class="section" id="sonuc">
+                <div class="section-header">
+                    <span class="section-number">11</span>
+                    <div>
+                        <h2>Sonuç</h2>
+                    </div>
+                </div>
+                
+                <p>2025 yılına ilişkin analizler, Türkiye'de uygulanan insan hakları ihlallerinin çok katmanlı ve sistemik nitelikte olduğunu ortaya koymaktadır. İncelenen veriler ve vaka analizleri, devletin çeşitli alanlarda – özellikle kitlesel gözaltılar, keyfi tutuklamalar, zorla kaybetmeler, hukuka aykırı sınır dışı işlemler, mal varlıklarının dondurulması ve yaşam hakkı ihlalleri – uyguladığı yöntemlerin, hem ulusal hukukun hem de uluslararası insan hakları normlarının gerektirdiği standartlardan sapmalar içerdiğini göstermektedir.</p>
+                
+                <p>Özellikle Gülen Hareketi ile ilişkilendirilen eylemler üzerinden somut örneklerle desteklenen bulgular, devletin belirli grupları hedef alırken kullandığı uygulamaların, daha geniş ve yapısal sorunların bir yansıması olduğunu ortaya koymaktadır. Buna ek olarak, yargı bağımsızlığına yönelik baskılar ve cezaevi koşullarındaki insanlık dışı uygulamalar, yalnızca belirli bir hareketin ötesinde, Türkiye'nin genel hukuk sistemi ve ceza infaz mekanizmalarındaki derin eksikliklere işaret etmektedir.</p>
+                
+                <div class="info-box danger">
+                    <div class="info-box-title">Sonuç ve Çağrı</div>
+                    <p style="color: var(--text-secondary);">2025 yılında yaşanan bu hak ihlalleri, Türkiye'de hukukun üstünlüğü ve insan haklarının muhafazası açısından ciddi reform ihtiyacını ortaya koymaktadır. Devlet birimleri makamlarından aldıkları gücü bir zulüm aracı olarak kullanmayı bırakmalı, yaşanan sosyal soykırımın faili durumuna düşmemelidirler.</p>
+                    <p style="margin-bottom: 0; color: var(--text-secondary);">Elde edilen somut bulgular, hem ulusal düzeyde hem de uluslararası toplum nezdinde, mevcut uygulamaların sonlandırılması gerektiğini, hak ihlallerinin ve hukuksuzlukların daha fazla kılıfla örtülemeyeceğini ve mağdurların haklarının korunması yönünde acil gerekliliği işaret etmektedir.</p>
+                </div>
+            </section>
+
+            <!-- Kaynakça -->
+            <section class="references-section" id="kaynakca">
+                <h3>Kaynakça</h3>
+                <div id="referencesContainer">
+                    <!-- References will be populated by JavaScript -->
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-logo">Turkey <span>Rights</span> Monitor</div>
+            <p class="footer-text">2025 Yıllık İnsan Hakları Raporu</p>
+            <div class="footer-links">
+                <a href="https://turkeyrightsmonitor.com" target="_blank">Ana Sayfa</a>
+                <a href="https://turkeyrightsmonitor.com/tr/kitlesel-gozaltilar" target="_blank">Kitlesel Gözaltılar</a>
+                <a href="#" onclick="downloadPDF(); return false;">Yazdır / PDF</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scroll to Top Button -->
+    <button class="scroll-top" id="scrollTop" onclick="scrollToTop()">↑</button>
+
+    <!-- Footnote Tooltip -->
+    <div class="footnote-tooltip" id="footnoteTooltip"></div>
+
+    <script>
+        // Footnotes data
+        const footnotes = {
+            1: 'Suetonius. (2021). On İki Roma İmparatoru [The Twelve Caesars]. Ü. Fafo Telatar ve Gül Öztürk (Çev.). Doğu Batı Yayınları. ISBN: 9786052133859.',
+            2: '<a href="https://turkeyrightsmonitor.com/tr/kitlesel-gozaltilar" target="_blank">https://turkeyrightsmonitor.com/tr/kitlesel-gozaltilar</a>',
+            3: 'Ali Yerlikaya (İçişleri Bakanlığı), kabine dönemi: 4.022 operasyon / 6.045 gözaltı (21.02.2024). <a href="https://www.icisleri.gov.tr/fetopdy-silahli-teror-orgutune-yonelik-kiskac-7-operasyonlarinda-67-supheli-yakalandi" target="_blank">Kaynak</a>',
+            4: 'Anadolu Ajansı, kabine dönemi: 6.025 operasyon / 9.738 gözaltı (13.07.2024). <a href="https://www.aa.com.tr/tr/gundem/bakan-yerlikaya-feto-firarilerinin-yaklasik-yuzde-16sinin-abdde-yuzde-23unun-almanyada-oldugu-degerlendiriliyor/3274085" target="_blank">Kaynak</a>',
+            5: 'Anadolu Ajansı, kabine dönemi: 10.968 operasyon / 17.890 gözaltı (15.07.2025). <a href="https://www.aa.com.tr/tr/15-temmuz-darbe-girisimi/icisleri-bakani-yerlikayadan-aaya-15-temmuz-degerlendirmesi/3631063" target="_blank">Kaynak</a>',
+            6: 'İçişleri Bakanlığı, kabine dönemi güncelleme: 11.667 operasyon / 19.025 gözaltı/yakalama (21.09.2025). <a href="https://www.icisleri.gov.tr/bakanimiz-sayin-ali-yerlikaya-fetoye-karsi-mucadelemizi-kararlilikla-surduruyoruz-son-1-hafta-icinde-fetoye-yonelik-39-operasyon-duzenledik" target="_blank">Kaynak</a>',
+            7: '<a href="https://turkeyrightsmonitor.com/tr/kitlesel-gozaltilar" target="_blank">https://turkeyrightsmonitor.com/tr/kitlesel-gozaltilar</a>',
+            8: 'Bu rakamlar, duyurularda gerekçeye bağlanan kişi sayısının açıkça belirtildiği operasyonlarla sınırlıdır.',
+            9: '<a href="https://www.ohchr.org/en/about-arbitrary-detention" target="_blank">https://www.ohchr.org/en/about-arbitrary-detention</a>',
+            10: '<a href="https://www.ohchr.org/en/about-arbitrary-detention" target="_blank">https://www.ohchr.org/en/about-arbitrary-detention</a>',
+            11: '<a href="https://www.ohchr.org/en/about-arbitrary-detention" target="_blank">https://www.ohchr.org/en/about-arbitrary-detention</a>',
+            12: 'Keyfi Tutuklamalar Çalışma Grubu Görüş No. 66/2023 (Paragraf 63), Görüş No. 3/2023 (Paragraf 85), Görüş No. 66/2020 (Paragraf 67), Görüş No. 67/2020 (Paragraf 96) ve Görüş No. 84/2020 (Paragraf 76)',
+            13: '<a href="https://enlargement.ec.europa.eu/document/download/4bb4ddd1-4f20-4ee0-92db-926996ec8dd1_en" target="_blank">AB 2025 Türkiye Raporu</a>',
+            14: '<a href="https://share.google/yQE4wth1sRPHWpGI1">İHD Raporu</a>',
+            15: '<a href="https://www.omct.org/site-resources/files/factsheets/Factsheet-Turkiye-EN.pdf" target="_blank">OMCT Global Torture Index 2025</a>',
+            16: '<a href="https://www.tr724.com/kiz-cocuklarina-iskence-ve-internet-sansuru-abd-insan-haklari-raporunda/" target="_blank">TR724 Haber</a>',
+            17: '<a href="https://www.tr724.com/khkli-ogretmene-yapilan-iskencenin-taniklari-mahkemede-anlatti-kiyafetleri-kanlar-icindeydi-bilinci-kapaliydi/" target="_blank">TR724 Haber</a>',
+            18: '<a href="https://www.tr724.com/aymden-khklilara-yapilan-iskencelerle-ilgili-3-hak-ihlali-karari-mitin-kacirip-108-gun-iskence-ettigi-zabit-kisiye-manevi-tazminat-odenecek/" target="_blank">TR724 Haber</a>',
+            19: '<a href="https://www.omct.org/site-resources/files/factsheets/Factsheet-Turkiye-EN.pdf" target="_blank">OMCT Factsheet</a>',
+            20: '<a href="https://enlargement.ec.europa.eu/document/download/4bb4ddd1-4f20-4ee0-92db-926996ec8dd1_en" target="_blank">AB 2025 Türkiye Raporu</a>',
+            21: 'Anadolu Ajansı - 31 Ağustos 2024 tarihli mal varlığının dondurulması kararı. <a href="https://www.aa.com.tr/tr/gundem/teror-orgutleriyle-baglantili-bazi-gercek-ve-tuzel-kisilerin-mal-varliklari-donduruldu/3317499" target="_blank">Kaynak</a>',
+            22: '<a href="https://www.terorarananlar.pol.tr/tarananlar" target="_blank">Terör Arananlar Listesi</a>',
+            23: '<a href="https://www.hrw.org/world-report/2025/country-chapters/turkiye" target="_blank">Human Rights Watch 2025</a>',
+            24: '<a href="https://masak.hmb.gov.tr/7madde" target="_blank">MASAK</a>',
+            25: '<a href="https://www.ohchr.org/en/special-procedures/wg-disappearances/about-enforced-disappearance" target="_blank">BM Zorla Kaybedilme Tanımı</a>',
+            26: 'ICPED\'nin 2. Maddesi ve Zorla Kaybolma Tehlikesi Altındaki Tüm Kişilerin Korunmasına Dair Bildirinin Önsözü.',
+            27: 'Sunay Elmas - 27 Ocak 2016 tarihi itibariyle Ankara\'da kaybolan öğretmen. Ailesi tarafından elde edilen güvenlik kamerası görüntülerinde kaçırılma anı görülmektedir.',
+            28: 'Ayhan Oran - Ağustos 2016\'da ihraç edilen eski MİT görevlisi, 1 Kasım 2016 itibarıyla Ankara\'da kayboldu.',
+            29: 'Yusuf Bilge Tunç - KHK ile ihraç edilen Savunma Sanayi Müsteşarlığı çalışanı, 6 Ağustos 2019 itibarıyla kayıp.',
+            30: '<a href="https://stockholmcf.org/kenya-releases-turkish-refugee-arrested-at-turkeys-request/" target="_blank">Stockholm Center for Freedom</a>',
+            31: '<a href="https://stockholmcf.org/kenya-releases-turkish-refugee-arrested-at-turkeys-request/" target="_blank">Stockholm Center for Freedom</a>',
+            32: '<a href="https://www.turkishminute.com/2026/01/06/lawyer-detained-in-mozambique-over-turkeys-extradition-request-released-pending-trial/" target="_blank">Turkish Minute</a>',
+            33: '<a href="https://www.turkishminute.com/2026/01/06/lawyer-detained-in-mozambique-over-turkeys-extradition-request-released-pending-trial/" target="_blank">Turkish Minute</a>',
+            34: '<a href="https://www.adalet.gov.tr/adalet-bakani-yilmaz-tunc-fetonun-darbe-girisiminin-9-yilinda-15-temmuz-u-degerlendirdi" target="_blank">Adalet Bakanlığı Açıklaması</a>',
+            35: '<a href="https://www.aa.com.tr/tr/15-temmuz-darbe-girisimi/icisleri-bakani-yerlikayadan-aaya-15-temmuz-degerlendirmesi/3631063" target="_blank">Anadolu Ajansı</a>',
+            36: '<a href="https://www.memurlar.net/haber/648024/kamudan-127-bin-feto-cu-temizlendi.html">Memurlar Net Haber</a>',
+            37: '<a href="https://www.aa.com.tr/tr/15-temmuz-darbe-girisimi/icisleri-bakani-yerlikayadan-aaya-15-temmuz-degerlendirmesi/3631063" target="_blank">Anadolu Ajansı</a>',
+            38: '<a href="https://t24.com.tr/haber/ab-2025-turkiye-raporunu-acikladi-hukukun-ustunlugu-ve-yargi-bagimsizligi-konusunda-endiseler-giderilemedi-cok-katmanli-dis-politika-izleniyor,1273553" target="_blank">T24 Haber</a>',
+            39: '<a href="https://enlargement.ec.europa.eu/document/download/4bb4ddd1-4f20-4ee0-92db-926996ec8dd1_en" target="_blank">AB 2025 Türkiye Raporu</a>',
+            40: '<a href="https://www.ab.gov.tr/regarding-the-european-commissions-2025-report-on-turkiye-republic-of-turkiye-ministry-of-foreign-affairs_54129_en.html" target="_blank">TC Dışişleri Bakanlığı Açıklaması</a>',
+            41: '<a href="https://www.turkishminute.com/2025/11/07/turkey-facing-its-worst-democratic-decline-in-history-eu-rapporteur" target="_blank">Turkish Minute</a>',
+            42: '<a href="https://www.hrw.org/news/2025/06/16/defiance-of-european-court-judgments-and-erosion-of-judicial-independence" target="_blank">Human Rights Watch</a>',
+            43: '<a href="https://www.hrw.org/news/2025/06/16/defiance-of-european-court-judgments-and-erosion-of-judicial-independence" target="_blank">Human Rights Watch</a>',
+            44: '<a href="https://stockholmcf.org/turkish-judges-defy-constitutional-court-reject-retrial-of-former-city-planner/" target="_blank">Stockholm Center for Freedom</a>',
+            45: '<a href="https://bianet.org/haber/gun-gun-uc-aylik-medya-ifade-ozgurlugu-ihlalleri-312456" target="_blank">Bianet</a>'
+        };
+
+        // Populate references section
+        function populateReferences() {
+            const container = document.getElementById('referencesContainer');
+            let html = '';
+            for (let i = 1; i <= 45; i++) {
+                if (footnotes[i]) {
+                    html += `<div class="reference-item">
+                        <span class="reference-number">[${i}]</span>
+                        <span class="reference-text">${footnotes[i]}</span>
+                    </div>`;
+                }
+            }
+            container.innerHTML = html;
+        }
+
+        // Footnote tooltip
+        const tooltip = document.getElementById('footnoteTooltip');
+        document.querySelectorAll('.footnote-ref').forEach(ref => {
+            ref.addEventListener('click', (e) => {
+                e.stopPropagation();
+                const footnoteNum = ref.dataset.footnote;
+                const content = footnotes[footnoteNum];
+                
+                if (content) {
+                    tooltip.innerHTML = `<strong>[${footnoteNum}]</strong> ${content}`;
+                    tooltip.classList.add('visible');
+                    
+                    const rect = ref.getBoundingClientRect();
+                    let left = rect.left;
+                    let top = rect.bottom + 10;
+                    
+                    // Adjust position if tooltip goes off screen
+                    if (left + 400 > window.innerWidth) {
+                        left = window.innerWidth - 420;
+                    }
+                    if (top + 200 > window.innerHeight) {
+                        top = rect.top - 100;
+                    }
+                    
+                    tooltip.style.left = left + 'px';
+                    tooltip.style.top = top + 'px';
+                }
+            });
+        });
+
+        document.addEventListener('click', () => {
+            tooltip.classList.remove('visible');
+        });
+
+        // Progress bar
+        window.addEventListener('scroll', () => {
+            const scrollTop = document.documentElement.scrollTop;
+            const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const progress = (scrollTop / scrollHeight) * 100;
+            document.getElementById('progressBar').style.width = progress + '%';
+            
+            // Scroll to top button
+            const scrollTopBtn = document.getElementById('scrollTop');
+            if (scrollTop > 500) {
+                scrollTopBtn.classList.add('visible');
+            } else {
+                scrollTopBtn.classList.remove('visible');
+            }
+        });
+
+        // Active navigation
+        const sections = document.querySelectorAll('.section, #kaynakca');
+        const navLinks = document.querySelectorAll('.sidebar-nav a');
+
+        window.addEventListener('scroll', () => {
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                if (scrollY >= sectionTop - 150) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === '#' + current) {
+                    link.classList.add('active');
+                }
+            });
+        });
+
+        // Mobile sidebar
+        function toggleSidebar() {
+            document.getElementById('sidebar').classList.toggle('open');
+            document.getElementById('sidebarOverlay').classList.toggle('visible');
+        }
+
+        // Close sidebar on link click (mobile)
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                if (window.innerWidth <= 1024) {
+                    toggleSidebar();
+                }
+            });
+        });
+
+        // Scroll to top
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // PDF Download - Using browser's native print
+        function downloadPDF() {
+            // Simple and reliable - uses browser's print dialog
+            // User can choose "Save as PDF" in the print dialog
+            window.print();
+        }
+
+        // Charts
+        Chart.defaults.color = '#94a3b8';
+        Chart.defaults.borderColor = '#2a3f5f';
+
+        // Monthly Detentions Chart
+        new Chart(document.getElementById('monthlyDetentionsChart'), {
+            type: 'bar',
+            data: {
+                labels: ['Oca', 'Şub', 'Mar', 'Nis', 'May', 'Haz', 'Tem', 'Ağu', 'Eyl', 'Eki', 'Kas', 'Ara'],
+                datasets: [{
+                    label: 'Gözaltı Sayısı',
+                    data: [320, 380, 420, 356, 464, 410, 450, 390, 420, 380, 470, 456],
+                    backgroundColor: 'rgba(0, 212, 170, 0.8)',
+                    borderColor: '#00d4aa',
+                    borderWidth: 1,
+                    borderRadius: 4
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: { display: false }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        grid: { color: '#1a2744' }
+                    },
+                    x: {
+                        grid: { display: false }
+                    }
+                }
+            }
+        });
+
+        // Detention Waves Chart
+        new Chart(document.getElementById('detentionWavesChart'), {
+            type: 'line',
+            data: {
+                labels: ['Oca', 'Şub', 'Mar', 'Nis', 'May', 'Haz', 'Tem', 'Ağu', 'Eyl', 'Eki', 'Kas', 'Ara'],
+                datasets: [{
+                    label: 'Günlük Tepe Noktaları',
+                    data: [120, 85, 150, 90, 356, 110, 270, 95, 241, 180, 464, 200],
+                    borderColor: '#00d4aa',
+                    backgroundColor: 'rgba(0, 212, 170, 0.1)',
+                    fill: true,
+                    tension: 0.4,
+                    pointBackgroundColor: '#00d4aa',
+                    pointBorderColor: '#00d4aa',
+                    pointRadius: 4
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: { display: false }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        grid: { color: '#1a2744' }
+                    },
+                    x: {
+                        grid: { display: false }
+                    }
+                }
+            }
+        });
+
+        // Yearly Comparison Chart
+        new Chart(document.getElementById('yearlyComparisonChart'), {
+            type: 'bar',
+            data: {
+                labels: ['2024', '2025'],
+                datasets: [{
+                    label: 'Yıllık Gözaltı',
+                    data: [4058, 4916],
+                    backgroundColor: ['rgba(100, 116, 139, 0.8)', 'rgba(0, 212, 170, 0.8)'],
+                    borderColor: ['#64748b', '#00d4aa'],
+                    borderWidth: 1,
+                    borderRadius: 8
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                indexAxis: 'y',
+                plugins: {
+                    legend: { display: false }
+                },
+                scales: {
+                    x: {
+                        beginAtZero: true,
+                        grid: { color: '#1a2744' }
+                    },
+                    y: {
+                        grid: { display: false }
+                    }
+                }
+            }
+        });
+
+        // Death Causes Chart
+        new Chart(document.getElementById('deathCausesChart'), {
+            type: 'doughnut',
+            data: {
+                labels: ['Hastalık', 'Cezaevinde Ölüm', 'İntihar', 'Trafik Kazası', 'İş Kazası', 'Diğer'],
+                datasets: [{
+                    data: [44, 10, 5, 6, 4, 1],
+                    backgroundColor: [
+                        'rgba(0, 212, 170, 0.8)',
+                        'rgba(239, 68, 68, 0.8)',
+                        'rgba(245, 158, 11, 0.8)',
+                        'rgba(100, 116, 139, 0.8)',
+                        'rgba(74, 222, 128, 0.8)',
+                        'rgba(148, 163, 184, 0.8)'
+                    ],
+                    borderWidth: 0
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        position: 'right',
+                        labels: { padding: 15 }
+                    }
+                }
+            }
+        });
+
+        // Prison Violations Chart
+        new Chart(document.getElementById('prisonViolationsChart'), {
+            type: 'bar',
+            data: {
+                labels: ['Sağlık Hakkı', 'Tahliye Engeli', 'Aşırı Doluluk', 'Keyfi Disiplin', 'Kötü Muamele', 'Diğer'],
+                datasets: [{
+                    label: 'Vaka Sayısı',
+                    data: [300, 180, 160, 120, 90, 100],
+                    backgroundColor: [
+                        'rgba(239, 68, 68, 0.8)',
+                        'rgba(245, 158, 11, 0.8)',
+                        'rgba(0, 212, 170, 0.8)',
+                        'rgba(100, 116, 139, 0.8)',
+                        'rgba(74, 222, 128, 0.8)',
+                        'rgba(148, 163, 184, 0.8)'
+                    ],
+                    borderRadius: 4
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                indexAxis: 'y',
+                plugins: {
+                    legend: { display: false }
+                },
+                scales: {
+                    x: {
+                        beginAtZero: true,
+                        grid: { color: '#1a2744' }
+                    },
+                    y: {
+                        grid: { display: false }
+                    }
+                }
+            }
+        });
+
+        // Dismissals Chart
+        new Chart(document.getElementById('dismissalsChart'), {
+            type: 'bar',
+            data: {
+                labels: ['Emniyet', 'Jandarma', 'Mülki İdare', 'Sahil Güvenlik'],
+                datasets: [{
+                    label: 'İhraç Sayısı',
+                    data: [33534, 8456, 2599, 640],
+                    backgroundColor: 'rgba(0, 212, 170, 0.8)',
+                    borderRadius: 4
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: { display: false }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        grid: { color: '#1a2744' }
+                    },
+                    x: {
+                        grid: { display: false }
+                    }
+                }
+            }
+        });
+
+        // Closed Institutions Chart
+        new Chart(document.getElementById('closedInstitutionsChart'), {
+            type: 'bar',
+            data: {
+                labels: ['Dernek', 'Özel Okul', 'Yurt', 'Dershane', 'Vakıf', 'Medya', 'Diğer'],
+                datasets: [{
+                    label: 'Kapatılan Kurum',
+                    data: [1410, 1034, 835, 301, 109, 114, 139],
+                    backgroundColor: [
+                        'rgba(0, 212, 170, 0.8)',
+                        'rgba(74, 222, 128, 0.8)',
+                        'rgba(245, 158, 11, 0.8)',
+                        'rgba(239, 68, 68, 0.8)',
+                        'rgba(100, 116, 139, 0.8)',
+                        'rgba(148, 163, 184, 0.8)',
+                        'rgba(59, 130, 246, 0.8)'
+                    ],
+                    borderRadius: 4
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: { display: false }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        grid: { color: '#1a2744' }
+                    },
+                    x: {
+                        grid: { display: false }
+                    }
+                }
+            }
+        });
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', () => {
+            populateReferences();
+            
+            // Hide loading after page load
+            setTimeout(() => {
+                document.getElementById('loadingOverlay').classList.add('hidden');
+            }, 500);
+        });
+    </script>
+</body>
+</html>

@@ -64,7 +64,7 @@ function YillarGrafik() {
 
     const formattedData = [headers];
 
-    for (let i = 4; i <= 13; i++) {
+    for (let i = 4; i <= 14; i++) {
       if (data[i]) {
         formattedData.push([
           data[i][0],

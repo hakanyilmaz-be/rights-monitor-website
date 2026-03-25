@@ -19,6 +19,8 @@ const urlMapping = {
   '/tr/teror-sucu-istatistikleri': '/en/terror-crime-statistics',
   '/tr/yargi-bagimsizligi': '/en/judicial-independence',
   '/tr/2024-almanak': '/en/2024-almanac',
+  '/tr/2025-almanak': '/en/2025-almanac',
+  '/tr/resmi-aciklamalar': '/en/official-statements',
   '/tr/raporlar': '/en/reports',
   '/en': '/tr',
   '/en/mass-detentions': '/tr/kitlesel-gozaltilar',
@@ -34,6 +36,8 @@ const urlMapping = {
   '/en/terror-crime-statistics': '/tr/teror-sucu-istatistikleri',
   '/en/judicial-independence': '/tr/yargi-bagimsizligi',
   '/en/2024-almanac': '/tr/2024-almanak',
+  '/en/2025-almanac': '/tr/2025-almanak',
+  '/en/official-statements': '/tr/resmi-aciklamalar',
   '/en/reports' : '/tr/raporlar',
 
 };

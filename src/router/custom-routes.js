@@ -18,6 +18,8 @@ import ScrollToTop from "./ScrollToTop";
 import Page2024 from "../pages/Page2024";
 import RaporKiskac from "../pages/RaporKiskac";
 import Raporlar from "../pages/Raporlar";
+import Page2025 from "../pages/Page2025";
+import ResmiAciklamalar from "../pages/ResmiAciklamalar";
 
 const CustomRoutes = () => {
   return (
@@ -44,6 +46,11 @@ const CustomRoutes = () => {
         <Route path="/tr/raporlar" element={<AdminTemplate> <Raporlar/> </AdminTemplate>} /> 
         <Route path="/tr/2024-almanak" element={<AdminTemplate> <Page2024/> </AdminTemplate>} /> 
         <Route path="/tr/rapor-kiskac" element={<AdminTemplate> <RaporKiskac/> </AdminTemplate>} /> 
+        <Route path="/tr/resmi-aciklamalar" element={<AdminTemplate> <ResmiAciklamalar/> </AdminTemplate>} /> 
+
+       <Route path="/tr/2025-almanak" element={<Page2025 />} />
+
+
 
 
          
@@ -64,6 +71,10 @@ const CustomRoutes = () => {
         <Route path="/en/reports" element={<AdminTemplate> <Raporlar/> </AdminTemplate>} /> 
         <Route path="/en/2024-almanac" element={<AdminTemplate> <Page2024/> </AdminTemplate>} />  
         <Route path="/en/report-operations" element={<AdminTemplate> <RaporKiskac/> </AdminTemplate>} />  
+        <Route path="/en/official-statements" element={<AdminTemplate> <ResmiAciklamalar/> </AdminTemplate>} /> 
+        <Route path="/en/2025-almanac" element={<AdminTemplate><Page2025 /></AdminTemplate>} />
+  
+
 
 
 

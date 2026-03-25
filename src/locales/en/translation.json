@@ -3,6 +3,42 @@
   "homepage_title": "HUMAN RIGHTS VIOLATIONS MONITORING PROJECT",
   "thematic_reports": "Thematic Reports",
   "homepage_reports": "Reports",
+   "giris_alani": {
+    "main_title": "Official Statements",
+    "main_subtitle": "Statements by the Official Authorities of the Republic of Türkiye Regarding Operations Against the Gülen Movement",
+    "highlight_title": "Key Figures — Latest Reported Numbers",
+
+    "latest_detention": "TOTAL DETENTIONS",
+    "latest_arrest": "TOTAL ARRESTS",
+    "latest_digital_material": "SEIZED DIGITAL MATERIAL",
+    "latest_passport_cancellation": "TOTAL PASSPORT CANCELLATIONS",
+
+    "general_data": "General Data",
+    "digital_material": "Digital Material",
+     "description": "This page aims to compile, in a chronological manner, the aggregate figures periodically announced by official authorities in Turkey regarding detentions, arrests, dismissals, and similar measures targeting the Gülen movement. These figures are often presented as “balance sheets,” reflecting the cumulative outcomes of a specific period through large-scale numerical data. This mode of presentation goes beyond mere statistical reporting; it also constructs a language of power that emphasizes the scale and continuity of state-led processes. The periodic announcement of high-volume aggregate figures can create a deterrent and pressure-inducing effect on broader segments of society. By systematically documenting these “balance sheet statements,” this page seeks to make visible the progression and repetition of numerical narratives over time. In doing so, it enables the monitoring of how collectively announced official data influences public perception and the broader social atmosphere."
+  },
+  "advanced_tableresmi": {
+  "search": "Search:",
+  "search_placeholder": "Person, category, description...",
+  "year": "Year:",
+  "official": "Official:",
+  "official_statements": "Official Statements",
+  "all": "All",
+  "records": "records",
+  "loading": "Loading...",
+  "no_results": "No results found.",
+   "read_more": "Show more",
+  "read_less": "Show less",
+  "source_button": "Source",
+  "columns": {
+    "date": "DATE",
+    "official": "OFFICIAL",
+    "category": "CATEGORY",
+    "statistics": "STATISTICS",
+    "description": "DESCRIPTION",
+    "source": "SOURCE"
+  }
+},
   "ehcr_page": "ECHR Data",
     "un_page": "United Nations Data",
     "yalcinkaya_decison_results": "Yalçınkaya Judgment Monitoring",
@@ -13,8 +49,10 @@
   "closed_seized_institutions": "Closed and Seized Institutions",
   "terror_crime_statistics": "Terror Crime Statistics",
   "comprehensive_statistics": "Comprehensive Statistics",
+  "official_statements": "Official Statements",
   "judicial_independence": "Judicial Independence",
   "almanac_2024":"2024 Almanac",
+  "almanac_2025":"2025 Almanac",
   "judicial_independence_description": "According to the 1982 Constitution, judges are independent in their duties, and no organ, authority, or person can give orders or instructions to judges in the exercise of judicial power. However, with the detention of 2,745 judges and prosecutors in a single day in 2016, it became evident that the judiciary is subject to political pressure and interference. Since December 2013, hundreds of cases have been identified showing the erosion of judicial independence, which are shared on this page.",
   "judicial_independence_timeline": "Judicial Independence Timeline",
   "home": "Home",
@@ -85,6 +123,11 @@
   "pageDescriptionR": "With the support of Solidarity with OTHERS based in Brussels, Turkey Rights Monitor functions as an independent and impartial platform documenting and analyzing human rights violations targeting members of the Gülen Movement and others accused of similar connections. On this page, you can access our reports.",
   "buttonLabelR": "View Report",
   "reports": [
+     {
+      "title": "2025 Almanac",
+      "description": "This report focuses on mass detentions, arbitrary arrests, confiscations and enforced disappearances targeting the Gülen Movement in 2025, while also highlighting broader justice issues like judicial independence and prison conditions.",
+    "link": "/en/2025-almanac"
+    },
     {
       "title": "2024 Almanac",
       "description": "This report focuses on mass detentions, arbitrary arrests, confiscations and enforced disappearances targeting the Gülen Movement in 2024, while also highlighting broader justice issues like judicial independence and prison conditions.",
@@ -187,7 +230,7 @@
     "paragraph3": "As a result, Turkey has become a maze with no exit for members of the Gülen Movement, leaving them with no safe space outside of prisons."
   },
   "yillarAciklama": {
-    "title": "The Chronology of the Witch Hunt",
+    "title": "Chronology of Mass Detentions",
     "paragraph1": "Mass police operations against members of the Gülen movement began in April 2014 with the detention of 8 police officers in the",
     "operationLink": "operation",
     "paragraph2": ". The persecution of the Gülen movement is attempted to be legitimized by the government by linking it to July 15, 2016, which marked a significant turning point in Turkey. However, the data contradicts this claim. Operations against members of the Gülen movement had already spread to 72 provinces before July 15, 2016. Before the coup attempt, nearly 5,000 people were detained in more than 250 operations. After the coup attempt, the operations against members of the Gülen movement turned into a 'scraping' process.",

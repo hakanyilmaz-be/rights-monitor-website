@@ -34,6 +34,8 @@ const AnasayfaMenu = () => {
           return "/en/closed-institutions";
         case "/teror-sucu-istatistikleri":
           return "/en/terror-crime-statistics";
+        case "/resmi-aciklamalar":
+          return "/en/official-statements";
         case "/yargi-bagimsizligi":
           return "/en/judicial-independence";
         case "/2024-almanak":
@@ -63,6 +65,7 @@ const AnasayfaMenu = () => {
           <li><Link to={getLocalizedPath("/cezaevi-hak-ihlali")} className="nav-link">{t('prison_rights_violations')}</Link></li>
           <li><Link to={getLocalizedPath("/kapatilankurumlar")} className="nav-link">{t('closed_institutions')}</Link></li>
           <li><Link to={getLocalizedPath("/teror-sucu-istatistikleri")} className="nav-link">{t('terror_crime_statistics')}</Link></li>
+          <li><Link to={getLocalizedPath("/resmi-aciklamalar")} className="nav-link">{t('official_statements')}</Link></li>
           <li><Link to={getLocalizedPath("/yargi-bagimsizligi")} className="nav-link">{t('judicial_independence')}</Link></li>
         {/*   <li><Link to={getLocalizedPath("/2024-almanak")} className="nav-link">{t('almanac_2024')}</Link></li>
 

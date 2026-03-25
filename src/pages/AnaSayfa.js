@@ -129,9 +129,9 @@ const AnaSayfa = () => {
           </h1>
 
           <div className="buttons buton-mobile">
-          <button style={{ width: "230px", marginRight: "20px", fontSize: "14px", fontWeight: "400" }} className="btn-hover color-1" onClick={handleButtonClick6}>
+      {/*     <button style={{ width: "230px", marginRight: "20px", fontSize: "14px", fontWeight: "400" }} className="btn-hover color-1" onClick={handleButtonClick6}>
               {t('yalcinkaya_decison_results')}
-            </button>
+            </button> */}
            
             <button style={{ width: "150px", marginRight: "20px", fontSize: "14px", fontWeight: "400" }} className="btn-hover color-5" onClick={handleButtonClick7}>
               {t('ehcr_page')}
@@ -150,11 +150,19 @@ const AnaSayfa = () => {
       <div className="lg-only" style={{ height: "50px" }}></div>
 
       <div className="buttons butons-mobile mobile-only">
-        <button style={{ width: "120px", marginRight: "20px", fontSize: "13px", fontWeight: "400" }} className="btn-hover color-5" onClick={handleButtonClick5}>
-          {t('thematic_reports')}
+       {/*  <button style={{ width: "160px", marginRight: "20px", fontSize: "13px", fontWeight: "400" }} className="btn-hover color-1" onClick={handleButtonClick6}>
+          {t('yalcinkaya_decison_results')}
+        </button> */}
+        <button style={{ width: "120px", marginRight: "0px", fontSize: "13px", fontWeight: "400" }} className="btn-hover color-5" onClick={handleButtonClick7}>
+          {t('ehcr_page')}
         </button>
-        <button style={{ width: "120px", marginRight: "0px", fontSize: "13px", fontWeight: "400" }} className="btn-hover color-5" onClick={handleButtonClick6}>
-          {t('weekly_bulletins')}
+      </div>
+      <div className="buttons butons-mobile mobile-only">
+         <button style={{ width: "120px", marginRight: "20px", fontSize: "13px", fontWeight: "400" }} className="btn-hover color-5" onClick={handleButtonClick8}>
+          {t('un_page')}
+        </button>
+         <button style={{ width: "120px", marginRight: "0px", fontSize: "13px", fontWeight: "400" }} className="btn-hover color-5" onClick={handleButtonClick5}>
+          {t('homepage_reports')}
         </button>
       </div>
       <div className="mobile-only" style={{ height: "20px" }}></div>

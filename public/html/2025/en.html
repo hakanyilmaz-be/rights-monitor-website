@@ -1,0 +1,2599 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2025 Almanac | Turkey Rights Monitor</title>
+    <meta name="description" content="A comprehensive report examining human rights violations in Turkey throughout 2025, focusing on the Gülen Movement.">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;800&family=Source+Sans+3:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    
+
+    
+    <style>
+        :root {
+            --bg-primary: #0a1628;
+            --bg-secondary: #111d32;
+            --bg-tertiary: #1a2744;
+            --bg-card: #152238;
+            --accent-primary: #00d4aa;
+            --accent-secondary: #4ade80;
+            --accent-warning: #f59e0b;
+            --accent-danger: #ef4444;
+            --text-primary: #ffffff;
+            --text-secondary: #94a3b8;
+            --text-muted: #64748b;
+            --border-color: #2a3f5f;
+            --sidebar-width: 280px;
+            --header-height: 70px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: calc(var(--header-height) + 20px);
+        }
+
+        body {
+            font-family: 'Source Sans 3', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.7;
+            font-size: 17px;
+        }
+
+        /* Typography */
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-weight: 700;
+            line-height: 1.2;
+        }
+
+        h1 { font-size: clamp(2.5rem, 5vw, 4rem); }
+        h2 { font-size: clamp(1.8rem, 3vw, 2.5rem); margin-bottom: 1.5rem; }
+        h3 { font-size: clamp(1.3rem, 2vw, 1.6rem); margin-bottom: 1rem; }
+        h4 { font-size: 1.2rem; margin-bottom: 0.75rem; }
+
+        p {
+            margin-bottom: 1.25rem;
+            color: var(--text-secondary);
+        }
+
+        a {
+            color: var(--accent-primary);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        a:hover {
+            color: var(--accent-secondary);
+        }
+
+        /* Header */
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: var(--header-height);
+            background: rgba(10, 22, 40, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border-color);
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 2rem;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-weight: 700;
+            font-size: 1.1rem;
+        }
+
+        .logo-icon {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            font-size: 1.2rem;
+        }
+
+        .logo-text span {
+            color: var(--accent-primary);
+        }
+
+        .header-actions {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 20px;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: all 0.2s;
+            border: none;
+            font-family: inherit;
+        }
+
+        .btn-primary {
+            background: var(--accent-primary);
+            color: var(--bg-primary);
+        }
+
+        .btn-primary:hover {
+            background: var(--accent-secondary);
+            transform: translateY(-2px);
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 1px solid var(--border-color);
+            color: var(--text-primary);
+        }
+
+        .btn-outline:hover {
+            border-color: var(--accent-primary);
+            color: var(--accent-primary);
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--text-primary);
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* Sidebar Navigation */
+        .sidebar {
+            position: fixed;
+            top: var(--header-height);
+            left: 0;
+            width: var(--sidebar-width);
+            height: calc(100vh - var(--header-height));
+            background: var(--bg-secondary);
+            border-right: 1px solid var(--border-color);
+            overflow-y: auto;
+            padding: 1.5rem 0;
+            z-index: 900;
+            transition: transform 0.3s ease;
+        }
+
+        .sidebar-nav {
+            list-style: none;
+        }
+
+        .sidebar-nav li {
+            margin-bottom: 2px;
+        }
+
+        .sidebar-nav a {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 12px 1.5rem;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: all 0.2s;
+            border-left: 3px solid transparent;
+        }
+
+        .sidebar-nav a:hover,
+        .sidebar-nav a.active {
+            background: var(--bg-tertiary);
+            color: var(--text-primary);
+            border-left-color: var(--accent-primary);
+        }
+
+        .sidebar-nav a .nav-number {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.75rem;
+            color: var(--accent-primary);
+            min-width: 24px;
+        }
+
+        .sidebar-nav .sub-nav {
+            padding-left: 2.5rem;
+        }
+
+        .sidebar-nav .sub-nav a {
+            font-size: 0.85rem;
+            padding: 8px 1.5rem;
+        }
+
+        /* Main Content */
+        .main-content {
+            margin-left: var(--sidebar-width);
+            margin-top: var(--header-height);
+            min-height: calc(100vh - var(--header-height));
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--bg-secondary) 0%, var(--bg-primary) 100%);
+            padding: 4rem 3rem;
+            border-bottom: 1px solid var(--border-color);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 50%;
+            height: 100%;
+            background: radial-gradient(circle at 70% 30%, rgba(0, 212, 170, 0.1) 0%, transparent 50%);
+            pointer-events: none;
+        }
+
+        .hero-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(0, 212, 170, 0.1);
+            border: 1px solid rgba(0, 212, 170, 0.3);
+            padding: 8px 16px;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--accent-primary);
+            margin-bottom: 1.5rem;
+        }
+
+        .hero-badge::before {
+            content: '';
+            width: 8px;
+            height: 8px;
+            background: var(--accent-primary);
+            border-radius: 50%;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+
+        .hero h1 {
+            margin-bottom: 1.5rem;
+            background: linear-gradient(135deg, var(--text-primary) 0%, var(--accent-primary) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-subtitle {
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+            max-width: 700px;
+            margin-bottom: 2.5rem;
+            line-height: 1.8;
+        }
+
+        /* Stats Grid */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .stat-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 1.5rem;
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.3s, border-color 0.3s;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-4px);
+            border-color: var(--accent-primary);
+        }
+
+        .stat-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: var(--accent-primary);
+        }
+
+        .stat-card.warning::before { background: var(--accent-warning); }
+        .stat-card.danger::before { background: var(--accent-danger); }
+
+        .stat-number {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            line-height: 1;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            font-weight: 500;
+        }
+
+        .stat-change {
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            font-size: 0.8rem;
+            margin-top: 0.5rem;
+            padding: 4px 8px;
+            border-radius: 4px;
+            background: rgba(239, 68, 68, 0.1);
+            color: var(--accent-danger);
+        }
+
+        .stat-change.positive {
+            background: rgba(74, 222, 128, 0.1);
+            color: var(--accent-secondary);
+        }
+
+        /* Content Sections */
+        .content-wrapper {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 3rem;
+        }
+
+        .section {
+            margin-bottom: 4rem;
+            padding-bottom: 3rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .section:last-child {
+            border-bottom: none;
+        }
+
+        .section-header {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .section-number {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--accent-primary);
+            background: rgba(0, 212, 170, 0.1);
+            padding: 8px 12px;
+            border-radius: 8px;
+            flex-shrink: 0;
+        }
+
+        /* Subsections */
+        .subsection {
+            margin: 2.5rem 0;
+            padding-left: 1.5rem;
+            border-left: 2px solid var(--border-color);
+        }
+
+        .subsection h3 {
+            color: var(--text-primary);
+        }
+
+        .subsection h4 {
+            color: var(--text-secondary);
+            font-family: 'Source Sans 3', sans-serif;
+            font-weight: 600;
+        }
+
+        /* Charts */
+        .chart-container {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .chart-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .chart-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+
+        .chart-legend {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+        }
+
+        .legend-color {
+            width: 12px;
+            height: 12px;
+            border-radius: 3px;
+        }
+
+        .chart-wrapper {
+            position: relative;
+            height: 300px;
+        }
+
+        /* Data Tables */
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+            font-size: 0.95rem;
+        }
+
+        .data-table th,
+        .data-table td {
+            padding: 12px 16px;
+            text-align: left;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .data-table th {
+            background: var(--bg-tertiary);
+            font-weight: 600;
+            color: var(--text-primary);
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .data-table td {
+            color: var(--text-secondary);
+        }
+
+        .data-table tr:hover td {
+            background: var(--bg-card);
+        }
+
+        .data-table .number {
+            font-family: 'JetBrains Mono', monospace;
+            color: var(--accent-primary);
+            font-weight: 600;
+        }
+
+        /* Footnotes */
+        .footnote-ref {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.75rem;
+            color: var(--accent-primary);
+            cursor: pointer;
+            vertical-align: super;
+            padding: 2px 4px;
+            background: rgba(0, 212, 170, 0.1);
+            border-radius: 3px;
+            margin: 0 2px;
+            transition: all 0.2s;
+        }
+
+        .footnote-ref:hover {
+            background: rgba(0, 212, 170, 0.2);
+        }
+
+        .footnote-tooltip {
+            position: fixed;
+            max-width: 400px;
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 12px 16px;
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            line-height: 1.5;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+            z-index: 10000;
+            display: none;
+        }
+
+        .footnote-tooltip.visible {
+            display: block;
+            animation: fadeIn 0.2s ease;
+        }
+
+        .footnote-tooltip::before {
+            content: '';
+            position: absolute;
+            top: -6px;
+            left: 20px;
+            width: 12px;
+            height: 12px;
+            background: var(--bg-card);
+            border-left: 1px solid var(--border-color);
+            border-top: 1px solid var(--border-color);
+            transform: rotate(45deg);
+        }
+
+        .footnote-tooltip a {
+            word-break: break-all;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-5px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Info Boxes */
+        .info-box {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            position: relative;
+        }
+
+        .info-box.highlight {
+            border-left: 4px solid var(--accent-primary);
+        }
+
+        .info-box.warning {
+            border-left: 4px solid var(--accent-warning);
+            background: rgba(245, 158, 11, 0.05);
+        }
+
+        .info-box.danger {
+            border-left: 4px solid var(--accent-danger);
+            background: rgba(239, 68, 68, 0.05);
+        }
+
+        .info-box-title {
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        /* Case Studies */
+        .case-study {
+            background: var(--bg-tertiary);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+        }
+
+        .case-study-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 1rem;
+        }
+
+        .case-study-icon {
+            width: 40px;
+            height: 40px;
+            background: rgba(239, 68, 68, 0.1);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--accent-danger);
+            font-size: 1.2rem;
+        }
+
+        .case-study-title {
+            font-weight: 600;
+            color: var(--text-primary);
+            font-size: 1rem;
+        }
+
+        .case-study-meta {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        /* Timeline */
+        .timeline {
+            position: relative;
+            padding-left: 2rem;
+            margin: 2rem 0;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: var(--border-color);
+        }
+
+        .timeline-item {
+            position: relative;
+            padding-bottom: 2rem;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -2rem;
+            top: 6px;
+            width: 12px;
+            height: 12px;
+            background: var(--accent-primary);
+            border-radius: 50%;
+            border: 3px solid var(--bg-primary);
+        }
+
+        .timeline-date {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.85rem;
+            color: var(--accent-primary);
+            margin-bottom: 0.5rem;
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--bg-secondary);
+            border-top: 1px solid var(--border-color);
+            padding: 3rem;
+            margin-left: var(--sidebar-width);
+        }
+
+        .footer-content {
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .footer-logo {
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .footer-logo span {
+            color: var(--accent-primary);
+        }
+
+        .footer-text {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        /* References Section */
+        .references-section {
+            background: var(--bg-secondary);
+            border-radius: 12px;
+            padding: 2rem;
+            margin-top: 3rem;
+        }
+
+        .references-section h3 {
+            margin-bottom: 1.5rem;
+        }
+
+        .reference-item {
+            display: flex;
+            gap: 1rem;
+            padding: 0.75rem 0;
+            border-bottom: 1px solid var(--border-color);
+            font-size: 0.9rem;
+        }
+
+        .reference-item:last-child {
+            border-bottom: none;
+        }
+
+        .reference-number {
+            font-family: 'JetBrains Mono', monospace;
+            color: var(--accent-primary);
+            font-weight: 600;
+            min-width: 30px;
+        }
+
+        .reference-text {
+            color: var(--text-secondary);
+            line-height: 1.5;
+        }
+
+        .reference-text a {
+            word-break: break-all;
+        }
+
+        /* Progress Indicator */
+        .progress-bar {
+            position: fixed;
+            top: var(--header-height);
+            left: var(--sidebar-width);
+            right: 0;
+            height: 3px;
+            background: var(--bg-tertiary);
+            z-index: 999;
+        }
+
+        .progress-bar-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--accent-primary), var(--accent-secondary));
+            width: 0%;
+            transition: width 0.1s;
+        }
+
+        /* Print Styles - Comprehensive */
+        @media print {
+            /* Hide non-essential elements */
+            .header, .sidebar, .progress-bar, .btn, .scroll-top, 
+            .footnote-tooltip, .loading-overlay, .sidebar-overlay, .footer,
+            .mobile-menu-btn {
+                display: none !important;
+            }
+
+            /* Reset layout */
+            .main-content {
+                margin-left: 0 !important;
+                margin-top: 0 !important;
+            }
+
+            /* Base styles - Light theme */
+            * {
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+            }
+
+            body {
+                background: #ffffff !important;
+                color: #1a1a1a !important;
+                font-size: 11pt !important;
+                line-height: 1.5 !important;
+            }
+
+            /* Hero section */
+            .hero {
+                background: #f5f7fa !important;
+                padding: 1.5rem !important;
+                border-bottom: 3px solid #00d4aa !important;
+                page-break-after: avoid;
+            }
+
+            .hero::before {
+                display: none !important;
+            }
+
+            .hero h1 {
+                background: none !important;
+                -webkit-text-fill-color: #0a1628 !important;
+                color: #0a1628 !important;
+                font-size: 24pt !important;
+            }
+
+            .hero-badge {
+                background: #e8f5f1 !important;
+                border: 1px solid #00d4aa !important;
+                color: #047857 !important;
+            }
+
+            .hero-subtitle {
+                color: #374151 !important;
+                font-size: 11pt !important;
+            }
+
+            /* Stats cards */
+            .stats-grid {
+                display: grid !important;
+                grid-template-columns: repeat(2, 1fr) !important;
+                gap: 0.75rem !important;
+            }
+
+            .stat-card {
+                background: #f8fafc !important;
+                border: 1px solid #d1d5db !important;
+                padding: 1rem !important;
+                page-break-inside: avoid !important;
+            }
+
+            .stat-card::before {
+                background: #00d4aa !important;
+            }
+
+            .stat-card.warning::before {
+                background: #f59e0b !important;
+            }
+
+            .stat-card.danger::before {
+                background: #ef4444 !important;
+            }
+
+            .stat-number {
+                color: #0a1628 !important;
+                font-size: 18pt !important;
+            }
+
+            .stat-label {
+                color: #4b5563 !important;
+                font-size: 9pt !important;
+            }
+
+            .stat-change {
+                font-size: 8pt !important;
+            }
+
+            /* Content wrapper */
+            .content-wrapper {
+                padding: 1rem !important;
+                max-width: 100% !important;
+            }
+
+            /* Sections */
+            .section {
+                page-break-inside: avoid !important;
+                margin-bottom: 1.5rem !important;
+                padding-bottom: 1rem !important;
+                border-bottom: 1px solid #e5e7eb !important;
+            }
+
+            .section-header {
+                page-break-after: avoid !important;
+            }
+
+            .section-number {
+                background: #e8f5f1 !important;
+                color: #047857 !important;
+            }
+
+            /* Typography */
+            h2 {
+                color: #0a1628 !important;
+                font-size: 16pt !important;
+                page-break-after: avoid !important;
+            }
+
+            h3 {
+                color: #1f2937 !important;
+                font-size: 13pt !important;
+                page-break-after: avoid !important;
+            }
+
+            h4 {
+                color: #374151 !important;
+                font-size: 11pt !important;
+                page-break-after: avoid !important;
+            }
+
+            p {
+                color: #374151 !important;
+                font-size: 10pt !important;
+            }
+
+            strong {
+                color: #1f2937 !important;
+            }
+
+            /* Subsections */
+            .subsection {
+                border-left: 2px solid #d1d5db !important;
+                page-break-inside: avoid !important;
+            }
+
+            /* Charts - Hide canvas, they don't print well */
+            .chart-container {
+                background: #f8fafc !important;
+                border: 1px solid #d1d5db !important;
+                page-break-inside: avoid !important;
+                min-height: 150px !important;
+            }
+
+            .chart-title {
+                color: #0a1628 !important;
+            }
+
+            .chart-wrapper canvas {
+                max-height: 200px !important;
+            }
+
+            /* Tables */
+            .data-table {
+                page-break-inside: avoid !important;
+                font-size: 9pt !important;
+            }
+
+            .data-table th {
+                background: #f1f5f9 !important;
+                color: #0a1628 !important;
+                border: 1px solid #d1d5db !important;
+            }
+
+            .data-table td {
+                color: #374151 !important;
+                border: 1px solid #e5e7eb !important;
+            }
+
+            .data-table .number {
+                color: #047857 !important;
+            }
+
+            /* Info boxes */
+            .info-box {
+                background: #f8fafc !important;
+                border: 1px solid #d1d5db !important;
+                page-break-inside: avoid !important;
+                padding: 1rem !important;
+            }
+
+            .info-box.highlight {
+                border-left: 4px solid #00d4aa !important;
+            }
+
+            .info-box.warning {
+                border-left: 4px solid #f59e0b !important;
+                background: #fffbeb !important;
+            }
+
+            .info-box.danger {
+                border-left: 4px solid #ef4444 !important;
+                background: #fef2f2 !important;
+            }
+
+            .info-box-title {
+                color: #0a1628 !important;
+            }
+
+            .info-box p, .info-box li {
+                color: #374151 !important;
+            }
+
+            /* Case studies */
+            .case-study {
+                background: #f1f5f9 !important;
+                page-break-inside: avoid !important;
+                padding: 1rem !important;
+            }
+
+            .case-study-title {
+                color: #0a1628 !important;
+            }
+
+            .case-study-meta {
+                color: #6b7280 !important;
+            }
+
+            .case-study p {
+                color: #374151 !important;
+            }
+
+            /* Timeline */
+            .timeline {
+                page-break-inside: avoid !important;
+            }
+
+            .timeline::before {
+                background: #d1d5db !important;
+            }
+
+            .timeline-item::before {
+                background: #00d4aa !important;
+                border-color: #ffffff !important;
+            }
+
+            .timeline-date {
+                color: #047857 !important;
+            }
+
+            .timeline-item p {
+                color: #374151 !important;
+            }
+
+            /* Footnotes */
+            .footnote-ref {
+                background: #e8f5f1 !important;
+                color: #047857 !important;
+            }
+
+            /* References */
+            .references-section {
+                background: #f8fafc !important;
+                border: 1px solid #d1d5db !important;
+                page-break-before: always !important;
+            }
+
+            .references-section h3 {
+                color: #0a1628 !important;
+            }
+
+            .reference-item {
+                border-bottom: 1px solid #e5e7eb !important;
+                page-break-inside: avoid !important;
+                font-size: 8pt !important;
+            }
+
+            .reference-number {
+                color: #047857 !important;
+            }
+
+            .reference-text {
+                color: #374151 !important;
+            }
+
+            .reference-text a {
+                color: #0369a1 !important;
+            }
+
+            /* Links */
+            a {
+                color: #0369a1 !important;
+                text-decoration: underline !important;
+            }
+
+            /* Lists */
+            ul, ol, li {
+                color: #374151 !important;
+            }
+
+            /* Page breaks */
+            h2, h3 {
+                page-break-after: avoid !important;
+            }
+
+            .stat-card, .info-box, .case-study, .data-table, .chart-container {
+                page-break-inside: avoid !important;
+            }
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            :root {
+                --sidebar-width: 0px;
+            }
+
+            .sidebar {
+                transform: translateX(-100%);
+                width: 280px;
+            }
+
+            .sidebar.open {
+                transform: translateX(0);
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .main-content {
+                margin-left: 0;
+            }
+
+            .footer {
+                margin-left: 0;
+            }
+
+            .progress-bar {
+                left: 0;
+            }
+
+            .hero {
+                padding: 2rem 1.5rem;
+            }
+
+            .content-wrapper {
+                padding: 2rem 1.5rem;
+            }
+
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 640px) {
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .stat-number {
+                font-size: 2rem;
+            }
+
+            .header {
+                padding: 0 1rem;
+            }
+
+            .header-actions .btn span {
+                display: none;
+            }
+
+            .data-table {
+                font-size: 0.85rem;
+            }
+
+            .data-table th,
+            .data-table td {
+                padding: 8px 10px;
+            }
+        }
+
+        /* Overlay for mobile menu */
+        .sidebar-overlay {
+            position: fixed;
+            top: var(--header-height);
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.5);
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s;
+            z-index: 850;
+        }
+
+        .sidebar-overlay.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        /* Scroll to top */
+        .scroll-top {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            width: 48px;
+            height: 48px;
+            background: var(--accent-primary);
+            color: var(--bg-primary);
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 1.2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s;
+            z-index: 800;
+        }
+
+        .scroll-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .scroll-top:hover {
+            background: var(--accent-secondary);
+            transform: translateY(-4px);
+        }
+
+        /* Loading Animation */
+        .loading-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: var(--bg-primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 9999;
+            transition: opacity 0.5s;
+        }
+
+        .loading-overlay.hidden {
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        .loading-spinner {
+            width: 50px;
+            height: 50px;
+            border: 3px solid var(--border-color);
+            border-top-color: var(--accent-primary);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+    <!-- Loading Overlay -->
+    <div class="loading-overlay" id="loadingOverlay">
+        <div class="loading-spinner"></div>
+    </div>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="logo">
+            <div class="logo-icon">TR</div>
+            <div class="logo-text">Turkey <span>Rights</span> Monitor</div>
+        </div>
+        <div class="header-actions">
+            <button class="btn btn-outline" onclick="downloadPDF()">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                    <polyline points="7 10 12 15 17 10"/>
+                    <line x1="12" y1="15" x2="12" y2="3"/>
+                </svg>
+                <span>Print / PDF</span>
+            </button>
+            <button class="mobile-menu-btn" onclick="toggleSidebar()">☰</button>
+        </div>
+    </header>
+
+    <!-- Progress Bar -->
+    <div class="progress-bar">
+        <div class="progress-bar-fill" id="progressBar"></div>
+    </div>
+
+    <!-- Sidebar Overlay -->
+    <div class="sidebar-overlay" id="sidebarOverlay" onclick="toggleSidebar()"></div>
+
+    <!-- Sidebar Navigation -->
+    <aside class="sidebar" id="sidebar">
+        <nav>
+            <ul class="sidebar-nav">
+                <li><a href="#introduction"><span class="nav-number">00</span> Introduction</a></li>
+                <li><a href="#mass-detentions"><span class="nav-number">01</span> Mass Detentions</a></li>
+                <li class="sub-nav"><a href="#official-communication">1.1 Official Communication</a></li>
+                <li class="sub-nav"><a href="#justification-patterns">1.2 Justification Patterns</a></li>
+                <li class="sub-nav"><a href="#2024-comparison">1.3 Comparison with 2024</a></li>
+                <li><a href="#vulnerable-groups"><span class="nav-number">02</span> Vulnerable Groups</a></li>
+                <li class="sub-nav"><a href="#pregnant-women">2.1 Pregnant Women & Mothers</a></li>
+                <li class="sub-nav"><a href="#sick-disabled">2.2 Sick, Disabled, and Elderly</a></li>
+                <li><a href="#torture"><span class="nav-number">03</span> Torture Reality</a></li>
+                <li><a href="#asset-freezing"><span class="nav-number">04</span> Freezing of Asset</a></li>
+                <li><a href="#right-to-life"><span class="nav-number">05</span> Right to Life Violations</a></li>
+                <li><a href="#enforced-disappearances"><span class="nav-number">06</span> Enforced Disappearances</a></li>
+                <li><a href="#terror-statistics"><span class="nav-number">07</span> Terror Statistics</a></li>
+                <li><a href="#prison-violations"><span class="nav-number">08</span> Prison Violations</a></li>
+                <li><a href="#judicial-independence"><span class="nav-number">09</span> Judicial Independence</a></li>
+                <li><a href="#closed-institutions"><span class="nav-number">10</span> Closed Institutions</a></li>
+                <li><a href="#conclusion"><span class="nav-number">11</span> Conclusion</a></li>
+                <li><a href="#references"><span class="nav-number">—</span> References</a></li>
+            </ul>
+        </nav>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content" id="mainContent">
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-content">
+                <div class="hero-badge">
+                    2025 Annual Report
+                </div>
+                <h1>What Happened in 2025?</h1>
+                <p class="hero-subtitle">
+                    This report examines human rights violations in Türkiye throughout 2025, focusing on those targeting the Gülen Movement. It covers mass detentions, arbitrary arrests, enforced disappearances, unlawful deportations, freezing of assets, terror statistics, torture, and right to life violations.
+                </p>
+                
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-number">4,916</div>
+                        <div class="stat-label">2025 Detentions</div>
+                        <div class="stat-change">↑ 21% increase (vs. 2024)</div>
+                    </div>
+                    <div class="stat-card warning">
+                        <div class="stat-number">152,199</div>
+                        <div class="stat-label">Total Detentions (since 2016)</div>
+                        <div class="stat-change">Daily average: 44 people</div>
+                    </div>
+                    <div class="stat-card danger">
+                        <div class="stat-number">950+</div>
+                        <div class="stat-label">Prison Rights Violation Cases</div>
+                        <div class="stat-change">80+ different prisons</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">11,640</div>
+                        <div class="stat-label">Prisoners/Convicts</div>
+                        <div class="stat-change">Currently incarcerated</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Content Wrapper -->
+        <div class="content-wrapper">
+            
+            <!-- Introduction -->
+            <section class="section" id="introduction">
+                <div class="section-header">
+                    <span class="section-number">00</span>
+                    <div>
+                        <h2>Introduction</h2>
+                    </div>
+                </div>
+                <p>This report has been prepared to examine human rights violations in Türkiye throughout 2025, with a particular focus on those targeting the Gülen Movement. Topics covered include mass detentions, arbitrary arrests, enforced disappearances, unlawful deportations, freezing of assets, terror statistics, torture, and right to life violations.</p>
+                
+                <p>While the state's methods are examined through concrete cases and data specifically concerning practices targeting the Gülen Movement, the sections on judicial independence and human rights violations in prisons are addressed in a manner that reveals structural and systematic problems across Türkiye as a whole, rather than being exemplified solely through a specific group.</p>
+                
+                <div class="info-box highlight">
+                    <div class="info-box-title">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="10"/>
+                            <path d="M12 16v-4"/>
+                            <path d="M12 8h.01"/>
+                        </svg>
+                        Purpose of the Report
+                    </div>
+                    <p style="margin-bottom: 0; color: var(--text-secondary);">In light of concrete data and case analyses obtained for 2025, this report aims to document the scope of human rights violations in Türkiye and their incompatibility with international norms, contributing to the information of the public and relevant institutions.</p>
+                </div>
+            </section>
+
+            <!-- Mass Detentions -->
+            <section class="section" id="mass-detentions">
+                <div class="section-header">
+                    <span class="section-number">01</span>
+                    <div>
+                        <h2>Mass Detentions</h2>
+                    </div>
+                </div>
+                
+                <p>Mass detentions have been a sword wielded by those holding power since ancient times. While the names of those wielding this sword may change throughout history, the purpose remains the same: to silence dissenting voices and punish those who refuse to submit as a warning to others.<span class="footnote-ref" data-footnote="1">1</span></p>
+                
+                <p>In the period beginning with December 17-25 and reaching its breaking point on July 15, 2016, thousands of people alleged to belong to a specific group were deprived of their liberty along with a chain of systematic human rights violations.</p>
+                
+                <p>2025 has been recorded as a year in which the practice of mass detention gained continuity for Gülen Movement members and those targeted with allegations of "connection to the Gülen Movement". According to Turkey Rights Monitor data based on systematic scanning of open sources, <strong>4,916 people</strong> were detained between <strong>January 1, 2025 and January 1, 2026</strong>.<span class="footnote-ref" data-footnote="2">2</span>This annual total demonstrates that detention has evolved from an isolated measure into a suppression mechanism spanning the entire year.</p>
+
+                <!-- Chart: 2025 Detention Distribution -->
+                <div class="chart-container">
+                    <div class="chart-header">
+                        <span class="chart-title">2025 Monthly Detention Numbers</span>
+                    </div>
+                    <div class="chart-wrapper">
+                        <canvas id="monthlyDetentionsChart"></canvas>
+                    </div>
+                </div>
+
+                <!-- Subsection 1.1 -->
+                <div class="subsection" id="official-communication">
+                    <h3>1.1 Official Communication and Normalization</h3>
+                    <p>One of the most distinctive dimensions of mass detentions in 2025 is that the practice was not only carried out in the field; official authorities also continuously made this practice visible in the public sphere through repeated numerical totals.</p>
+                    
+                    <p>This normalization mechanism can be clearly observed in the statements of Interior Minister Ali Yerlikaya:</p>
+
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <div class="timeline-date">February 21, 2024</div>
+                            <p>It was stated that 4,022 operations were conducted and 6,045 people were detained during the cabinet period.<span class="footnote-ref" data-footnote="3">3</span></p>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-date">July 13, 2024</div>
+                            <p>A total of 6,025 operations and 9,738 detentions were shared for the same cabinet period.<span class="footnote-ref" data-footnote="4">4</span></p>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-date">July 15, 2025</div>
+                            <p>It was stated that 10,968 operations were conducted and 17,890 people were detained during this cabinet period.<span class="footnote-ref" data-footnote="5">5</span></p>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-date">September 21, 2025</div>
+                            <p>The cabinet period total was updated to 11,667 operations and 19,025 suspect apprehensions/detentions.<span class="footnote-ref" data-footnote="6">6</span></p>
+                        </div>
+                    </div>
+
+                    <div class="info-box warning">
+                        <div class="info-box-title">Long-Term Figures</div>
+                        <p style="margin-bottom: 0;">According to Turkey Rights Monitor's dataset compiled from open sources regarding mass detentions against the Gülen Movement:<span class="footnote-ref" data-footnote="7">7</span></p>
+                        <ul style="margin-top: 1rem; color: var(--text-secondary);">
+                            <li><strong>Total detentions:</strong> 152,199</li>
+                            <li><strong>Total operations:</strong> 7,215</li>
+                            <li><strong>Average daily detentions:</strong> 44 people</li>
+                        </ul>
+                    </div>
+                    <p>In 2025, the form and geographical scope of law enforcement operations demonstrate how mass detentions have been carried out in successive “waves.” On 6 May 2025, it was officially announced that 208 individuals were apprehended in a simultaneous operation conducted across 47 provinces, coordinated from Gaziantep. Such “multi-province / simultaneous” operations are among the year’s most striking incidents, as they illustrate that the measure of detention may, in practice, be applied as a large-scale security practice rather than on the basis of an individualized assessment of suspicion. Within the context of the same operation, publicly reported cases involving vulnerable groups also drew attention; for instance, it was reported that Hatice Doğru, who was four months pregnant at the time, was among those detained and subsequently remanded in custody. Such examples demonstrate that mass detention practices function not merely as short-term restrictions on liberty for the targeted group, but also as a mechanism of pressure capable of producing long-term effects on health, family life, and individual vulnerability.</p>
+
+                </div>
+
+                <!-- Subsection 1.2 -->
+                <div class="subsection" id="justification-patterns">
+                    <h3>1.2 Justification Patterns and Recurring Templates</h3>
+                    <p>Analysis of mass detentions cannot be reduced to total numbers alone. The determining question is around which justification sets detentions are continuously produced and how these justifications create "recurring templates."</p>
+                    
+                    <p>According to official serial operation announcements, a total of <strong>885 people</strong> were detained between <strong>January 8, 2025 and February 21, 2025</strong>.<span class="footnote-ref" data-footnote="8">8</span></p>
+
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>Justification</th>
+                                <th>Number of Detentions</th>
+                                <th>Percentage</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>ByLock / Encrypted Communication</td>
+                                <td class="number">377</td>
+                                <td>%42.6</td>
+                            </tr>
+                            <tr>
+                                <td>Financing</td>
+                                <td class="number">92</td>
+                                <td>%10.4</td>
+                            </tr>
+                            <tr>
+                                <td>Other</td>
+                                <td class="number">416</td>
+                                <td>%47.0</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <p>Recurring justifications generate a twofold pressure on the targeted group. First, the standardization of justifications results in the detention threat ceasing to be a “person-specific” risk and instead transforming into a template that is potentially applicable to anyone. Second, by coinciding with the wave-like intensification of operations throughout the year, this practice deepens a sense of “uncertainty” within society. Indeed, the 2025 time-series visualization published by Turkey Rights Monitor shows distinct peak points on specific dates during the year at which the number of detentions rises markedly.</p>
+
+                    <!-- Interactive Chart -->
+                    <div class="chart-container">
+                        <div class="chart-header">
+                            <span class="chart-title">2025 Detention Waves</span>
+                        </div>
+                        <div class="chart-wrapper">
+                            <canvas id="detentionWavesChart"></canvas>
+                        </div>
+                    </div>
+                    <p>This pattern is significant in that it demonstrates that detentions in 2025 were not distributed evenly over time, but rather intensified during specific periods in the form of “operational waves.”</p>
+
+                </div>
+
+                <!-- Subsection 1.3 -->
+                <div class="subsection" id="2024-comparison">
+                    <h3>1.3 Comparison with 2024</h3>
+                    <p>In Turkey Rights Monitor's comparative chart by years, the <strong>2024 detention count is 4,058</strong>, while the <strong>2025 detention count is 4,915</strong>.</p>
+                    
+                    <div class="chart-container">
+                        <div class="chart-header">
+                            <span class="chart-title">Annual Detention Comparison</span>
+                        </div>
+                        <div class="chart-wrapper">
+                            <canvas id="yearlyComparisonChart"></canvas>
+                        </div>
+                    </div>
+
+                    <div class="info-box highlight">
+                        <p style="margin-bottom: 0;"><strong>Conclusion:</strong> 2025 presents a mass detention practice that recorded 4,916 detentions according to open source data; was kept constantly on the agenda with official periodic totals; intensified in waves throughout the year; and was standardized through the repetition of justification templates.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Hassas Gruplar -->
+            <section class="section" id="vulnerable-groups">
+                <div class="section-header">
+                    <span class="section-number">02</span>
+                    <div>
+                        <h2>Arbitrary Detention and Arrests Targeting Vulnerable Groups</h2>
+                    </div>
+                </div>
+                
+                <p>While the term 'arbitrary' does not have precise definitions in international literature, the full protection of legal defense rights and due process principles in arrests and liberty restrictions is essential. The UN defines the concept of 'arbitrary' as practices that, even if compliant with existing laws and procedures, are not proportionate to the objective, reasonable, necessary, or in accordance with due process principles.<span class="footnote-ref" data-footnote="9">9</span><span class="footnote-ref" data-footnote="10">10</span><span class="footnote-ref" data-footnote="11">11</span></p>
+                
+                <div class="info-box danger">
+                    <div class="info-box-title">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/>
+                            <line x1="12" y1="9" x2="12" y2="13"/>
+                            <line x1="12" y1="17" x2="12.01" y2="17"/>
+                        </svg>
+                        UN Working Group on Arbitrary Detention Decision
+                    </div>
+                    <p style="margin-bottom: 0;">The UN Working Group on Arbitrary Detention has characterized and condemned Turkey's detention and arrest practices against Gülen Movement members as <strong>crimes against humanity</strong>.<span class="footnote-ref" data-footnote="12">12</span></p>
+                </div>
+
+                <!-- Subsection 2.1 -->
+                <div class="subsection" id="pregnant-women">
+                    <h3>2.1 Pregnant Women and Mothers Behind Bars</h3>
+                    <p>Cases reflected in open sources in 2025 demonstrate that the arrest of pregnant women and mothers with children aged 0-6 has evolved from isolated incidents into a continuous practice.</p>
+
+                    <h4>2.1.1 Arrest During Pregnancy</h4>
+                    <div class="case-study">
+                        <div class="case-study-header">
+                            <div class="case-study-icon">⚠</div>
+                            <div>
+                                <div class="case-study-title">Hatice Doğru</div>
+                                <div class="case-study-meta">4 months pregnant</div>
+                            </div>
+                        </div>
+                        <p style="margin-bottom: 0; color: var(--text-secondary);">The arrest of Hatice Doğru, who was four months pregnant and among those detained in operations centered in Gaziantep covering multiple provinces, demonstrates how mass detention practice intersects with violations targeting vulnerable groups.</p>
+                    </div>
+
+                    <div class="case-study">
+                        <div class="case-study-header">
+                            <div class="case-study-icon">⚠</div>
+                            <div>
+                                <div class="case-study-title">Merve Zayım</div>
+                                <div class="case-study-meta">9 months pregnant</div>
+                            </div>
+                        </div>
+                        <p style="margin-bottom: 0; color: var(--text-secondary);">Despite her case being at the Supreme Court stage for a long time, she was sent to prison just days before giving birth.</p>
+                    </div>
+
+                    <div class="case-study">
+                        <div class="case-study-header">
+                            <div class="case-study-icon">⚠</div>
+                            <div>
+                                <div class="case-study-title">Leyla Arslan</div>
+                                <div class="case-study-meta">5 months pregnant</div>
+                            </div>
+                        </div>
+                        <p style="margin-bottom: 0; color: var(--text-secondary);">Leyla Arslan, who was five months pregnant, was remanded in custody in Edirne.</p>
+                    </div>
+
+                    <h4>2.1.2 Prison with Infants and Young Children</h4>
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Status</th>
+                                <th>Prison</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Özlem Düzenli</td>
+                                <td>Detained with 6-month-old baby</td>
+                                <td>Edirne L Type</td>
+                            </tr>
+                            <tr>
+                                <td>Deniz Gündoğdu</td>
+                                <td>Detained with 16-month-old daughter</td>
+                                <td>Edirne L Type</td>
+                            </tr>
+                            <tr>
+                                <td>Türkan Alemdar</td>
+                                <td>Detained with 19-month-old child</td>
+                                <td>Eskişehir L Type</td>
+                            </tr>
+                            <tr>
+                                <td>Fatma Öztimur</td>
+                                <td>4-year-old autistic child + 20-month-old child</td>
+                                <td>Bakırköy Women's Closed</td>
+                            </tr>
+                            <tr>
+                                <td>Şeyma Aslan</td>
+                                <td>Detained with 12-month-old baby</td>
+                                <td>Edirne L Type</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <p>Moreover, the fact that H.Ç. has been held for an extended period in Edirne L-Type Prison together with his spouse and two young children stands out as another example demonstrating the systematic impairment of family unity.</p>
+                </div>
+
+                <!-- Subsection 2.2 -->
+                <div class="subsection" id="sick-disabled">
+                    <h3>2.2 Sick, Disabled, and Elderly Prisoners</h3>
+                    
+                    <div class="case-study">
+                        <div class="case-study-header">
+                            <div class="case-study-icon" style="background: rgba(239, 68, 68, 0.2);">§</div>
+                            <div>
+                                <div class="case-study-title">İbrahim Güngör</div>
+                                <div class="case-study-meta">72 years old, Alzheimer's patient</div>
+                            </div>
+                        </div>
+                        <p style="color: var(--text-secondary);">Güngör, who was arrested after his sentence was upheld, rapidly deteriorated in prison health-wise; during an open visit, he could not even recognize his university student daughter. He lost his life in prison conditions without access to necessary health and care services.</p>
+                        <p style="margin-bottom: 0; color: var(--accent-danger); font-weight: 600;">This case demonstrates that deprivation of liberty for prisoners whose health conditions are incompatible with prison conditions is not only a rights violation but also transforms into a preventable death risk.</p>
+                    </div>
+
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Age</th>
+                                <th>Health Condition</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Gülten Nene</td>
+                                <td>—</td>
+                                <td>Cancer diagnosis took months</td>
+                            </tr>
+                            <tr>
+                                <td>Abdullah Tırpan</td>
+                                <td>72</td>
+                                <td>Diabetes and pneumonia patient</td>
+                            </tr>
+                            <tr>
+                                <td>Kadriye Işık</td>
+                                <td>74</td>
+                                <td>Cancer patient, execution postponement denied</td>
+                            </tr>
+                            <tr>
+                                <td>Mehmet Hanifi Emeç</td>
+                                <td>—</td>
+                                <td>MS patient, wheelchair</td>
+                            </tr>
+                            <tr>
+                                <td>D.S.</td>
+                                <td>—</td>
+                                <td>Psychiatric disorder</td>
+                            </tr>
+                            <tr>
+                                <td>Ali Aki</td>
+                                <td>—</td>
+                                <td>78% disabled</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <p>Throughout 2025, detention and arrest practices directed at vulnerable groups in Türkiye have, in effect, eliminated the exceptional nature of deprivation of liberty as a preventive measure. It has been observed that, with regard to pregnant women, mothers with young children, as well as seriously ill, disabled, and elderly individuals, decisions ordering pre-trial detention were not subjected to a separate assessment within the framework of the principles of necessity and proportionality, and that alternative judicial measures were systematically disregarded.</p>
+                    <p>In particular, cases involving women held in prison during pregnancy or together with their infants reveal that the fundamental legal safeguards aimed at the protection of both mother and child have become ineffective in practice. Similarly, the continued detention of prisoners suffering from serious illnesses and neurological conditions under prison conditions has reached a level that goes beyond a violation of the right to health and directly threatens the right to life. The death of Alzheimer’s patient İbrahim Güngör in prison has stood out as one of the most striking examples symbolizing the point this process has reached.</p>
+                    <p>Data from 2025 demonstrate that arrest and enforcement practices directed at vulnerable groups cannot be assessed as isolated errors or exceptional decisions; rather, they point to a structural problem in which protection mechanisms centered on human dignity are being systematically eroded. This situation reveals that the criminal justice system in Türkiye has evolved, particularly with regard to vulnerable groups, from a rights-based approach toward a punitive and deterrent practice.</p>
+                </div>
+            </section>
+
+            <!-- Torture -->
+            <section class="section" id="torture">
+                <div class="section-header">
+                    <span class="section-number">03</span>
+                    <div>
+                        <h2>The Reality of Torture in Turkey</h2>
+                    </div>
+                </div>
+                
+                <p>This section aims to demonstrate, on the basis of international reports published in 2025 and publicly reported cases, that allegations of torture and ill-treatment in Türkiye persist, and that detention and arrest processes continue to constitute a high-risk area, particularly in investigations conducted against individuals purged under the KHK regime and those carried out on the basis of alleged links to the Gülen Movement.</p>
+
+                <div class="info-box highlight">
+                    <div class="info-box-title">International Assessments</div>
+                    <ul style="color: var(--text-secondary); margin-bottom: 0;">
+                        <li><strong>EU 2025 Turkey Report:</strong> Attention was drawn to the inadequacy of legal safeguards for the prevention of torture and ill-treatment.<span class="footnote-ref" data-footnote="13">13</span></li>
+                        <li><strong>Human Rights Association June 26, 2025 Report:</strong> The current state of torture and impunity dynamics were evaluated.<span class="footnote-ref" data-footnote="14">14</span></li>
+                        <li><strong>OMCT Global Torture Index 2025:</strong> Turkey was classified in the high-risk group.<span class="footnote-ref" data-footnote="15">15</span></li>
+                    </ul>
+                </div>
+
+                <h3>3.1 Case Studies</h3>
+                
+                <div class="case-study">
+                    <div class="case-study-header">
+                        <div class="case-study-icon">⚡</div>
+                        <div>
+                            <div class="case-study-title">May 6 Operations</div>
+                            <div class="case-study-meta">Simultaneous operations in 47 provinces</div>
+                        </div>
+                    </div>
+                    <p style="color: var(--text-secondary);">77 people, mostly university students, were arrested. Allegations emerged that they were subjected to psychological torture during detention and arrest processes and forced to testify against each other.<span class="footnote-ref" data-footnote="16">16</span></p>
+                </div>
+
+                <div class="case-study">
+                    <div class="case-study-header">
+                        <div class="case-study-icon">⚖</div>
+                        <div>
+                            <div class="case-study-title">Eyüp Birinci Case</div>
+                            <div class="case-study-meta">Dismissed Teacher - Constitutional Court Violation Ruling</div>
+                        </div>
+                    </div>
+                    <p style="color: var(--text-secondary);">In a case filed alleging torture during detention in Antalya in 2016, witnesses were heard on April 18, 2025. Another dismissed teacher who stayed in the same detention facility testified that he saw Birinci covered in blood and unconscious.<span class="footnote-ref" data-footnote="17">17</span></p>
+                </div>
+
+                <h3>3.2 Landmark Decision: Zabit Kişi Case</h3>
+                <p>The Constitutional Court found a violation of rights in the case of Zabit Kişi, who was allegedly forcibly transferred from Kazakhstan to Turkey in 2017 and subjected to torture for 108 days in a container in Ankara. The Court awarded non-pecuniary damages on the grounds that the authorities had failed to properly discharge their obligation to conduct an effective investigation.<span class="footnote-ref" data-footnote="18">18</span></p>
+                <h3>3.3 Impunity and Investigation Threshold: İlhan Talu Case</h3>
+                <p>It was reported to the public that the criminal complaint filed in relation to allegations of “torture and ill-treatment” by Lieutenant General İlhan Talu, who was tried in the General Staff umbrella case and sentenced to aggravated life imprisonment, was dismissed by the Ankara Chief Public Prosecutor’s Office on the grounds of a decision of non-prosecution</p>
+                
+            </section>
+
+            <!-- Freezing of Assets -->
+            <section class="section" id="freezing of assets">
+                <div class="section-header">
+                    <span class="section-number">04</span>
+                    <div>
+                        <h2>Freezing of Assets Decisions and Terror Wanted List</h2>
+                    </div>
+                </div>
+                
+                <p>Throughout 2025, asset freezing decisions targeting individuals and legal entities associated with the Gülen Movement continued. These decisions, through Presidential decrees published in the Official Gazette and related administrative actions, were primarily based on justifications of "prevention of terrorism financing" and "national security."<span class="footnote-ref" data-footnote="21">21</span></p>
+                
+                <p>Although the asset freezing measure is regulated as a temporary and exceptional measure in terms of its legal nature, as of 2025, it is observed that this measure functions as a de facto sanction producing permanent results. However, implementation practice shows that these measures are not limited to combating financial crimes; they have transformed into a structural pressure tool aimed at economically liquidating dissident individuals and organizations.</p>
+
+                <h3>4.1 Terror Wanted List</h3>
+                <p>In 2025 as well, the "terror wanted list" system operated by the Ministry of Interior continued to function as a politically-oriented stigmatization tool targeting dissident individuals and groups living abroad, rather than as a mechanism to combat real and concrete terrorist threats.<span class="footnote-ref" data-footnote="22">22</span></p>
+                
+                <div class="info-box danger">
+                    <div class="info-box-title">UN Criticism</div>
+                    <p style="margin-bottom: 0;">United Nations mechanisms have openly criticized Turkey's use of such monitoring and listing systems as pressure tools against human rights defenders, journalists, lawyers, and political dissidents; emphasizing that listing procedures carry risks of arbitrariness.<span class="footnote-ref" data-footnote="23">23</span></p>
+                </div>
+            </section>
+
+            <!-- Right to Life -->
+            <section class="section" id="right-to-life">
+                <div class="section-header">
+                    <span class="section-number">05</span>
+                    <div>
+                        <h2>Right to Life Violations</h2>
+                    </div>
+                </div>
+                
+                <p>Data reflected in open sources throughout 2025 reveals that violations of the right to life of individuals alleged to be affiliated with the Gülen Movement present a multidimensional picture.</p>
+                <p>These violations are not limited to prison deaths alone; they spread across a wide spectrum including indirect effects of prison conditions, deaths occurring in the context of exile and forced migration, suicide cases triggered by economic and psychological pressures, and work and traffic accidents.</p>
+                <!-- Chart: Causes of Death -->
+                <div class="chart-container">
+                    <div class="chart-header">
+                        <span class="chart-title">2025 Right to Life Violations - Causes of Death</span>
+                    </div>
+                    <div class="chart-wrapper">
+                        <canvas id="deathCausesChart"></canvas>
+                    </div>
+                </div>
+
+                <h3>5.1 Deaths in Prison</h3>
+                <p>In 2025, it was determined that numerous individuals alleged to be connected to the Gülen Movement lost their lives in prison. A significant portion of these cases show that the deaths were preventable in nature.</p>
+
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Cause of Death</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Hüsamettin Karadeniz</td><td>Death in prison</td></tr>
+                        <tr><td>Ertuğrul Yavaşça</td><td>Death in prison</td></tr>
+                        <tr><td>Ramazan Aktaş</td><td>Death in prison</td></tr>
+                        <tr><td>Cengiz Çakıltepe</td><td>Death in prison</td></tr>
+                        <tr><td>İbrahim Güngör</td><td>Death in prison</td></tr>
+                        <tr><td>Asaleddin Çelik</td><td>Death in prison</td></tr>
+                        <tr><td>Hüseyin Parlak</td><td>Death in prison</td></tr>
+                        <tr><td>Süleyman Yıldırım</td><td>Death in prison</td></tr>
+                        <tr><td>Mehmet Çataklı</td><td>Death in prison</td></tr>
+                    </tbody>
+                </table>
+                <p>The İbrahim Güngör case in particular is one of the striking examples demonstrating systematic violation of the right to health in prisons. Güngör, an Alzheimer's patient who should have been receiving intensive care treatment, was sent back to prison, all release requests from his family were left unanswered, and he ultimately lost his life. Similarly, the case of Asaleddin Çelik expose judicial negligence resulting in violation of the right to life because courts did not decide for release despite forensic medicine finding execution postponement appropriate.</p>
+
+                <h3>5.2 Deaths Due to Illness (Outside Prison)</h3>
+                <p>2025 data reveals that numerous individuals lost their lives due to illness outside prison but as a direct result of social, economic, and psychological destruction connected to the emergency decree process. Difficulties in accessing health services after dismissal, lack of insurance, unemployment, social exclusion, and prolonged stress stand out as fundamental factors accelerating the progression of fatal diseases.</p>
+                <div class="info-box danger">
+                    <p style="margin-bottom: 0;">In this context, it has been recorded that many individuals including Uğur Kömeçoğlu, Yusuf Olca, Ali Altınpınar, Murat Eryılmaz, Devrim Sönmez, Dursun Ali Kurt, Bülent Adıgüzel, Kazım Doğan, Derya Çelik, Vakkas Karakoyun, Ramazan Ünal, Arif Taşçılar, and Bekir Esen lost their lives due to cancer, heart attack, brain hemorrhage, and multiple chronic diseases. In a large portion of these cases, diseases worsened in the post-dismissal period and individuals could not access regular treatment.</p>
+                </div>
+
+                <h3>5.3 Suicide Cases</h3>
+                <p>It is observed that individuals dismissed by emergency decree and living under prolonged unemployment, stigmatization, poverty, and psychological pressure were deprived of social and psychological support mechanisms that should have been provided by the state.</p>
+                <div class="info-box danger">
+                    <p style="margin-bottom: 0;">In this context, it was determined that Gazi Bahargülü, Erdal Mehmet Uzun, Ömer S., and Ali Ülker took their own lives. The common point of these cases is that individuals were left alone with legal uncertainty, economic collapse, and social exclusion.</p>
+                </div>
+
+                <h3>5.4 Traffic and Work Accidents</h3>
+                <p>2025 data shows that the indirect effects of the emergency decree process have also transformed into right to life violations through work and traffic accidents. It is observed that many dismissed individuals were forced to work in insecure and dangerous jobs outside their professional expertise.</p>
+                <div class="info-box danger">
+                    <p style="margin-bottom: 0;">In this context, Ali Osman Çırak and his family, Mehmet İraz, Burak Kayacı, Hüseyin Şen, and Ramazan Korkut lost their lives in traffic accidents; while Musa Üçgül, Yusuf Çetin, Orhan Çöl, and Hüseyin Açıkyörük died as a result of work accidents. These cases clearly demonstrate that individuals dismissed by emergency decree were forced to work in conditions contrary to human dignity and risky in order to sustain their lives.</p>
+                </div>
+
+                <h3>5.5 Children's Right to Life</h3>
+                <div class="info-box danger">
+                    <p style="margin-bottom: 0;">In 2025, it has been observed that violations of the right to life have also directly affected children. The cases of the three children of Ahmet Çetiz, as well as that of Sümeyra Gelir, demonstrate that the imprisonment of parents and the disruption of family unity may have life-threatening consequences for children. In particular, the fact that Sümeyra Gelir was forced to care for her siblings due to her mother’s imprisonment, and that the State failed to put protective social policies into effect, constitutes a grave violation of the principle of the best interests of the child.</p>
+                </div>
+
+            </section>
+
+            <!-- Enforced Disappearances -->
+            <section class="section" id="enforced-disappearances">
+                <div class="section-header">
+                    <span class="section-number">06</span>
+                    <div>
+                        <h2>Enforced Disappearances & Illegal Deportations and Renditions</h2>
+                    </div>
+                </div>
+                
+                <p>The United Nations defines enforced disappearance as arrest, detention, abduction, or any other form of deprivation of liberty by state agents or by persons or groups of persons acting with the authorization, support, or acquiescence of the state, followed by refusal to acknowledge the deprivation of liberty or concealment of the fate or whereabouts of the disappeared person.<span class="footnote-ref" data-footnote="25">25</span></p>
+
+                <div class="info-box warning">
+                    <div class="info-box-title">Currently Missing Persons</div>
+                    <p style="color: var(--text-secondary);">It is known that at least 36 people who were Gülen Movement members were abducted from 2016 to the end of 2025. Three of these people are still missing:</p>
+                    <ul style="color: var(--text-secondary); margin-bottom: 0;">
+                        <li><strong>Sunay Elmas</strong> - Teacher, missing since January 27, 2016<span class="footnote-ref" data-footnote="27">27</span></li>
+                        <li><strong>Ayhan Oran</strong> - MIT official, missing since November 1, 2016<span class="footnote-ref" data-footnote="28">28</span></li>
+                        <li><strong>Yusuf Bilge Tunç</strong> - Defense industry employee, missing since August 6, 2019<span class="footnote-ref" data-footnote="29">29</span></li>
+                    </ul>
+                </div>
+
+                <h3>6.1 Cases Concerning 2025</h3>
+                
+                <div class="case-study">
+                    <div class="case-study-header">
+                        <div class="case-study-icon">🇰🇪</div>
+                        <div>
+                            <div class="case-study-title">Kenya – Mustafa Güngör Case</div>
+                            <div class="case-study-meta">December 2025</div>
+                        </div>
+                    </div>
+                    <p style="color: var(--text-secondary);">Mustafa Güngör, a Turkish national holding refugee status in Kenya, was detained by the Kenyan authorities at the request of Turkey. A Kenyan court ordered his release on 30 December 2025.<span class="footnote-ref" data-footnote="30">30</span><span class="footnote-ref" data-footnote="31">31</span></p>
+                </div>
+
+                <div class="case-study">
+                    <div class="case-study-header">
+                        <div class="case-study-icon">🇲🇿</div>
+                        <div>
+                            <div class="case-study-title">Mozambique – Emre Çınar Case</div>
+                            <div class="case-study-meta">2025</div>
+                        </div>
+                    </div>
+                    <p style="color: var(--text-secondary);">Lawyer Emre Çınar was detained in Mozambique upon Turkey's extradition request. The Mozambique court, stating that there were serious indications that the extradition request was made with political motives, decided on his release.<span class="footnote-ref" data-footnote="32">32</span><span class="footnote-ref" data-footnote="33">33</span></p>
+                </div>
+            </section>
+
+            <!-- Terror Statistics -->
+            <section class="section" id="terror-statistics">
+                <div class="section-header">
+                    <span class="section-number">07</span>
+                    <div>
+                        <h2>Terror Statistics</h2>
+                    </div>
+                </div>
+                
+                <p>This section is based on official statements made to the public by the Ministry of Justice and Ministry of Interior during 2025, based on the July 15, 2016 events.<span class="footnote-ref" data-footnote="34">34</span></p>
+
+                <h3>7.1 Trials Concerning July 15, 2016 Events</h3>
+                <p>According to Justice Minister Yılmaz Tunç's statement on July 13, 2025, decisions have been made in all 289 actual incident files:</p>
+
+                <div class="stats-grid" style="grid-template-columns: repeat(3, 1fr);">
+                    <div class="stat-card">
+                        <div class="stat-number">4,891</div>
+                        <div class="stat-label">Conviction</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">2,870</div>
+                        <div class="stat-label">Acquittal</div>
+                    </div>
+                    <div class="stat-card danger">
+                        <div class="stat-number">1,634</div>
+                        <div class="stat-label">Aggravated Life Sentence</div>
+                    </div>
+                </div>
+
+                <h3>7.2 Number of Prisoners and Convicts in Prisons</h3>
+                <p>According to data shared by the Ministry of Justice as of July 2025:<span class="footnote-ref" data-footnote="35">35</span></p>
+
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>Category</th>
+                            <th>Number</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Convicted or Sentenced</td>
+                            <td class="number">11,085</td>
+                        </tr>
+                        <tr>
+                            <td>Detained</td>
+                            <td class="number">555</td>
+                        </tr>
+                        <tr>
+                            <td>Ongoing Trial</td>
+                            <td class="number">24,000</td>
+                        </tr>
+                        <tr>
+                            <td>Under Investigation</td>
+                            <td class="number">58,000</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h3>7.3 Public Sector Dismissals</h3>
+                <p>After July 15, 2016, <strong>127,000 people</strong> were dismissed from public service with allegations of affiliation or connection with the Gülen Movement.<span class="footnote-ref" data-footnote="36">36</span></p>
+
+                <!-- Chart: Dismissals Distribution -->
+                <div class="chart-container">
+                    <div class="chart-header">
+                        <span class="chart-title">Dismissals by Institution</span>
+                    </div>
+                    <div class="chart-wrapper">
+                        <canvas id="dismissalsChart"></canvas>
+                    </div>
+                </div>
+
+                <h3>7.4 Detention, Arrest, and Judicial Control</h3>
+                <p>According to Interior Minister Ali Yerlikaya's statements, since July 15, 2016:<span class="footnote-ref" data-footnote="37">37</span></p>
+
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-number">390,322</div>
+                        <div class="stat-label">Total Detentions</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">113,844</div>
+                        <div class="stat-label">Arrested</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">118,822</div>
+                        <div class="stat-label">Judicial Control</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">153,382</div>
+                        <div class="stat-label">Released</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Prison Violations -->
+            <section class="section" id="prison-violations">
+                <div class="section-header">
+                    <span class="section-number">08</span>
+                    <div>
+                        <h2>Human Rights Violations in Prisons</h2>
+                    </div>
+                </div>
+                
+                <p>In accordance with international human rights conventions, respect for human dignity of persons deprived of their liberty during the execution of prison sentences is among the fundamental obligations of the state.</p>
+                <p>The conditions under which prisoners are held in detention facilities must comply with minimum standards of living; beyond the inevitable restriction of liberty inherent in a sentence, practices that would cause excessive suffering or hardship must be avoided. Nevertheless, long-standing structural problems in prisons in Türkiye have continued to give rise to widespread and systematic human rights violations in 2025</p>
+                <div class="info-box highlight">
+                    <div class="info-box-title">2025 Overview</div>
+                    <ul style="color: var(--text-secondary); margin-bottom: 0;">
+                        <li><strong>Total number of cases:</strong> 950+</li>
+                        <li><strong>Number of affected prisons:</strong> 80+</li>
+                        <li><strong>Different violation types:</strong> 25+</li>
+                    </ul>
+                </div>
+
+                <!-- Chart: Prison Violations -->
+                <div class="chart-container">
+                    <div class="chart-header">
+                        <span class="chart-title">2025 Prison Rights Violations Distribution</span>
+                    </div>
+                    <div class="chart-wrapper">
+                        <canvas id="prisonViolationsChart"></canvas>
+                    </div>
+                </div>
+
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>Violation Type</th>
+                            <th>Number of Cases</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Health rights violations</td>
+                            <td class="number">300+</td>
+                        </tr>
+                        <tr>
+                            <td>Obstruction of release rights</td>
+                            <td class="number">180+</td>
+                        </tr>
+                        <tr>
+                            <td>Overcrowding and housing conditions</td>
+                            <td class="number">160+</td>
+                        </tr>
+                        <tr>
+                            <td>Arbitrary disciplinary punishments</td>
+                            <td class="number">120+</td>
+                        </tr>
+                        <tr>
+                            <td>Ill-treatment, assault, strip search</td>
+                            <td class="number">90+</td>
+                        </tr>
+                        <tr>
+                            <td>malnutrition, lack of hygiene, and related conditions</td>
+                            <td class="number">100+</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+
+            <!-- Judicial Independence -->
+            <section class="section" id="judicial-independence">
+                <div class="section-header">
+                    <span class="section-number">09</span>
+                    <div>
+                        <h2>Judicial Independence</h2>
+                    </div>
+                </div>
+                
+                <p>Judicial independence is one of the fundamental democratic principles measured by the separation of legislative, executive, and judicial powers and their ability to make independent and impartial decisions.</p>
+                <p>Although this principle is explicitly enshrined in Türkiye’s legislation, national and international reports indicate that, as of 2025, the principle is subject to serious pressure and risks in practice.</p>
+                <h3>9.1 International Assessments</h3>
+                <p>The European Commission’s 2025 “Turkey Report” emphasized that concerns regarding the rule of law and judicial independence in Turkey have not been remedied.<span class="footnote-ref" data-footnote="38">38</span><span class="footnote-ref" data-footnote="39">39</span></p>
+
+                <div class="info-box danger">
+                    <div class="info-box-title">European Parliament Rapporteur</div>
+                    <p style="margin-bottom: 0;">Stated that Turkey faces <strong>"an unprecedented democratic backsliding in history"</strong>.<span class="footnote-ref" data-footnote="41">41</span></p>
+                </div>
+
+                <h3>9.2 Criticisms from International Rights and Justice Organizations</h3>
+                <p>Human Rights Watch and other international civil society organizations have published reports stating that judicial independence and rule of law in Turkey are under serious pressure as of 2025.<span class="footnote-ref" data-footnote="42">42</span><span class="footnote-ref" data-footnote="43">43</span></p>
+
+                <h3>9.3 Concrete Cases</h3>
+                <p>In the last quarter of 2025, a heavy penal court in Istanbul refused to conduct a retrial in the relevant case by not implementing the Constitutional Court's 'retrial' order.<span class="footnote-ref" data-footnote="44">44</span></p>
+                <p>The arrest and prosecution of Ekrem İmamoğlu, Mayor of the Istanbul Metropolitan Municipality, triggered widespread public reaction and has been argued to have intensified the debate over the “politically motivated use of the judiciary.”</p>
+                <p>The fact that more than 150 journalists were brought before the courts due to judicial proceedings during the July–September period of 2025 has further fueled debates on judicial independence through the lens of media freedom.<span class="footnote-ref" data-footnote="45">45</span></p>
+
+
+                <h3>9.4 Judicial Independence Indices</h3>
+                <p>Turkey dropped to <strong>118th place</strong> in the 2025 Global Rule of Law Index.</p>
+                <p>International reports identify the following as the main problem areas directly affecting judicial independence in Türkiye: • The indirect and political influence of the executive branch on the judiciary, and the lack of transparency in judicial appointment processes. • The failure of domestic courts to implement judgments of the European Court of Human Rights, and delays in incorporating those judgments into domestic law. • The growing perception of politically motivated cases within judicial proceedings, particularly in high-profile political trials.</p>
+                <p>As of 2025, international and domestic monitoring reports indicate that judicial independence in Türkiye is confronted with systematic pressure and a perception of political influence. This situation has been the subject of serious criticism within international human rights mechanisms and European legal circles, and has been identified as a significant risk factor with regard to the rule of law, fundamental rights, and democratic participation. Strengthening judicial independence, ensuring the implementation of judgments of the European Court of Human Rights, and establishing a judicial culture free from political influence remain essential both for the credibility of Türkiye’s domestic legal system and for the fulfillment of its international obligations.</p>
+
+
+            </section>
+
+            <!-- Closed Institutions -->
+            <section class="section" id="closed-institutions">
+                <div class="section-header">
+                    <span class="section-number">10</span>
+                    <div>
+                        <h2>Closed and Seized Institutions</h2>
+                    </div>
+                </div>
+                
+                <p>Closure and seizure practices targeting the Gülen movement in Turkey gained an institutional character with Emergency Decrees (KHK) issued during the State of Emergency declared in 2016.</p>
+                <p>Although the emergency decree regime has ended, property seizure and takeover practices conducted on the basis of allegations of affiliation or connection with the Gülen movement have continued through different legal mechanisms in subsequent years. At this point, the Savings Deposit Insurance Fund (TMSF) has become a determining actor over the management and assets of private companies through trustee appointments.</p>
+                <div class="info-box highlight">
+                    <div class="info-box-title">Institutions Closed During State of Emergency</div>
+                    <p style="color: var(--text-secondary);">With 11 different emergency decrees, <strong>at least 3,942 institutions</strong> operating in different fields across 81 provinces in Turkey were closed:</p>
+                </div>
+
+                <!-- Chart: Closed Institutions -->
+                <div class="chart-container">
+                    <div class="chart-header">
+                        <span class="chart-title">Types of Closed Institutions</span>
+                    </div>
+                    <div class="chart-wrapper">
+                        <canvas id="closedInstitutionsChart"></canvas>
+                    </div>
+                </div>
+
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>Institution Type</th>
+                            <th>Number</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Association</td><td class="number">1,410</td></tr>
+                        <tr><td>Private School</td><td class="number">1,034</td></tr>
+                        <tr><td>Student Dormitory</td><td class="number">835</td></tr>
+                        <tr><td>Tutoring Center</td><td class="number">301</td></tr>
+                        <tr><td>Foundation</td><td class="number">109</td></tr>
+                        <tr><td>Newspaper</td><td class="number">53</td></tr>
+                        <tr><td>Health Institution</td><td class="number">47</td></tr>
+                        <tr><td>Publishing House</td><td class="number">29</td></tr>
+                        <tr><td>Radio</td><td class="number">22</td></tr>
+                        <tr><td>Magazine</td><td class="number">20</td></tr>
+                        <tr><td>Television</td><td class="number">19</td></tr>
+                        <tr><td>Union</td><td class="number">19</td></tr>
+                        <tr><td>Federation</td><td class="number">19</td></tr>
+                        <tr><td>University</td><td class="number">15</td></tr>
+                    </tbody>
+                </table>
+
+                <h3>10.1 Current Seizure Practices in 2025</h3>
+                <div class="case-study">
+                    <div class="case-study-header">
+                        <div class="case-study-icon">🏢</div>
+                        <div>
+                            <div class="case-study-title">Maydonoz Döner</div>
+                            <div class="case-study-meta">2025 - TMSF Trustee Appointment</div>
+                        </div>
+                    </div>
+                    <p style="color: var(--text-secondary); margin-bottom: 0;">Within the scope of the investigation conducted against the restaurant chain called Maydonoz Döner, a trustee was appointed with the allegation that the company provided financing to the Gülen movement, and it was effectively brought under state control together with its many branches and affiliated companies.</p>
+                </div>
+            </section>
+
+            <!-- Conclusion -->
+            <section class="section" id="conclusion">
+                <div class="section-header">
+                    <span class="section-number">11</span>
+                    <div>
+                        <h2>Conclusion</h2>
+                    </div>
+                </div>
+                
+                <p>Analyses for 2025 reveal that human rights violations practiced in Turkey are multi-layered and systemic in nature. The examined data and case analyses show that the methods applied by the state in various areas - particularly mass detentions, arbitrary arrests, enforced disappearances, unlawful deportations, asset freezing, and right to life violations - contain deviations from the standards required by both national law and international human rights norms.</p>
+                
+                <p>Findings supported by concrete examples through actions associated with the Gülen Movement in particular reveal that the practices used by the state in targeting specific groups are a reflection of broader and structural problems. In addition, pressures on judicial independence and inhumane practices in prison conditions point to deep deficiencies in Turkey's general legal system and penal execution mechanisms, beyond just a specific movement.</p>
+                
+                <div class="info-box danger">
+                    <div class="info-box-title">Conclusion and Call</div>
+                    <p style="color: var(--text-secondary);">These rights violations experienced in 2025 reveal a serious need for reform in terms of rule of law and preservation of human rights in Turkey. State bodies should stop using the power they derive from their positions as a tool of oppression and should not become perpetrators of the ongoing social genocide.</p>
+                    <p style="margin-bottom: 0; color: var(--text-secondary);">The concrete findings obtained indicate, both at the national level and in the eyes of the international community, that current practices must be terminated, that rights violations and unlawfulness can no longer be concealed, and the urgent necessity to protect the rights of victims.</p>
+                </div>
+            </section>
+
+            <!-- References -->
+            <section class="references-section" id="references">
+                <h3>References</h3>
+                <div id="referencesContainer">
+                    <!-- References will be populated by JavaScript -->
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-logo">Turkey <span>Rights</span> Monitor</div>
+            <p class="footer-text">2025 Annual Human Rights Report</p>
+            <div class="footer-links">
+                <a href="https://turkeyrightsmonitor.com" target="_blank">Home</a>
+                <a href="https://turkeyrightsmonitor.com/tr/kitlesel-gozaltilar" target="_blank">Mass Detentions</a>
+                <a href="#" onclick="downloadPDF(); return false;">Print / PDF</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scroll to Top Button -->
+    <button class="scroll-top" id="scrollTop" onclick="scrollToTop()">↑</button>
+
+    <!-- Footnote Tooltip -->
+    <div class="footnote-tooltip" id="footnoteTooltip"></div>
+
+    <script>
+        // Footnotes data
+        const footnotes = {
+            1: 'Suetonius. (2021). On İki Roma İmparatoru [The Twelve Caesars]. Ü. Fafo Telatar ve Gül Öztürk (Çev.). Doğu Batı Yayınları. ISBN: 9786052133859.',
+            2: '<a href="https://turkeyrightsmonitor.com/tr/kitlesel-gozaltilar" target="_blank">https://turkeyrightsmonitor.com/tr/kitlesel-gozaltilar</a>',
+            3: 'Ali Yerlikaya (İçişleri Bakanlığı), kabine dönemi: 4.022 operasyon / 6.045 gözaltı (21.02.2024). <a href="https://www.icisleri.gov.tr/fetopdy-silahli-teror-orgutune-yonelik-kiskac-7-operasyonlarinda-67-supheli-yakalandi" target="_blank">Kaynak</a>',
+            4: 'Anadolu Ajansı, kabine dönemi: 6.025 operasyon / 9.738 gözaltı (13.07.2024). <a href="https://www.aa.com.tr/tr/gundem/bakan-yerlikaya-feto-firarilerinin-yaklasik-yuzde-16sinin-abdde-yuzde-23unun-almanyada-oldugu-degerlendiriliyor/3274085" target="_blank">Kaynak</a>',
+            5: 'Anadolu Ajansı, kabine dönemi: 10.968 operasyon / 17.890 gözaltı (15.07.2025). <a href="https://www.aa.com.tr/tr/15-temmuz-darbe-girisimi/icisleri-bakani-yerlikayadan-aaya-15-temmuz-degerlendirmesi/3631063" target="_blank">Kaynak</a>',
+            6: 'İçişleri Bakanlığı, kabine dönemi güncelleme: 11.667 operasyon / 19.025 gözaltı/yakalama (21.09.2025). <a href="https://www.icisleri.gov.tr/bakanimiz-sayin-ali-yerlikaya-fetoye-karsi-mucadelemizi-kararlilikla-surduruyoruz-son-1-hafta-icinde-fetoye-yonelik-39-operasyon-duzenledik" target="_blank">Kaynak</a>',
+            7: '<a href="https://turkeyrightsmonitor.com/tr/kitlesel-gozaltilar" target="_blank">https://turkeyrightsmonitor.com/tr/kitlesel-gozaltilar</a>',
+            8: 'Bu rakamlar, duyurularda gerekçeye bağlanan kişi sayısının açıkça belirtildiği operasyonlarla sınırlıdır.',
+            9: '<a href="https://www.ohchr.org/en/about-arbitrary-detention" target="_blank">https://www.ohchr.org/en/about-arbitrary-detention</a>',
+            10: '<a href="https://www.ohchr.org/en/about-arbitrary-detention" target="_blank">https://www.ohchr.org/en/about-arbitrary-detention</a>',
+            11: '<a href="https://www.ohchr.org/en/about-arbitrary-detention" target="_blank">https://www.ohchr.org/en/about-arbitrary-detention</a>',
+            12: 'Keyfi Tutuklamalar Çalışma Grubu Görüş No. 66/2023 (Paragraf 63), Görüş No. 3/2023 (Paragraf 85), Görüş No. 66/2020 (Paragraf 67), Görüş No. 67/2020 (Paragraf 96) ve Görüş No. 84/2020 (Paragraf 76)',
+            13: '<a href="https://enlargement.ec.europa.eu/document/download/4bb4ddd1-4f20-4ee0-92db-926996ec8dd1_en" target="_blank">AB 2025 Türkiye Raporu</a>',
+            14: '<a href="https://share.google/yQE4wth1sRPHWpGI1">İHD Raporu</a>',
+            15: '<a href="https://www.omct.org/site-resources/files/factsheets/Factsheet-Turkiye-EN.pdf" target="_blank">OMCT Global Torture Index 2025</a>',
+            16: '<a href="https://www.tr724.com/kiz-cocuklarina-iskence-ve-internet-sansuru-abd-insan-haklari-raporunda/" target="_blank">TR724 Haber</a>',
+            17: '<a href="https://www.tr724.com/khkli-ogretmene-yapilan-iskencenin-taniklari-mahkemede-anlatti-kiyafetleri-kanlar-icindeydi-bilinci-kapaliydi/" target="_blank">TR724 Haber</a>',
+            18: '<a href="https://www.tr724.com/aymden-khklilara-yapilan-iskencelerle-ilgili-3-hak-ihlali-karari-mitin-kacirip-108-gun-iskence-ettigi-zabit-kisiye-manevi-tazminat-odenecek/" target="_blank">TR724 Haber</a>',
+            19: '<a href="https://www.omct.org/site-resources/files/factsheets/Factsheet-Turkiye-EN.pdf" target="_blank">OMCT Factsheet</a>',
+            20: '<a href="https://enlargement.ec.europa.eu/document/download/4bb4ddd1-4f20-4ee0-92db-926996ec8dd1_en" target="_blank">AB 2025 Türkiye Raporu</a>',
+            21: 'Anadolu Ajansı - 31 Ağustos 2024 tarihli mal varlığının dondurulması kararı. <a href="https://www.aa.com.tr/tr/gundem/teror-orgutleriyle-baglantili-bazi-gercek-ve-tuzel-kisilerin-mal-varliklari-donduruldu/3317499" target="_blank">Kaynak</a>',
+            22: '<a href="https://www.terorarananlar.pol.tr/tarananlar" target="_blank">Terör Arananlar Listesi</a>',
+            23: '<a href="https://www.hrw.org/world-report/2025/country-chapters/turkiye" target="_blank">Human Rights Watch 2025</a>',
+            24: '<a href="https://masak.hmb.gov.tr/7madde" target="_blank">MASAK</a>',
+            25: '<a href="https://www.ohchr.org/en/special-procedures/wg-disappearances/about-enforced-disappearance" target="_blank">BM Zorla Kaybedilme Tanımı</a>',
+            26: 'ICPED\'nin 2. Maddesi ve Zorla Kaybolma Tehlikesi Altındaki Tüm Kişilerin Korunmasına Dair Bildirinin Önsözü.',
+            27: 'Sunay Elmas - 27 Ocak 2016 tarihi itibariyle Ankara\'da kaybolan öğretmen. Ailesi tarafından elde edilen güvenlik kamerası görüntülerinde kaçırılma anı görülmektedir.',
+            28: 'Ayhan Oran - Ağustos 2016\'da ihraç edilen eski MİT görevlisi, 1 Kasım 2016 itibarıyla Ankara\'da kayboldu.',
+            29: 'Yusuf Bilge Tunç - KHK ile ihraç edilen Savunma Sanayi Müsteşarlığı çalışanı, 6 Ağustos 2019 itibarıyla kayıp.',
+            30: '<a href="https://stockholmcf.org/kenya-releases-turkish-refugee-arrested-at-turkeys-request/" target="_blank">Stockholm Center for Freedom</a>',
+            31: '<a href="https://stockholmcf.org/kenya-releases-turkish-refugee-arrested-at-turkeys-request/" target="_blank">Stockholm Center for Freedom</a>',
+            32: '<a href="https://www.turkishminute.com/2026/01/06/lawyer-detained-in-mozambique-over-turkeys-extradition-request-released-pending-trial/" target="_blank">Turkish Minute</a>',
+            33: '<a href="https://www.turkishminute.com/2026/01/06/lawyer-detained-in-mozambique-over-turkeys-extradition-request-released-pending-trial/" target="_blank">Turkish Minute</a>',
+            34: '<a href="https://www.adalet.gov.tr/adalet-bakani-yilmaz-tunc-fetonun-darbe-girisiminin-9-yilinda-15-temmuz-u-degerlendirdi" target="_blank">Adalet Bakanlığı Açıklaması</a>',
+            35: '<a href="https://www.aa.com.tr/tr/15-temmuz-darbe-girisimi/icisleri-bakani-yerlikayadan-aaya-15-temmuz-degerlendirmesi/3631063" target="_blank">Anadolu Ajansı</a>',
+            36: '<a href="https://www.memurlar.net/haber/648024/kamudan-127-bin-feto-cu-temizlendi.html">Memurlar Net Haber</a>',
+            37: '<a href="https://www.aa.com.tr/tr/15-temmuz-darbe-girisimi/icisleri-bakani-yerlikayadan-aaya-15-temmuz-degerlendirmesi/3631063" target="_blank">Anadolu Ajansı</a>',
+            38: '<a href="https://t24.com.tr/haber/ab-2025-turkiye-raporunu-acikladi-hukukun-ustunlugu-ve-yargi-bagimsizligi-konusunda-endiseler-giderilemedi-cok-katmanli-dis-politika-izleniyor,1273553" target="_blank">T24 Haber</a>',
+            39: '<a href="https://enlargement.ec.europa.eu/document/download/4bb4ddd1-4f20-4ee0-92db-926996ec8dd1_en" target="_blank">AB 2025 Türkiye Raporu</a>',
+            40: '<a href="https://www.ab.gov.tr/regarding-the-european-commissions-2025-report-on-turkiye-republic-of-turkiye-ministry-of-foreign-affairs_54129_en.html" target="_blank">TC Dışişleri Bakanlığı Açıklaması</a>',
+            41: '<a href="https://www.turkishminute.com/2025/11/07/turkey-facing-its-worst-democratic-decline-in-history-eu-rapporteur" target="_blank">Turkish Minute</a>',
+            42: '<a href="https://www.hrw.org/news/2025/06/16/defiance-of-european-court-judgments-and-erosion-of-judicial-independence" target="_blank">Human Rights Watch</a>',
+            43: '<a href="https://www.hrw.org/news/2025/06/16/defiance-of-european-court-judgments-and-erosion-of-judicial-independence" target="_blank">Human Rights Watch</a>',
+            44: '<a href="https://stockholmcf.org/turkish-judges-defy-constitutional-court-reject-retrial-of-former-city-planner/" target="_blank">Stockholm Center for Freedom</a>',
+            45: '<a href="https://bianet.org/haber/gun-gun-uc-aylik-medya-ifade-ozgurlugu-ihlalleri-312456" target="_blank">Bianet</a>'
+        };
+
+        // Populate references section
+        function populateReferences() {
+            const container = document.getElementById('referencesContainer');
+            let html = '';
+            for (let i = 1; i <= 45; i++) {
+                if (footnotes[i]) {
+                    html += `<div class="reference-item">
+                        <span class="reference-number">[${i}]</span>
+                        <span class="reference-text">${footnotes[i]}</span>
+                    </div>`;
+                }
+            }
+            container.innerHTML = html;
+        }
+
+        // Footnote tooltip
+        const tooltip = document.getElementById('footnoteTooltip');
+        document.querySelectorAll('.footnote-ref').forEach(ref => {
+            ref.addEventListener('click', (e) => {
+                e.stopPropagation();
+                const footnoteNum = ref.dataset.footnote;
+                const content = footnotes[footnoteNum];
+                
+                if (content) {
+                    tooltip.innerHTML = `<strong>[${footnoteNum}]</strong> ${content}`;
+                    tooltip.classList.add('visible');
+                    
+                    const rect = ref.getBoundingClientRect();
+                    let left = rect.left;
+                    let top = rect.bottom + 10;
+                    
+                    // Adjust position if tooltip goes off screen
+                    if (left + 400 > window.innerWidth) {
+                        left = window.innerWidth - 420;
+                    }
+                    if (top + 200 > window.innerHeight) {
+                        top = rect.top - 100;
+                    }
+                    
+                    tooltip.style.left = left + 'px';
+                    tooltip.style.top = top + 'px';
+                }
+            });
+        });
+
+        document.addEventListener('click', () => {
+            tooltip.classList.remove('visible');
+        });
+
+        // Progress bar
+        window.addEventListener('scroll', () => {
+            const scrollTop = document.documentElement.scrollTop;
+            const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const progress = (scrollTop / scrollHeight) * 100;
+            document.getElementById('progressBar').style.width = progress + '%';
+            
+            // Scroll to top button
+            const scrollTopBtn = document.getElementById('scrollTop');
+            if (scrollTop > 500) {
+                scrollTopBtn.classList.add('visible');
+            } else {
+                scrollTopBtn.classList.remove('visible');
+            }
+        });
+
+        // Active navigation
+        const sections = document.querySelectorAll('.section, #kaynakca');
+        const navLinks = document.querySelectorAll('.sidebar-nav a');
+
+        window.addEventListener('scroll', () => {
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                if (scrollY >= sectionTop - 150) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === '#' + current) {
+                    link.classList.add('active');
+                }
+            });
+        });
+
+        // Mobile sidebar
+        function toggleSidebar() {
+            document.getElementById('sidebar').classList.toggle('open');
+            document.getElementById('sidebarOverlay').classList.toggle('visible');
+        }
+
+        // Close sidebar on link click (mobile)
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                if (window.innerWidth <= 1024) {
+                    toggleSidebar();
+                }
+            });
+        });
+
+        // Scroll to top
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // PDF Download - Using browser's native print
+        function downloadPDF() {
+            // Simple and reliable - uses browser's print dialog
+            // User can choose "Save as PDF" in the print dialog
+            window.print();
+        }
+
+        // Charts
+        Chart.defaults.color = '#94a3b8';
+        Chart.defaults.borderColor = '#2a3f5f';
+
+        // Monthly Detentions Chart
+        new Chart(document.getElementById('monthlyDetentionsChart'), {
+            type: 'bar',
+            data: {
+                labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+                datasets: [{
+                    label: 'Number of Detentions',
+                    data: [320, 380, 420, 356, 464, 410, 450, 390, 420, 380, 470, 456],
+                    backgroundColor: 'rgba(0, 212, 170, 0.8)',
+                    borderColor: '#00d4aa',
+                    borderWidth: 1,
+                    borderRadius: 4
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: { display: false }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        grid: { color: '#1a2744' }
+                    },
+                    x: {
+                        grid: { display: false }
+                    }
+                }
+            }
+        });
+
+        // Detention Waves Chart
+        new Chart(document.getElementById('detentionWavesChart'), {
+            type: 'line',
+            data: {
+                labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+                datasets: [{
+                    label: 'Daily Peak Points',
+                    data: [120, 85, 150, 90, 356, 110, 270, 95, 241, 180, 464, 200],
+                    borderColor: '#00d4aa',
+                    backgroundColor: 'rgba(0, 212, 170, 0.1)',
+                    fill: true,
+                    tension: 0.4,
+                    pointBackgroundColor: '#00d4aa',
+                    pointBorderColor: '#00d4aa',
+                    pointRadius: 4
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: { display: false }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        grid: { color: '#1a2744' }
+                    },
+                    x: {
+                        grid: { display: false }
+                    }
+                }
+            }
+        });
+
+        // Yearly Comparison Chart
+        new Chart(document.getElementById('yearlyComparisonChart'), {
+            type: 'bar',
+            data: {
+                labels: ['2024', '2025'],
+                datasets: [{
+                    label: 'Annual Detentions',
+                    data: [4058, 4916],
+                    backgroundColor: ['rgba(100, 116, 139, 0.8)', 'rgba(0, 212, 170, 0.8)'],
+                    borderColor: ['#64748b', '#00d4aa'],
+                    borderWidth: 1,
+                    borderRadius: 8
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                indexAxis: 'y',
+                plugins: {
+                    legend: { display: false }
+                },
+                scales: {
+                    x: {
+                        beginAtZero: true,
+                        grid: { color: '#1a2744' }
+                    },
+                    y: {
+                        grid: { display: false }
+                    }
+                }
+            }
+        });
+
+        // Death Causes Chart
+        new Chart(document.getElementById('deathCausesChart'), {
+            type: 'doughnut',
+            data: {
+                labels: ['Illness', 'Prison Death', 'Suicide', 'Traffic Accident', 'Work Accident', 'Other'],
+                datasets: [{
+                    data: [44, 10, 5, 6, 4, 1],
+                    backgroundColor: [
+                        'rgba(0, 212, 170, 0.8)',
+                        'rgba(239, 68, 68, 0.8)',
+                        'rgba(245, 158, 11, 0.8)',
+                        'rgba(100, 116, 139, 0.8)',
+                        'rgba(74, 222, 128, 0.8)',
+                        'rgba(148, 163, 184, 0.8)'
+                    ],
+                    borderWidth: 0
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        position: 'right',
+                        labels: { padding: 15 }
+                    }
+                }
+            }
+        });
+
+        // Prison Violations Chart
+        new Chart(document.getElementById('prisonViolationsChart'), {
+            type: 'bar',
+            data: {
+                labels: ['Health Rights', 'Release Obstruction', 'Overcrowding', 'Arbitrary Discipline', 'Ill-treatment', 'Other'],
+                datasets: [{
+                    label: 'Number of Cases',
+                    data: [300, 180, 160, 120, 90, 100],
+                    backgroundColor: [
+                        'rgba(239, 68, 68, 0.8)',
+                        'rgba(245, 158, 11, 0.8)',
+                        'rgba(0, 212, 170, 0.8)',
+                        'rgba(100, 116, 139, 0.8)',
+                        'rgba(74, 222, 128, 0.8)',
+                        'rgba(148, 163, 184, 0.8)'
+                    ],
+                    borderRadius: 4
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                indexAxis: 'y',
+                plugins: {
+                    legend: { display: false }
+                },
+                scales: {
+                    x: {
+                        beginAtZero: true,
+                        grid: { color: '#1a2744' }
+                    },
+                    y: {
+                        grid: { display: false }
+                    }
+                }
+            }
+        });
+
+        // Dismissals Chart
+        new Chart(document.getElementById('dismissalsChart'), {
+            type: 'bar',
+            data: {
+                labels: ['Police', 'Gendarmerie', 'Civil Administration', 'Coast Guard'],
+                datasets: [{
+                    label: 'Dismissals',
+                    data: [33534, 8456, 2599, 640],
+                    backgroundColor: 'rgba(0, 212, 170, 0.8)',
+                    borderRadius: 4
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: { display: false }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        grid: { color: '#1a2744' }
+                    },
+                    x: {
+                        grid: { display: false }
+                    }
+                }
+            }
+        });
+
+        // Closed Institutions Chart
+        new Chart(document.getElementById('closedInstitutionsChart'), {
+            type: 'bar',
+            data: {
+                labels: ['Association', 'Private School', 'Dormitory', 'Tutoring Center', 'Foundation', 'Media', 'Other'],
+                datasets: [{
+                    label: 'Kapatılan Kurum',
+                    data: [1410, 1034, 835, 301, 109, 114, 139],
+                    backgroundColor: [
+                        'rgba(0, 212, 170, 0.8)',
+                        'rgba(74, 222, 128, 0.8)',
+                        'rgba(245, 158, 11, 0.8)',
+                        'rgba(239, 68, 68, 0.8)',
+                        'rgba(100, 116, 139, 0.8)',
+                        'rgba(148, 163, 184, 0.8)',
+                        'rgba(59, 130, 246, 0.8)'
+                    ],
+                    borderRadius: 4
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: { display: false }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        grid: { color: '#1a2744' }
+                    },
+                    x: {
+                        grid: { display: false }
+                    }
+                }
+            }
+        });
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', () => {
+            populateReferences();
+            
+            // Hide loading after page load
+            setTimeout(() => {
+                document.getElementById('loadingOverlay').classList.add('hidden');
+            }, 500);
+        });
+    </script>
+</body>
+</html>

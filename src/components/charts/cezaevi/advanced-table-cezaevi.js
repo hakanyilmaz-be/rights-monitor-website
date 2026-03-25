@@ -3,7 +3,7 @@ import axios from 'axios';
 import DataTable from 'react-data-table-component';
 import Papa from 'papaparse';
 import { FormControl } from 'react-bootstrap';
-import { useTranslation } from 'react-i18next'; // i18next hook'u
+import { useTranslation } from 'react-i18next'; 
 import "./advanced-table-cezaevi.css"
 
 function AdvancedTableCezaevi() {

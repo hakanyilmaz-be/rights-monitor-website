@@ -5,12 +5,46 @@
     "homepage_reports": "Raporlar",
     "ehcr_page": "AİHM Verileri",
     "un_page": "BM Verileri",
+     "giris_alani": {
+    "main_title": "Resmi Açıklamalar",
+    "main_subtitle": "Türkiye Cumhuriyeti Resmi Makamlarının Gülen Hareketi Operasyonları Hakkında Açıklamaları",
+    "highlight_title": "Öne Çıkan Veriler — En Son Açıklanan Rakamlar",
+    "latest_detention": "TOPLAM GÖZALTI",
+    "latest_arrest": "TOPLAM TUTUKLAMA",
+    "latest_digital_material": "EL KONULAN DİJİTAL MATERYAL",
+    "latest_passport_cancellation": "TOPLAM PASAPORT İPTALİ",
+    "general_data": "Genel Veriler",
+    "digital_material": "Dijital Materyal",
+     "description": "Bu sayfa, Türkiye'de resmi makamlar tarafından Gülen hareketine yönelik olarak dönemsel aralıklarla kamuoyuna açıklanan toplu gözaltı, tutuklama, ihraç ve benzeri sayısal verileri kronolojik biçimde bir araya getirmeyi amaçlamaktadır. Söz konusu rakamlar çoğu zaman “bilanço” niteliğinde, belirli bir dönemin toplam sonuçlarını gösteren büyük ölçekli sayılar şeklinde yayımlanmaktadır. Bu sunum biçimi, yalnızca istatistiksel bir bilgilendirme değil; aynı zamanda devletin yürüttüğü sürecin hacmini ve sürekliliğini vurgulayan bir güç gösterisi dili üretmektedir. Yüksek hacimli toplam rakamların periyodik olarak kamuoyuna duyurulması, geniş toplum kesimleri üzerinde caydırıcı ve baskı artırıcı bir etki yaratabilmektedir. Bu sayfa, söz konusu “bilanço açıklamaları”nı sistematik biçimde belgeleyerek, sayısal söylemin zaman içindeki artışını ve tekrarını görünür kılmayı hedeflemektedir. Böylece resmi makamların dönem dönem yayımladığı toplu verilerin, toplumsal algı ve kamusal atmosfer üzerindeki etkisi izlenebilir hale getirilmektedir."
+  },
+  "advanced_tableresmi": {
+    "search": "Arama:",
+    "search_placeholder": "Kişi, kategori, açıklama...",
+    "year": "Yıl:",
+    "official": "Yetkili:",
+    "all": "Tümü",
+    "records": "açıklama",
+    "loading": "Yükleniyor...",
+    "no_results": "Sonuç bulunamadı.",
+     "read_more": "Daha fazla",
+  "read_less": "Daha az",
+    "source_button": "Kaynak",
+    "columns": {
+      "date": "TARİH",
+      "official": "YETKİLİ",
+      "category": "KATEGORİ",
+      "statistics": "İSTATİSTİKLER",
+      "description": "AÇIKLAMA",
+      "source": "KAYNAK"
+    }
+  },
     "yalcinkaya_decison_results": "Yalçınkaya Karar Takibi",
     "weekly_bulletins": "Haftalık Bültenler",
     "right_to_life_violations": "Yaşam Hakkı İhlalleri",
     "prison_mistreatment": "Cezaevindeki Kötü Muameleler",
     "closed_institutions": "Kapatılan Kurumlar",
     "closed_seized_institutions": "Kapatılan ve El Konulan Kurumlar",
+    "official_statements": "Resmi Açıklamalar",
     "terror_crime_statistics": "Terör Suçu İstatistikleri",
     "comprehensive_statistics": "Kapsamlı İstatistikler",
     "judicial_independence": "Yargı Bağımsızlığı",
@@ -55,6 +89,11 @@
   "pageDescriptionR": "Turkey Rights Monitor, Brüksel merkezli Solidarity with OTHERS Derneği’nin desteğiyle bağımsız ve tarafsız bir platform olarak, Türkiye’de özellikle Gülen Hareketi mensupları ve bu suçlamayla karşı karşıya kalan bireylerin maruz kaldığı hak ihlallerini belgeleyip analiz ediyor. Bu sayfada raporlarımıza erişebilirsiniz.",
   "buttonLabelR": "Raporu İnceleyiniz",
   "reports": [
+     {
+      "title": "2025 Almanak",
+      "description": "Bu rapor, odak noktasını 2025 yılında Gülen Hareketi’ne yönelik olarak gerçekleştirilen kitlesel gözaltı, keyfi tutuklama, mal varlığına el koyma ve zorla kaybetme gibi hak ihlallerine yer vererek şekillendirirken; yargı bağımsızlığı, cezaevi koşulları ve evrensel hukuka aykırı sınır dışı işlemleri gibi başlıklarla Türkiye genelindeki sistemik adalet zaaflarına da ışık tutmaktadır.",
+    "link": "/tr/2025-almanak"
+    },
     {
       "title": "2024 Almanak",
       "description": "Bu rapor, odak noktasını 2024 yılında Gülen Hareketi’ne yönelik olarak gerçekleştirilen kitlesel gözaltı, keyfi tutuklama, mal varlığına el koyma ve zorla kaybetme gibi hak ihlallerine yer vererek şekillendirirken; yargı bağımsızlığı, cezaevi koşulları ve evrensel hukuka aykırı sınır dışı işlemleri gibi başlıklarla Türkiye genelindeki sistemik adalet zaaflarına da ışık tutmaktadır.",
@@ -251,7 +290,7 @@
 
 
     "yillarAciklama": {
-      "title": "Cadı Avının Kronolojisi",
+      "title": "Kitlesel Operasyonların Kronolojisi",
       "paragraph1": "Gülen hareketi üyelerine yönelik kitlesel polis operasyonları 2014 yılı Nisan ayında 8 polisin gözaltına alındığı",
       "operationLink": "operasyon",
       "paragraph2": "ile başlamıştır. Gülen hareketine yönelik zulüm, iktidar tarafından, Türkiye'de önemli bir kırılma anına işaret eden 15 Temmuz 2016'ya dayandırılarak meşrulaştırılmaya çalışılmaktadır. Ancak, veriler bu iddianın aksini göstermektedir. Gülen hareketi mensuplarına yönelik operasyonlar, 15 Temmuz 2016 öncesi zaten 72 ile yayılmış durumdaydı. Darbe girişiminden önce 250'den fazla operasyonda 5 bine yakın kişi gözaltına alınmıştı. Darbe girişimi sonrasında ise Gülen hareketi mensuplarına yönelik operasyonlar adeta 'kazıma' şeklinde gerçekleşmeye başlamıştır.",
@@ -976,6 +1015,7 @@
                       "ihlal2024":"Hak İhlali",
                       "vaka2024":"Vaka Sayısı",
                       "almanac_2024":"2024 Almanak",
+                      "almanac_2025":"2025 Almanak",
                       "countOfcezaevi2024":"2024 yılında cezaevinde yapılan hak ihlalleri",
                       "p2024yargi_title":"Yargı Bağımsızlığı",
                       "informant_yargi2024-1":"Yasama, yürütme ve yargı erklerinin birbirinden bağımsız olması gerektiği, demokratik bir hukuk devletinin temel ilkelerindendir. Ancak, Türkiye'de bu üç erk arasındaki sınırların bulanıklaşması ve iç içe geçmesi, yargının bağımsızlığı ve tarafsızlığı konusundaki endişeleri artırmıştır. Özellikle son yıllarda, yargı mensuplarının iktidar yanlısı kararlar aldığı ve yargı sistemine siyasi müdahalelerin arttığı gözlemlenmektedir.",

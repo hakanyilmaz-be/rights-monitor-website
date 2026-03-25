@@ -72,6 +72,8 @@ const SideBar = () => {
           return "/en/closed-institutions";
         case "/teror-sucu-istatistikleri":
           return "/en/terror-crime-statistics";
+            case "/resmi-aciklamalar":
+          return "/en/official-statements";
         case "/yargi-bagimsizligi":
           return "/en/judicial-independence";
         case "/2024-almanak":
@@ -136,6 +138,9 @@ const SideBar = () => {
               </Nav.Link>
               <Nav.Link as={Link} to={getLocalizedPath("/teror-sucu-istatistikleri")} className={currentPath === getLocalizedPath("/teror-sucu-istatistikleri") ? "active" : ""} onClick={handleNavClick}>
                 {t('terror_crime_statistics')}
+              </Nav.Link>
+                  <Nav.Link as={Link} to={getLocalizedPath("/resmi-aciklamalar")} className={currentPath === getLocalizedPath("/resmi-aciklamalar") ? "active" : ""} onClick={handleNavClick}>
+                {t('official_statements')}
               </Nav.Link>
               <Nav.Link as={Link} to={getLocalizedPath("/yargi-bagimsizligi")} className={currentPath === getLocalizedPath("/yargi-bagimsizligi") ? "active" : ""} onClick={handleNavClick}>
                 {t('judicial_independence')}
