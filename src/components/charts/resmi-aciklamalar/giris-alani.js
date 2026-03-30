@@ -31,19 +31,21 @@ const GirisAlani = () => {
         const data = parseCSV(response.data);
 
         const detentionData = getMaxValueWithRow(data, 7); // H
-        const arrestData = getMaxValueWithRow(data, 11); // L
-        const digitalData = getMaxValueWithRow(data, 21); // V
-        const passportData = getMaxValueWithRow(data, 22); // W
+        const arrestData = getMaxValueWithRow(data, 8); // L
+        const digitalData = getMaxValueWithRow(data, 6); // V
+        const passportData = getLatestNonEmptyFValue(data);
+        const passportRow = getLatestNonEmptyFRow(data);
+        
 
         setStats({
           latestDetention: detentionData.value,
           latestArrest: arrestData.value,
           latestDigitalMaterial: digitalData.value,
-          latestPassportCancellation: passportData.value,
+          latestPassportCancellation: passportData,
           detentionFooter: buildFooterFromRow(detentionData.row),
           arrestFooter: buildFooterFromRow(arrestData.row),
           digitalFooter: buildFooterFromRow(digitalData.row),
-          passportFooter: buildFooterFromRow(passportData.row),
+          passportFooter: buildFooterFromRow(passportRow),
         });
       } catch (error) {
         console.error("Error fetching CSV data:", error);
@@ -74,7 +76,7 @@ const GirisAlani = () => {
       {
         title: t("giris_alani.latest_digital_material"),
         value: stats.latestDigitalMaterial,
-        subTitle: t("giris_alani.digital_material"),
+        subTitle: t("giris_alani.general_data"),
         footer: stats.digitalFooter,
         cardClass: "card-type-1",
       },
@@ -228,7 +230,73 @@ function getMaxValueWithRow(data, columnIndex) {
   };
 }
 
-/* Footer = aynı satırdaki A ve D sütunu */
+
+/* Tarihi parse eder */
+function parseDateValue(dateString) {
+  if (!dateString) return 0;
+
+  const str = String(dateString).trim();
+
+  if (/^\d{1,2}\.\d{1,2}\.\d{4}$/.test(str)) {
+    const [day, month, year] = str.split(".");
+    return new Date(year, month - 1, day).getTime();
+  }
+
+  if (/^\d{1,2}\/\d{1,2}\/\d{4}$/.test(str)) {
+    const [month, day, year] = str.split("/");
+    return new Date(year, month - 1, day).getTime();
+  }
+
+  const parsed = Date.parse(str);
+  return isNaN(parsed) ? 0 : parsed;
+}
+
+
+/* F sütunu dolu olanlar içinden en güncel tarihi bulur */
+function getLatestNonEmptyFValue(data) {
+  let latestRow = null;
+  let latestTimestamp = 0;
+
+  data.forEach((row, index) => {
+    const rawDate = row[3]; // C
+    const fValue = String(row[13] || "").trim(); // F
+
+    console.log("---- ROW ----");
+    console.log("Index:", index);
+    console.log("C (date):", rawDate);
+    console.log("F (value):", fValue);
+
+    // F boşsa atla
+    if (!fValue) {
+      console.log("❌ F boş → SKIP");
+      return;
+    }
+
+    const timestamp = parseDateValue(rawDate);
+    console.log("Parsed timestamp:", timestamp);
+
+    if (timestamp > latestTimestamp) {
+      console.log("✅ YENİ EN GÜNCEL BULUNDU");
+
+      latestTimestamp = timestamp;
+      latestRow = row;
+    }
+  });
+
+  console.log("===== SONUÇ =====");
+  console.log("Latest Row:", latestRow);
+
+  if (latestRow) {
+    console.log("Final C (date):", latestRow[3]);
+    console.log("Final F (value):", latestRow[13]);
+  } else {
+    console.log("❌ Hiç uygun satır bulunamadı");
+  }
+
+  return latestRow ? latestRow[13] : "";
+}
+
+/* Footer = aynı satırdaki A ve D sütunu  */
 function buildFooterFromRow(row) {
   if (!row) return "";
 
@@ -249,6 +317,27 @@ function formatNumber(num) {
   return Math.round(num)
     .toString()
     .replace(/\B(?=(\d{3})+(?!\d))/g, "\u2009,\u2009");
+}
+
+function getLatestNonEmptyFRow(data) {
+  let latestRow = null;
+  let latestTimestamp = 0;
+
+  data.forEach((row) => {
+    const rawDate = row[3]; // tarih sütunu
+    const fValue = String(row[13] || "").trim(); // hedef sütun
+
+    if (!fValue) return;
+
+    const timestamp = parseDateValue(rawDate);
+
+    if (timestamp > latestTimestamp) {
+      latestTimestamp = timestamp;
+      latestRow = row;
+    }
+  });
+
+  return latestRow;
 }
 
 export default GirisAlani;

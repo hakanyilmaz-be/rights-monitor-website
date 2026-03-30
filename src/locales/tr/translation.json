@@ -5,14 +5,16 @@
     "homepage_reports": "Raporlar",
     "ehcr_page": "AİHM Verileri",
     "un_page": "BM Verileri",
+    "operationCountKitlesel": "Operasyon Sayısı",
+    "totalDetentionKitlesel": "Toplam Gözaltı Sayısı",
      "giris_alani": {
     "main_title": "Resmi Açıklamalar",
     "main_subtitle": "Türkiye Cumhuriyeti Resmi Makamlarının Gülen Hareketi Operasyonları Hakkında Açıklamaları",
     "highlight_title": "Öne Çıkan Veriler — En Son Açıklanan Rakamlar",
     "latest_detention": "TOPLAM GÖZALTI",
     "latest_arrest": "TOPLAM TUTUKLAMA",
-    "latest_digital_material": "EL KONULAN DİJİTAL MATERYAL",
-    "latest_passport_cancellation": "TOPLAM PASAPORT İPTALİ",
+    "latest_digital_material": "İŞLEM YAPILAN KİŞİ SAYISI",
+    "latest_passport_cancellation": "MEVCUT HÜKÜMLÜ / HÜKÜM ÖZLÜ / TUTUKLU",
     "general_data": "Genel Veriler",
     "digital_material": "Dijital Materyal",
      "description": "Bu sayfa, Türkiye'de resmi makamlar tarafından Gülen hareketine yönelik olarak dönemsel aralıklarla kamuoyuna açıklanan toplu gözaltı, tutuklama, ihraç ve benzeri sayısal verileri kronolojik biçimde bir araya getirmeyi amaçlamaktadır. Söz konusu rakamlar çoğu zaman “bilanço” niteliğinde, belirli bir dönemin toplam sonuçlarını gösteren büyük ölçekli sayılar şeklinde yayımlanmaktadır. Bu sunum biçimi, yalnızca istatistiksel bir bilgilendirme değil; aynı zamanda devletin yürüttüğü sürecin hacmini ve sürekliliğini vurgulayan bir güç gösterisi dili üretmektedir. Yüksek hacimli toplam rakamların periyodik olarak kamuoyuna duyurulması, geniş toplum kesimleri üzerinde caydırıcı ve baskı artırıcı bir etki yaratabilmektedir. Bu sayfa, söz konusu “bilanço açıklamaları”nı sistematik biçimde belgeleyerek, sayısal söylemin zaman içindeki artışını ve tekrarını görünür kılmayı hedeflemektedir. Böylece resmi makamların dönem dönem yayımladığı toplu verilerin, toplumsal algı ve kamusal atmosfer üzerindeki etkisi izlenebilir hale getirilmektedir."

@@ -2,6 +2,8 @@
   "menu": "Menu",
   "homepage_title": "HUMAN RIGHTS VIOLATIONS MONITORING PROJECT",
   "thematic_reports": "Thematic Reports",
+  "operationCountKitlesel": "Number of Operations",
+  "totalDetentionKitlesel": "Total Detentions",
   "homepage_reports": "Reports",
    "giris_alani": {
     "main_title": "Official Statements",
@@ -10,8 +12,8 @@
 
     "latest_detention": "TOTAL DETENTIONS",
     "latest_arrest": "TOTAL ARRESTS",
-    "latest_digital_material": "SEIZED DIGITAL MATERIAL",
-    "latest_passport_cancellation": "TOTAL PASSPORT CANCELLATIONS",
+    "latest_digital_material": "NUMBER OF PEOPLE PROCESSED",
+    "latest_passport_cancellation": "CURRENT CONVICTED / SENTENCED / DETAINEE",
 
     "general_data": "General Data",
     "digital_material": "Digital Material",

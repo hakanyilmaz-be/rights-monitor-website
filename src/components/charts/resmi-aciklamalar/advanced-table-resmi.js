@@ -1,6 +1,6 @@
 import React, { useEffect, useMemo, useState } from "react";
 import axios from "axios";
-import { Container, Form, Button } from "react-bootstrap";
+import { Container, Form, Button, Row, Col } from "react-bootstrap";
 import { useTranslation } from "react-i18next";
 import "./advanced-tableresmi.css";
 
@@ -123,10 +123,12 @@ const AdvancedTableResmi = () => {
   }, [rows, selectedYear, selectedOfficial, searchTerm, i18n.language]);
 
   return (
-    <section className="advanced-table-wrapper">
-      <Container fluid className="advanced-table-container">
-        <div className="advanced-filter-box">
-          <div className="advanced-filter-row">
+    <section className="advanced-table-wrapper-resmi">
+      <div className="advanced-table-container-resmi">
+    
+
+        <div className="advanced-filter-box-resmi">
+          <div className="advanced-filter-row-resmi">
             <div className="filter-group-inline filter-search">
               <label className="advanced-filter-label">
                 {tt(t, "advanced_tableresmi.search", "Arama:")}
@@ -312,7 +314,8 @@ const AdvancedTableResmi = () => {
             </table>
           </div>
         </div>
-      </Container>
+        
+      </div>
     </section>
   );
 };
