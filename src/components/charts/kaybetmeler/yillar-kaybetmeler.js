@@ -32,6 +32,8 @@ const YillarKaybetmeler = () => {
               ['2019', parseFloat(parsedData[3][1])],
               ['2020', parseFloat(parsedData[4][1])],
               ['2021', parseFloat(parsedData[5][1])],
+              ['2024', parseFloat(parsedData[6][1])],
+
             ]);
           }
         })

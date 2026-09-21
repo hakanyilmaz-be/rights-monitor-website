@@ -38,7 +38,7 @@ function AdvancedTableSinirDisi() {
                 const rows = results.data;
                 if (rows.length > 0) {
                     const headers = rows[0];
-                    const columnsToShow = [0, 1, 2, 3, 4, 5];
+                    const columnsToShow = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
                     const data = rows.slice(1).map(row => {
                         let rowData = {};
@@ -61,18 +61,55 @@ function AdvancedTableSinirDisi() {
                             selector: row => row[headers[4]],
                             sortable: true,
                             wrap: true,
-                            grow: 0.5
+                            grow: 0.1
                         },
                         {
                             name: headers[5],
                             selector: row => row[headers[5]],
                             sortable: true,
                             wrap: true,
-                            grow: 0.5
+                            grow: 0.1
+                        },
+                         {
+                            name: headers[6],
+                            selector: row => row[headers[6]],
+                            sortable: true,
+                            wrap: true,
+                            grow: 0.1,
+                            center: true
+                        },
+                        {
+                            name: headers[7],
+                            selector: row => row[headers[7]],
+                            sortable: true,
+                            wrap: true,
+                            grow: 0.1
                         },
                         {
                             name: headers[2],
                             selector: row => row[headers[2]],
+                            sortable: true,
+                            wrap: true,
+                            grow: 0.5
+                        },
+                        {
+                            name: headers[8],
+                            selector: row => row[headers[8]],
+                            sortable: true,
+                            wrap: true,
+                            grow: 0.5
+                        },
+                          
+                          {
+                            name: headers[9],
+                            selector: row => row[headers[9]],
+                            sortable: true,
+                            wrap: true,
+                            grow: 0.5
+                        },
+                          {
+                            name: headers[10],
+                            selector: row => row[headers[10]],
                             sortable: true,
                             wrap: true,
                             grow: 0.5
@@ -90,9 +127,12 @@ function AdvancedTableSinirDisi() {
                             selector: row => row[headers[3]],
                             sortable: true,
                             wrap: true,
-                            grow: 2,
-                            cell: row => <a href={row[headers[3]]} target="_blank" rel="noopener noreferrer">{row[headers[3]]}</a>
-                        }
+                            grow: 0.1,
+                            cell: row => (
+                                <a href={row[headers[3]]} target="_blank" rel="noopener noreferrer">
+                                    Kaynak
+                                </a>
+                            )                        }
                     ];
 
                     setDataRows(data);
@@ -127,16 +167,16 @@ function AdvancedTableSinirDisi() {
     const customStyles = {
         headCells: {
             style: {
-                padding: '8px 0px 8px 8px',
+                padding: '8px 0px 8px 5px',
                 background: '#1A1A1A',
                 color: '#FFF',
-                fontSize: '12px',
+                fontSize: '11px',
             }
         },
         cells: {
             style: {
-                padding: '8px',
-                fontSize: '11px',
+                padding: '4px',
+                fontSize: '10px',
             }
         }
     };

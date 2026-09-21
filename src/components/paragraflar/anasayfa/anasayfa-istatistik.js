@@ -17,7 +17,7 @@ const AnasayfaIstatistik = () => {
                 const chartData = [
                     [t('year'), t('conviction'), t('deferment'), t('acquittal')]
                 ];
-                rows.slice(3, 13).forEach(row => {
+                rows.slice(3, 15).forEach(row => {
                     chartData.push([row[20], parseInt(row[23]), parseInt(row[22]), parseInt(row[21]) ]);
                 });
                 setData(chartData);

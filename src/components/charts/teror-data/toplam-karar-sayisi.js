@@ -17,6 +17,8 @@ const ToplamKararSayisi = () => {
     ['2021', 0],
     ['2022', 0],
     ['2023', 0],
+    ['2024', 0],
+    ['2025', 0],
   ]);
 
   useEffect(() => {
@@ -39,6 +41,9 @@ const ToplamKararSayisi = () => {
               ['2021', parseFloat(parsedData[21][11])],
               ['2022', parseFloat(parsedData[22][11])],
               ['2023', parseFloat(parsedData[23][11])],
+              ['2024', parseFloat(parsedData[24][11])],
+              ['2025', parseFloat(parsedData[25][11])],
+
             ]);
           }
         })

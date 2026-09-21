@@ -13,4 +13,7 @@
       margin-bottom: -1200px; 
     }
   }
-  
+
+  .advanced-table-container {
+    zoom: 0.92;
+}

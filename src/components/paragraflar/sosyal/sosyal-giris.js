@@ -28,7 +28,7 @@ const SosyalGiris = () => {
           <div className="info-box-container">
             <div className="info-box box1">
               <p className="title">{t("sosyalGiris.caseCountTitle")}</p>
-              <CountUp className="count" start={0} end={58} duration={5} />
+              <CountUp className="count" start={0} end={65} duration={5} />
             </div>
             <div className="info-box box2">
               <p className="description">

@@ -37,6 +37,8 @@ const YillarIskence = () => {
               ['2020', parseFloat(parsedData[6][16])],
               ['2021', parseFloat(parsedData[7][16])],
               ['2022', parseFloat(parsedData[8][16])],
+              ['2025', parseFloat(parsedData[9][16])],
+
             ]);
           }
         })

@@ -14,7 +14,7 @@ const KitleselYillarGrafik = () => {
                 const response = await axios.get(csvUrl);
                 const rows = parseCSV(response.data);
                 const chartData = [[t('kitleselYillarGrafik.year'), t('kitleselYillarGrafik.detentionCount'), t('kitleselYillarGrafik.operationCount')]];
-                rows.slice(2, 13).forEach(row => {
+                rows.slice(2, 14).forEach(row => {
                     chartData.push([row[4], parseInt(row[5]), parseInt(row[6])]);
                 });
                 setData(chartData);

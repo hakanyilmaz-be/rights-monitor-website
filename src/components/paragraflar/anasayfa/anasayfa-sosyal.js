@@ -67,7 +67,7 @@ const AnasayfaSosyal = () => {
             <div className="info-box box1">
               <p className="title">{t('incident_count')}</p>
               {isCounting && (
-                <CountUp className="count" start={0} end={58} duration={5} />
+                <CountUp className="count" start={0} end={65} duration={5} />
               )}
             </div>
             <div className="info-box box2">

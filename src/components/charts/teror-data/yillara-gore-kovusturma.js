@@ -15,7 +15,7 @@ const YillarKovusturmaGrafik = () => {
                 const response = await axios.get(csvUrl);
                 const rows = parseCSV(response.data);
                 const chartData = [[t('graph.year'), t('graph.conviction'), t('graph.suspendedSentence'), t('graph.acquittal')]];
-                rows.slice(3, 13).forEach(row => {
+                rows.slice(3, 14).forEach(row => {
                     chartData.push([row[20], parseInt(row[23]), parseInt(row[22]), parseInt(row[21]) ]);
                 });
                 setData(chartData);

@@ -37,7 +37,7 @@ const AdvancedTableResmi = () => {
         const dataRows = parsedRows.slice(1);
 
         const statHeaders = headerRow
-          .slice(4, 30)
+          .slice(4, 32)
           .map((h) => String(h || "").trim());
 
         const rawItems = dataRows
@@ -48,8 +48,8 @@ const AdvancedTableResmi = () => {
             category: String(row[1] || "").trim(), // B
             date: String(row[3] || "").trim(), // D
             statistics: collectRowStatistics(row, statHeaders), // E - AD
-            description: String(row[30] || "").trim(), // AE
-            source: String(row[31] || "").trim(), // AF
+            description: String(row[32] || "").trim(), // AE
+            source: String(row[33] || "").trim(), // AF
             year: extractYear(String(row[3] || "").trim()),
           }));
 
@@ -361,7 +361,7 @@ function tt(t, key, fallback) {
 function collectRowStatistics(row, headers) {
   const stats = [];
 
-  for (let colIndex = 4; colIndex <= 29; colIndex++) {
+  for (let colIndex = 4; colIndex <= 31; colIndex++) {
     const rawValue = row[colIndex];
     const label = headers[colIndex - 4];
 

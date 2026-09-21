@@ -17,6 +17,8 @@ const Kovusturma = () => {
     ['2021', 0],
     ['2022', 0],
     ['2023', 0],
+    ['2024', 0],
+    ['2025', 0],
   ]);
 
   useEffect(() => {
@@ -39,6 +41,8 @@ const Kovusturma = () => {
               ['2021', parseFloat(parsedData[21][15])],
               ['2022', parseFloat(parsedData[22][15])],
               ['2023', parseFloat(parsedData[23][15])],
+              ['2024', parseFloat(parsedData[24][15])],
+              ['2025', parseFloat(parsedData[25][15])],
             ]);
           }
         })

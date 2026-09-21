@@ -162,7 +162,7 @@
     "social_economic_rights_description": "2016'da Türkiye'de olağanüstü hal (OHAL) ilan edilmesiyle birlikte çıkarılan Kanun Hükmünde Kararnameler (KHK) çerçevesinde yaklaşık 125 bin kamu çalışanının, idari ve adli işleme tabi tutulmadan görevlerine son verildi. Bu süreçte, KHK'lıların karşılaştığı sosyal ve ekonomik hak ihlalleri, insan hakları gözlemcileri tarafından 'sosyal ölüm' olarak tanımlandı.",
     "social_economic_rights_button": "Sosyal ve Ekonomik Hak İhlalleri",
     "incident_count": "Olay Sayısı",
-    "incident_description": "KHK'lılar en az 58 farklı olay türünde sosyal ve ekonomik hak ihlali yaşamaktadırlar.",
+    "incident_description": "KHK'lılar en az 65 farklı olay türünde sosyal ve ekonomik hak ihlali yaşamaktadırlar.",
     "institution_count": "Kurum Sayısı",
     "institution_description": "Söz konusu ihlallerden en az 30 farklı kurum ve kuruluş sorumludur.",
     "confiscated_institutions_title": "El Konulan Kurumlara Ne Oldu?",
@@ -600,7 +600,7 @@
       "title": "Sosyal ve Ekonomik Hak İhlalleri ve Mağduriyetler",
       "introText": "2016'da Türkiye'de olağanüstü hal (OHAL) ilan edilmesiyle birlikte çıkarılan Kanun Hükmünde Kararnameler (KHK) çerçevesinde yaklaşık 125 bin kamu çalışanının, idari ve adli işleme tabi tutulmadan görevlerine son verildi. Bu süreçte, KHK'lıların karşılaştığı sosyal ve ekonomik hak ihlalleri, insan hakları gözlemcileri tarafından 'sosyal ölüm' olarak tanımlandı.",
       "caseCountTitle": "Olay Sayısı",
-      "caseCountDescription": "KHK'lılar en az 58 farklı olay türünde sosyal ve ekonomik hak ihlali yaşamaktadırlar.",
+      "caseCountDescription": "KHK'lılar en az 65 farklı olay türünde sosyal ve ekonomik hak ihlali yaşamaktadırlar.",
       "institutionCountTitle": "Kurum Sayısı",
       "institutionCountDescription": "Söz konusu ihlallerden en az 30 farklı kurum ve kuruluş sorumludur."
     },
