@@ -102,6 +102,11 @@ const AnaSayfa = () => {
     }
   };
 
+  const handleButtonClickYargitay = () => {
+    // Yargıtay data page is language-agnostic (served at /yargitay/)
+    window.location.href = 'https://database.turkeyrightsmonitor.com/yargitay/';
+  };
+
   const { t, i18n } = useTranslation();
   const rightsMonitorImage = i18n.language === 'tr' ? trImage : enImage;
 
@@ -139,6 +144,9 @@ const AnaSayfa = () => {
             <button style={{ width: "150px", marginRight: "20px", fontSize: "14px", fontWeight: "400" }} className="btn-hover color-5" onClick={handleButtonClick8}>
               {t('un_page')}
             </button>
+            <button style={{ width: "150px", marginRight: "20px", fontSize: "14px", fontWeight: "400" }} className="btn-hover color-5" onClick={handleButtonClickYargitay}>
+              {t('yargitay_page')}
+            </button>
             <button style={{ width: "150px", marginRight: "20px", fontSize: "14px", fontWeight: "400" }} className="btn-hover color-5" onClick={handleButtonClick5}>
               {t('homepage_reports')}
             </button>
@@ -153,8 +161,11 @@ const AnaSayfa = () => {
        {/*  <button style={{ width: "160px", marginRight: "20px", fontSize: "13px", fontWeight: "400" }} className="btn-hover color-1" onClick={handleButtonClick6}>
           {t('yalcinkaya_decison_results')}
         </button> */}
-        <button style={{ width: "120px", marginRight: "0px", fontSize: "13px", fontWeight: "400" }} className="btn-hover color-5" onClick={handleButtonClick7}>
+        <button style={{ width: "120px", marginRight: "20px", fontSize: "13px", fontWeight: "400" }} className="btn-hover color-5" onClick={handleButtonClick7}>
           {t('ehcr_page')}
+        </button>
+        <button style={{ width: "120px", marginRight: "0px", fontSize: "13px", fontWeight: "400" }} className="btn-hover color-5" onClick={handleButtonClickYargitay}>
+          {t('yargitay_page')}
         </button>
       </div>
       <div className="buttons butons-mobile mobile-only">
